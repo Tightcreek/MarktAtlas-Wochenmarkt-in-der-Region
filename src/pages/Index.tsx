@@ -42,6 +42,11 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
+                <img 
+                  src="/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png" 
+                  alt="MarktAtlas Logo" 
+                  className="h-16 w-auto mb-6"
+                />
                 <h1 className="text-4xl lg:text-hero font-bold text-foreground leading-tight tracking-tight-custom">
                   Finde frische Vielfalt – dein digitaler Atlas für Wochenmärkte in Deutschland.
                 </h1>
