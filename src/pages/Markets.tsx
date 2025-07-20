@@ -429,13 +429,19 @@ const Markets = () => {
                       <span className="text-sm">{market.openingHours}</span>
                     </div>
 
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 mb-4">
                       {market.features.map((feature, index) => (
                         <Badge key={index} variant="secondary" className="text-xs">
                           {feature}
                         </Badge>
                       ))}
                     </div>
+                    
+                    <Link to={`/markets/${market.id}`}>
+                      <Button variant="outline" size="sm" className="w-full">
+                        Details anzeigen
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
