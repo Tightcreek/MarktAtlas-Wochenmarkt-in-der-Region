@@ -37,53 +37,31 @@ const Index = () => {
         </div>
       </nav>
       {/* Hero Section */}
-      <section className="relative py-20 px-4 min-h-[600px] flex items-center" style={{
-        backgroundImage: `url(${heroImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}>
-        <div className="absolute inset-0 bg-white/80"></div>
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Wochenmarkt{' '}
-                <span className="text-primary">MarktAtlas</span>
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Entdecken Sie frische, regionale Produkte und traditionelle Wochenmärkte 
-                in Ihrer Nähe. Von saisonalem Obst und Gemüse bis hin zu lokalen 
-                Spezialitäten.
-              </p>
-            </div>
-            
-            <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-2 flex">
-              <input 
-                type="text"
-                placeholder="Stadt oder Postleitzahl eingeben..."
-                className="flex-1 px-4 py-3 text-gray-700 bg-transparent outline-none"
-              />
+      <section className="relative bg-gradient-hero py-16 px-4 sm:py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h1 className="text-4xl lg:text-hero font-bold text-foreground leading-tight tracking-tight-custom">
+                  Finde frische Vielfalt – dein digitaler Atlas für Wochenmärkte in Deutschland.
+                </h1>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Entdecke regionale Märkte, saisonale Angebote und gesunde Ernährung – ganz in deiner Nähe.
+                </p>
+              </div>
               <Link to="/markets">
-                <Button size="lg" className="px-6">
-                  Märkte suchen
+                <Button variant="hero" size="hero" className="group">
+                  <Search className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  Markt in deiner Nähe finden
                 </Button>
               </Link>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">500+</div>
-                <div className="text-sm text-muted-foreground">Wochenmärkte</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">16</div>
-                <div className="text-sm text-muted-foreground">Bundesländer</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">1000+</div>
-                <div className="text-sm text-muted-foreground">Händler</div>
-              </div>
+            <div className="lg:order-2">
+              <img
+                src={heroImage}
+                alt="Luftiger Bauernmarkt mit frischen Produkten"
+                className="w-full h-[400px] lg:h-[500px] object-cover rounded-2xl shadow-card"
+              />
             </div>
           </div>
         </div>
