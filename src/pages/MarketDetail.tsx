@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Star, MapPin, Clock, Phone, Mail, Globe, Users } from "lucide-react";
+import { ArrowLeft, MapPin, Clock, Phone, Mail, Globe, Users } from "lucide-react";
 
 interface Market {
   id: string;
@@ -14,7 +14,6 @@ interface Market {
   features: string[];
   isOpen: boolean;
   description?: string;
-  rating?: number;
   vendors?: number;
   phone?: string;
   email?: string;
@@ -37,7 +36,6 @@ const getMarketDetails = (id: string): Market | undefined => {
       features: ["Bio", "International", "Streetfood"],
       isOpen: true,
       description: "Der Winterfeldtmarkt ist einer der beliebtesten Wochenmärkte Berlins. Im Herzen von Schöneberg gelegen, bietet er eine große Auswahl an ökologischen und regionalen Produkten. Der Markt ist bekannt für seine entspannte Atmosphäre und die hohe Qualität der angebotenen Waren.",
-      rating: 4.5,
       vendors: 45,
       phone: "+49 30 12345678",
       email: "info@winterfeldtmarkt.de",
@@ -56,7 +54,6 @@ const getMarketDetails = (id: string): Market | undefined => {
       features: ["Bio", "Kunsthandwerk", "Regional"],
       isOpen: false,
       description: "Der Markt am Kollwitzplatz besteht seit über 20 Jahren und hat sich zu einem der wichtigsten Bio-Märkte Berlins entwickelt. Benannt nach der Künstlerin Käthe Kollwitz, spiegelt der Markt den kreativen und umweltbewussten Geist des Kiezes wider.",
-      rating: 4.6,
       vendors: 66,
       phone: "+49 30 12345679",
       email: "info@kollwitzplatz-markt.de", 
@@ -121,17 +118,13 @@ const MarketDetail = () => {
       {/* Hero Section */}
       <div className="relative h-64 bg-gradient-to-r from-green-600 to-green-700 overflow-hidden">
         <img 
-          src="/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png"
+          src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=1200&h=400"
           alt="Frisches Obst und Gemüse am Wochenmarkt"
           className="w-full h-full object-cover opacity-80"
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute bottom-6 left-6 text-white">
           <div className="flex items-center gap-2 mb-2">
-            <div className="flex items-center gap-1">
-              <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-              <span className="font-semibold">{market.rating}</span>
-            </div>
             <div className="flex items-center gap-1">
               <Users className="w-4 h-4" />
               <span className="text-sm">{market.vendors} Händler</span>
