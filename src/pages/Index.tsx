@@ -9,17 +9,8 @@ const Index = () => {
   
   return (
     <div className="min-h-screen bg-background">
-      {/* Logo */}
-      <div className="absolute top-4 left-4 z-10">
-        <img 
-          src="/lovable-uploads/a7b1e144-d521-440c-8c93-25c4398a9433.png" 
-          alt="MarktAtlas Logo" 
-          className="h-12 w-auto"
-        />
-      </div>
-      
       {/* Navigation */}
-      <nav className="bg-background border-b border-border pt-16">
+      <nav className="bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-center space-x-8">
             <Link
