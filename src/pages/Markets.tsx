@@ -458,6 +458,388 @@ const marketData: Market[] = [
     openingHours: "Do 8-13",
     features: ["Stadtteilmarkt"],
     isOpen: false
+  },
+  // Düsseldorf
+  {
+    id: "44",
+    name: "Carlsplatz",
+    address: "Carlsplatz",
+    city: "Düsseldorf",
+    postalCode: "40213",
+    openingHours: "Mo-Fr 8:00-18:00, Sa 8:00-16:00",
+    features: ["Traditional", "Regional", "Bio"],
+    isOpen: true
+  },
+  {
+    id: "45",
+    name: "Rheinischer Bauernmarkt (Pempelfort)",
+    address: "Pempelforter Straße",
+    city: "Düsseldorf",
+    postalCode: "40211",
+    openingHours: "Mi 8:30-13:00, Sa 8:30-13:30",
+    features: ["Bauernmarkt", "Regional"],
+    isOpen: false
+  },
+  {
+    id: "46",
+    name: "Hermannplatz (Fingern)",
+    address: "Hermannplatz",
+    city: "Düsseldorf",
+    postalCode: "40233",
+    openingHours: "Sa 7:00-13:00",
+    features: ["Stadtteilmarkt"],
+    isOpen: true
+  },
+  {
+    id: "47",
+    name: "Friedensplätzen (Unterbilk)",
+    address: "Friedensplätzen",
+    city: "Düsseldorf",
+    postalCode: "40219",
+    openingHours: "Di 8:00-13:00, Fr 9:00-17:00",
+    features: ["Bio", "Regional"],
+    isOpen: false
+  },
+  {
+    id: "48",
+    name: "Marktplatz (Benrath)",
+    address: "Benrather Marktplatz",
+    city: "Düsseldorf",
+    postalCode: "40597",
+    openingHours: "Mo-Fr 8:00-18:00, Sa 8:00-14:00",
+    features: ["Traditional", "Regional"],
+    isOpen: true
+  },
+  {
+    id: "49",
+    name: "Neusser Tor (Gerresheim)",
+    address: "Neusser Tor",
+    city: "Düsseldorf",
+    postalCode: "40625",
+    openingHours: "Di und Do 8:00-17:00, Sa 8:00-14:00",
+    features: ["Stadtteilmarkt"],
+    isOpen: false
+  },
+  {
+    id: "50",
+    name: "Marktplatz (Kaiserswerth)",
+    address: "Kaiserswerther Marktplatz",
+    city: "Düsseldorf",
+    postalCode: "40489",
+    openingHours: "Mi und Sa 8:00-14:00",
+    features: ["Historic", "Regional"],
+    isOpen: true
+  },
+  {
+    id: "51",
+    name: "Barbarossaplatz (Oberkassel)",
+    address: "Barbarossaplatz",
+    city: "Düsseldorf",
+    postalCode: "40545",
+    openingHours: "Di und Fr 7:00-18:00",
+    features: ["Bio", "International"],
+    isOpen: false
+  },
+  {
+    id: "52",
+    name: "Lessingplatz (Oberbilk)",
+    address: "Lessingplatz",
+    city: "Düsseldorf",
+    postalCode: "40227",
+    openingHours: "Do 8:00-13:30",
+    features: ["Neighborhood"],
+    isOpen: true
+  },
+  {
+    id: "53",
+    name: "Gertrudisplatz Östetelbekhausen",
+    address: "Gertrudisplatz",
+    city: "Düsseldorf",
+    postalCode: "40225",
+    openingHours: "Di und Fr 8:00-18:00, Sa 8:00-14:00",
+    features: ["Regional", "Bio"],
+    isOpen: false
+  },
+  // Bremen
+  {
+    id: "54",
+    name: "Wochenmarkt Findorff",
+    address: "Neukirchstraße 45",
+    city: "Bremen",
+    postalCode: "28215",
+    openingHours: "Di, Do und Sa 8:00-13:00, Sa 8:00-14:00",
+    features: ["Regional", "Bio"],
+    isOpen: true
+  },
+  {
+    id: "55",
+    name: "Wochenmarkt Gröpelingen",
+    address: "Bürgermeister-Ehlers-Platz, Pastorenweg",
+    city: "Bremen",
+    postalCode: "28239",
+    openingHours: "Di, Do, Sa 8:00-13:00",
+    features: ["Stadtteilmarkt"],
+    isOpen: false
+  },
+  {
+    id: "56",
+    name: "Wochenmarkt Osterholz-Scharmbeck",
+    address: "Regine-Hildebrandt-Platz",
+    city: "Bremen",
+    postalCode: "28239",
+    openingHours: "Mi, Fr 8:00-13:00",
+    features: ["Regional"],
+    isOpen: true
+  },
+  {
+    id: "57",
+    name: "Bauernmarkt Fangelm",
+    address: "Fangelm",
+    city: "Bremen",
+    postalCode: "28195",
+    openingHours: "Fr 10:00-16:00",
+    features: ["Bauernmarkt", "Bio"],
+    isOpen: false
+  },
+  {
+    id: "58",
+    name: "Blumenmarkt Unser-Lieben-Frauen",
+    address: "Unser Lieben Frauen Kirchhof",
+    city: "Bremen",
+    postalCode: "28195",
+    openingHours: "Mo-Fr 8:00-14:00, Sa 8:00-15:00",
+    features: ["Blumen", "Pflanzen"],
+    isOpen: true
+  },
+  {
+    id: "59",
+    name: "Wochenmarkt Domshof",
+    address: "Domshof",
+    city: "Bremen",
+    postalCode: "28195",
+    openingHours: "Mo-Fr 8:00-14:00, Sa 8:00-15:00",
+    features: ["Historic", "Traditional"],
+    isOpen: false
+  },
+  {
+    id: "60",
+    name: "Wochenmarkt Walle",
+    address: "Wartburgstraße 12",
+    city: "Bremen",
+    postalCode: "28217",
+    openingHours: "Di, Do, Sa 8:00-13:00",
+    features: ["Stadtteilmarkt"],
+    isOpen: true
+  },
+  {
+    id: "61",
+    name: "Wochenmarkt Horn-Lehe",
+    address: "Ecke Robert-Bunsen-Straße/Wilhelm-Raabe-Straße",
+    city: "Bremen",
+    postalCode: "28359",
+    openingHours: "Do, Sa 8:00-13:00",
+    features: ["Regional"],
+    isOpen: false
+  },
+  {
+    id: "62",
+    name: "Wochenmarkt Steintor (Zegenmarkt)",
+    address: "Vor dem Steintor 82",
+    city: "Bremen",
+    postalCode: "28203",
+    openingHours: "Di, Fr 8:00-18:00, Sa 8:00-14:00",
+    features: ["Urban", "International"],
+    isOpen: true
+  },
+  {
+    id: "63",
+    name: "Wochenmarkt Blödelt",
+    address: "Einkaufszentrum Blödelt, Max-Säume",
+    city: "Bremen",
+    postalCode: "28279",
+    openingHours: "Fr 8:00-13:00",
+    features: ["Shopping Center"],
+    isOpen: false
+  },
+  {
+    id: "64",
+    name: "Wochenmarkt Osterholz",
+    address: "Schweizer Eck (Weser)",
+    city: "Bremen",
+    postalCode: "28325",
+    openingHours: "Di, Do, Sa 8:00-13:00",
+    features: ["Stadtteilmarkt"],
+    isOpen: true
+  },
+  {
+    id: "65",
+    name: "Bauernmarkt Steglitzstraße",
+    address: "Steglitzstraße 56",
+    city: "Bremen",
+    postalCode: "28209",
+    openingHours: "Do 10:00-16:00",
+    features: ["Bauernmarkt"],
+    isOpen: false
+  },
+  {
+    id: "66",
+    name: "Wochenmarkt Schwachhausen (Bürgerpark)",
+    address: "Benquestraße",
+    city: "Bremen",
+    postalCode: "28209",
+    openingHours: "Mi 7:30-13:00, Sa 7:30-13:30",
+    features: ["Park Setting"],
+    isOpen: true
+  },
+  {
+    id: "67",
+    name: "Wochenmarkt Schwachhausen (H.-J.-Weier-Allee)",
+    address: "Ecke H.-J.-Weier-Allee/Hans Kausen",
+    city: "Bremen",
+    postalCode: "28211",
+    openingHours: "Fr und Sa 8:00-13:00",
+    features: ["Neighborhood"],
+    isOpen: false
+  },
+  {
+    id: "68",
+    name: "Wochenmarkt Großer Kurfürst",
+    address: "Eislebener Straße 66",
+    city: "Bremen",
+    postalCode: "28329",
+    openingHours: "Fr 8:00-13:00",
+    features: ["Local"],
+    isOpen: true
+  },
+  {
+    id: "69",
+    name: "Wochenmarkt Vahr",
+    address: "Berliner Freiheit",
+    city: "Bremen",
+    postalCode: "28327",
+    openingHours: "Di, Do, Sa 8:00-13:30",
+    features: ["Shopping Area"],
+    isOpen: false
+  },
+  {
+    id: "70",
+    name: "Wochenmarkt Borgfeld",
+    address: "Platz zur Linde",
+    city: "Bremen",
+    postalCode: "28357",
+    openingHours: "Mi, Sa 8:00-13:00",
+    features: ["Village Setting"],
+    isOpen: true
+  },
+  {
+    id: "71",
+    name: "Wochenmarkt Arbergen",
+    address: "Dorfplatz, Colehornstraße 36",
+    city: "Bremen",
+    postalCode: "28307",
+    openingHours: "Fr 8:00-13:00",
+    features: ["Rural"],
+    isOpen: false
+  },
+  {
+    id: "72",
+    name: "Wochenmarkt Hastedt",
+    address: "Ecke Bei den drei Pfahlen, Hermine-Berthold-Straße",
+    city: "Bremen",
+    postalCode: "28199",
+    openingHours: "Fr 8:00-13:00",
+    features: ["Community"],
+    isOpen: true
+  },
+  {
+    id: "73",
+    name: "Wochenmarkt Neustadt (Kornstraße)",
+    address: "Ecke Am Sodenmatt/Berntalstr.",
+    city: "Bremen",
+    postalCode: "28199",
+    openingHours: "Mi, Sa 8:00-13:00, Fr 7:00-13:30",
+    features: ["Traditional"],
+    isOpen: false
+  },
+  {
+    id: "74",
+    name: "Wochenmarkt Neustadt (Delmestraße)",
+    address: "Ecke Delmestraße, Papedistraße",
+    city: "Bremen",
+    postalCode: "28199",
+    openingHours: "Mo-Fr 8:00-13:00, Sa 8:00-14:00",
+    features: ["Central"],
+    isOpen: true
+  },
+  {
+    id: "75",
+    name: "Wochenmarkt Neustadt (Gottfried-Menken-Straße)",
+    address: "Gottfried-Menken-Straße",
+    city: "Bremen",
+    postalCode: "28201",
+    openingHours: "Fr und Sa 8:00-13:00",
+    features: ["Residential"],
+    isOpen: false
+  },
+  {
+    id: "76",
+    name: "Wochenmarkt Habenhausen",
+    address: "Anna-Seghers-Straße",
+    city: "Bremen",
+    postalCode: "28279",
+    openingHours: "Do 15:00-18:00",
+    features: ["Afternoon Market"],
+    isOpen: true
+  },
+  {
+    id: "77",
+    name: "Wochenmarkt Obervieland",
+    address: "Kattenturner Marktplatz, Anna-Stegmann-Str.",
+    city: "Bremen",
+    postalCode: "28277",
+    openingHours: "Mi, Fr 8:00-13:00",
+    features: ["Suburban"],
+    isOpen: false
+  },
+  {
+    id: "78",
+    name: "Wochenmarkt Woltmershausen",
+    address: "Pusdorfer Marktplatz",
+    city: "Bremen",
+    postalCode: "28197",
+    openingHours: "Di, Do, Sa 8:00-13:00",
+    features: ["Harbor Area"],
+    isOpen: true
+  },
+  {
+    id: "79",
+    name: "Wochenmarkt Lesum",
+    address: "Hindenburgstraße",
+    city: "Bremen",
+    postalCode: "28717",
+    openingHours: "Fr 8:00-13:00",
+    features: ["North Bremen"],
+    isOpen: false
+  },
+  {
+    id: "80",
+    name: "Wochenmarkt Marßel",
+    address: "Stockholmer Straße",
+    city: "Bremen",
+    postalCode: "28719",
+    openingHours: "Fr 8:00-13:00",
+    features: ["Local Market"],
+    isOpen: true
+  },
+  {
+    id: "81",
+    name: "Wochenmarkt Vegesack",
+    address: "Am Sedanplatz",
+    city: "Bremen",
+    postalCode: "28757",
+    openingHours: "Mi, Sa 8:00-13:00, Sa 8:00-13:30",
+    features: ["Coastal", "Traditional"],
+    isOpen: false
   }
 ];
 
