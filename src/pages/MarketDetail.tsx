@@ -1565,32 +1565,6 @@ const MarketDetail = () => {
               </CardContent>
             </Card>
 
-            {/* Contact */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Kontakt</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {market.phone && (
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-green-600" />
-                    <span className="text-sm">{market.phone}</span>
-                  </div>
-                )}
-                {market.email && (
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-green-600" />
-                    <span className="text-sm">{market.email}</span>
-                  </div>
-                )}
-                {market.website && (
-                  <div className="flex items-center gap-2">
-                    <Globe className="w-4 h-4 text-green-600" />
-                    <span className="text-sm">{market.website}</span>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
 
             {/* Address */}
             <Card>
