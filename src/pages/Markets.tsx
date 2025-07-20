@@ -205,22 +205,258 @@ const marketData: Market[] = [
   // Köln
   {
     id: "19",
-    name: "Wilhelmsplatz (Nippes)",
-    address: "Wilhelmsplatz",
+    name: "Severinshof",
+    address: "Severinshof",
     city: "Köln",
-    postalCode: "50733",
-    openingHours: "Mo-Sa 7-13",
-    features: ["Stadtteilmarkt"],
+    postalCode: "50678",
+    openingHours: "Di, Fr 8-14",
+    features: ["Bio", "Regional"],
     isOpen: true
   },
   {
     id: "20",
-    name: "Wiener Platz",
-    address: "Wiener Platz",
+    name: "Rudolfplatz",
+    address: "Rudolfplatz",
     city: "Köln",
-    postalCode: "51065",
-    openingHours: "Di, Do, Sa 7-14",
+    postalCode: "50674",
+    openingHours: "Mi 10-18, Sa",
+    features: ["Bio", "Kunsthandwerk"],
+    isOpen: false
+  },
+  {
+    id: "21",
+    name: "Münster Platz",
+    address: "Münster Platz",
+    city: "Köln",
+    postalCode: "50733",
+    openingHours: "Do 8-14",
+    features: ["Bio", "Fleisch"],
+    isOpen: true
+  },
+  // Frankfurt
+  {
+    id: "22",
+    name: "Schillerplatz",
+    address: "Schillerplatz",
+    city: "Frankfurt",
+    postalCode: "60313",
+    openingHours: "Fr 7:30-18:30",
+    features: ["Brotstand", "Fleisch", "International"],
+    isOpen: true
+  },
+  {
+    id: "23",
+    name: "Berlinerhof Wochenmarkt",
+    address: "Berlinerhof",
+    city: "Frankfurt",
+    postalCode: "60311",
+    openingHours: "Di, Sa 8-16",
+    features: ["Regional", "Bio"],
+    isOpen: false
+  },
+  {
+    id: "24",
+    name: "Salzgasse",
+    address: "Salzgasse",
+    city: "Frankfurt",
+    postalCode: "60311",
+    openingHours: "Sa 8-16",
+    features: ["Flohmarkt", "Regional"],
+    isOpen: true
+  },
+  // Stuttgart
+  {
+    id: "25",
+    name: "Großmarkthalle",
+    address: "Großmarkthalle",
+    city: "Stuttgart",
+    postalCode: "70315",
+    openingHours: "Di, Do, Sa",
+    features: ["Großmarkthalle"],
+    isOpen: false
+  },
+  {
+    id: "26",
+    name: "Markthalle",
+    address: "Markthalle",
+    city: "Stuttgart",
+    postalCode: "70173",
+    openingHours: "Mo-Sa",
+    features: ["Markthalle"],
+    isOpen: true
+  },
+  {
+    id: "27",
+    name: "Marienplatz",
+    address: "Marienplatz",
+    city: "Stuttgart",
+    postalCode: "70178",
+    openingHours: "Mi 10-18",
+    features: ["Bio", "Regional"],
+    isOpen: false
+  },
+  {
+    id: "28",
+    name: "Wilhelmsplatz",
+    address: "Wilhelmsplatz",
+    city: "Stuttgart",
+    postalCode: "70182",
+    openingHours: "Fr 8-13",
+    features: ["Regional", "Bio"],
+    isOpen: true
+  },
+  {
+    id: "29",
+    name: "Marktplatz Cannstatt",
+    address: "Marktplatz Cannstatt",
+    city: "Stuttgart",
+    postalCode: "70372",
+    openingHours: "Di, Do, Sa",
+    features: ["Stadtteilmarkt"],
+    isOpen: false
+  },
+  // Leipzig
+  {
+    id: "30",
+    name: "Diezellshofer",
+    address: "Diezellshofer",
+    city: "Leipzig",
+    postalCode: "04317",
+    openingHours: "Do 8-13",
+    features: ["Stadtteilmarkt"],
+    isOpen: true
+  },
+  {
+    id: "31",
+    name: "Markgrafenstraße",
+    address: "Markgrafenstraße",
+    city: "Leipzig",
+    postalCode: "04109",
+    openingHours: "Mi, Sa 8-16",
+    features: ["Regional", "Bio"],
+    isOpen: false
+  },
+  {
+    id: "32",
+    name: "Inh Zentrum Grünau",
+    address: "Zentrum Grünau",
+    city: "Leipzig",
+    postalCode: "04207",
+    openingHours: "Do 8-16",
+    features: ["Zentral", "Regional"],
+    isOpen: true
+  },
+  {
+    id: "33",
+    name: "Wilhelm Külz-Ring",
+    address: "Wilhelm Külz-Ring",
+    city: "Leipzig",
+    postalCode: "04109",
+    openingHours: "Mi, Sa 8-16",
+    features: ["Regional", "Bio"],
+    isOpen: false
+  },
+  // Essen
+  {
+    id: "34",
+    name: "Rüttenscheid",
+    address: "Rüttenscheid",
+    city: "Essen",
+    postalCode: "45130",
+    openingHours: "Di, Do, Sa",
+    features: ["Vielfalt", "Bio"],
+    isOpen: true
+  },
+  {
+    id: "35",
+    name: "Altenessen",
+    address: "Altenessen",
+    city: "Essen",
+    postalCode: "45326",
+    openingHours: "Mi, Do, Sa",
+    features: ["Zentral", "Regional"],
+    isOpen: false
+  },
+  {
+    id: "36",
+    name: "Altenessen Markt",
+    address: "Altenessen Markt",
+    city: "Essen",
+    postalCode: "45326",
+    openingHours: "Mi, Do, Sa",
+    features: ["Stadtteilmarkt"],
+    isOpen: true
+  },
+  // Dortmund
+  {
+    id: "37",
+    name: "Markthof",
+    address: "Markthof",
+    city: "Dortmund",
+    postalCode: "44135",
+    openingHours: "Mi, Fr 7-13",
     features: ["Regional"],
+    isOpen: false
+  },
+  {
+    id: "38",
+    name: "Mengede",
+    address: "Mengede",
+    city: "Dortmund",
+    postalCode: "44359",
+    openingHours: "Mi, Fr 7-13",
+    features: ["Regional"],
+    isOpen: true
+  },
+  {
+    id: "39",
+    name: "Mallinkckrodt-straße",
+    address: "Mallinkckrodt-straße",
+    city: "Dortmund",
+    postalCode: "44147",
+    openingHours: "Di, Fr 8-13",
+    features: ["Regional"],
+    isOpen: false
+  },
+  {
+    id: "40",
+    name: "Hausmarkt",
+    address: "Hausmarkt",
+    city: "Dortmund",
+    postalCode: "44139",
+    openingHours: "Mi, Sa 7-13",
+    features: ["Regional"],
+    isOpen: true
+  },
+  // Dresden
+  {
+    id: "41",
+    name: "Fürstenhof",
+    address: "Fürstenhof",
+    city: "Dresden",
+    postalCode: "01307",
+    openingHours: "Di 8-18, Fr",
+    features: ["Biothek", "Bio"],
+    isOpen: false
+  },
+  {
+    id: "42",
+    name: "Bautzner",
+    address: "Bautzner",
+    city: "Dresden",
+    postalCode: "01099",
+    openingHours: "Di, Fr 8-18, Sa",
+    features: ["Regional", "Bio"],
+    isOpen: true
+  },
+  {
+    id: "43",
+    name: "Albertstadt",
+    address: "Albertstadt",
+    city: "Dresden",
+    postalCode: "01099",
+    openingHours: "Do 8-13",
+    features: ["Stadtteilmarkt"],
     isOpen: false
   }
 ];
@@ -343,7 +579,41 @@ const Markets = () => {
               <div className="flex gap-2">
                 <select 
                   value={selectedDay}
-                  onChange={(e) => setSelectedDay(e.target.value)}
+                  onChange={(e) => {
+                    setSelectedDay(e.target.value);
+                    // Trigger search immediately when day selection changes
+                    setTimeout(() => {
+                      let filtered = marketData;
+                      
+                      if (searchTerm.trim()) {
+                        filtered = filtered.filter(market => 
+                          market.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          market.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          market.postalCode.includes(searchTerm.trim()) ||
+                          market.address.toLowerCase().includes(searchTerm.toLowerCase())
+                        );
+                      }
+
+                      if (e.target.value) {
+                        const dayMap: { [key: string]: string[] } = {
+                          "mo": ["Mo", "Montag"],
+                          "di": ["Di", "Dienstag"],
+                          "mi": ["Mi", "Mittwoch"],
+                          "do": ["Do", "Donnerstag"],
+                          "fr": ["Fr", "Freitag"],
+                          "sa": ["Sa", "Samstag"],
+                          "so": ["So", "Sonntag"]
+                        };
+                        
+                        const searchDays = dayMap[e.target.value] || [];
+                        filtered = filtered.filter(market => 
+                          searchDays.some(day => market.openingHours.includes(day))
+                        );
+                      }
+
+                      setFilteredMarkets(filtered);
+                    }, 100);
+                  }}
                   className="h-12 px-4 rounded-md border border-input bg-background text-sm"
                 >
                   <option value="">Wochentag wählen</option>
@@ -353,6 +623,7 @@ const Markets = () => {
                   <option value="do">Donnerstag</option>
                   <option value="fr">Freitag</option>
                   <option value="sa">Samstag</option>
+                  <option value="so">Sonntag</option>
                 </select>
                 <Button onClick={handleSearch} size="lg" className="h-12">
                   <Search className="w-5 h-5 mr-2" />
