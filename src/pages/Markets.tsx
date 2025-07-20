@@ -1091,7 +1091,7 @@ const Markets = () => {
                     </div>
                     
                     <Link to={`/markets/${market.id}`}>
-                      <Button variant="outline" size="sm" className="h-12">
+                      <Button variant="outline" size="sm" className="w-full">
                         Details anzeigen
                       </Button>
                     </Link>
