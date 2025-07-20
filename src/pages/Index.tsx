@@ -45,7 +45,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png" 
                   alt="MarktAtlas Logo" 
-                  className="h-16 w-auto mb-6"
+                  className="h-50 w-auto mb-17"
                 />
                 <h1 className="text-4xl lg:text-hero font-bold text-foreground leading-tight tracking-tight-custom">
                   Finde frische Vielfalt – dein digitaler Atlas für Wochenmärkte in Deutschland.
