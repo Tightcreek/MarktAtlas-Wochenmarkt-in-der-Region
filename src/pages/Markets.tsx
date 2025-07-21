@@ -850,6 +850,399 @@ const marketData: Market[] = [
     openingHours: "Mi 07:00-14:00 Uhr, Fr 08:00-15:00 Uhr, Sa 07:00-15:00",
     features: ["Regional", "Bio"],
     isOpen: false
+  },
+  // Additional Dortmund markets
+  {
+    id: "83",
+    name: "Wochenmarkt Mengede",
+    address: "Mengede Markt",
+    city: "Dortmund", 
+    postalCode: "44359",
+    openingHours: "Di, Fr 07:00-13:00 Uhr",
+    features: ["Allgemeiner Wochenmarkt"],
+    isOpen: true
+  },
+  {
+    id: "84",
+    name: "Wochenmarkt Eving",
+    address: "Evinger Straße",
+    city: "Dortmund",
+    postalCode: "44339", 
+    openingHours: "Di, Fr 07:00-13:00 Uhr",
+    features: ["Allgemeiner Wochenmarkt"],
+    isOpen: false
+  },
+  {
+    id: "85",
+    name: "Wochenmarkt Scharnhorst",
+    address: "Gleiwitzer Weg",
+    city: "Dortmund",
+    postalCode: "44328",
+    openingHours: "Do 07:00-13:00 Uhr",
+    features: ["Allgemeiner Wochenmarkt"],
+    isOpen: true
+  },
+  {
+    id: "86", 
+    name: "Wochenmarkt Huckarde",
+    address: "Rahmer Straße",
+    city: "Dortmund",
+    postalCode: "44369",
+    openingHours: "Di, Fr 07:00-13:00 Uhr",
+    features: ["Allgemeiner Wochenmarkt"],
+    isOpen: false
+  },
+  {
+    id: "87",
+    name: "Nordmarkt",
+    address: "Nordmarktplatz", 
+    city: "Dortmund",
+    postalCode: "44145",
+    openingHours: "Di, Fr 07:00-13:00 Uhr",
+    features: ["Allgemeiner Wochenmarkt", "multikulturell"],
+    isOpen: true
+  },
+  {
+    id: "88",
+    name: "Davidismarkt",
+    address: "Davidstraße 1",
+    city: "Dortmund",
+    postalCode: "44137",
+    openingHours: "Sa 07:00-13:00 Uhr",
+    features: ["Allgemeiner Wochenmarkt"],
+    isOpen: false
+  },
+  {
+    id: "89",
+    name: "Wochenmarkt Brackel",
+    address: "Oberdorfstr. 17",
+    city: "Dortmund",
+    postalCode: "44309",
+    openingHours: "Do 07:00-13:00 Uhr",
+    features: ["Allgemeiner Wochenmarkt"],
+    isOpen: true
+  },
+  {
+    id: "90",
+    name: "Wochenmarkt Lütgendortmund",
+    address: "Limbecker Straße",
+    city: "Dortmund", 
+    postalCode: "44388",
+    openingHours: "Mi 07:00-13:00 Uhr",
+    features: ["Allgemeiner Wochenmarkt"],
+    isOpen: false
+  },
+  {
+    id: "91",
+    name: "Wochenmarkt Dorstfeld",
+    address: "Wilhelmplatz",
+    city: "Dortmund",
+    postalCode: "44149",
+    openingHours: "Di, Fr 07:00-13:00 Uhr",
+    features: ["Allgemeiner Wochenmarkt"],
+    isOpen: true
+  },
+  {
+    id: "92",
+    name: "Wochenmarkt Hörde",
+    address: "Hörder Neumarkt & Hermannstraße",
+    city: "Dortmund",
+    postalCode: "44263",
+    openingHours: "Di, Fr 07:00-13:00 Uhr",
+    features: ["Allgemeiner Wochenmarkt"],
+    isOpen: false
+  },
+  {
+    id: "93",
+    name: "Wochenmarkt Aplerbeck",
+    address: "Köln-Berliner-Str. 1",
+    city: "Dortmund",
+    postalCode: "44287",
+    openingHours: "Do 07:00-13:00 Uhr",
+    features: ["Allgemeiner Wochenmarkt", "vor allem Nahrungs- und Genussmittel"],
+    isOpen: true
+  },
+  {
+    id: "94",
+    name: "Wochenmarkt Hombruch",
+    address: "Harkortstraße 57",
+    city: "Dortmund",
+    postalCode: "44225",
+    openingHours: "Mi, Sa 07:00-13:00 Uhr",
+    features: ["Allgemeiner Wochenmarkt"],
+    isOpen: false
+  },
+  // Duisburg markets
+  {
+    id: "95",
+    name: "Wochenmarkt Vierlinden",
+    address: "Franz-Lenze-Platz",
+    city: "Duisburg",
+    postalCode: "47176",
+    openingHours: "Mi, Sa 08:00-13:00 Uhr",
+    features: ["Bunter", "vielfältiger Wochenmarkt"],
+    isOpen: true
+  },
+  {
+    id: "96",
+    name: "Wochenmarkt Aldenrade", 
+    address: "Königsplatz",
+    city: "Duisburg",
+    postalCode: "47179",
+    openingHours: "Di, Fr 08:00-13:00 Uhr",
+    features: ["Kleiner aber feiner Wochenmarkt von Aldenrade"],
+    isOpen: false
+  },
+  {
+    id: "97",
+    name: "Wochenmarkt Marxloh",
+    address: "August-Bebel-Platz",
+    city: "Duisburg",
+    postalCode: "47169", 
+    openingHours: "Mo, Mi, Fr 08:00-13:00 Uhr",
+    features: ["Bunter und vielfältiger Wochenmarkt im multikulturellen Stadtteil"],
+    isOpen: true
+  },
+  {
+    id: "98",
+    name: "Wochenmarkt Neumühl",
+    address: "Hohenstaufenstraße",
+    city: "Duisburg",
+    postalCode: "47167",
+    openingHours: "Mi, Fr 08:00-13:00 Uhr",
+    features: ["Frische Produkte wie Obst, Gemüse, Fleisch, Fisch, Backwaren, Eier"],
+    isOpen: false
+  },
+  {
+    id: "99",
+    name: "Wochenmarkt Rheinhausen",
+    address: "Hamborner Altmarkt",
+    city: "Duisburg",
+    postalCode: "47139",
+    openingHours: "Do, Sa 08:00-13:00 Uhr",
+    features: ["Großer und vielfältiger Wochenmarkt im Norden mit ca. 100 Händlern"],
+    isOpen: true
+  },
+  {
+    id: "100",
+    name: "Wochenmarkt Bruckhausen", 
+    address: "Heihlingsplatz",
+    city: "Duisburg",
+    postalCode: "47166",
+    openingHours: "Fr 08:00-13:00 Uhr",
+    features: ["Bunter und günstiger Wochenmarkt"],
+    isOpen: false
+  },
+  {
+    id: "101",
+    name: "Wochenmarkt Beeck",
+    address: "Marktstraße",
+    city: "Duisburg",
+    postalCode: "47119",
+    openingHours: "Di, Do, Sa 08:00-13:00 Uhr",
+    features: ["Lebendiger Treffpunkt im täglichen Bedarf"],
+    isOpen: true
+  },
+  {
+    id: "102",
+    name: "Wochenmarkt Laar",
+    address: "Werthschützstraße",
+    city: "Duisburg",
+    postalCode: "47119",
+    openingHours: "Do 08:00-13:00 Uhr",
+    features: ["Breites Angebot u.a. Obst"],
+    isOpen: false
+  },
+  {
+    id: "103",
+    name: "Wochenmarkt Meiderich",
+    address: "Bahnhofstraße Von-der-Mark-Straße",
+    city: "Duisburg",
+    postalCode: "47137",
+    openingHours: "Mi 08:00-14:00 Uhr",
+    features: ["Kleiner aber feiner Wochenmarkt im Herberink"],
+    isOpen: true
+  },
+  {
+    id: "104",
+    name: "Wochenmarkt Ruhrort",
+    address: "Neumarkt",
+    city: "Duisburg", 
+    postalCode: "47119",
+    openingHours: "Mi 08:00-13:00 Uhr",
+    features: ["Kleiner aber feiner Wochenmarkt im Herberink"],
+    isOpen: false
+  },
+  {
+    id: "105", 
+    name: "Wochenmarkt Homberg",
+    address: "Bismarckplatz",
+    city: "Duisburg",
+    postalCode: "47198",
+    openingHours: "Di, Fr 08:00-13:00 Uhr",
+    features: ["Bunter und vielfältiger Wochenmarkt"],
+    isOpen: true
+  },
+  {
+    id: "106",
+    name: "Wochenmarkt Hochheide",
+    address: "Bürgermeister-Bongartz-Platz",
+    city: "Duisburg",
+    postalCode: "47198",
+    openingHours: "Mi, Sa 08:00-13:00 Uhr",
+    features: ["Gutes Preis-Leistungs-Verhältnis"],
+    isOpen: false
+  },
+  {
+    id: "107",
+    name: "Wochenmarkt Friemersheim",
+    address: "Dorf/Verbindungsstraße",
+    city: "Duisburg",
+    postalCode: "47139",
+    openingHours: "Do 08:00-13:00 Uhr",
+    features: ["Fahrbereit und gesellige Atmosphäre"],
+    isOpen: true
+  },
+  {
+    id: "108",
+    name: "Wochenmarkt Friemersheim",
+    address: "Kaiser-/Kronprinzenstraße",
+    city: "Duisburg",
+    postalCode: "47229",
+    openingHours: "Di, Fr 08:00-13:00 Uhr",
+    features: ["Vielfältiger Wochenmarkt mit großer Auswahl"],
+    isOpen: false
+  },
+  {
+    id: "109",
+    name: "Wochenmarkt Hochneimern",
+    address: "Altdorf Straße/Duisburger Straße",
+    city: "Duisburg", 
+    postalCode: "47226",
+    openingHours: "Mi, Sa 08:00-13:00 Uhr",
+    features: ["Bunge und inhabergeführter Markt im NFV gekürtr, umfangreiches Angebot"],
+    isOpen: true
+  },
+  {
+    id: "110",
+    name: "Wochenmarkt Düssern",
+    address: "Königsberger Allee",
+    city: "Duisburg",
+    postalCode: "47055",
+    openingHours: "Fr Mi 08:00-13:00 Uhr",
+    features: ["Vielfältiger Sortiment, arbeitsfreundliche Zeiten"],
+    isOpen: false
+  },
+  {
+    id: "111",
+    name: "Wochenmarkt Neudorf",
+    address: "Lüdgeriaplatz",
+    city: "Duisburg",
+    postalCode: "47057",
+    openingHours: "Di, Fr 08:00-13:00 Uhr",
+    features: ["Eiso Qualität Sortiment wie früher Zeiten"],
+    isOpen: true
+  },
+  {
+    id: "112",
+    name: "Bauernmarkt",
+    address: "Königstraße",
+    city: "Duisburg",
+    postalCode: "47051",
+    openingHours: "Di, Do 10:00-18:00 Uhr, Sa 10:00-16:00 Uhr",
+    features: ["Etablierter reiner Erzeugermarkt in der Innenstadt"],
+    isOpen: false
+  },
+  {
+    id: "113",
+    name: "Wochenmarkt Hochfeld",
+    address: "Saarbrücker Straße/Essen Straße",
+    city: "Duisburg", 
+    postalCode: "47053",
+    openingHours: "Mi, Sa 08:00-13:00 Uhr",
+    features: ["Bunte und fröhliche Atmosphäre, multikulturelles Angebot"],
+    isOpen: true
+  },
+  {
+    id: "114",
+    name: "Wochenmarkt Wanheim",
+    address: "Idolsplatz",
+    city: "Duisburg",
+    postalCode: "47053",
+    openingHours: "Di, Do 08:00-13:00 Uhr",
+    features: ["Breites Sortiment und tolle Atmosphäre"],
+    isOpen: false
+  },
+  {
+    id: "115",
+    name: "Wochenmarkt Buchholz",
+    address: "Dorfplatz",
+    city: "Duisburg",
+    postalCode: "47259",
+    openingHours: "Do 08:00-13:00 Uhr",
+    features: ["Gute Stimmung und freundlicher Treffpunkt"],
+    isOpen: true
+  },
+  {
+    id: "116",
+    name: "Wochenmarkt Wedau",
+    address: "Wedauer Markt",
+    city: "Duisburg",
+    postalCode: "47279",
+    openingHours: "Mi, Fr 08:00-13:00 Uhr",
+    features: ["Gemütliche Atmosphäre, tägliche Einkaufsmärkte"],
+    isOpen: false
+  },
+  {
+    id: "117", 
+    name: "Wochenmarkt Buchholz",
+    address: "Mülheimer Straße",
+    city: "Duisburg",
+    postalCode: "47249",
+    openingHours: "Di, Fr 08:00-13:00 Uhr",
+    features: ["Übersehenes großer Markt mit tollem Warenangebot"],
+    isOpen: true
+  },
+  {
+    id: "118",
+    name: "Wochenmarkt Wanhiem",
+    address: "Am Tollberg/Moerser Straße",
+    city: "Duisburg",
+    postalCode: "47249",
+    openingHours: "Mi, Sa 08:00-13:00 Uhr",
+    features: ["Reiches Angebot an frischen Waren und Möglichkeit um Pflanzenheim"],
+    isOpen: false
+  },
+  // Potsdam markets
+  {
+    id: "119",
+    name: "Wochenmarkt Potsdam am Bassinplatz",
+    address: "Bassinplatz",
+    city: "Potsdam",
+    postalCode: "14467",
+    openingHours: "Mo-Fr 07:00-16:00 Uhr, Sa 07:00-13:00 Uhr (Apr-Okt), 07:00-12:00 (Nov-Mär)",
+    features: ["Frisches vom Bauern", "Schnittblumen", "Käse", "Fisch", "Küchenkräuter und viele mehr"],
+    isOpen: true
+  },
+  {
+    id: "120",
+    name: "Markt auf Nauener Tor",
+    address: "Nauener Tor",
+    city: "Potsdam",
+    postalCode: "14467",
+    openingHours: "Sa 9:00-16:00 Uhr",
+    features: ["Frische Einkaufsplatz für Feinschmecker, mittwochs Streetfood, samstags Flohmarkt und Spezialitäten"],
+    isOpen: false
+  },
+  {
+    id: "121",
+    name: "Wochenmarkt Weberplatz",
+    address: "Weberplatz",
+    city: "Potsdam",
+    postalCode: "14482",
+    openingHours: "Sa 07:00-14:00 Uhr", 
+    features: ["Allgemeiner Wochenmarkt in Babelsberg"],
+    isOpen: true
   }
 ];
 
