@@ -840,7 +840,7 @@ const marketData: Market[] = [
     openingHours: "Mi, Sa 8:00-13:00, Sa 8:00-13:30",
     features: ["Coastal", "Traditional"],
     isOpen: false
-  }
+  },
   {
     id: "82",
     name: "Hauptwochenmarkt (Innenstadt)",
