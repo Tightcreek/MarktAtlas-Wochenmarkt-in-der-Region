@@ -869,6 +869,135 @@ const marketData: Market[] = [
     postalCode: "14482",
     openingHours: "Sa 07:00-14:00 Uhr", 
     features: ["Allgemeiner Wochenmarkt in Babelsberg"]
+  },
+  // Additional Hamburg Markets
+  {
+    id: "87",
+    name: "Wandsbeker Wochenmarkt",
+    address: "Quarree, Hamburg",
+    city: "Hamburg",
+    postalCode: "22041",
+    openingHours: "Montag - Samstag, 08:00 - 13:00 Uhr",
+    features: ["Bietet für eine große Auswahl an frischen Lebensmitteln mit imbesssarend und rund 100 Marktständen"]
+  },
+  {
+    id: "88", 
+    name: "St. Martin Markt Hamburg",
+    address: "Sillemstraße 75, Hamburg", 
+    city: "Hamburg",
+    postalCode: "20257",
+    openingHours: "Mittwoch: 15:00 - 22:00 Uhr; Samstag: 16:00 - 21:00 Uhr (Okt)",
+    features: ["Bietet regionale und saisonale Produkte wie frisches Brot, Blumen und Grillgaze. Bis zu 50 Stände sind an sechs Tagen der Woche geöffnet"]
+  },
+  // Bremen Markets
+  {
+    id: "89",
+    name: "Wochenmarkt Findorff", 
+    address: "Neukirchstraße 45, 28215 Bremen",
+    city: "Bremen",
+    postalCode: "28215", 
+    openingHours: "Dienstag, Donnerstag, 08:00 - 13:00 Uhr; Samstag, 08:00 - 14:00 Uhr",
+    features: ["Herzstück des Stadtteils für saisonale, regionale und frische Lebensmittel"]
+  },
+  {
+    id: "90", 
+    name: "Wochenmarkt Gröpelingen",
+    address: "Bürgermeister-Ehlers-Platz, Pastorenweg",
+    city: "Bremen", 
+    postalCode: "28237",
+    openingHours: "Dienstag, Donnerstag, Samstag, 08:00 - 13:00 Uhr",
+    features: ["Keine Angabe"]
+  },
+  {
+    id: "91",
+    name: "Wochenmarkt Oberwerland",
+    address: "Oberwerland 8, 28219 Bremen",
+    city: "Bremen",
+    postalCode: "28219", 
+    openingHours: "Freitag, 10:00 - 16:00 Uhr",
+    features: ["Keine Angabe"]
+  },
+  {
+    id: "92",
+    name: "Bauernmarkt Unser-Lieben-Frauen",
+    address: "Unser Lieben Frauen Kirchhof, 28195 Bremen",
+    city: "Bremen",
+    postalCode: "28195",
+    openingHours: "Montag - Freitag, 08:00 - 14:00 Uhr; Samstag, 08:00 - 15:00 Uhr", 
+    features: ["Keine Angabe"]
+  },
+  {
+    id: "93",
+    name: "Wochenmarkt Domshof",
+    address: "Domshof, 28195 Bremen", 
+    city: "Bremen",
+    postalCode: "28195",
+    openingHours: "Montag - Freitag, 08:00 - 14:00 Uhr; Samstag, 08:00 - 15:00 Uhr",
+    features: ["Keine Angabe"]
+  },
+  {
+    id: "94",
+    name: "Wochenmarkt Walle",
+    address: "Wartburgplatz 1, 28217 Bremen",
+    city: "Bremen", 
+    postalCode: "28217",
+    openingHours: "Dienstag, Donnerstag, 08:00 - 13:00 Uhr",
+    features: ["Keine Angabe"]
+  },
+  {
+    id: "95", 
+    name: "Wochenmarkt Horn-Lehe",
+    address: "Ecke Robert-Bunsen-Straße/Bremen-Am Dobben", 
+    city: "Bremen",
+    postalCode: "28355",
+    openingHours: "Donnerstag, Samstag, 08:00 - 13:00 Uhr",
+    features: ["Keine Angabe"]
+  },
+  {
+    id: "96",
+    name: "Wochenmarkt Senior (Ziegenmärkt)",
+    address: "Vor dem Steintor 50-62, 28203 Bremen",
+    city: "Bremen",
+    postalCode: "28203", 
+    openingHours: "Mittwoch - Freitag, 08:00 - 18:00 Uhr; Samstag, 08:00 - 14:00 Uhr",
+    features: ["Keine Angabe"]
+  },
+  {
+    id: "97",
+    name: "Wochenmarkt Vegesack",
+    address: "Am Sedanplatz, 28757 Bremen",
+    city: "Bremen",
+    postalCode: "28757",
+    openingHours: "Dienstag, Donnerstag, 08:00 - 13:00 Uhr; Samstag, 08:00 - 13:30 Uhr",
+    features: ["Keine Angabe"]
+  },
+  // Additional München Markets  
+  {
+    id: "98",
+    name: "Wochenmarkt Haidhausen",
+    address: "Weißenburger Platz, 81667 München",
+    city: "München",
+    postalCode: "81667",
+    openingHours: "Dienstag, 08:00 - 12:00 Uhr",
+    features: ["Klassischer Wochenmarkt mit Obst, Gemüse, Fisch und Fleisch, ergänzt durch bayerische und italienische Texilwaren"]
+  },
+  {
+    id: "99", 
+    name: "Elisenhof",
+    address: "St.-Anna-Platz 1, 80538 München",
+    city: "München",
+    postalCode: "80538",
+    openingHours: "Donnerstag, 10:30 - 18:00 Uhr",
+    features: ["Bietet eine breite Palette an Produkten von Obst, Gemüse, Fleisch, Fisch, bis zu Schloßkäse und Blumen. Seit 2011 in Rosenberg"]
+  },
+  {
+    id: "100", 
+    name: "Bauernmarkt Lehel",
+    address: "St.-Anna-Platz 1, 80538 München", 
+    city: "München",
+    postalCode: "80538",
+    openingHours: "Donnerstag, 10:30 - 18:00 Uhr",
+    features: ["Einer der vier saisonalen Münchner Märkte mit hochpreisigem Angebot"]
   }
 ];
 
