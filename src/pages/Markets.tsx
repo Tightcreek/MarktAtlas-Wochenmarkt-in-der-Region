@@ -1000,7 +1000,7 @@ const marketData: Market[] = [
   },
   // Additional München Markets
   {
-    id: "98",
+    id: "101",
     name: "Wochenmarkt Haidhausen",
     address: "Weißenburger Platz, 81667 München",
     city: "München",
@@ -1009,7 +1009,7 @@ const marketData: Market[] = [
     features: ["Klassischer Wochenmarkt mit Obst, Gemüse, Fisch und Fleisch, ergänzt durch bayerische und italienische Texilwaren"]
   },
   {
-    id: "99", 
+    id: "102", 
     name: "Elisenhof",
     address: "St.-Anna-Platz 1, 80538 München",
     city: "München",
@@ -1018,7 +1018,7 @@ const marketData: Market[] = [
     features: ["Bietet eine breite Palette an Produkten von Obst, Gemüse, Fleisch, Fisch, bis zu Schloßkäse und Blumen. Seit 2011 in Rosenberg"]
   },
   {
-    id: "100", 
+    id: "103", 
     name: "Bauernmarkt Lehel",
     address: "St.-Anna-Platz 1, 80538 München", 
     city: "München",

@@ -2270,7 +2270,7 @@ const getMarketDetails = (id: string): Market | undefined => {
     },
     // Additional München Markets  
     {
-      id: "98",
+      id: "101",
       name: "Wochenmarkt Haidhausen",
       address: "Weißenburger Platz, 81667 München",
       city: "München",
@@ -2287,7 +2287,7 @@ const getMarketDetails = (id: string): Market | undefined => {
       transport: "S-Bahn: Rosenheimer Platz (S1-S8), Tram 15, 25"
     },
     {
-      id: "99", 
+      id: "102", 
       name: "Elisenhof",
       address: "St.-Anna-Platz 1, 80538 München",
       city: "München",
@@ -2304,7 +2304,7 @@ const getMarketDetails = (id: string): Market | undefined => {
       transport: "U-Bahn: Odeonsplatz (U3, U4, U5, U6), Universität (U3, U6)"
     },
     {
-      id: "100", 
+      id: "103", 
       name: "Bauernmarkt Lehel",
       address: "St.-Anna-Platz 1, 80538 München", 
       city: "München",
