@@ -841,6 +841,16 @@ const marketData: Market[] = [
     features: ["Coastal", "Traditional"],
     isOpen: false
   }
+    {
+    id: "82",
+    name: "Hauptwochenmarkt (Innenstadt)",
+    address: "Hansaplatz 1",
+    city: "Dortmund",
+    postalCode: "44137",
+    openingHours: "Mi 07:00-14:00 Uhr, Fr 08:00-15:00 Uhr, Sa 07:00-15:00",
+    features: ["Regional", "Bio"],
+    isOpen: false
+  }
 ];
 
 const Markets = () => {
