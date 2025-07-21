@@ -1091,13 +1091,9 @@ const Markets = () => {
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <CardTitle className="text-lg">{market.name}</CardTitle>
-                      {isMarketOpen(market.openingHours) ? (
+                      {isMarketOpen(market.openingHours) && (
                         <Badge className="bg-green-100 text-green-700 border-green-200">
                           Geöffnet
-                        </Badge>
-                      ) : (
-                        <Badge className="bg-red-100 text-red-700 border-red-200">
-                          Geschlossen
                         </Badge>
                       )}
                     </div>
