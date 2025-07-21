@@ -1129,9 +1129,12 @@ const Markets = () => {
       {/* Search Section */}
       <section className="bg-green-50 py-12 px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold text-center text-foreground mb-8">
-            Alle Wochenmärkte in deiner Nähe
+          <h1 className="text-3xl font-bold text-center text-foreground mb-2">
+            Wochenmarkt Finder Deutschland - Alle Märkte mit Öffnungszeiten
           </h1>
+          <h2 className="text-xl text-center text-muted-foreground mb-8">
+            Finde Wochenmärkte in deiner Nähe - Markt heute geöffnet, Bauernmarkt Öffnungszeiten und regionale Direktvermarkter
+          </h2>
           
           <div className="bg-card rounded-2xl shadow-card p-6 space-y-6">
             <div className="flex flex-col md:flex-row gap-4">

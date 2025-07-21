@@ -48,23 +48,23 @@ const Index = () => {
                   className="h-36 w-auto mb-18"
                 />
                 <h1 className="text-4xl lg:text-hero font-bold text-foreground leading-tight tracking-tight-custom">
-                  Finde frische Vielfalt – dein digitaler Atlas für Wochenmärkte in Deutschland.
+                  Wochenmarkt Finder Deutschland - Alle Wochenmärkte in deiner Nähe
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  Entdecke regionale Märkte, saisonale Angebote und gesunde Ernährung – ganz in deiner Nähe.
+                  Entdecke über 500 Wochenmärkte und Bauernmärkte in Deutschland. Finde Märkte heute geöffnet, aktuelle Öffnungszeiten und frische Produkte direkt vom Erzeuger - ganz in deiner Nähe.
                 </p>
               </div>
               <Link to="/markets">
                 <Button variant="hero" size="hero" className="group">
                   <Search className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  Markt in deiner Nähe finden
+                  Nächster Wochenmarkt finden
                 </Button>
               </Link>
             </div>
             <div className="lg:order-2">
               <img
                 src={heroImage}
-                alt="Luftiger Bauernmarkt mit frischen Produkten"
+                alt="Wochenmarkt mit frischen Produkten und regionalen Spezialitäten"
                 className="w-full h-[400px] lg:h-[500px] object-cover rounded-2xl shadow-card"
               />
             </div>
@@ -75,16 +75,19 @@ const Index = () => {
       {/* Features Section */}
       <section className="py-16 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-foreground text-center mb-12">
+            Wochenmarkt Deutschland - Dein umfassender Marktfinder
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="border-0 shadow-soft hover:shadow-card transition-all duration-300 bg-gradient-card">
               <CardContent className="p-8 text-center space-y-4">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
                   <MapPin className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Gesund & Regional</h3>
+                <h3 className="text-xl font-semibold text-foreground">Wochenmarkt Öffnungszeiten</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Wochenmärkte bieten frische, saisonale Produkte direkt vom Erzeuger. 
-                  Kurze Wege, beste Qualität und Unterstützung der regionalen Landwirtschaft.
+                  Finde alle Wochenmärkte mit aktuellen Öffnungszeiten. Von Montag bis Sonntag - 
+                  entdecke welcher Markt heute geöffnet hat und bietet frische, regionale Produkte direkt vom Bauernmarkt.
                 </p>
               </CardContent>
             </Card>
@@ -94,10 +97,10 @@ const Index = () => {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
                   <Search className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Einfach Finden</h3>
+                <h3 className="text-xl font-semibold text-foreground">Wochenmärkte in meiner Nähe</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Suche gezielt nach Stadt, Postleitzahl oder Marktname. 
-                  Filter nach Wochentag, Bio-Angebot oder besonderen Merkmalen.
+                  Suche gezielt nach Stadt, Postleitzahl oder Marktname. Finde den nächsten Wochenmarkt 
+                  und filtere nach Wochentag, Bio-Angebot oder besonderen Direktvermarkter-Spezialitäten.
                 </p>
               </CardContent>
             </Card>
@@ -107,12 +110,113 @@ const Index = () => {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
                   <RefreshCw className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Immer Aktuell</h3>
+                <h3 className="text-xl font-semibold text-foreground">Markt heute geöffnet</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Laufende Ergänzung und Pflege der Markt-Datenbank. 
-                  Aktuelle Öffnungszeiten, Standorte und besondere Angebote.
+                  Aktuelle Marktzeiten und Standorte aller Wochenmärkte Deutschland. 
+                  Bauernmarkt Öffnungszeiten, Sonderveranstaltungen und frische Produkte Markt-Updates.
                 </p>
               </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Cities Section */}
+      <section className="py-16 px-4 bg-muted/50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-foreground text-center mb-4">
+            Wochenmärkte in deutschen Großstädten
+          </h2>
+          <p className="text-lg text-muted-foreground text-center mb-12">
+            Entdecke die besten Wochenmärkte und Bauernmärkte in allen deutschen Großstädten
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="space-y-3">
+              <h3 className="text-lg font-semibold text-foreground">Norddeutschland</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Wochenmarkt Hamburg</Link></li>
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Wochenmarkt Bremen</Link></li>
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Bauernmarkt Kiel</Link></li>
+              </ul>
+            </div>
+            
+            <div className="space-y-3">
+              <h3 className="text-lg font-semibold text-foreground">Westdeutschland</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Wochenmarkt Köln</Link></li>
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Wochenmarkt Düsseldorf</Link></li>
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Wochenmarkt Dortmund</Link></li>
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Wochenmarkt Essen</Link></li>
+              </ul>
+            </div>
+            
+            <div className="space-y-3">
+              <h3 className="text-lg font-semibold text-foreground">Süddeutschland</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Wochenmarkt München</Link></li>
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Wochenmarkt Stuttgart</Link></li>
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Bauernmarkt Frankfurt</Link></li>
+              </ul>
+            </div>
+            
+            <div className="space-y-3">
+              <h3 className="text-lg font-semibold text-foreground">Ostdeutschland</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Wochenmarkt Berlin</Link></li>
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Wochenmarkt Leipzig</Link></li>
+                <li><Link to="/markets" className="hover:text-primary transition-colors">Bauernmarkt Dresden</Link></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Weekdays Section */}
+      <section className="py-16 px-4 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-foreground text-center mb-4">
+            Wochenmarkt Zeiten - Märkte nach Wochentagen
+          </h2>
+          <p className="text-lg text-muted-foreground text-center mb-12">
+            Finde heraus, welche Märkte an welchem Tag geöffnet haben
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold mb-3">Wochenbeginn</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>🗓️ Markt Montag</li>
+                <li>🗓️ Markt Dienstag</li>
+                <li>🗓️ Markt Mittwoch</li>
+              </ul>
+            </Card>
+            
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold mb-3">Wochenmitte</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>🗓️ Markt Donnerstag</li>
+                <li>🗓️ Markt Freitag</li>
+                <li>🛒 Frische Produkte Markt</li>
+              </ul>
+            </Card>
+            
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold mb-3">Wochenende</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>🎪 Wochenmarkt Samstag</li>
+                <li>🌅 Wochenmarkt Sonntag</li>
+                <li>👨‍👩‍👧‍👦 Familienmarkt</li>
+              </ul>
+            </Card>
+            
+            <Card className="p-6">
+              <h3 className="text-lg font-semibold mb-3">Besondere Zeiten</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>🎊 Wochenmarkt Feiertag</li>
+                <li>⏰ Markt täglich</li>
+                <li>🌙 Abendmärkte</li>
+              </ul>
             </Card>
           </div>
         </div>
