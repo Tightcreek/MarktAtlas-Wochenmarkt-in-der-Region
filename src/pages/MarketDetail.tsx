@@ -2478,12 +2478,12 @@ const MarketDetail = () => {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {market.facilities?.map((facility, index) => (
-                    <Badge key={index} variant="outline" className="text-green-700 border-green-200">
+                    <Badge key={`facility-${index}`} variant="outline" className="text-green-700 border-green-200">
                       • {facility}
                     </Badge>
                   ))}
                   {market.features.map((feature, index) => (
-                    <Badge key={index} variant="outline" className="text-green-700 border-green-200">
+                    <Badge key={`feature-${index}`} variant="outline" className="text-green-700 border-green-200">
                       • {feature}
                     </Badge>
                   ))}
