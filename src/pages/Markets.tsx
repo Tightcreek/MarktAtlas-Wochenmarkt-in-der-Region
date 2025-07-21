@@ -971,7 +971,34 @@ const marketData: Market[] = [
     openingHours: "Dienstag, Donnerstag, 08:00 - 13:00 Uhr; Samstag, 08:00 - 13:30 Uhr",
     features: ["Keine Angabe"]
   },
-  // Additional München Markets  
+  {
+    id: "98",
+    name: "Bauernmarkt Fangturm", 
+    address: "Fangturm, 28195 Bremen",
+    city: "Bremen",
+    postalCode: "28195",
+    openingHours: "Freitag, 10:00 - 16:00 Uhr",
+    features: ["Keine Angabe"]
+  },
+  {
+    id: "99",
+    name: "Wochenmarkt Osterholz",
+    address: "Osterholzer Heerstraße, 28325 Bremen", 
+    city: "Bremen",
+    postalCode: "28325",
+    openingHours: "Donnerstag, Samstag, 08:00 - 13:00 Uhr",
+    features: ["Keine Angabe"]
+  },
+  {
+    id: "100",
+    name: "Wochenmarkt Schwachhausen",
+    address: "Schwachhauser Heerstraße, 28209 Bremen",
+    city: "Bremen",
+    postalCode: "28209", 
+    openingHours: "Mittwoch, 07:30 - 13:00 Uhr; Samstag, 07:30 - 13:30 Uhr",
+    features: ["Keine Angabe"]
+  },
+  // Additional München Markets
   {
     id: "98",
     name: "Wochenmarkt Haidhausen",
