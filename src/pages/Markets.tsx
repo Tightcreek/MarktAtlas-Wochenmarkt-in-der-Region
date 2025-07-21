@@ -841,7 +841,7 @@ const marketData: Market[] = [
     features: ["Coastal", "Traditional"],
     isOpen: false
   }
-    {
+  {
     id: "82",
     name: "Hauptwochenmarkt (Innenstadt)",
     address: "Hansaplatz 1",
