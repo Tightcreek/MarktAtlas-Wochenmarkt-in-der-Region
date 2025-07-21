@@ -14,8 +14,71 @@ interface Market {
   postalCode: string;
   openingHours: string;
   features: string[];
-  isOpen: boolean;
 }
+
+// Helper function to check if a market is currently open
+const isMarketOpen = (openingHours: string): boolean => {
+  const now = new Date();
+  const currentDay = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+  const currentTime = now.getHours() * 100 + now.getMinutes(); // HHMM format
+
+  // German day mapping
+  const dayMap: { [key: string]: number } = {
+    'Mo': 1, 'Di': 2, 'Mi': 3, 'Do': 4, 'Fr': 5, 'Sa': 6, 'So': 0
+  };
+
+  // Clean up the opening hours string
+  const cleanedHours = openingHours.replace(/ Uhr/g, '').replace(/:/g, '');
+  
+  // Split by comma to handle multiple day/time combinations
+  const timeSlots = cleanedHours.split(',').map(slot => slot.trim());
+  
+  for (const slot of timeSlots) {
+    // Handle day ranges like "Mo-Fr" or single days like "Mi"
+    const dayTimeMatch = slot.match(/^([A-Za-z-]+)\s+(.+)$/);
+    if (!dayTimeMatch) continue;
+    
+    const [, daysPart, timePart] = dayTimeMatch;
+    const timeRange = timePart.match(/(\d{1,2})-(\d{1,2})/);
+    if (!timeRange) continue;
+    
+    const [, startHour, endHour] = timeRange;
+    const startTime = parseInt(startHour) * 100;
+    const endTime = parseInt(endHour) * 100;
+    
+    // Handle day ranges (e.g., "Mo-Fr") or single days
+    if (daysPart.includes('-')) {
+      const [startDayStr, endDayStr] = daysPart.split('-');
+      const startDay = dayMap[startDayStr];
+      const endDay = dayMap[endDayStr];
+      
+      if (startDay !== undefined && endDay !== undefined) {
+        let dayMatches = false;
+        if (startDay <= endDay) {
+          dayMatches = currentDay >= startDay && currentDay <= endDay;
+        } else {
+          // Handle week wraparound (e.g., Sa-Mo)
+          dayMatches = currentDay >= startDay || currentDay <= endDay;
+        }
+        
+        if (dayMatches && currentTime >= startTime && currentTime <= endTime) {
+          return true;
+        }
+      }
+    } else {
+      // Handle single days or multiple days separated by spaces
+      const days = daysPart.split(/\s+/);
+      for (const dayStr of days) {
+        const day = dayMap[dayStr];
+        if (day === currentDay && currentTime >= startTime && currentTime <= endTime) {
+          return true;
+        }
+      }
+    }
+  }
+  
+  return false;
+};
 
 // Market data from wochenmarkt-deutschland.de
 const marketData: Market[] = [
@@ -27,8 +90,7 @@ const marketData: Market[] = [
     city: "Berlin",
     postalCode: "10781",
     openingHours: "Mi 8-14, Sa 8-16",
-    features: ["Bio", "International", "Streetfood"],
-    isOpen: true
+    features: ["Bio", "International", "Streetfood"]
   },
   {
     id: "2",
@@ -37,8 +99,7 @@ const marketData: Market[] = [
     city: "Berlin", 
     postalCode: "10405",
     openingHours: "Do 12-18, Sa 9-16",
-    features: ["Bio", "Kunsthandwerk", "Regional"],
-    isOpen: false
+    features: ["Bio", "Kunsthandwerk", "Regional"]
   },
   {
     id: "3",
@@ -47,8 +108,7 @@ const marketData: Market[] = [
     city: "Berlin",
     postalCode: "12047",
     openingHours: "Di, Fr 11-18:30",
-    features: ["International", "Großmarkt", "Streetfood"],
-    isOpen: true
+    features: ["International", "Großmarkt", "Streetfood"]
   },
   {
     id: "4",
@@ -57,8 +117,7 @@ const marketData: Market[] = [
     city: "Berlin",
     postalCode: "10245",
     openingHours: "Sa 9-15:30",
-    features: ["Bio", "Regional", "Produkte", "Imbisse"],
-    isOpen: false
+    features: ["Bio", "Regional", "Produkte", "Imbisse"]
   },
   {
     id: "5",
@@ -67,8 +126,7 @@ const marketData: Market[] = [
     city: "Berlin",
     postalCode: "10435",
     openingHours: "Fr 12-19",
-    features: ["Feinkost", "Lokal"],
-    isOpen: true
+    features: ["Feinkost", "Lokal"]
   },
   {
     id: "6",
@@ -77,8 +135,7 @@ const marketData: Market[] = [
     city: "Berlin",
     postalCode: "14163",
     openingHours: "Sa 9-15",
-    features: ["Bio", "Kunsthandwerk", "Dorf-Atmosphäre"],
-    isOpen: false
+    features: ["Bio", "Kunsthandwerk", "Dorf-Atmosphäre"]
   },
   {
     id: "7",
@@ -87,8 +144,7 @@ const marketData: Market[] = [
     city: "Berlin",
     postalCode: "10625",
     openingHours: "Mi 8-13, Sa 8-14",
-    features: ["Blumen", "Gemüse", "Feinkost"],
-    isOpen: true
+    features: ["Blumen", "Gemüse", "Feinkost"]
   },
   {
     id: "8",
@@ -97,8 +153,7 @@ const marketData: Market[] = [
     city: "Berlin",
     postalCode: "12051",
     openingHours: "Sa 10-16",
-    features: ["Regional", "Bio", "Musik", "Streetfood"],
-    isOpen: false
+    features: ["Regional", "Bio", "Musik", "Streetfood"]
   },
   // Hamburg
   {
@@ -108,8 +163,7 @@ const marketData: Market[] = [
     city: "Hamburg",
     postalCode: "20144",
     openingHours: "Di, Fr 8:30-14",
-    features: ["Großer Europas", "Regional", "Bio"],
-    isOpen: true
+    features: ["Großer Europas", "Regional", "Bio"]
   },
   {
     id: "10",
@@ -118,8 +172,7 @@ const marketData: Market[] = [
     city: "Hamburg",
     postalCode: "20354",
     openingHours: "Mi, Sa 8:30-13:30",
-    features: ["Historischer Stadtmarkt"],
-    isOpen: false
+    features: ["Historischer Stadtmarkt"]
   },
   {
     id: "11",
@@ -128,8 +181,7 @@ const marketData: Market[] = [
     city: "Hamburg",
     postalCode: "22767",
     openingHours: "So 5-9:30",
-    features: ["Kultmarkt", "Fisch", "Musik"],
-    isOpen: true
+    features: ["Kultmarkt", "Fisch", "Musik"]
   },
   {
     id: "12",
@@ -138,8 +190,7 @@ const marketData: Market[] = [
     city: "Hamburg",
     postalCode: "22303",
     openingHours: "Di, Do, Sa 8:30-13",
-    features: ["Regional", "Bio"],
-    isOpen: false
+    features: ["Regional", "Bio"]
   },
   {
     id: "13",
@@ -148,8 +199,7 @@ const marketData: Market[] = [
     city: "Hamburg",
     postalCode: "22111",
     openingHours: "Di 9-13, Fr 9-13",
-    features: ["Stadtteilmarkt"],
-    isOpen: true
+    features: ["Stadtteilmarkt"]
   },
   // München
   {
@@ -159,8 +209,7 @@ const marketData: Market[] = [
     city: "München",
     postalCode: "80331",
     openingHours: "Mo-Sa 8-20",
-    features: ["Traditionsmarkt", "Regional", "Produkte"],
-    isOpen: true
+    features: ["Traditionsmarkt", "Regional", "Produkte"]
   },
   {
     id: "15",
@@ -169,8 +218,7 @@ const marketData: Market[] = [
     city: "München",
     postalCode: "80798",
     openingHours: "Di 12-18",
-    features: ["Bio", "Regional"],
-    isOpen: false
+    features: ["Bio", "Regional"]
   },
   {
     id: "16",
@@ -179,8 +227,7 @@ const marketData: Market[] = [
     city: "München",
     postalCode: "81541",
     openingHours: "Sa 7-13",
-    features: ["Groß", "Bauernmarkt"],
-    isOpen: true
+    features: ["Groß", "Bauernmarkt"]
   },
   {
     id: "17",
@@ -189,8 +236,7 @@ const marketData: Market[] = [
     city: "München",
     postalCode: "81925",
     openingHours: "Do 8-18",
-    features: ["Regional", "Vielfalt"],
-    isOpen: false
+    features: ["Regional", "Vielfalt"]
   },
   {
     id: "18",
@@ -199,8 +245,7 @@ const marketData: Market[] = [
     city: "München",
     postalCode: "81543",
     openingHours: "Do 8-13",
-    features: ["Nachbarschaftsmarkt"],
-    isOpen: true
+    features: ["Nachbarschaftsmarkt"]
   },
   // Köln
   {
@@ -210,8 +255,7 @@ const marketData: Market[] = [
     city: "Köln",
     postalCode: "50678",
     openingHours: "Di, Fr 8-14",
-    features: ["Bio", "Regional"],
-    isOpen: true
+    features: ["Bio", "Regional"]
   },
   {
     id: "20",
@@ -220,8 +264,7 @@ const marketData: Market[] = [
     city: "Köln",
     postalCode: "50674",
     openingHours: "Mi 10-18, Sa",
-    features: ["Bio", "Kunsthandwerk"],
-    isOpen: false
+    features: ["Bio", "Kunsthandwerk"]
   },
   {
     id: "21",
@@ -230,8 +273,7 @@ const marketData: Market[] = [
     city: "Köln",
     postalCode: "50733",
     openingHours: "Do 8-14",
-    features: ["Bio", "Fleisch"],
-    isOpen: true
+    features: ["Bio", "Fleisch"]
   },
   // Frankfurt
   {
@@ -241,8 +283,7 @@ const marketData: Market[] = [
     city: "Frankfurt",
     postalCode: "60313",
     openingHours: "Fr 7:30-18:30",
-    features: ["Brotstand", "Fleisch", "International"],
-    isOpen: true
+    features: ["Brotstand", "Fleisch", "International"]
   },
   {
     id: "23",
@@ -251,8 +292,7 @@ const marketData: Market[] = [
     city: "Frankfurt",
     postalCode: "60311",
     openingHours: "Di, Sa 8-16",
-    features: ["Regional", "Bio"],
-    isOpen: false
+    features: ["Regional", "Bio"]
   },
   {
     id: "24",
@@ -261,8 +301,7 @@ const marketData: Market[] = [
     city: "Frankfurt",
     postalCode: "60311",
     openingHours: "Sa 8-16",
-    features: ["Flohmarkt", "Regional"],
-    isOpen: true
+    features: ["Flohmarkt", "Regional"]
   },
   // Stuttgart
   {
@@ -272,8 +311,7 @@ const marketData: Market[] = [
     city: "Stuttgart",
     postalCode: "70315",
     openingHours: "Di, Do, Sa",
-    features: ["Großmarkthalle"],
-    isOpen: false
+    features: ["Großmarkthalle"]
   },
   {
     id: "26",
@@ -282,8 +320,7 @@ const marketData: Market[] = [
     city: "Stuttgart",
     postalCode: "70173",
     openingHours: "Mo-Sa",
-    features: ["Markthalle"],
-    isOpen: true
+    features: ["Markthalle"]
   },
   {
     id: "27",
@@ -292,8 +329,7 @@ const marketData: Market[] = [
     city: "Stuttgart",
     postalCode: "70178",
     openingHours: "Mi 10-18",
-    features: ["Bio", "Regional"],
-    isOpen: false
+    features: ["Bio", "Regional"]
   },
   {
     id: "28",
@@ -302,8 +338,7 @@ const marketData: Market[] = [
     city: "Stuttgart",
     postalCode: "70182",
     openingHours: "Fr 8-13",
-    features: ["Regional", "Bio"],
-    isOpen: true
+    features: ["Regional", "Bio"]
   },
   {
     id: "29",
@@ -312,8 +347,7 @@ const marketData: Market[] = [
     city: "Stuttgart",
     postalCode: "70372",
     openingHours: "Di, Do, Sa",
-    features: ["Stadtteilmarkt"],
-    isOpen: false
+    features: ["Stadtteilmarkt"]
   },
   // Leipzig
   {
@@ -323,8 +357,7 @@ const marketData: Market[] = [
     city: "Leipzig",
     postalCode: "04317",
     openingHours: "Do 8-13",
-    features: ["Stadtteilmarkt"],
-    isOpen: true
+    features: ["Stadtteilmarkt"]
   },
   {
     id: "31",
@@ -333,8 +366,7 @@ const marketData: Market[] = [
     city: "Leipzig",
     postalCode: "04109",
     openingHours: "Mi, Sa 8-16",
-    features: ["Regional", "Bio"],
-    isOpen: false
+    features: ["Regional", "Bio"]
   },
   {
     id: "32",
@@ -343,8 +375,7 @@ const marketData: Market[] = [
     city: "Leipzig",
     postalCode: "04207",
     openingHours: "Do 8-16",
-    features: ["Zentral", "Regional"],
-    isOpen: true
+    features: ["Zentral", "Regional"]
   },
   {
     id: "33",
@@ -353,8 +384,7 @@ const marketData: Market[] = [
     city: "Leipzig",
     postalCode: "04109",
     openingHours: "Mi, Sa 8-16",
-    features: ["Regional", "Bio"],
-    isOpen: false
+    features: ["Regional", "Bio"]
   },
   // Essen
   {
@@ -364,8 +394,7 @@ const marketData: Market[] = [
     city: "Essen",
     postalCode: "45130",
     openingHours: "Di, Do, Sa",
-    features: ["Vielfalt", "Bio"],
-    isOpen: true
+    features: ["Vielfalt", "Bio"]
   },
   {
     id: "35",
@@ -374,8 +403,7 @@ const marketData: Market[] = [
     city: "Essen",
     postalCode: "45326",
     openingHours: "Mi, Do, Sa",
-    features: ["Zentral", "Regional"],
-    isOpen: false
+    features: ["Zentral", "Regional"]
   },
   {
     id: "36",
@@ -384,8 +412,7 @@ const marketData: Market[] = [
     city: "Essen",
     postalCode: "45326",
     openingHours: "Mi, Do, Sa",
-    features: ["Stadtteilmarkt"],
-    isOpen: true
+    features: ["Stadtteilmarkt"]
   },
   // Dortmund
   {
@@ -395,8 +422,7 @@ const marketData: Market[] = [
     city: "Dortmund",
     postalCode: "44135",
     openingHours: "Mi, Fr 7-13",
-    features: ["Regional"],
-    isOpen: false
+    features: ["Regional"]
   },
   {
     id: "38",
@@ -405,8 +431,7 @@ const marketData: Market[] = [
     city: "Dortmund",
     postalCode: "44359",
     openingHours: "Mi, Fr 7-13",
-    features: ["Regional"],
-    isOpen: true
+    features: ["Regional"]
   },
   {
     id: "39",
@@ -415,8 +440,7 @@ const marketData: Market[] = [
     city: "Dortmund",
     postalCode: "44147",
     openingHours: "Di, Fr 8-13",
-    features: ["Regional"],
-    isOpen: false
+    features: ["Regional"]
   },
   {
     id: "40",
@@ -425,8 +449,7 @@ const marketData: Market[] = [
     city: "Dortmund",
     postalCode: "44139",
     openingHours: "Mi, Sa 7-13",
-    features: ["Regional"],
-    isOpen: true
+    features: ["Regional"]
   },
   // Dresden
   {
@@ -436,8 +459,7 @@ const marketData: Market[] = [
     city: "Dresden",
     postalCode: "01307",
     openingHours: "Di 8-18, Fr",
-    features: ["Biothek", "Bio"],
-    isOpen: false
+    features: ["Biothek", "Bio"]
   },
   {
     id: "42",
@@ -446,8 +468,7 @@ const marketData: Market[] = [
     city: "Dresden",
     postalCode: "01099",
     openingHours: "Di, Fr 8-18, Sa",
-    features: ["Regional", "Bio"],
-    isOpen: true
+    features: ["Regional", "Bio"]
   },
   {
     id: "43",
@@ -456,8 +477,7 @@ const marketData: Market[] = [
     city: "Dresden",
     postalCode: "01099",
     openingHours: "Do 8-13",
-    features: ["Stadtteilmarkt"],
-    isOpen: false
+    features: ["Stadtteilmarkt"]
   },
   // Düsseldorf
   {
@@ -467,8 +487,7 @@ const marketData: Market[] = [
     city: "Düsseldorf",
     postalCode: "40213",
     openingHours: "Mo-Fr 8:00-18:00, Sa 8:00-16:00",
-    features: ["Traditional", "Regional", "Bio"],
-    isOpen: true
+    features: ["Traditional", "Regional", "Bio"]
   },
   {
     id: "45",
@@ -477,8 +496,7 @@ const marketData: Market[] = [
     city: "Düsseldorf",
     postalCode: "40211",
     openingHours: "Mi 8:30-13:00, Sa 8:30-13:30",
-    features: ["Bauernmarkt", "Regional"],
-    isOpen: false
+    features: ["Bauernmarkt", "Regional"]
   },
   {
     id: "46",
@@ -487,8 +505,7 @@ const marketData: Market[] = [
     city: "Düsseldorf",
     postalCode: "40233",
     openingHours: "Sa 7:00-13:00",
-    features: ["Stadtteilmarkt"],
-    isOpen: true
+    features: ["Stadtteilmarkt"]
   },
   {
     id: "47",
@@ -497,752 +514,361 @@ const marketData: Market[] = [
     city: "Düsseldorf",
     postalCode: "40219",
     openingHours: "Di 8:00-13:00, Fr 9:00-17:00",
-    features: ["Bio", "Regional"],
-    isOpen: false
-  },
-  {
-    id: "48",
-    name: "Marktplatz (Benrath)",
-    address: "Benrather Marktplatz",
-    city: "Düsseldorf",
-    postalCode: "40597",
-    openingHours: "Mo-Fr 8:00-18:00, Sa 8:00-14:00",
-    features: ["Traditional", "Regional"],
-    isOpen: true
-  },
-  {
-    id: "49",
-    name: "Neusser Tor (Gerresheim)",
-    address: "Neusser Tor",
-    city: "Düsseldorf",
-    postalCode: "40625",
-    openingHours: "Di und Do 8:00-17:00, Sa 8:00-14:00",
-    features: ["Stadtteilmarkt"],
-    isOpen: false
-  },
-  {
-    id: "50",
-    name: "Marktplatz (Kaiserswerth)",
-    address: "Kaiserswerther Marktplatz",
-    city: "Düsseldorf",
-    postalCode: "40489",
-    openingHours: "Mi und Sa 8:00-14:00",
-    features: ["Historic", "Regional"],
-    isOpen: true
-  },
-  {
-    id: "51",
-    name: "Barbarossaplatz (Oberkassel)",
-    address: "Barbarossaplatz",
-    city: "Düsseldorf",
-    postalCode: "40545",
-    openingHours: "Di und Fr 7:00-18:00",
-    features: ["Bio", "International"],
-    isOpen: false
-  },
-  {
-    id: "52",
-    name: "Lessingplatz (Oberbilk)",
-    address: "Lessingplatz",
-    city: "Düsseldorf",
-    postalCode: "40227",
-    openingHours: "Do 8:00-13:30",
-    features: ["Neighborhood"],
-    isOpen: true
-  },
-  {
-    id: "53",
-    name: "Gertrudisplatz Östetelbekhausen",
-    address: "Gertrudisplatz",
-    city: "Düsseldorf",
-    postalCode: "40225",
-    openingHours: "Di und Fr 8:00-18:00, Sa 8:00-14:00",
-    features: ["Regional", "Bio"],
-    isOpen: false
-  },
-  // Bremen
-  {
-    id: "54",
-    name: "Wochenmarkt Findorff",
-    address: "Neukirchstraße 45",
-    city: "Bremen",
-    postalCode: "28215",
-    openingHours: "Di, Do und Sa 8:00-13:00, Sa 8:00-14:00",
-    features: ["Regional", "Bio"],
-    isOpen: true
-  },
-  {
-    id: "55",
-    name: "Wochenmarkt Gröpelingen",
-    address: "Bürgermeister-Ehlers-Platz, Pastorenweg",
-    city: "Bremen",
-    postalCode: "28239",
-    openingHours: "Di, Do, Sa 8:00-13:00",
-    features: ["Stadtteilmarkt"],
-    isOpen: false
-  },
-  {
-    id: "56",
-    name: "Wochenmarkt Osterholz-Scharmbeck",
-    address: "Regine-Hildebrandt-Platz",
-    city: "Bremen",
-    postalCode: "28239",
-    openingHours: "Mi, Fr 8:00-13:00",
-    features: ["Regional"],
-    isOpen: true
-  },
-  {
-    id: "57",
-    name: "Bauernmarkt Fangelm",
-    address: "Fangelm",
-    city: "Bremen",
-    postalCode: "28195",
-    openingHours: "Fr 10:00-16:00",
-    features: ["Bauernmarkt", "Bio"],
-    isOpen: false
-  },
-  {
-    id: "58",
-    name: "Blumenmarkt Unser-Lieben-Frauen",
-    address: "Unser Lieben Frauen Kirchhof",
-    city: "Bremen",
-    postalCode: "28195",
-    openingHours: "Mo-Fr 8:00-14:00, Sa 8:00-15:00",
-    features: ["Blumen", "Pflanzen"],
-    isOpen: true
-  },
-  {
-    id: "59",
-    name: "Wochenmarkt Domshof",
-    address: "Domshof",
-    city: "Bremen",
-    postalCode: "28195",
-    openingHours: "Mo-Fr 8:00-14:00, Sa 8:00-15:00",
-    features: ["Historic", "Traditional"],
-    isOpen: false
-  },
-  {
-    id: "60",
-    name: "Wochenmarkt Walle",
-    address: "Wartburgstraße 12",
-    city: "Bremen",
-    postalCode: "28217",
-    openingHours: "Di, Do, Sa 8:00-13:00",
-    features: ["Stadtteilmarkt"],
-    isOpen: true
-  },
-  {
-    id: "61",
-    name: "Wochenmarkt Horn-Lehe",
-    address: "Ecke Robert-Bunsen-Straße/Wilhelm-Raabe-Straße",
-    city: "Bremen",
-    postalCode: "28359",
-    openingHours: "Do, Sa 8:00-13:00",
-    features: ["Regional"],
-    isOpen: false
-  },
-  {
-    id: "62",
-    name: "Wochenmarkt Steintor (Zegenmarkt)",
-    address: "Vor dem Steintor 82",
-    city: "Bremen",
-    postalCode: "28203",
-    openingHours: "Di, Fr 8:00-18:00, Sa 8:00-14:00",
-    features: ["Urban", "International"],
-    isOpen: true
-  },
-  {
-    id: "63",
-    name: "Wochenmarkt Blödelt",
-    address: "Einkaufszentrum Blödelt, Max-Säume",
-    city: "Bremen",
-    postalCode: "28279",
-    openingHours: "Fr 8:00-13:00",
-    features: ["Shopping Center"],
-    isOpen: false
-  },
-  {
-    id: "64",
-    name: "Wochenmarkt Osterholz",
-    address: "Schweizer Eck (Weser)",
-    city: "Bremen",
-    postalCode: "28325",
-    openingHours: "Di, Do, Sa 8:00-13:00",
-    features: ["Stadtteilmarkt"],
-    isOpen: true
-  },
-  {
-    id: "65",
-    name: "Bauernmarkt Steglitzstraße",
-    address: "Steglitzstraße 56",
-    city: "Bremen",
-    postalCode: "28209",
-    openingHours: "Do 10:00-16:00",
-    features: ["Bauernmarkt"],
-    isOpen: false
-  },
-  {
-    id: "66",
-    name: "Wochenmarkt Schwachhausen (Bürgerpark)",
-    address: "Benquestraße",
-    city: "Bremen",
-    postalCode: "28209",
-    openingHours: "Mi 7:30-13:00, Sa 7:30-13:30",
-    features: ["Park Setting"],
-    isOpen: true
-  },
-  {
-    id: "67",
-    name: "Wochenmarkt Schwachhausen (H.-J.-Weier-Allee)",
-    address: "Ecke H.-J.-Weier-Allee/Hans Kausen",
-    city: "Bremen",
-    postalCode: "28211",
-    openingHours: "Fr und Sa 8:00-13:00",
-    features: ["Neighborhood"],
-    isOpen: false
-  },
-  {
-    id: "68",
-    name: "Wochenmarkt Großer Kurfürst",
-    address: "Eislebener Straße 66",
-    city: "Bremen",
-    postalCode: "28329",
-    openingHours: "Fr 8:00-13:00",
-    features: ["Local"],
-    isOpen: true
-  },
-  {
-    id: "69",
-    name: "Wochenmarkt Vahr",
-    address: "Berliner Freiheit",
-    city: "Bremen",
-    postalCode: "28327",
-    openingHours: "Di, Do, Sa 8:00-13:30",
-    features: ["Shopping Area"],
-    isOpen: false
-  },
-  {
-    id: "70",
-    name: "Wochenmarkt Borgfeld",
-    address: "Platz zur Linde",
-    city: "Bremen",
-    postalCode: "28357",
-    openingHours: "Mi, Sa 8:00-13:00",
-    features: ["Village Setting"],
-    isOpen: true
-  },
-  {
-    id: "71",
-    name: "Wochenmarkt Arbergen",
-    address: "Dorfplatz, Colehornstraße 36",
-    city: "Bremen",
-    postalCode: "28307",
-    openingHours: "Fr 8:00-13:00",
-    features: ["Rural"],
-    isOpen: false
-  },
-  {
-    id: "72",
-    name: "Wochenmarkt Hastedt",
-    address: "Ecke Bei den drei Pfahlen, Hermine-Berthold-Straße",
-    city: "Bremen",
-    postalCode: "28199",
-    openingHours: "Fr 8:00-13:00",
-    features: ["Community"],
-    isOpen: true
-  },
-  {
-    id: "73",
-    name: "Wochenmarkt Neustadt (Kornstraße)",
-    address: "Ecke Am Sodenmatt/Berntalstr.",
-    city: "Bremen",
-    postalCode: "28199",
-    openingHours: "Mi, Sa 8:00-13:00, Fr 7:00-13:30",
-    features: ["Traditional"],
-    isOpen: false
-  },
-  {
-    id: "74",
-    name: "Wochenmarkt Neustadt (Delmestraße)",
-    address: "Ecke Delmestraße, Papedistraße",
-    city: "Bremen",
-    postalCode: "28199",
-    openingHours: "Mo-Fr 8:00-13:00, Sa 8:00-14:00",
-    features: ["Central"],
-    isOpen: true
-  },
-  {
-    id: "75",
-    name: "Wochenmarkt Neustadt (Gottfried-Menken-Straße)",
-    address: "Gottfried-Menken-Straße",
-    city: "Bremen",
-    postalCode: "28201",
-    openingHours: "Fr und Sa 8:00-13:00",
-    features: ["Residential"],
-    isOpen: false
-  },
-  {
-    id: "76",
-    name: "Wochenmarkt Habenhausen",
-    address: "Anna-Seghers-Straße",
-    city: "Bremen",
-    postalCode: "28279",
-    openingHours: "Do 15:00-18:00",
-    features: ["Afternoon Market"],
-    isOpen: true
-  },
-  {
-    id: "77",
-    name: "Wochenmarkt Obervieland",
-    address: "Kattenturner Marktplatz, Anna-Stegmann-Str.",
-    city: "Bremen",
-    postalCode: "28277",
-    openingHours: "Mi, Fr 8:00-13:00",
-    features: ["Suburban"],
-    isOpen: false
-  },
-  {
-    id: "78",
-    name: "Wochenmarkt Woltmershausen",
-    address: "Pusdorfer Marktplatz",
-    city: "Bremen",
-    postalCode: "28197",
-    openingHours: "Di, Do, Sa 8:00-13:00",
-    features: ["Harbor Area"],
-    isOpen: true
-  },
-  {
-    id: "79",
-    name: "Wochenmarkt Lesum",
-    address: "Hindenburgstraße",
-    city: "Bremen",
-    postalCode: "28717",
-    openingHours: "Fr 8:00-13:00",
-    features: ["North Bremen"],
-    isOpen: false
-  },
-  {
-    id: "80",
-    name: "Wochenmarkt Marßel",
-    address: "Stockholmer Straße",
-    city: "Bremen",
-    postalCode: "28719",
-    openingHours: "Fr 8:00-13:00",
-    features: ["Local Market"],
-    isOpen: true
-  },
-  {
-    id: "81",
-    name: "Wochenmarkt Vegesack",
-    address: "Am Sedanplatz",
-    city: "Bremen",
-    postalCode: "28757",
-    openingHours: "Mi, Sa 8:00-13:00, Sa 8:00-13:30",
-    features: ["Coastal", "Traditional"],
-    isOpen: false
-  },
-  {
-    id: "82",
-    name: "Hauptwochenmarkt (Innenstadt)",
-    address: "Hansaplatz 1",
-    city: "Dortmund",
-    postalCode: "44137",
-    openingHours: "Mi 07:00-14:00 Uhr, Fr 08:00-15:00 Uhr, Sa 07:00-15:00",
-    features: ["Regional", "Bio"],
-    isOpen: false
+    features: ["Bio", "Regional"]
   },
   // Additional Dortmund markets
   {
-    id: "83",
-    name: "Wochenmarkt Mengede",
-    address: "Mengede Markt",
+    id: "48",
+    name: "Wochenmarkt Aplerbeck",
+    address: "Rodenbergstraße",
+    city: "Dortmund",
+    postalCode: "44287",
+    openingHours: "Mi 08:00-13:00 Uhr",
+    features: ["Gemüse, Obst, Fleisch und Wurst, Backwaren, Fisch, Blumen und andere Artikel"]
+  },
+  {
+    id: "49",
+    name: "Wochenmarkt Asseln",
+    address: "Asselner Hellweg / Niederste-Frielinghaus-Weg",
     city: "Dortmund", 
-    postalCode: "44359",
-    openingHours: "Di, Fr 07:00-13:00 Uhr",
-    features: ["Allgemeiner Wochenmarkt"],
-    isOpen: true
+    postalCode: "44319",
+    openingHours: "Fr 08:00-13:00 Uhr",
+    features: ["Gemüse, Obst, Fleisch und Wurst, Backwaren, Fisch, Blumen und andere Artikel"]
   },
   {
-    id: "84",
-    name: "Wochenmarkt Eving",
-    address: "Evinger Straße",
-    city: "Dortmund",
-    postalCode: "44339", 
-    openingHours: "Di, Fr 07:00-13:00 Uhr",
-    features: ["Allgemeiner Wochenmarkt"],
-    isOpen: false
-  },
-  {
-    id: "85",
-    name: "Wochenmarkt Scharnhorst",
-    address: "Gleiwitzer Weg",
-    city: "Dortmund",
-    postalCode: "44328",
-    openingHours: "Do 07:00-13:00 Uhr",
-    features: ["Allgemeiner Wochenmarkt"],
-    isOpen: true
-  },
-  {
-    id: "86", 
-    name: "Wochenmarkt Huckarde",
-    address: "Rahmer Straße",
-    city: "Dortmund",
-    postalCode: "44369",
-    openingHours: "Di, Fr 07:00-13:00 Uhr",
-    features: ["Allgemeiner Wochenmarkt"],
-    isOpen: false
-  },
-  {
-    id: "87",
-    name: "Nordmarkt",
-    address: "Nordmarktplatz", 
-    city: "Dortmund",
-    postalCode: "44145",
-    openingHours: "Di, Fr 07:00-13:00 Uhr",
-    features: ["Allgemeiner Wochenmarkt", "multikulturell"],
-    isOpen: true
-  },
-  {
-    id: "88",
-    name: "Davidismarkt",
-    address: "Davidstraße 1",
-    city: "Dortmund",
-    postalCode: "44137",
-    openingHours: "Sa 07:00-13:00 Uhr",
-    features: ["Allgemeiner Wochenmarkt"],
-    isOpen: false
-  },
-  {
-    id: "89",
+    id: "50", 
     name: "Wochenmarkt Brackel",
-    address: "Oberdorfstr. 17",
+    address: "Brackeler Hellweg",
     city: "Dortmund",
     postalCode: "44309",
     openingHours: "Do 07:00-13:00 Uhr",
-    features: ["Allgemeiner Wochenmarkt"],
-    isOpen: true
+    features: ["Gemüse, Obst, Fleisch und Wurst, Backwaren, Fisch, Blumen und andere Artikel"]
   },
   {
-    id: "90",
-    name: "Wochenmarkt Lütgendortmund",
-    address: "Limbecker Straße",
-    city: "Dortmund", 
-    postalCode: "44388",
-    openingHours: "Mi 07:00-13:00 Uhr",
-    features: ["Allgemeiner Wochenmarkt"],
-    isOpen: false
-  },
-  {
-    id: "91",
-    name: "Wochenmarkt Dorstfeld",
-    address: "Wilhelmplatz",
+    id: "51",
+    name: "Wochenmarkt Eving",
+    address: "Evinger Platz",
     city: "Dortmund",
-    postalCode: "44149",
-    openingHours: "Di, Fr 07:00-13:00 Uhr",
-    features: ["Allgemeiner Wochenmarkt"],
-    isOpen: true
+    postalCode: "44339",
+    openingHours: "Di 07:00-13:00 Uhr",
+    features: ["Gemüse, Obst, Fleisch und Wurst, Backwaren, Fisch, Blumen und andere Artikel"]
   },
   {
-    id: "92",
+    id: "52",
     name: "Wochenmarkt Hörde",
-    address: "Hörder Neumarkt & Hermannstraße",
+    address: "Hörder Bahnhofstraße / Ecke Benninghofer Straße",
     city: "Dortmund",
-    postalCode: "44263",
+    postalCode: "44263", 
     openingHours: "Di, Fr 07:00-13:00 Uhr",
-    features: ["Allgemeiner Wochenmarkt"],
-    isOpen: false
+    features: ["Gemüse, Obst, Fleisch und Wurst, Backwaren, Fisch, Blumen und andere Artikel"]
   },
   {
-    id: "93",
-    name: "Wochenmarkt Aplerbeck",
-    address: "Köln-Berliner-Str. 1",
+    id: "53",
+    name: "Wochenmarkt Huckarde",
+    address: "Urbanusstraße",
     city: "Dortmund",
-    postalCode: "44287",
-    openingHours: "Do 07:00-13:00 Uhr",
-    features: ["Allgemeiner Wochenmarkt", "vor allem Nahrungs- und Genussmittel"],
-    isOpen: true
+    postalCode: "44369",
+    openingHours: "Sa 07:00-14:00 Uhr",
+    features: ["Gemüse, Obst, Fleisch und Wurst, Backwaren, Fisch, Blumen und andere Artikel"]
   },
   {
-    id: "94",
-    name: "Wochenmarkt Hombruch",
-    address: "Harkortstraße 57",
+    id: "54",
+    name: "Wochenmarkt Lütgendortmund", 
+    address: "Werner Hellweg",
     city: "Dortmund",
-    postalCode: "44225",
-    openingHours: "Mi, Sa 07:00-13:00 Uhr",
-    features: ["Allgemeiner Wochenmarkt"],
-    isOpen: false
+    postalCode: "44388",
+    openingHours: "Do 08:00-13:00 Uhr",
+    features: ["Gemüse, Obst, Fleisch und Wurst, Backwaren, Fisch, Blumen und andere Artikel"]
+  },
+  {
+    id: "55",
+    name: "Wochenmarkt Mengede",
+    address: "Bodelschwingher Straße / Ecke Westerfilder Straße",
+    city: "Dortmund",
+    postalCode: "44359",
+    openingHours: "Mi, Fr 07:00-13:00 Uhr",
+    features: ["Gemüse, Obst, Fleisch und Wurst, Backwaren, Fisch, Blumen und andere Artikel"]
+  },
+  {
+    id: "56",
+    name: "Wochenmarkt Scharnhorst",
+    address: "Mackenrothweg / Ecke Gleiwitzstraße",
+    city: "Dortmund",
+    postalCode: "44328",
+    openingHours: "Fr 08:00-13:00 Uhr",
+    features: ["Gemüse, Obst, Fleisch und Wurst, Backwaren, Fisch, Blumen und andere Artikel"]
+  },
+  {
+    id: "57",
+    name: "Wochenmarkt Wambel",
+    address: "Wambeler Hellweg / Ecke Schirrmannstraße", 
+    city: "Dortmund",
+    postalCode: "44143",
+    openingHours: "Sa 07:00-13:00 Uhr", 
+    features: ["Gemüse, Obst, Fleisch und Wurst, Backwaren, Fisch, Blumen und andere Artikel"]
+  },
+  {
+    id: "58",
+    name: "Wochenmarkt Westerfilde",
+    address: "Westerfilder Straße",
+    city: "Dortmund",
+    postalCode: "44357",
+    openingHours: "Di 08:00-13:00 Uhr",
+    features: ["Gemüse, Obst, Fleisch und Wurst, Backwaren, Fisch, Blumen und andere Artikel"]
+  },
+  {
+    id: "59",
+    name: "Wochenmarkt Wickede",
+    address: "Wickeder Hellweg / Ecke Im Odemsloh",
+    city: "Dortmund",
+    postalCode: "44319",
+    openingHours: "Do 08:00-13:00 Uhr",
+    features: ["Gemüse, Obst, Fleisch und Wurst, Backwaren, Fisch, Blumen und andere Artikel"]
   },
   // Duisburg markets
   {
-    id: "95",
-    name: "Wochenmarkt Vierlinden",
-    address: "Franz-Lenze-Platz",
+    id: "60",
+    name: "Wochenmarkt Duissern",
+    address: "Düsseldorfer Straße",
     city: "Duisburg",
-    postalCode: "47176",
-    openingHours: "Mi, Sa 08:00-13:00 Uhr",
-    features: ["Bunter", "vielfältiger Wochenmarkt"],
-    isOpen: true
+    postalCode: "47058",
+    openingHours: "Mi, Sa 07:00-13:00 Uhr",
+    features: ["Großer Markt mit ca. 60 Ständen in 2 Reihen Angebot an Obst und Gemüse, Fisch, Fleisch- und Wurstwaren, Käse und Molkereiprodukten, Backwaren, Blumen und Pflanzen sowie an sonstigen Marktartikeln"]
   },
   {
-    id: "96",
-    name: "Wochenmarkt Aldenrade", 
-    address: "Königsplatz",
-    city: "Duisburg",
-    postalCode: "47179",
-    openingHours: "Di, Fr 08:00-13:00 Uhr",
-    features: ["Kleiner aber feiner Wochenmarkt von Aldenrade"],
-    isOpen: false
-  },
-  {
-    id: "97",
-    name: "Wochenmarkt Marxloh",
-    address: "August-Bebel-Platz",
-    city: "Duisburg",
-    postalCode: "47169", 
-    openingHours: "Mo, Mi, Fr 08:00-13:00 Uhr",
-    features: ["Bunter und vielfältiger Wochenmarkt im multikulturellen Stadtteil"],
-    isOpen: true
-  },
-  {
-    id: "98",
-    name: "Wochenmarkt Neumühl",
-    address: "Hohenstaufenstraße",
-    city: "Duisburg",
-    postalCode: "47167",
-    openingHours: "Mi, Fr 08:00-13:00 Uhr",
-    features: ["Frische Produkte wie Obst, Gemüse, Fleisch, Fisch, Backwaren, Eier"],
-    isOpen: false
-  },
-  {
-    id: "99",
-    name: "Wochenmarkt Rheinhausen",
-    address: "Hamborner Altmarkt",
-    city: "Duisburg",
-    postalCode: "47139",
-    openingHours: "Do, Sa 08:00-13:00 Uhr",
-    features: ["Großer und vielfältiger Wochenmarkt im Norden mit ca. 100 Händlern"],
-    isOpen: true
-  },
-  {
-    id: "100",
-    name: "Wochenmarkt Bruckhausen", 
-    address: "Heihlingsplatz",
-    city: "Duisburg",
-    postalCode: "47166",
-    openingHours: "Fr 08:00-13:00 Uhr",
-    features: ["Bunter und günstiger Wochenmarkt"],
-    isOpen: false
-  },
-  {
-    id: "101",
-    name: "Wochenmarkt Beeck",
-    address: "Marktstraße",
-    city: "Duisburg",
-    postalCode: "47119",
-    openingHours: "Di, Do, Sa 08:00-13:00 Uhr",
-    features: ["Lebendiger Treffpunkt im täglichen Bedarf"],
-    isOpen: true
-  },
-  {
-    id: "102",
-    name: "Wochenmarkt Laar",
-    address: "Werthschützstraße",
-    city: "Duisburg",
-    postalCode: "47119",
-    openingHours: "Do 08:00-13:00 Uhr",
-    features: ["Breites Angebot u.a. Obst"],
-    isOpen: false
-  },
-  {
-    id: "103",
-    name: "Wochenmarkt Meiderich",
-    address: "Bahnhofstraße Von-der-Mark-Straße",
-    city: "Duisburg",
-    postalCode: "47137",
-    openingHours: "Mi 08:00-14:00 Uhr",
-    features: ["Kleiner aber feiner Wochenmarkt im Herberink"],
-    isOpen: true
-  },
-  {
-    id: "104",
-    name: "Wochenmarkt Ruhrort",
-    address: "Neumarkt",
-    city: "Duisburg", 
-    postalCode: "47119",
-    openingHours: "Mi 08:00-13:00 Uhr",
-    features: ["Kleiner aber feiner Wochenmarkt im Herberink"],
-    isOpen: false
-  },
-  {
-    id: "105", 
-    name: "Wochenmarkt Homberg",
-    address: "Bismarckplatz",
-    city: "Duisburg",
-    postalCode: "47198",
-    openingHours: "Di, Fr 08:00-13:00 Uhr",
-    features: ["Bunter und vielfältiger Wochenmarkt"],
-    isOpen: true
-  },
-  {
-    id: "106",
-    name: "Wochenmarkt Hochheide",
-    address: "Bürgermeister-Bongartz-Platz",
-    city: "Duisburg",
-    postalCode: "47198",
-    openingHours: "Mi, Sa 08:00-13:00 Uhr",
-    features: ["Gutes Preis-Leistungs-Verhältnis"],
-    isOpen: false
-  },
-  {
-    id: "107",
-    name: "Wochenmarkt Friemersheim",
-    address: "Dorf/Verbindungsstraße",
-    city: "Duisburg",
-    postalCode: "47139",
-    openingHours: "Do 08:00-13:00 Uhr",
-    features: ["Fahrbereit und gesellige Atmosphäre"],
-    isOpen: true
-  },
-  {
-    id: "108",
-    name: "Wochenmarkt Friemersheim",
-    address: "Kaiser-/Kronprinzenstraße",
-    city: "Duisburg",
-    postalCode: "47229",
-    openingHours: "Di, Fr 08:00-13:00 Uhr",
-    features: ["Vielfältiger Wochenmarkt mit großer Auswahl"],
-    isOpen: false
-  },
-  {
-    id: "109",
-    name: "Wochenmarkt Hochneimern",
-    address: "Altdorf Straße/Duisburger Straße",
-    city: "Duisburg", 
-    postalCode: "47226",
-    openingHours: "Mi, Sa 08:00-13:00 Uhr",
-    features: ["Bunge und inhabergeführter Markt im NFV gekürtr, umfangreiches Angebot"],
-    isOpen: true
-  },
-  {
-    id: "110",
-    name: "Wochenmarkt Düssern",
-    address: "Königsberger Allee",
-    city: "Duisburg",
-    postalCode: "47055",
-    openingHours: "Fr Mi 08:00-13:00 Uhr",
-    features: ["Vielfältiger Sortiment, arbeitsfreundliche Zeiten"],
-    isOpen: false
-  },
-  {
-    id: "111",
+    id: "61", 
     name: "Wochenmarkt Neudorf",
-    address: "Lüdgeriaplatz",
+    address: "Kaiser-Friedrich-Straße",
     city: "Duisburg",
     postalCode: "47057",
-    openingHours: "Di, Fr 08:00-13:00 Uhr",
-    features: ["Eiso Qualität Sortiment wie früher Zeiten"],
-    isOpen: true
+    openingHours: "Fr 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt mit Angebot an frischem Obst und Gemüse, Fleisch- und Wurstwaren, Backwaren, Blumen und an sonstigen Marktartikeln"]
   },
   {
-    id: "112",
-    name: "Bauernmarkt",
-    address: "Königstraße",
+    id: "62",
+    name: "Wochenmarkt Alt-Hamborn",
+    address: "Kaiser-Wilhelm-Straße",
     city: "Duisburg",
-    postalCode: "47051",
-    openingHours: "Di, Do 10:00-18:00 Uhr, Sa 10:00-16:00 Uhr",
-    features: ["Etablierter reiner Erzeugermarkt in der Innenstadt"],
-    isOpen: false
+    postalCode: "47166",
+    openingHours: "Do, Sa 08:00-13:00 Uhr",
+    features: ["Großer Markt mit ca. 70 Ständen, Angebot an Obst und Gemüse, Fisch, Fleisch- und Wurstwaren, Käse und Molkereiprodukten, Backwaren, Blumen und Pflanzen sowie an sonstigen Marktartikeln"]
   },
   {
-    id: "113",
-    name: "Wochenmarkt Hochfeld",
-    address: "Saarbrücker Straße/Essen Straße",
+    id: "63",
+    name: "Wochenmarkt Marxloh",
+    address: "Kaiser-Wilhelm-Straße",
     city: "Duisburg", 
-    postalCode: "47053",
-    openingHours: "Mi, Sa 08:00-13:00 Uhr",
-    features: ["Bunte und fröhliche Atmosphäre, multikulturelles Angebot"],
-    isOpen: true
+    postalCode: "47169",
+    openingHours: "Di, Fr 08:00-13:00 Uhr",
+    features: ["Mittlerer Markt mit ca. 30 Ständen, reiches Angebot"]
   },
   {
-    id: "114",
-    name: "Wochenmarkt Wanheim",
-    address: "Idolsplatz",
+    id: "64",
+    name: "Wochenmarkt Beeck",
+    address: "Mercatorstraße",
     city: "Duisburg",
-    postalCode: "47053",
-    openingHours: "Di, Do 08:00-13:00 Uhr",
-    features: ["Breites Sortiment und tolle Atmosphäre"],
-    isOpen: false
+    postalCode: "47166",
+    openingHours: "Mi 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt mit ca. 20 Ständen, reiches Angebot an frischen Waren"]
   },
   {
-    id: "115",
-    name: "Wochenmarkt Buchholz",
-    address: "Dorfplatz",
+    id: "65",
+    name: "Wochenmarkt Neumühl",
+    address: "Obermarxloher Straße",
     city: "Duisburg",
-    postalCode: "47259",
+    postalCode: "47167", 
+    openingHours: "Sa 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot"]
+  },
+  {
+    id: "66",
+    name: "Wochenmarkt Röttgersbach",
+    address: "Röttgersbacher Straße",
+    city: "Duisburg",
+    postalCode: "47239",
     openingHours: "Do 08:00-13:00 Uhr",
-    features: ["Gute Stimmung und freundlicher Treffpunkt"],
-    isOpen: true
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
   },
   {
-    id: "116",
-    name: "Wochenmarkt Wedau",
-    address: "Wedauer Markt",
+    id: "67", 
+    name: "Wochenmarkt Meiderich",
+    address: "Westender Straße",
     city: "Duisburg",
-    postalCode: "47279",
-    openingHours: "Mi, Fr 08:00-13:00 Uhr",
-    features: ["Gemütliche Atmosphäre, tägliche Einkaufsmärkte"],
-    isOpen: false
+    postalCode: "47137", 
+    openingHours: "Di, Fr 08:00-13:00 Uhr",
+    features: ["Mittlerer Markt mit ca. 30 Ständen, reiches Angebot"]
   },
   {
-    id: "117", 
+    id: "68",
+    name: "Wochenmarkt Ruhrort",
+    address: "Am Schwanentor",
+    city: "Duisburg",
+    postalCode: "47119",
+    openingHours: "Fr 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt mit ca. 20 Ständen, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "69",
     name: "Wochenmarkt Buchholz",
-    address: "Mülheimer Straße",
+    address: "Sittardsberger Allee",
+    city: "Duisburg",
+    postalCode: "47057",
+    openingHours: "Sa 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "70",
+    name: "Wochenmarkt Ungelsheim", 
+    address: "Düsseldorfer Straße / Ecke Angertaler Straße",
     city: "Duisburg",
     postalCode: "47249",
-    openingHours: "Di, Fr 08:00-13:00 Uhr",
-    features: ["Übersehenes großer Markt mit tollem Warenangebot"],
-    isOpen: true
+    openingHours: "Do 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
   },
   {
-    id: "118",
+    id: "71",
+    name: "Wochenmarkt Großenbaum",
+    address: "Großenbaumer Allee",
+    city: "Duisburg",
+    postalCode: "47249",
+    openingHours: "Mi 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "72",
+    name: "Wochenmarkt Süd",
+    address: "Wanheimer Straße / Ecke Koloniestraße",
+    city: "Duisburg",
+    postalCode: "47166",
+    openingHours: "Sa 08:00-13:00 Uhr", 
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "73",
+    name: "Wochenmarkt Hüttenheim",
+    address: "Koloniestraße",
+    city: "Duisburg",
+    postalCode: "47259",
+    openingHours: "Fr 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "74",
+    name: "Wochenmarkt Huckingen",
+    address: "Düsseldorfer Landstraße",
+    city: "Duisburg",
+    postalCode: "47259", 
+    openingHours: "Do 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "75",
+    name: "Wochenmarkt Wedau",
+    address: "Kalkweg / Ecke Masurenallee", 
+    city: "Duisburg",
+    postalCode: "47279",
+    openingHours: "Fr 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "76", 
+    name: "Wochenmarkt Bissingheim",
+    address: "Bissingheimer Straße / Ecke Am Bissingheimer Berg",
+    city: "Duisburg",
+    postalCode: "47259",
+    openingHours: "Sa 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "77",
+    name: "Wochenmarkt Wanheimerort",
+    address: "Am Wanheimer Ort / Ecke Dr.-Hammacher-Straße",
+    city: "Duisburg", 
+    postalCode: "47279",
+    openingHours: "Do 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "78",
+    name: "Wochenmarkt Rheinhausen-Mitte",
+    address: "Rheinauestraße / Ecke Asterlager Straße",
+    city: "Duisburg",
+    postalCode: "47228",
+    openingHours: "Mi, Sa 08:00-13:00 Uhr",
+    features: ["Mittlerer Markt mit ca. 35 Ständen, reiches Angebot"]
+  },
+  {
+    id: "79",
+    name: "Wochenmarkt Friemersheim",
+    address: "Moerser Straße",
+    city: "Duisburg",
+    postalCode: "47229",
+    openingHours: "Fr 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "80",
+    name: "Wochenmarkt Rumeln",
+    address: "Rumeln-Kaldenhausen",
+    city: "Duisburg",
+    postalCode: "47229",
+    openingHours: "Do 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "81",
+    name: "Wochenmarkt Baerl",
+    address: "Baerler Straße",
+    city: "Duisburg",
+    postalCode: "47239",
+    openingHours: "Sa 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "82",
+    name: "Wochenmarkt Homberg",
+    address: "Rheinstraße / Ecke Duisburger Straße",
+    city: "Duisburg",
+    postalCode: "47198",
+    openingHours: "Fr 08:00-13:00 Uhr",
+    features: ["Kleinerer Markt, reiches Angebot an frischen Waren"]
+  },
+  {
+    id: "83",
     name: "Wochenmarkt Wanhiem",
     address: "Am Tollberg/Moerser Straße",
     city: "Duisburg",
     postalCode: "47249",
     openingHours: "Mi, Sa 08:00-13:00 Uhr",
-    features: ["Reiches Angebot an frischen Waren und Möglichkeit um Pflanzenheim"],
-    isOpen: false
+    features: ["Reiches Angebot an frischen Waren und Möglichkeit um Pflanzenheim"]
   },
   // Potsdam markets
   {
-    id: "119",
+    id: "84",
     name: "Wochenmarkt Potsdam am Bassinplatz",
     address: "Bassinplatz",
     city: "Potsdam",
     postalCode: "14467",
     openingHours: "Mo-Fr 07:00-16:00 Uhr, Sa 07:00-13:00 Uhr (Apr-Okt), 07:00-12:00 (Nov-Mär)",
-    features: ["Frisches vom Bauern", "Schnittblumen", "Käse", "Fisch", "Küchenkräuter und viele mehr"],
-    isOpen: true
+    features: ["Frisches vom Bauern", "Schnittblumen", "Käse", "Fisch", "Küchenkräuter und viele mehr"]
   },
   {
-    id: "120",
+    id: "85",
     name: "Markt auf Nauener Tor",
     address: "Nauener Tor",
     city: "Potsdam",
     postalCode: "14467",
     openingHours: "Sa 9:00-16:00 Uhr",
-    features: ["Frische Einkaufsplatz für Feinschmecker, mittwochs Streetfood, samstags Flohmarkt und Spezialitäten"],
-    isOpen: false
+    features: ["Frische Einkaufsplatz für Feinschmecker, mittwochs Streetfood, samstags Flohmarkt und Spezialitäten"]
   },
   {
-    id: "121",
+    id: "86",
     name: "Wochenmarkt Weberplatz",
     address: "Weberplatz",
     city: "Potsdam",
     postalCode: "14482",
     openingHours: "Sa 07:00-14:00 Uhr", 
-    features: ["Allgemeiner Wochenmarkt in Babelsberg"],
-    isOpen: true
+    features: ["Allgemeiner Wochenmarkt in Babelsberg"]
   }
 ];
 
@@ -1465,7 +1091,7 @@ const Markets = () => {
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <CardTitle className="text-lg">{market.name}</CardTitle>
-                      {market.isOpen && (
+                      {isMarketOpen(market.openingHours) && (
                         <Badge className="bg-green-100 text-green-700 border-green-200">
                           Geöffnet
                         </Badge>
