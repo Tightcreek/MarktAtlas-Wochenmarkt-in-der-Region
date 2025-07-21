@@ -80,7 +80,6 @@ const isMarketOpen = (openingHours: string): boolean => {
   return false;
 };
 
-// Market data from wochenmarkt-deutschland.de
 const marketData: Market[] = [
   // Berlin
   {
