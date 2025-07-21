@@ -3,12 +3,55 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Search, RefreshCw } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import heroImage from "@/assets/hero-market.jpg";
+import SEOHead from "@/components/SEOHead";
 
 const Index = () => {
   const location = useLocation();
   
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MarktAtlas Deutschland",
+    "description": "Deutschlands umfassender Wochenmarkt Finder mit über 500 Märkten",
+    "url": "https://markt-atlas-finden.lovable.app",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://markt-atlas-finden.lovable.app/markets?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Deutsche Wochenmärkte",
+      "description": "Vollständige Liste aller Wochenmärkte und Bauernmärkte in Deutschland",
+      "itemListElement": [
+        {
+          "@type": "Place",
+          "name": "Wochenmärkte Berlin",
+          "description": "Alle Wochenmärkte in Berlin mit Öffnungszeiten"
+        },
+        {
+          "@type": "Place", 
+          "name": "Wochenmärkte Hamburg",
+          "description": "Alle Wochenmärkte in Hamburg mit Öffnungszeiten"
+        },
+        {
+          "@type": "Place",
+          "name": "Wochenmärkte München", 
+          "description": "Alle Wochenmärkte in München mit Öffnungszeiten"
+        }
+      ]
+    }
+  };
+  
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Wochenmarkt Finder Deutschland - Alle Märkte in deiner Nähe | MarktAtlas"
+        description="Finde über 500 Wochenmärkte und Bauernmärkte in Deutschland. Aktuelle Öffnungszeiten, Standorte und frische Produkte direkt vom Erzeuger. Markt heute geöffnet in deiner Stadt."
+        keywords="wochenmarkt finder, bauernmarkt deutschland, märkte heute geöffnet, wochenmarkt öffnungszeiten, frische produkte markt, regional einkaufen, markt samstag, wochenmarkt berlin hamburg münchen"
+        canonicalUrl="https://markt-atlas-finden.lovable.app/"
+        schemaData={schemaData}
+      />
       {/* Navigation */}
       <nav className="bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4">

@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Search, MapPin, Clock, Filter, Map, List } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 
 interface Market {
   id: string;
@@ -1104,8 +1105,38 @@ const Markets = () => {
     }, 300);
   };
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Wochenmärkte Deutschland",
+    "description": "Vollständige Liste aller Wochenmärkte und Bauernmärkte in Deutschland mit Öffnungszeiten und Standorten",
+    "url": "https://markt-atlas-finden.lovable.app/markets",
+    "numberOfItems": marketData.length,
+    "itemListElement": marketData.slice(0, 10).map((market, index) => ({
+      "@type": "Place",
+      "position": index + 1,
+      "name": market.name,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": market.address,
+        "addressLocality": market.city,
+        "postalCode": market.postalCode,
+        "addressCountry": "DE"
+      },
+      "openingHours": market.openingHours,
+      "url": `https://markt-atlas-finden.lovable.app/markets/${market.id}`
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Alle Wochenmärkte Deutschland - Marktfinder mit Öffnungszeiten | MarktAtlas"
+        description="Entdecke über 500 Wochenmärkte in Deutschland. Suche nach Stadt, PLZ oder Marktname. Aktuelle Öffnungszeiten, Standorte und welche Märkte heute geöffnet haben."
+        keywords="wochenmärkte deutschland, bauernmärkte suchen, markt öffnungszeiten, märkte heute geöffnet, wochenmarkt berlin hamburg münchen köln, regional einkaufen"
+        canonicalUrl="https://markt-atlas-finden.lovable.app/markets"
+        schemaData={schemaData}
+      />
       {/* Header */}
       <header className="bg-green-50 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 py-6">

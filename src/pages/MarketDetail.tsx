@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, MapPin, Clock, Phone, Mail, Globe } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 interface Market {
   id: string;
@@ -2342,8 +2343,52 @@ const MarketDetail = () => {
     );
   }
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `https://markt-atlas-finden.lovable.app/markets/${market.id}`,
+    "name": market.name,
+    "description": market.description,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": market.address,
+      "addressLocality": market.city,
+      "postalCode": market.postalCode,
+      "addressCountry": "DE"
+    },
+    "openingHours": market.openingHours,
+    "telephone": market.phone,
+    "email": market.email,
+    "url": market.website,
+    "geo": {
+      "@type": "GeoCoordinates",
+      "addressCountry": "DE"
+    },
+    "priceRange": "€",
+    "paymentAccepted": "Cash",
+    "currenciesAccepted": "EUR",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Marktangebot",
+      "itemListElement": market.specialties?.map(specialty => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": specialty
+        }
+      }))
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title={`${market.name} ${market.city} - Wochenmarkt Öffnungszeiten & Infos | MarktAtlas`}
+        description={`${market.name} in ${market.city}: ${market.description?.substring(0, 150)}... Öffnungszeiten: ${market.openingHours}. Adresse, Anfahrt und alle Details zum Wochenmarkt.`}
+        keywords={`${market.name}, wochenmarkt ${market.city}, markt ${market.postalCode}, ${market.features?.join(', ')}, öffnungszeiten ${market.city}`}
+        canonicalUrl={`https://markt-atlas-finden.lovable.app/markets/${market.id}`}
+        schemaData={schemaData}
+      />
       {/* Header */}
       <header className="bg-green-50 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 py-6">
