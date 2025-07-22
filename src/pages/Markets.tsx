@@ -6,82 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Search, MapPin, Clock, Filter, Map, List } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-
-interface Market {
-  id: string;
-  name: string;
-  address: string;
-  city: string;
-  postalCode: string;
-  openingHours: string;
-  features: string[];
-}
-
-// Helper function to check if a market is currently open
-const isMarketOpen = (openingHours: string): boolean => {
-  const now = new Date();
-  const currentDay = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
-  const currentTime = now.getHours() * 100 + now.getMinutes(); // HHMM format
-
-  // German day mapping
-  const dayMap: { [key: string]: number } = {
-    'Mo': 1, 'Di': 2, 'Mi': 3, 'Do': 4, 'Fr': 5, 'Sa': 6, 'So': 0
-  };
-
-  // Clean up the opening hours string
-  const cleanedHours = openingHours.replace(/ Uhr/g, '').replace(/:/g, '');
-  
-  // Split by comma to handle multiple day/time combinations
-  const timeSlots = cleanedHours.split(',').map(slot => slot.trim());
-  
-  for (const slot of timeSlots) {
-    // Handle day ranges like "Mo-Fr" or single days like "Mi"
-    const dayTimeMatch = slot.match(/^([A-Za-z-]+)\s+(.+)$/);
-    if (!dayTimeMatch) continue;
-    
-    const [, daysPart, timePart] = dayTimeMatch;
-    const timeRange = timePart.match(/(\d{1,2})-(\d{1,2})/);
-    if (!timeRange) continue;
-    
-    const [, startHour, endHour] = timeRange;
-    const startTime = parseInt(startHour) * 100;
-    const endTime = parseInt(endHour) * 100;
-    
-    // Handle day ranges (e.g., "Mo-Fr") or single days
-    if (daysPart.includes('-')) {
-      const [startDayStr, endDayStr] = daysPart.split('-');
-      const startDay = dayMap[startDayStr];
-      const endDay = dayMap[endDayStr];
-      
-      if (startDay !== undefined && endDay !== undefined) {
-        let dayMatches = false;
-        if (startDay <= endDay) {
-          dayMatches = currentDay >= startDay && currentDay <= endDay;
-        } else {
-          // Handle week wraparound (e.g., Sa-Mo)
-          dayMatches = currentDay >= startDay || currentDay <= endDay;
-        }
-        
-        if (dayMatches && currentTime >= startTime && currentTime <= endTime) {
-          return true;
-        }
-      }
-    } else {
-      // Handle single days or multiple days separated by spaces
-      const days = daysPart.split(/\s+/);
-      for (const dayStr of days) {
-        const day = dayMap[dayStr];
-        if (day === currentDay && currentTime >= startTime && currentTime <= endTime) {
-          return true;
-        }
-      }
-    }
-  }
-  
-  return false;
-};
-
-const marketData: Market[] = [
+import marketsData, { isMarketOpen, type Market } from "@/data/markets";
   // Berlin
   {
     id: "1",
@@ -1032,10 +957,10 @@ const Markets = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDay, setSelectedDay] = useState("");
   const [viewMode, setViewMode] = useState<"list" | "map">("list");
-  const [filteredMarkets, setFilteredMarkets] = useState(marketData);
+  const [filteredMarkets, setFilteredMarkets] = useState(marketsData);
 
   const handleSearch = () => {
-    let filtered = marketData;
+    let filtered = marketsData;
 
     // Filter by search term (city, postal code, or market name)
     if (searchTerm.trim()) {
@@ -1073,7 +998,7 @@ const Markets = () => {
     setSearchTerm(value);
     // Auto-search after short delay
     setTimeout(() => {
-      let filtered = marketData;
+      let filtered = marketsData;
       
       if (value.trim()) {
         filtered = filtered.filter(market => 
@@ -1111,8 +1036,8 @@ const Markets = () => {
     "name": "Wochenmärkte Deutschland",
     "description": "Vollständige Liste aller Wochenmärkte und Bauernmärkte in Deutschland mit Öffnungszeiten und Standorten",
     "url": "https://markt-atlas-finden.lovable.app/markets",
-    "numberOfItems": marketData.length,
-    "itemListElement": marketData.slice(0, 10).map((market, index) => ({
+    "numberOfItems": marketsData.length,
+    "itemListElement": marketsData.slice(0, 10).map((market, index) => ({
       "@type": "Place",
       "position": index + 1,
       "name": market.name,
@@ -1183,7 +1108,7 @@ const Markets = () => {
                     setSelectedDay(e.target.value);
                     // Trigger search immediately when day selection changes
                     setTimeout(() => {
-                      let filtered = marketData;
+                      let filtered = marketsData;
                       
                       if (searchTerm.trim()) {
                         filtered = filtered.filter(market => 
