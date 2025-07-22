@@ -893,7 +893,7 @@ const marketData: Market[] = [
   {
     id: "89",
     name: "Wochenmarkt Findorff", 
-    address: "Neukirchstraße 45, 28215 Bremen",
+    address: "Neukirchstraße 45",
     city: "Bremen",
     postalCode: "28215", 
     openingHours: "Dienstag, Donnerstag, 08:00 - 13:00 Uhr; Samstag, 08:00 - 14:00 Uhr",
