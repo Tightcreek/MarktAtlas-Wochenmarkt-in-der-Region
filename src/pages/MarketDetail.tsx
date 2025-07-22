@@ -1282,7 +1282,7 @@ const getMarketDetails = (id: string): Market | undefined => {
       openingHours: "Mittwoch, Samstag 8:00-13:00",
       features: ["Village Setting"],
       isOpen: true,
-      description: "Der Wochenmarkt in Borgfeld am malerischen Platz zur Linde verkörpert das dörfliche Flair des östlichsten Bremer Stadtteils. Mit seinem authentischen Charakter und der idyllischen Lage bietet er eine entspannte Alternative zu den urbanen Märkten.",
+      description: "Der Wochenmarkt in Borgfeld am malerischen Platz zur Linde verkörpert das dörfliche Flair des östlichsten Bremer Stadtteils. Mit seinem authentischen Charakter und der idyllischen Lage bietet er eine entspannte Alternative zu den urbanen Märkten. Ein Markt mit ländlichem Charme, spezialisiert auf frisches Gemüse direkt vom Bauern, Blumen und handgemachte Lebensmittelprodukte – besonders bei Liebhabern regionaler Landwirtschaft beliebt.",
       phone: "+49 421 71234567",
       email: "info@borgfeld-markt.de",
       website: "www.platz-zur-linde-markt.de",
