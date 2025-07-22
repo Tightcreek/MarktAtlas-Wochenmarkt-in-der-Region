@@ -911,7 +911,7 @@ const marketData: Market[] = [
   {
     id: "91",
     name: "Wochenmarkt Oberwerland",
-    address: "Oberwerland 8, 28219 Bremen",
+    address: "Oberwerland 8",
     city: "Bremen",
     postalCode: "28219", 
     openingHours: "Freitag, 10:00 - 16:00 Uhr",
