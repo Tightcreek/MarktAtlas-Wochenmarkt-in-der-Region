@@ -5,6 +5,69 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, MapPin, Clock, Phone, Mail, Globe } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 
+// Helper function to check if a market is currently open
+const isMarketOpen = (openingHours: string): boolean => {
+  const now = new Date();
+  const currentDay = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+  const currentTime = now.getHours() * 100 + now.getMinutes(); // HHMM format
+
+  // German day mapping
+  const dayMap: { [key: string]: number } = {
+    'Mo': 1, 'Di': 2, 'Mi': 3, 'Do': 4, 'Fr': 5, 'Sa': 6, 'So': 0
+  };
+
+  // Clean up the opening hours string
+  const cleanedHours = openingHours.replace(/ Uhr/g, '').replace(/:/g, '');
+  
+  // Split by comma to handle multiple time periods
+  const timePeriods = cleanedHours.split(',');
+  
+  for (const period of timePeriods) {
+    const trimmedPeriod = period.trim();
+    
+    // Match patterns like "Mo-Fr 8-18", "Samstag 9-16", "Donnerstag 12-19"
+    const match = trimmedPeriod.match(/^(.+?)\s+(\d{1,2})-(\d{1,2})$/);
+    
+    if (match) {
+      const daysPart = match[1];
+      const startTime = parseInt(match[2]) * 100; // Convert to HHMM
+      const endTime = parseInt(match[3]) * 100; // Convert to HHMM
+      
+      // Handle day ranges (e.g., "Mo-Fr")
+      if (daysPart.includes('-')) {
+        const [startDayStr, endDayStr] = daysPart.split('-');
+        const startDay = dayMap[startDayStr];
+        const endDay = dayMap[endDayStr];
+        
+        if (startDay !== undefined && endDay !== undefined) {
+          let dayMatches = false;
+          if (startDay <= endDay) {
+            dayMatches = currentDay >= startDay && currentDay <= endDay;
+          } else {
+            // Handle week wraparound (e.g., Sa-Mo)
+            dayMatches = currentDay >= startDay || currentDay <= endDay;
+          }
+          
+          if (dayMatches && currentTime >= startTime && currentTime <= endTime) {
+            return true;
+          }
+        }
+      } else {
+        // Handle single days or multiple days separated by spaces
+        const days = daysPart.split(/\s+/);
+        for (const dayStr of days) {
+          const day = dayMap[dayStr];
+          if (day === currentDay && currentTime >= startTime && currentTime <= endTime) {
+            return true;
+          }
+        }
+      }
+    }
+  }
+  
+  return false;
+};
+
 interface Market {
   id: string;
   name: string;
@@ -2505,9 +2568,9 @@ const MarketDetail = () => {
               <CardContent>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <div className={`w-2 h-2 rounded-full ${market.isOpen ? 'bg-green-500' : 'bg-red-500'}`} />
+                    <div className={`w-2 h-2 rounded-full ${isMarketOpen(market.openingHours) ? 'bg-green-500' : 'bg-red-500'}`} />
                     <span className="text-sm font-medium">
-                      {market.isOpen ? 'Geöffnet' : 'Geschlossen'}
+                      {isMarketOpen(market.openingHours) ? 'Geöffnet' : 'Geschlossen'}
                     </span>
                   </div>
                   <p className="text-sm text-muted-foreground">
