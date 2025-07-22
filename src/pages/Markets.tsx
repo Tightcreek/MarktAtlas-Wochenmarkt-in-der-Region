@@ -920,7 +920,7 @@ const marketData: Market[] = [
   {
     id: "92",
     name: "Bauernmarkt Unser-Lieben-Frauen",
-    address: "Unser Lieben Frauen Kirchhof, 28195 Bremen",
+    address: "Unser Lieben Frauen Kirchhof",
     city: "Bremen",
     postalCode: "28195",
     openingHours: "Montag - Freitag, 08:00 - 14:00 Uhr; Samstag, 08:00 - 15:00 Uhr", 
@@ -929,7 +929,7 @@ const marketData: Market[] = [
   {
     id: "93",
     name: "Wochenmarkt Domshof",
-    address: "Domshof, 28195 Bremen", 
+    address: "Domshof", 
     city: "Bremen",
     postalCode: "28195",
     openingHours: "Montag - Freitag, 08:00 - 14:00 Uhr; Samstag, 08:00 - 15:00 Uhr",
@@ -938,7 +938,7 @@ const marketData: Market[] = [
   {
     id: "94",
     name: "Wochenmarkt Walle",
-    address: "Wartburgplatz 1, 28217 Bremen",
+    address: "Wartburgplatz 1",
     city: "Bremen", 
     postalCode: "28217",
     openingHours: "Dienstag, Donnerstag, 08:00 - 13:00 Uhr",
@@ -956,7 +956,7 @@ const marketData: Market[] = [
   {
     id: "96",
     name: "Wochenmarkt Senior (Ziegenmärkt)",
-    address: "Vor dem Steintor 50-62, 28203 Bremen",
+    address: "Vor dem Steintor 50-62",
     city: "Bremen",
     postalCode: "28203", 
     openingHours: "Mittwoch - Freitag, 08:00 - 18:00 Uhr; Samstag, 08:00 - 14:00 Uhr",
@@ -965,7 +965,7 @@ const marketData: Market[] = [
   {
     id: "97",
     name: "Wochenmarkt Vegesack",
-    address: "Am Sedanplatz, 28757 Bremen",
+    address: "Am Sedanplatz",
     city: "Bremen",
     postalCode: "28757",
     openingHours: "Dienstag, Donnerstag, 08:00 - 13:00 Uhr; Samstag, 08:00 - 13:30 Uhr",
@@ -974,7 +974,7 @@ const marketData: Market[] = [
   {
     id: "98",
     name: "Bauernmarkt Fangturm", 
-    address: "Fangturm, 28195 Bremen",
+    address: "Fangturm",
     city: "Bremen",
     postalCode: "28195",
     openingHours: "Freitag, 10:00 - 16:00 Uhr",
@@ -983,7 +983,7 @@ const marketData: Market[] = [
   {
     id: "99",
     name: "Wochenmarkt Osterholz",
-    address: "Osterholzer Heerstraße, 28325 Bremen", 
+    address: "Osterholzer Heerstraße", 
     city: "Bremen",
     postalCode: "28325",
     openingHours: "Donnerstag, Samstag, 08:00 - 13:00 Uhr",
@@ -992,7 +992,7 @@ const marketData: Market[] = [
   {
     id: "100",
     name: "Wochenmarkt Schwachhausen",
-    address: "Schwachhauser Heerstraße, 28209 Bremen",
+    address: "Schwachhauser Heerstraße",
     city: "Bremen",
     postalCode: "28209", 
     openingHours: "Mittwoch, 07:30 - 13:00 Uhr; Samstag, 07:30 - 13:30 Uhr",
@@ -1002,7 +1002,7 @@ const marketData: Market[] = [
   {
     id: "101",
     name: "Wochenmarkt Haidhausen",
-    address: "Weißenburger Platz, 81667 München",
+    address: "Weißenburger Platz",
     city: "München",
     postalCode: "81667",
     openingHours: "Dienstag, 08:00 - 12:00 Uhr",
@@ -1011,7 +1011,7 @@ const marketData: Market[] = [
   {
     id: "102", 
     name: "Elisenhof",
-    address: "St.-Anna-Platz 1, 80538 München",
+    address: "St.-Anna-Platz 1",
     city: "München",
     postalCode: "80538",
     openingHours: "Donnerstag, 10:30 - 18:00 Uhr",
@@ -1020,7 +1020,7 @@ const marketData: Market[] = [
   {
     id: "103", 
     name: "Bauernmarkt Lehel",
-    address: "St.-Anna-Platz 1, 80538 München", 
+    address: "St.-Anna-Platz 1", 
     city: "München",
     postalCode: "80538",
     openingHours: "Donnerstag, 10:30 - 18:00 Uhr",
