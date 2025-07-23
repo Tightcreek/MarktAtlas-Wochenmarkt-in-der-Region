@@ -7,6 +7,40 @@ import { Search, MapPin, Clock, Filter, Map, List } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 
+// 1. ERWEITERTE KEYWORD-GENERIERUNG (nach den Imports einfügen)
+const generateSEOKeywords = (markets: Market[]) => {
+  // Alle einzigartigen Städte extrahieren
+  const cities = [...new Set(markets.map(market => market.city))];
+  
+  // Basis Keywords
+  const baseKeywords = [
+    'wochenmärkte deutschland',
+    'bauernmärkte deutschland', 
+    'markt heute geöffnet',
+    'wochenmarkt öffnungszeiten',
+    'regionale märkte'
+  ];
+  
+  // Stadt-spezifische Keywords generieren
+  const cityKeywords = cities.flatMap(city => [
+    `wochenmarkt ${city.toLowerCase()}`,
+    `bauernmarkt ${city.toLowerCase()}`,
+    `markt heute ${city.toLowerCase()}`,
+    `${city.toLowerCase()} wochenmarkt öffnungszeiten`,
+    `märkte ${city.toLowerCase()}`
+  ]);
+  
+  // Long-tail Keywords
+  const longTailKeywords = cities.flatMap(city => [
+    `wo ist heute wochenmarkt in ${city.toLowerCase()}`,
+    `wochenmarkt ${city.toLowerCase()} parken`,
+    `bester wochenmarkt ${city.toLowerCase()}`,
+    `${city.toLowerCase()} bauernmarkt heute`
+  ]);
+  
+  return [...baseKeywords, ...cityKeywords, ...longTailKeywords].join(', ');
+};
+
 interface Market {
   id: string;
   name: string;
