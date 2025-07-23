@@ -2140,58 +2140,6 @@ const getMarketDetails = (id: string): Market | undefined => {
       specialties: ["Babelsberg", "Filmberühmt", "Stadtteilmarkt", "Erweiterte Zeiten", "Samstags-Atmosphäre"],
       facilities: ["Bis 14 Uhr", "Babelsberg", "Stadtteil-Zentrum"],
       transport: "S-Bahn: Babelsberg (S1), Tram: Weberplatz (Linie 94), Bus 601, 602"
-    },
-    // Additional München Markets  
-    {
-      id: "101",
-      name: "Wochenmarkt Haidhausen",
-      address: "Weißenburger Platz, 81667 München",
-      city: "München",
-      postalCode: "81667",
-      openingHours: "Dienstag, 08:00 - 12:00 Uhr",
-      features: ["Klassischer Wochenmarkt mit Obst, Gemüse, Fisch und Fleisch, ergänzt durch bayerische und italienische Texilwaren"],
-      isOpen: false,
-      description: "Der Wochenmarkt Haidhausen am Weißenburger Platz ist ein klassischer bayerischer Stadtteilmarkt im Münchner Osten. Jeden Dienstag verwandelt sich der malerische Platz in einen lebendigen Markt, der neben frischen Lebensmitteln auch bayerische und italienische Textiltraditionen pflegt.",
-      phone: "+49 89 12345001",
-      email: "info@haidhausen-markt.de",
-      website: "www.wochenmarkt-haidhausen.de",
-      specialties: ["Klassisch bayerisch", "Weißenburger Platz", "Textiltraditionen", "Münchner Osten", "Dienstags"],
-      facilities: ["Einmal wöchentlich", "Haidhausen", "Klassisch"],
-      transport: "S-Bahn: Rosenheimer Platz (S1-S8), Tram 15, 25"
-    },
-    {
-      id: "102", 
-      name: "Elisenhof",
-      address: "St.-Anna-Platz 1, 80538 München",
-      city: "München",
-      postalCode: "80538",
-      openingHours: "Donnerstag, 10:30 - 18:00 Uhr",
-      features: ["Bietet eine breite Palette an Produkten von Obst, Gemüse, Fleisch, Fisch, bis zu Schloßkäse und Blumen. Seit 2011 in Rosenberg"],
-      isOpen: true,
-      description: "Der Elisenhof am St.-Anna-Platz ist ein exklusiver Donnerstags-Markt im Herzen der Münchner Maxvorstadt. Mit seinem gehobenen Angebot und den erweiterten Öffnungszeiten bis 18 Uhr richtet er sich an anspruchsvolle Kunden, die Wert auf Qualität und Service legen.",
-      phone: "+49 89 12345002",
-      email: "info@elisenhof-markt.de",
-      website: "www.elisenhof-muenchen.de",
-      specialties: ["Exklusiv", "St.-Anna-Platz", "Bis 18 Uhr", "Gehobenes Angebot", "Maxvorstadt"],
-      facilities: ["Donnerstags", "Bis 18 Uhr", "Exklusiv"],
-      transport: "U-Bahn: Odeonsplatz (U3, U4, U5, U6), Universität (U3, U6)"
-    },
-    {
-      id: "103", 
-      name: "Bauernmarkt Lehel",
-      address: "St.-Anna-Platz 1, 80538 München", 
-      city: "München",
-      postalCode: "80538",
-      openingHours: "Donnerstag, 10:30 - 18:00 Uhr",
-      features: ["Einer der vier saisonalen Münchner Märkte mit hochpreisigem Angebot"],
-      isOpen: true,
-      description: "Der Bauernmarkt Lehel ist einer der vier saisonalen Münchner Märkte und steht für höchste Qualität und regionale Authentizität. Am St.-Anna-Platz gelegen, bietet er donnerstags von 10:30 bis 18:00 Uhr eine exquisite Auswahl an Produkten direkt vom Bauern.",
-      phone: "+49 89 12345003",
-      email: "info@bauernmarkt-lehel.de",
-      website: "www.bauernmarkt-lehel.de",
-      specialties: ["Saisonal", "Vier Münchner Märkte", "Hochpreisig", "Direkt vom Bauern", "St.-Anna-Platz"],
-      facilities: ["Saisonal", "Hochwertig", "Donnerstags"],
-      transport: "U-Bahn: Odeonsplatz (U3, U4, U5, U6), Universität (U3, U6)"
     }
   ];
 
