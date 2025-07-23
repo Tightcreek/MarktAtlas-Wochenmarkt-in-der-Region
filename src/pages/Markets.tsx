@@ -1139,28 +1139,39 @@ const Markets = () => {
     }, 300);
   };
 
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Wochenmärkte Deutschland",
-    "description": "Vollständige Liste aller Wochenmärkte und Bauernmärkte in Deutschland mit Öffnungszeiten und Standorten",
-    "url": "https://markt-atlas-finden.lovable.app/markets",
-    "numberOfItems": marketData.length,
-    "itemListElement": marketData.slice(0, 10).map((market, index) => ({
-      "@type": "Place",
-      "position": index + 1,
-      "name": market.name,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": market.address,
-        "addressLocality": market.city,
-        "postalCode": market.postalCode,
-        "addressCountry": "DE"
-      },
-      "openingHours": market.openingHours,
-      "url": `https://markt-atlas-finden.lovable.app/markets/${market.id}`
-    }))
-  };
+const enhancedSchemaData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Wochenmärkte Deutschland - Vollständiger Marktfinder",
+  "description": "Umfassende Liste aller Wochenmärkte und Bauernmärkte in Deutschland mit aktuellen Öffnungszeiten, Standorten und Live-Status",
+  "url": "https://markt-atlas-finden.lovable.app/markets",
+  "numberOfItems": filteredMarkets.length,
+  "keywords": generateSEOKeywords(marketData),
+  "itemListElement": filteredMarkets.slice(0, 20).map((market, index) => ({
+    "@type": "LocalBusiness",
+    "position": index + 1,
+    "name": `${market.name} - Wochenmarkt ${market.city}`,
+    "description": `Wochenmarkt in ${market.city} mit ${market.features.join(', ')}. Öffnungszeiten: ${market.openingHours}`,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": market.address,
+      "addressLocality": market.city,
+      "postalCode": market.postalCode,
+      "addressCountry": "DE"
+    },
+    "openingHours": market.openingHours,
+    "url": `https://markt-atlas-finden.lovable.app/markets/${market.id}`,
+    "keywords": `wochenmarkt ${market.city.toLowerCase()}, bauernmarkt ${market.city.toLowerCase()}, ${market.features.join(', ').toLowerCase()}`,
+    "isOpen": isMarketOpen(market.openingHours),
+    "paymentAccepted": ["Cash", "Bargeld"],
+    "currenciesAccepted": "EUR"
+  })),
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://markt-atlas-finden.lovable.app/markets?search={search_term}",
+    "query-input": "required name=search_term"
+  }
+};
 
   return (
     <div className="min-h-screen bg-background">
