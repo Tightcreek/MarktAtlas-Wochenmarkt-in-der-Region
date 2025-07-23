@@ -77,18 +77,18 @@ interface Market {
   openingHours: string;
   features: string[];
   isOpen: boolean;
-  description?: string;
-  phone?: string;
-  email?: string;
-  website?: string;
-  specialties?: string[];
-  facilities?: string[];
-  transport?: string;
+  description: string;
+  phone: string;
+  email: string;
+  website: string;
+  specialties: string[];
+  facilities: string[];
+  transport: string;
 }
 
 // Extended market data with additional details
 const getMarketDetails = (id: string): Market | undefined => {
-  const baseMarkets = [
+  const baseMarkets: Market[] = [
     {
       id: "1",
       name: "Winterfeldtmarkt",
@@ -2140,10 +2140,6 @@ const getMarketDetails = (id: string): Market | undefined => {
       specialties: ["Babelsberg", "Filmberühmt", "Stadtteilmarkt", "Erweiterte Zeiten", "Samstags-Atmosphäre"],
       facilities: ["Bis 14 Uhr", "Babelsberg", "Stadtteil-Zentrum"],
       transport: "S-Bahn: Babelsberg (S1), Tram: Weberplatz (Linie 94), Bus 601, 602"
-    },
-    // Additional Hamburg Markets
-    {
-     
     },
     // Additional München Markets  
     {
