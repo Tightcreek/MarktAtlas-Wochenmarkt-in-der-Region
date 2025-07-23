@@ -1180,7 +1180,7 @@ const enhancedSchemaData = {
         description="Entdecke über 500 Wochenmärkte in Deutschland. Suche nach Stadt, PLZ oder Marktname. Aktuelle Öffnungszeiten, Standorte und welche Märkte heute geöffnet haben."
         keywords="wochenmärkte deutschland, bauernmärkte suchen, markt öffnungszeiten, märkte heute geöffnet, wochenmarkt berlin hamburg münchen köln, regional einkaufen"
         canonicalUrl="https://markt-atlas-finden.lovable.app/markets"
-        schemaData={schemaData}
+        schemaData={enhancedSchemaData}
       />
       {/* Header */}
       <header className="bg-green-50 border-b border-border">
