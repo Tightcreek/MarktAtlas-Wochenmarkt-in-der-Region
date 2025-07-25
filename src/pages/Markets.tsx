@@ -185,7 +185,7 @@ const Markets = () => {
 
                   <Button 
                     variant="green" size="sm"
-                    className="w-full mt-3"
+                    className="w-full"
                     onClick={() => window.location.href = `/markets/${market.id}`}
                   >
                     Details anzeigen
