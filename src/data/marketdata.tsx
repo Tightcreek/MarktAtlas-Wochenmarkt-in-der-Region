@@ -1935,7 +1935,7 @@ export const marketData: Market[] = [
     city: "Düsseldorf",
     postalCode: "40625",
     openingHours: "Dienstag 7-18, Donnerstag 7-18, Samstag 7-18",
-    features: ["Lebensmittel", "Dekor", "Käse", "mediterrane Spezialitäten"],
+    features: ["Lebensmittel", "Dekor", "mediterrane Spezialitäten"],
     isOpen: isMarketOpen("Dienstag 7-18, Donnerstag 7-18, Samstag 7-18"),
     description: "Der Gerresheimer Markt bietet ein umfangreiches Angebot von Haushaltswaren über Lebensmittel bis zum Dekor. Regionale Spezialitäten sind hier ebenso vertreten wie Altbekanntes. Die langen Öffnungszeiten bis 18 Uhr ermöglichen es auch Berufstätigen, den Markt zu besuchen.",
     phone: "N/A",
