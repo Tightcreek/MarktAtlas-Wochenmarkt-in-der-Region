@@ -175,13 +175,11 @@ const MarketDetail = () => {
   </CardHeader>
   <CardContent className="space-y-3">
     <div className="flex items-center gap-3">
-      <Phone className="h-4 w-4 text-gray-500" />
-      <a 
+      <Phone className="h-4 w-4 text-gray-500" /> 
         href={`tel:${market.phone}`}
         className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
       >
         {market.phone}
-      </a>
     </div>
     <div className="flex items-center gap-3">
       <Mail className="h-4 w-4 text-gray-500" />
