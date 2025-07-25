@@ -15,7 +15,7 @@ const Markets = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const location = useLocation();
 
-// Update current time every minute to keep badges accurate
+  // Update current time every minute to keep badges accurate
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
@@ -23,7 +23,7 @@ const Markets = () => {
 
     return () => clearInterval(timer);
   }, []);
-  
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
@@ -153,61 +153,70 @@ const Markets = () => {
           </div>
         </div>
 
+        {/* Current Time Display for Debugging */}
+        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 mb-6 text-center">
+          <p className="text-sm text-blue-700 dark:text-blue-300">
+            Aktuelle Zeit: {currentTime.toLocaleDateString('de-DE', { weekday: 'long' })}, {currentTime.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })}
+          </p>
+        </div>
+
         {/* Markets Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredMarkets.map((market) => (
+          {filteredMarkets.map((market) => {
             // Calculate market open status dynamically on each render
             const marketIsOpen = isMarketOpen(market.openingHours);
             
             return (
-            <Card key={market.id} className="hover:shadow-lg transition-shadow duration-200">
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div className="flex-1">
-                    <CardTitle className="text-lg">{market.name}</CardTitle>
-                    <CardDescription className="flex items-center gap-1 mt-1">
-                      <MapPin className="h-4 w-4" />
-                      {market.city}, {market.postalCode}
-                    </CardDescription>
+              <Card key={market.id} className="hover:shadow-lg transition-shadow duration-200">
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <div className="flex-1">
+                      <CardTitle className="text-lg">{market.name}</CardTitle>
+                      <CardDescription className="flex items-center gap-1 mt-1">
+                        <MapPin className="h-4 w-4" />
+                        {market.city}, {market.postalCode}
+                      </CardDescription>
+                    </div>
+                    <Badge 
+                      variant={marketIsOpen ? "default" : "secondary"}
+                      className={`ml-2 ${marketIsOpen ? 'bg-green-500 hover:bg-green-600' : 'bg-gray-500 hover:bg-gray-600'}`}
+                    >
+                      {marketIsOpen ? "Geöffnet" : "Geschlossen"}
+                    </Badge>
                   </div>
-                  <Badge 
-                    variant={isMarketOpen(market.openingHours) ? "default" : "secondary"}
-                    className="ml-2"
-                  >
-                    {isMarketOpen(market.openingHours) ? "Geöffnet" : "Geschlossen"}
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                    <Clock className="h-4 w-4" />
-                    {market.openingHours}
-                  </div>
-                  
-                  <div className="text-sm text-gray-500 dark:text-gray-400">
-                    {market.address}
-                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                      <Clock className="h-4 w-4" />
+                      {market.openingHours}
+                    </div>
+                    
+                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                      {market.address}
+                    </div>
 
-                  <div className="flex flex-wrap gap-1">
-                    {market.features.map((feature, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
-                        {feature}
-                      </Badge>
-                    ))}
-                  </div>
+                    <div className="flex flex-wrap gap-1">
+                      {market.features.map((feature, index) => (
+                        <Badge key={index} variant="outline" className="text-xs">
+                          {feature}
+                        </Badge>
+                      ))}
+                    </div>
 
-                  <Button 
-                    variant="green" size="sm"
-                    className="w-full"
-                    onClick={() => window.location.href = `/markets/${market.id}`}
-                  >
-                    Details anzeigen
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-              })}
+                    <Button 
+                      variant="default"
+                      size="sm"
+                      className="w-full bg-green-600 hover:bg-green-700"
+                      onClick={() => window.location.href = `/markets/${market.id}`}
+                    >
+                      Details anzeigen
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         {/* Empty State */}
