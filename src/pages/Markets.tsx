@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Search, MapPin, Clock, Filter } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import SEOHead from '@/components/SEOHead';
 import { marketData, isMarketOpen, generateSEOKeywords, type Market } from '@/data/marketdata';
 
@@ -11,6 +12,7 @@ const Markets = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDay, setSelectedDay] = useState('');
   const [isListView, setIsListView] = useState(true);
+  const location = useLocation();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
@@ -52,6 +54,34 @@ const Markets = () => {
         keywords={generateSEOKeywords(marketData)}
         canonicalUrl="https://markt-atlas-finden.lovable.app/markets"
       />
+      
+      {/* Navigation */}
+      <nav className="bg-background border-b border-border">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-center space-x-8">
+            <Link
+              to="/"
+              className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                location.pathname === '/' 
+                  ? 'border-primary text-primary' 
+                  : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground'
+              }`}
+            >
+              Startseite
+            </Link>
+            <Link
+              to="/markets"
+              className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                location.pathname === '/markets' 
+                  ? 'border-primary text-primary' 
+                  : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground'
+              }`}
+            >
+              Märkte
+            </Link>
+          </div>
+        </div>
+      </nav>
       
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
