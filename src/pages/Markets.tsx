@@ -179,7 +179,7 @@ const Markets = () => {
                     </div>
                     <Badge 
                       variant={marketIsOpen ? "default" : "secondary"}
-                      className={`ml-2 ${marketIsOpen ? 'bg-green-500 hover:bg-green-600' : 'bg-gray-500 hover:bg-gray-600'}`}
+                      className={`ml-2 ${marketIsOpen ? 'bg-green-100 text-green-700 border-green-200' : 'bg-red-100 text-red-700 border-red-200'}`}
                     >
                       {marketIsOpen ? "Geöffnet" : "Geschlossen"}
                     </Badge>
