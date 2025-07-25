@@ -15,7 +15,7 @@ const Markets = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const location = useLocation();
 
-  // Update current time every minute to keep badges accurate
+// Update current time every minute to keep badges accurate
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
@@ -155,13 +155,7 @@ const Markets = () => {
 
         {/* Markets Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredMarkets.map((market) => {
-
-// Calculate market open status dynamically on each render
-            const marketIsOpen = isMarketOpen(market.openingHours);
-            
-            return (
-      
+          {filteredMarkets.map((market) => (
             <Card key={market.id} className="hover:shadow-lg transition-shadow duration-200">
               <CardHeader>
                 <div className="flex justify-between items-start">
