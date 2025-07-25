@@ -67,7 +67,7 @@ const MarketDetail = () => {
             <div className="flex items-center gap-3">
               <Badge 
                 variant={marketIsOpen ? "default" : "secondary"}
-                className="text-sm px-3 py-1"
+                className={`ml-2 ${marketIsOpen ? 'bg-green-100 text-green-700 border-green-200' : 'bg-red-100 text-red-700 border-red-200'}`}
               >
                 {marketIsOpen ? "Jetzt geöffnet" : "Geschlossen"}
               </Badge>
