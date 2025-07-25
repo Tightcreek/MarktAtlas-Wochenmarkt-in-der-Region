@@ -170,13 +170,12 @@ const MarketDetail = () => {
 
             {/* Contact Information */}
             <Card>
-  <CardHeader>
-    <CardTitle>Kontakt</CardTitle>
-  </CardHeader>
-  <CardContent className="space-y-3">
-    <div className="flex items-center gap-3">
-      <Phone className="h-4 w-4 text-gray-500" /> 
-        <Phone className="h-4 w-4 text-gray-500" />
+              <CardHeader>
+                <CardTitle>Kontakt</CardTitle>
+             </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-3">
+                <Phone className="h-4 w-4 text-gray-500" /> 
                   <span className="text-sm text-gray-700 dark:text-gray-300">
                     {market.phone}
                   </span>
