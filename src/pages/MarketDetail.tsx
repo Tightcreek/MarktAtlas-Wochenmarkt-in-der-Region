@@ -170,30 +170,41 @@ const MarketDetail = () => {
 
             {/* Contact Information */}
             <Card>
-              <CardHeader>
-                <CardTitle>Kontakt</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Phone className="h-4 w-4 text-gray-500" />
-                  <span className="text-sm text-gray-700 dark:text-gray-300">
-                    {market.phone}
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="h-4 w-4 text-gray-500" />
-                  <span className="text-sm text-gray-700 dark:text-gray-300">
-                    {market.email}
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Globe className="h-4 w-4 text-gray-500" />
-                  <span className="text-sm text-gray-700 dark:text-gray-300">
-                    {market.website}
-                  </span>
-                </div>
-              </CardContent>
-            </Card>
+  <CardHeader>
+    <CardTitle>Kontakt</CardTitle>
+  </CardHeader>
+  <CardContent className="space-y-3">
+    <div className="flex items-center gap-3">
+      <Phone className="h-4 w-4 text-gray-500" />
+      <a 
+        href={`tel:${market.phone}`}
+        className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+      >
+        {market.phone}
+      </a>
+    </div>
+    <div className="flex items-center gap-3">
+      <Mail className="h-4 w-4 text-gray-500" />
+      <a 
+        href={`mailto:${market.email}`}
+        className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+      >
+        {market.email}
+      </a>
+    </div>
+    <div className="flex items-center gap-3">
+      <Globe className="h-4 w-4 text-gray-500" />
+      <a 
+        href={market.website}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+      >
+        {market.website}
+      </a>
+    </div>
+  </CardContent>
+</Card>
 
             {/* Address */}
             <Card>
