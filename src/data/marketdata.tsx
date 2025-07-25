@@ -1927,6 +1927,23 @@ export const marketData: Market[] = [
     specialties: ["Westpfälzer Küche", "Schuh-Tradition", "Industrie-Charme"],
     facilities: ["Schloss", "Deutsches Schuhmuseum"],
     transport: "Bus 260, 261 (Schloßplatz)"
+  },
+  {
+    id: "104",
+    name: "Wochenmarkt Gerresheim (Düsseldorf)",
+    address: "Neusser Tor",
+    city: "Düsseldorf",
+    postalCode: "40625",
+    openingHours: "Dienstag 7-18, Donnerstag 7-18, Samstag 7-18",
+    features: ["Lebensmittel", "Dekor", "Käse", "mediterrane Spezialitäten"],
+    isOpen: isMarketOpen("Dienstag 7-18, Donnerstag 7-18, Samstag 7-18"),
+    description: "Der Gerresheimer Markt bietet ein umfangreiches Angebot von Haushaltswaren über Lebensmittel bis zum Dekor. Regionale Spezialitäten sind hier ebenso vertreten wie Altbekanntes. Die langen Öffnungszeiten bis 18 Uhr ermöglichen es auch Berufstätigen, den Markt zu besuchen.",
+    phone: "N/A",
+    email: "N/A",
+    website: "https://duesseldorf-magazin.de/guide/wochenmaerkte-und-troedelmaerkte/wochenmarkt-neusser-tor-gerresheim",
+    specialties: ["Bio", "Regional", "Schmuck", "Fisch"],
+    facilities: ["Traditionsmarkt", "Nachbarschaftscharakter"],
+    transport: "Ab S-Bahnhaltestelle Gerresheim an Bahnsteig 1 in die Straßenbahn 703 einsteigen und bis zur Station Gerresheim Rathhaus fahren. Nach zwei Gehminuten erreicht man den Markt auf der rechten Seite."
   }
 ];
 
