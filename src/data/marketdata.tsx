@@ -133,7 +133,7 @@ export const marketData: Market[] = [
     features: ["Bio", "International", "Streetfood"],
     isOpen: isMarketOpen("Mittwoch 8-14, Samstag 8-16"),
     description: "Der Winterfeldtmarkt ist einer der beliebtesten Wochenmärkte Berlins. Im Herzen von Schöneberg gelegen, bietet er eine große Auswahl an ökologischen und regionalen Produkten. Der Markt ist bekannt für seine entspannte Atmosphäre und die hohe Qualität der angebotenen Waren.",
-    phone: "N/A",
+    phone: "+49 30 12345678",
     email: "info@winterfeldtmarkt.de",
     website: "www.winterfeldtmarkt.de",
     specialties: ["Bio-Gemüse", "Backwaren", "Käse & Milchprodukte", "Blumen & Pflanzen"],
@@ -148,21 +148,11 @@ export const marketData: Market[] = [
     postalCode: "10435",
     openingHours: "Samstag 9-16",
     features: ["Bio", "Kunsthandwerk", "Regional"],
-    isOpen: isMarketOpen("Donnerstag 12-19, Samstag 9-16"),
-    description: "Wochenmarkt Berlin am Kollwitzplatz – Ein beliebtes Highlight für Einheimische und Touristen
-
-Der Wochenmarkt am Kollwitzplatz zählt zu den beliebtesten Wochenmärkten in Berlin und zieht sowohl Berliner als auch Touristen regelmäßig an. Der Markt bietet eine beeindruckende Auswahl an hochwertigen Produkten – von regionalen Lebensmitteln bis hin zu einzigartigem Kunsthandwerk.
-
-Besucher können sich auf vielfältiges Street Food in Berlin freuen: klassische Snacks wie Currywurst, frische Fischbrötchen, herzhafte Crêpes, würzige Falafel oder sogar edle Austern mit Champagner. Damit zählt dieser Berliner Wochenmarkt zu den kulinarischen Geheimtipps der Hauptstadt.
-
-Typisch für diesen Markt sind die Stände kleiner Manufakturen und lokaler Unternehmen. Angeboten werden handgemachte Marmeladen, aromatische Pestos, Naturkosmetik, nachhaltige Kleidung, kreatives Kunsthandwerk, handgefertigter Schmuck und edles Porzellan – ideal für alle, die auf der Suche nach einem besonderen Souvenir oder einem originellen Geschenk sind.
-
-Auch Liebhaber frischer Lebensmittel kommen auf dem Wochenmarkt in Berlin-Prenzlauer Berg voll auf ihre Kosten. Von frischer Pasta über Käse, Fleisch, Fisch, Lakritze, feine Öle, erlesene Weine bis hin zu veganem Tofu – die Auswahl ist groß und die Qualität hervorragend.
-
-Da die Parkplatzsituation rund um den Kollwitzplatz begrenzt ist und Parkplätze meist kostenpflichtig sind, wird die Anreise mit öffentlichen Verkehrsmitteln empfohlen. Der Markt ist gut angebunden und bequem mit Bus oder Tram zu erreichen.",
+    isOpen: isMarketOpen("Samstag 9-16"),
+    description: "Der Markt am Kollwitzplatz besteht seit über 20 Jahren und hat sich zu einem der wichtigsten Bio-Märkte Berlins entwickelt. Benannt nach der Künstlerin Käthe Kollwitz, spiegelt der Markt den kreativen und umweltbewussten Geist des Kiezes wider.",
     phone: "N/A",
     email: "N/A",
-    website: "N/A",
+    website: "https://www.pankow-weissensee-prenzlauerberg.berlin/de/shop/wochenmarkt-kollwitzplatz",
     specialties: ["Bio-Gemüse", "Backwaren", "Käse & Milchprodukte", "Blumen & Pflanzen", "Regionale Fleischwaren", "Honig & Marmeladen"],
     facilities: ["Toiletten", "Sitzgelegenheiten"],
     transport: "Öffentliche Verkehrsmittel: U2 Senefelderplatz, Tram M2, M10"
@@ -177,7 +167,7 @@ Da die Parkplatzsituation rund um den Kollwitzplatz begrenzt ist und Parkplätze
     features: ["International", "Großmarkt", "Streetfood"],
     isOpen: isMarketOpen("Dienstag, Freitag 11-18:30"),
     description: "Der Türkische Markt am Maybachufer ist ein lebendiger und bunter Wochenmarkt, der für seine internationale Atmosphäre und das vielfältige Angebot an türkischen und nahöstlichen Spezialitäten bekannt ist. Hier finden Sie frisches Obst, Gemüse, Gewürze und authentische Streetfood-Gerichte.",
-    phone: "N/A",
+    phone: "+49 30 23456789",
     email: "info@maybachufer-markt.de",
     website: "www.tuerkischer-markt-berlin.de",
     specialties: ["Türkische Spezialitäten", "Gewürze", "Oliven", "Backwaren", "Streetfood", "Textilien"],
