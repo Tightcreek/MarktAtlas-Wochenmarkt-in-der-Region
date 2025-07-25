@@ -48,7 +48,7 @@ const MarketDetail = () => {
         title={`${market.name} - Wochenmarkt in ${market.city} | MarktAtlas`}
         description={`${market.name} in ${market.city}: ${market.description.substring(0, 150)}... Öffnungszeiten: ${market.openingHours}. Spezialitäten: ${market.specialties.join(', ')}.`}
         keywords={`${market.name}, wochenmarkt ${market.city.toLowerCase()}, ${market.features.join(', ')}, ${market.specialties.join(', ')}`}
-        canonicalUrl={`https://markt-atlas-finden.lovable.app/markets/${market.id}`}
+        canonicalUrl={`https://markt-atlas-finden.lovable.app/markets/${market.name}`}
       />
 
       <div className="container mx-auto px-4 py-8">
