@@ -61,7 +61,7 @@ const MarketDetail = () => {
               className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
             >
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform duration-200" />
-              Zurück zur Marktübersicht
+              <span>Zurück zur Marktübersicht</span>
             </button>
           </div>
 
