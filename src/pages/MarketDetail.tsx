@@ -169,16 +169,19 @@ const MarketDetail = () => {
             </Card>
 
             {/* Contact Information */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Kontakt</CardTitle>
-             </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-gray-500" /> 
-                  <span className="text-sm text-gray-700 dark:text-gray-300">
-                    {market.phone}
-                  </span>
+<Card>
+  <CardHeader>
+    <CardTitle>Kontakt</CardTitle>
+  </CardHeader>
+  <CardContent className="space-y-3">
+    <div className="flex items-center gap-3">
+      <Phone className="h-4 w-4 text-gray-500" />
+      <a 
+        href={`tel:${market.phone}`}
+        className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+      >
+        {market.phone}
+      </a>
     </div>
     <div className="flex items-center gap-3">
       <Mail className="h-4 w-4 text-gray-500" />
@@ -192,10 +195,10 @@ const MarketDetail = () => {
     <div className="flex items-center gap-3">
       <Globe className="h-4 w-4 text-gray-500" />
       <a 
-        href={market.website}
+        href={market.website.startsWith('http') ? market.website : `https://${market.website}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+        className="text-sm text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
       >
         {market.website}
       </a>
