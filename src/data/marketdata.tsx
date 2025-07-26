@@ -2045,7 +2045,7 @@ export const marketData: Market[] = [
     postalCode: "44137",
     openingHours: "Mittwoch 7-14:00, Freitag 8-15:00, Samstag 7-15:00",
     features: ["Regional", "Produkte", "Imbisse", "Blumen"],
-    isOpen: "isMarketOpen(\"Mittwoch 7-14:00, Freitag 8-15:00, Samstag 7-15:00\")",
+    isOpen: "isMarketOpen("Mittwoch 7-14:00, Freitag 8-15:00, Samstag 7-15:00")",
     description: "Der Hauptwochenmarkt auf dem Hansaplatz ist der größte Wochenmarkt in Dortmund mit einem vielfältigen Angebot an frischen Lebensmitteln, regionalen Produkten und Blumen.",
     phone: "N/A",
     email: "N/A",
