@@ -58,7 +58,7 @@ const MarketDetail = () => {
           <div className="mb-4">
             <button 
               onClick={() => window.location.href = '/markets'}
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+              className="flex items-center gap-1 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
             >
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform duration-200" />
               <span>Zurück zur Marktübersicht</span>
