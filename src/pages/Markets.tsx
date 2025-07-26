@@ -208,7 +208,7 @@ const Markets = () => {
                       variant="default"
                       size="sm"
                       className="w-full bg-green-600 hover:bg-green-700"
-                      onClick={() => window.location.href = `/market/${market.slug}`}
+                      onClick={() => window.location.href = `/markets/${market.id}`}
                     >
                       Details anzeigen
                     </Button>

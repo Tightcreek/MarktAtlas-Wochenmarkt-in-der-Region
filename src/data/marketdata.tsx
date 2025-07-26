@@ -3,7 +3,6 @@
 
 export interface Market {
   id: string;
-  slug: string;
   name: string;
   address: string;
   city: string;
@@ -51,44 +50,52 @@ export const isMarketOpen = (openingHours: string): boolean => {
     const timeMatch = timePart.match(/(\d{1,2}):?(\d{0,2})-(\d{1,2}):?(\d{0,2})/);
     if (!timeMatch) continue;
     
-    let startHour = parseInt(timeMatch[1]);
-    let startMin = timeMatch[2] ? parseInt(timeMatch[2]) : 0;
-    let endHour = parseInt(timeMatch[3]);
-    let endMin = timeMatch[4] ? parseInt(timeMatch[4]) : 0;
+    const startHour = parseInt(timeMatch[1]);
+    const startMin = parseInt(timeMatch[2] || '0');
+    const endHour = parseInt(timeMatch[3]);
+    const endMin = parseInt(timeMatch[4] || '0');
     
-    const openTime = startHour * 100 + startMin;
-    const closeTime = endHour * 100 + endMin;
+    const startTime = startHour * 100 + startMin;
+    const endTime = endHour * 100 + endMin;
     
-    // Parse days (e.g., "Mi", "Mo-Sa", "Mi-Fr")
+    // Handle day ranges (e.g., "Mo-Fr") or single days
     if (daysPart.includes('-')) {
-      // Range of days (e.g., "Mo-Sa")
-      const [startDay, endDay] = daysPart.split('-');
-      const startDayNum = dayMap[startDay];
-      const endDayNum = dayMap[endDay];
+      const [startDayStr, endDayStr] = daysPart.split('-');
+      const startDay = dayMap[startDayStr];
+      const endDay = dayMap[endDayStr];
       
-      if (startDayNum !== undefined && endDayNum !== undefined) {
+      if (startDay !== undefined && endDay !== undefined) {
+        // Check if current day is in the range
         let dayInRange = false;
-        if (startDayNum <= endDayNum) {
-          dayInRange = currentDay >= startDayNum && currentDay <= endDayNum;
+        if (startDay <= endDay) {
+          dayInRange = currentDay >= startDay && currentDay <= endDay;
         } else {
-          // Handle wrap-around (e.g., Sa-Mo)
-          dayInRange = currentDay >= startDayNum || currentDay <= endDayNum;
+          // Handle week wrap-around (e.g., Sa-Mo)
+          dayInRange = currentDay >= startDay || currentDay <= endDay;
         }
         
-        if (dayInRange && currentTime >= openTime && currentTime < closeTime) {
+        if (dayInRange && currentTime >= startTime && currentTime <= endTime) {
           return true;
         }
       }
     } else {
-      // Single day (e.g., "Mi")
-      const dayNum = dayMap[daysPart];
-      if (dayNum === currentDay && currentTime >= openTime && currentTime < closeTime) {
-        return true;
+      // Handle single days or multiple days separated by spaces
+      const days = daysPart.split(/\s+/);
+      for (const dayStr of days) {
+        const day = dayMap[dayStr];
+        if (day === currentDay && currentTime >= startTime && currentTime <= endTime) {
+          return true;
+        }
       }
     }
   }
   
   return false;
+};
+
+// Helper function to get market by ID
+export const getMarketById = (id: string): Market | undefined => {
+  return marketData.find(market => market.id === id);
 };
 
 // Helper function to generate SEO keywords from markets
@@ -118,7 +125,6 @@ export const marketData: Market[] = [
   // Berlin Markets
   {
     id: "1",
-    slug: "winterfeldtmarkt-berlin",
     name: "Winterfeldtmarkt",
     address: "Winterfeldtplatz",
     city: "Berlin",
@@ -136,7 +142,6 @@ export const marketData: Market[] = [
   },
   {
     id: "2",
-    slug: "kollwitzplatz-berlin",
     name: "Kollwitzplatz",
     address: "Kollwitzplatz",
     city: "Berlin",
@@ -154,7 +159,6 @@ export const marketData: Market[] = [
   },
   {
     id: "3",
-    slug: "maybachufer-berlin",
     name: "Maybachufer",
     address: "Maybachufer, Neukölln",
     city: "Berlin",
@@ -172,7 +176,6 @@ export const marketData: Market[] = [
   },
   {
     id: "4",
-    slug: "boxhagener-platz-berlin",
     name: "Boxhagener Platz",
     address: "Boxhagener Platz",
     city: "Berlin",
@@ -190,7 +193,6 @@ export const marketData: Market[] = [
   },
   {
     id: "5",
-    slug: "arkonaplatz-berlin",
     name: "Arkonaplatz",
     address: "Arkonaplatz",
     city: "Berlin",
@@ -206,11 +208,61 @@ export const marketData: Market[] = [
     facilities: ["Fahrradständer"],
     transport: "U-Bahn: Bernauer Straße (U8), Tram M1, M12"
   },
+  {
+    id: "6",
+    name: "Mexikoplatz",
+    address: "Mexikoplatz",
+    city: "Berlin",
+    postalCode: "14163",
+    openingHours: "Samstag 9-15",
+    features: ["Bio", "Kunsthandwerk", "Dorf-Atmosphäre"],
+    isOpen: isMarketOpen("Samstag 9-15"),
+    description: "Der Wochenmarkt am Mexikoplatz in Zehlendorf verkörpert das dörfliche Flair des Stadtteils. Mit seinem Fokus auf Bio-Produkte und Kunsthandwerk bietet er eine gemütliche Alternative zu den größeren Märkten der Innenstadt.",
+    phone: "+49 30 56789012",
+    email: "info@mexikoplatz-markt.de",
+    website: "www.mexikoplatz-markt.de",
+    specialties: ["Bio-Produkte", "Kunsthandwerk", "Blumen", "Backwaren", "Lokale Erzeugnisse"],
+    facilities: ["Toiletten", "Sitzgelegenheiten", "Fahrradständer"],
+    transport: "S-Bahn: Mexikoplatz (S1), Bus 112, 115"
+  },
+  {
+    id: "7",
+    name: "Karl-August-Platz",
+    address: "Karl-August-Platz",
+    city: "Berlin",
+    postalCode: "10625",
+    openingHours: "Mittwoch 8-13, Samstag 8-14",
+    features: ["Blumen", "Gemüse", "Feinkost"],
+    isOpen: isMarketOpen("Mittwoch 8-13, Samstag 8-14"),
+    description: "Der traditionelle Wochenmarkt am Karl-August-Platz in Charlottenburg ist bekannt für sein umfangreiches Angebot an frischen Blumen, Gemüse und Feinkost. Ein etablierter Markt mit langjährigen Händlern und treuer Kundschaft.",
+    phone: "+49 30 67890123",
+    email: "info@karl-august-markt.de",
+    website: "www.karl-august-markt.de",
+    specialties: ["Blumen", "Frisches Gemüse", "Feinkost", "Backwaren", "Milchprodukte"],
+    facilities: ["Toiletten", "Fahrradständer"],
+    transport: "U-Bahn: Sophie-Charlotte-Platz (U2), Bus M45"
+  },
+  {
+    id: "8",
+    name: "DIE DICKE LINDA",
+    address: "Kranoldplatz, Neukölln",
+    city: "Berlin",
+    postalCode: "12051",
+    openingHours: "Samstag 10-16",
+    features: ["Regional", "Bio", "Musik", "Streetfood"],
+    isOpen: isMarketOpen("Samstag 10-16"),
+    description: "DIE DICKE LINDA am Kranoldplatz ist mehr als nur ein Wochenmarkt - es ist ein kultureller Treffpunkt mit Live-Musik, regionalen Bio-Produkten und kreativen Streetfood-Ständen. Ein lebendiger Markt, der Gemeinschaft und Nachhaltigkeit vereint.",
+    phone: "+49 30 78901234",
+    email: "info@dickielinda.de",
+    website: "www.dickielinda.de",
+    specialties: ["Bio-Produkte", "Streetfood", "Handwerk", "Lokale Erzeugnisse", "Vintage"],
+    facilities: ["Musik-Bühne", "Sitzgelegenheiten", "Toiletten"],
+    transport: "S-Bahn: Lichterfelde Süd, Bus 187, 284"
+  },
 
   // Hamburg Markets
   {
-    id: "6",
-    slug: "isemarkt-hamburg",
+    id: "9",
     name: "Isemarkt",
     address: "Isestraße/Hoheluft",
     city: "Hamburg",
@@ -227,8 +279,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Hoheluftbrücke (U3), Bus 5, 15"
   },
   {
-    id: "7",
-    slug: "grossneumarkt-hamburg",
+    id: "10",
     name: "Großneumarkt",
     address: "Großneumarkt",
     city: "Hamburg",
@@ -245,8 +296,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Gänsemarkt (U2), Bus 35, 36"
   },
   {
-    id: "8",
-    slug: "fischmarkt-hamburg",
+    id: "11",
     name: "Fischmarkt",
     address: "Große Elbstraße 9",
     city: "Hamburg",
@@ -263,8 +313,7 @@ export const marketData: Market[] = [
     transport: "S-Bahn: Reeperbahn (S1, S3), Bus 112"
   },
   {
-    id: "9",
-    slug: "goldbekmarkt-hamburg",
+    id: "12",
     name: "Goldbekmarkt",
     address: "Goldbekplatz",
     city: "Hamburg",
@@ -281,8 +330,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Kellinghusenstraße (U3), Bus 6, 25"
   },
   {
-    id: "10",
-    slug: "billstedt-hamburg",
+    id: "13",
     name: "Billstedt",
     address: "Möllner Landstraße",
     city: "Hamburg",
@@ -301,8 +349,7 @@ export const marketData: Market[] = [
 
   // München Markets
   {
-    id: "11",
-    slug: "viktualienmarkt-muenchen",
+    id: "14",
     name: "Viktualienmarkt",
     address: "Viktualienmarkt",
     city: "München",
@@ -319,8 +366,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn/S-Bahn: Marienplatz, U3/U6 Marienplatz"
   },
   {
-    id: "12",
-    slug: "josephsplatz-muenchen",
+    id: "15",
     name: "Josephsplatz",
     address: "Josephsplatz",
     city: "München",
@@ -339,8 +385,7 @@ export const marketData: Market[] = [
 
   // München Markets (continued)
   {
-    id: "13",
-    slug: "mariahilfplatz-muenchen",
+    id: "16",
     name: "Mariahilfplatz",
     address: "Mariahilfplatz",
     city: "München",
@@ -357,8 +402,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Kolumbusplatz (U1, U2), Bus 52"
   },
   {
-    id: "14",
-    slug: "elisenhof-muenchen",
+    id: "17",
     name: "Elisenhof",
     address: "Prielmayerstraße",
     city: "München",
@@ -377,8 +421,7 @@ export const marketData: Market[] = [
 
   // Frankfurt Markets
   {
-    id: "15",
-    slug: "konstablerwache-frankfurt",
+    id: "21",
     name: "Konstablerwache",
     address: "Konstablerwache",
     city: "Frankfurt",
@@ -395,8 +438,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Konstablerwache (U1-U5), S-Bahn: Konstablerwache"
   },
   {
-    id: "16",
-    slug: "bornheim-markt-frankfurt",
+    id: "22",
     name: "Bornheim Markt",
     address: "Berger Straße",
     city: "Frankfurt",
@@ -413,8 +455,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Bornheim Mitte (U4), Tram 12"
   },
   {
-    id: "17",
-    slug: "sachsenhausen-markt-frankfurt",
+    id: "23",
     name: "Sachsenhausen Markt",
     address: "Diesterwegplatz",
     city: "Frankfurt",
@@ -433,8 +474,7 @@ export const marketData: Market[] = [
 
   // Stuttgart Markets
   {
-    id: "18",
-    slug: "schillerplatz-stuttgart",
+    id: "24",
     name: "Schillerplatz",
     address: "Schillerplatz",
     city: "Stuttgart",
@@ -451,8 +491,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Charlottenplatz (U1-U4), S-Bahn: Stadtmitte"
   },
   {
-    id: "19",
-    slug: "marktplatz-stuttgart",
+    id: "25",
     name: "Marktplatz Stuttgart",
     address: "Marktplatz",
     city: "Stuttgart",
@@ -471,8 +510,7 @@ export const marketData: Market[] = [
 
   // Düsseldorf Markets
   {
-    id: "20",
-    slug: "carlsplatz-duesseldorf",
+    id: "26",
     name: "Carlsplatz",
     address: "Carlsplatz",
     city: "Düsseldorf",
@@ -489,8 +527,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Heinrich-Heine-Allee (U70-U79), S-Bahn: Hauptbahnhof"
   },
   {
-    id: "21",
-    slug: "friedrichstadt-markt-duesseldorf",
+    id: "27",
     name: "Friedrichstadt Markt",
     address: "Friedrichstraße",
     city: "Düsseldorf",
@@ -507,10 +544,1357 @@ export const marketData: Market[] = [
     transport: "S-Bahn: Friedrichstadt (S1, S6), Bus 722"
   },
 
+  // Leipzig Markets
+  {
+    id: "28",
+    name: "Markt Leipzig",
+    address: "Marktplatz",
+    city: "Leipzig",
+    postalCode: "04109",
+    openingHours: "Dienstag, Donnerstag, Samstag 9-16",
+    features: ["Historisch", "Zentral"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 9-16"),
+    description: "Traditionsreicher Markt auf dem historischen Marktplatz vor dem Rathaus.",
+    phone: "+49 341 12345678",
+    email: "info@markt-leipzig.de",
+    website: "www.markt-leipzig.de",
+    specialties: ["Sächsische Spezialitäten", "Gemüse", "Blumen", "Handwerk"],
+    facilities: ["Historisches Rathaus", "Nikolaikirche"],
+    transport: "Tram 2, 8, 9, 10, 11 (Augustusplatz), S-Bahn: Markt"
+  },
+
+  // Dresden Markets
+  {
+    id: "29",
+    name: "Lingnermarkt",
+    address: "Lingnerplatz",
+    city: "Dresden",
+    postalCode: "01069",
+    openingHours: "Samstag 8-12",
+    features: ["Bio", "Regional"],
+    isOpen: isMarketOpen("Samstag 8-12"),
+    description: "Biomarkt auf dem Lingnerplatz mit Fokus auf regionale Erzeugnisse.",
+    phone: "+49 351 12345678",
+    email: "info@lingnermarkt.de",
+    website: "www.lingnermarkt-dresden.de",
+    specialties: ["Bio-Produkte", "Regionale Waren", "Handwerk"],
+    facilities: ["Parkanlage", "Elbblick"],
+    transport: "Tram 1, 2, 4 (Pirnaischer Platz), Bus 62"
+  },
+
+  // Hannover Markets
+  {
+    id: "30",
+    name: "Marktplatz Hannover",
+    address: "Marktplatz",
+    city: "Hannover",
+    postalCode: "30159",
+    openingHours: "Dienstag, Freitag 8-14, Samstag 8-15",
+    features: ["Zentral", "Groß"],
+    isOpen: isMarketOpen("Dienstag, Freitag 8-14, Samstag 8-15"),
+    description: "Hannovers größter Wochenmarkt direkt vor dem Rathaus.",
+    phone: "+49 511 12345678",
+    email: "info@marktplatz-hannover.de",
+    website: "www.marktplatz-hannover.de",
+    specialties: ["Niedersächsische Produkte", "Blumen", "Gemüse", "Feinkost"],
+    facilities: ["Rathaus", "Markthalle"],
+    transport: "S-Bahn: Kröpcke, U-Bahn: Kröpcke (U1-U3)"
+  },
+
+  // Nürnberg Markets
+  {
+    id: "31",
+    name: "Hauptmarkt Nürnberg",
+    address: "Hauptmarkt",
+    city: "Nürnberg",
+    postalCode: "90403",
+    openingHours: "Montag-Samstag 7-18",
+    features: ["Historisch", "Groß"],
+    isOpen: isMarketOpen("Montag-Samstag 7-18"),
+    description: "Historischer Markt auf dem berühmten Hauptmarkt mit der Frauenkirche.",
+    phone: "+49 911 12345678",
+    email: "info@hauptmarkt-nuernberg.de",
+    website: "www.hauptmarkt-nuernberg.de",
+    specialties: ["Fränkische Spezialitäten", "Lebkuchen", "Bratwurst", "Gemüse"],
+    facilities: ["Frauenkirche", "Schöner Brunnen"],
+    transport: "U-Bahn: Lorenzkirche (U1), Tram 4, 6, 8"
+  },
+
+  // Bremen Markets
+  {
+    id: "32",
+    name: "Marktplatz Bremen",
+    address: "Marktplatz",
+    city: "Bremen",
+    postalCode: "28195",
+    openingHours: "Montag-Samstag 8-14",
+    features: ["UNESCO-Welterbe", "Zentral"],
+    isOpen: isMarketOpen("Montag-Samstag 8-14"),
+    description: "Markt auf dem UNESCO-Welterbe Marktplatz vor dem historischen Rathaus.",
+    phone: "+49 421 12345678",
+    email: "info@marktplatz-bremen.de",
+    website: "www.marktplatz-bremen.de",
+    specialties: ["Norddeutsche Spezialitäten", "Fisch", "Gemüse", "Blumen"],
+    facilities: ["UNESCO-Welterbe", "Rathaus", "Roland"],
+    transport: "Tram 2, 3, 4, 5, 6, 8 (Domsheide)"
+  },
+
+  // Essen Markets
+  {
+    id: "33",
+    name: "Marktplatz Essen",
+    address: "Marktplatz",
+    city: "Essen",
+    postalCode: "45127",
+    openingHours: "Dienstag, Donnerstag, Samstag 8-14",
+    features: ["Zentral", "Traditionsmarkt"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-14"),
+    description: "Traditioneller Wochenmarkt im Herzen der Kulturhauptstadt.",
+    phone: "+49 201 12345678",
+    email: "info@marktplatz-essen.de",
+    website: "www.marktplatz-essen.de",
+    specialties: ["Ruhrgebiet-Spezialitäten", "Gemüse", "Backwaren"],
+    facilities: ["Marktkirche", "Rathaus"],
+    transport: "U-Bahn: Hauptbahnhof (U11-U18), S-Bahn: Hauptbahnhof"
+  },
+
+  // Dortmund Markets
+  {
+    id: "34",
+    name: "Hansaplatz",
+    address: "Hansaplatz",
+    city: "Dortmund",
+    postalCode: "44137",
+    openingHours: "Dienstag, Freitag, Samstag 8-14",
+    features: ["Groß", "Zentral"],
+    isOpen: isMarketOpen("Dienstag, Freitag, Samstag 8-14"),
+    description: "Dortmunds größter Wochenmarkt mit über 170 Ständen.",
+    phone: "+49 231 12345678",
+    email: "info@hansaplatz-markt.de",
+    website: "www.hansaplatz-dortmund.de",
+    specialties: ["Westfälische Spezialitäten", "Internationale Küche", "Blumen"],
+    facilities: ["Große Auswahl", "Parkplätze"],
+    transport: "U-Bahn: Hansaplatz (U41-U49), Bus 440, 445"
+  },
+
+  // Weitere deutsche Städte
+  {
+    id: "35",
+    name: "Marktplatz Augsburg",
+    address: "Marktplatz",
+    city: "Augsburg",
+    postalCode: "86150",
+    openingHours: "Mittwoch, Samstag 7-13",
+    features: ["Historisch", "Fuggerei"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 7-13"),
+    description: "Historischer Markt in der Fuggerstadt vor dem Renaissance-Rathaus.",
+    phone: "+49 821 12345678",
+    email: "info@markt-augsburg.de",
+    website: "www.markt-augsburg.de",
+    specialties: ["Schwäbische Küche", "Regionale Produkte", "Handwerk"],
+    facilities: ["Renaissance-Rathaus", "Perlachturm"],
+    transport: "Tram 1, 2, 3 (Rathausplatz), Bus 22, 23"
+  },
+  {
+    id: "36",
+    name: "Marktplatz Regensburg",
+    address: "Neupfarrplatz",
+    city: "Regensburg",
+    postalCode: "93047",
+    openingHours: "Samstag 6-14",
+    features: ["UNESCO-Welterbe", "Mittelalterlich"],
+    isOpen: isMarketOpen("Samstag 6-14"),
+    description: "Markt in der UNESCO-Welterbe-Altstadt mit mittelalterlichem Flair.",
+    phone: "+49 941 12345678",
+    email: "info@markt-regensburg.de",
+    website: "www.markt-regensburg.de",
+    specialties: ["Bayerische Spezialitäten", "Donau-Fisch", "Regensburger Wurst"],
+    facilities: ["Mittelalterliche Altstadt", "Dom"],
+    transport: "Bus 1, 2, 3, 11 (Neupfarrplatz)"
+  },
+  {
+    id: "37",
+    name: "Marktplatz Würzburg",
+    address: "Marktplatz",
+    city: "Würzburg",
+    postalCode: "97070",
+    openingHours: "Dienstag, Donnerstag, Samstag 7-14",
+    features: ["Weinstadt", "Fränkisch"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 7-14"),
+    description: "Markt in der Weinstadt am Fuße der Festung Marienberg.",
+    phone: "+49 931 12345678",
+    email: "info@markt-wuerzburg.de",
+    website: "www.markt-wuerzburg.de",
+    specialties: ["Fränkischer Wein", "Regionale Spezialitäten", "Gemüse"],
+    facilities: ["Marienkapelle", "Festungsblick"],
+    transport: "Tram 1, 3, 5 (Marktplatz), Bus 9, 14"
+  },
+  {
+    id: "38",
+    name: "Marktplatz Heidelberg",
+    address: "Marktplatz",
+    city: "Heidelberg",
+    postalCode: "69117",
+    openingHours: "Mittwoch, Samstag 7-14",
+    features: ["Romantisch", "Universitätsstadt"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 7-14"),
+    description: "Romantischer Markt in der Universitätsstadt am Neckar.",
+    phone: "+49 6221 12345678",
+    email: "info@markt-heidelberg.de",
+    website: "www.markt-heidelberg.de",
+    specialties: ["Neckar-Spezialitäten", "Universitäts-Charme", "Blumen"],
+    facilities: ["Heiliggeistkirche", "Schlossblick"],
+    transport: "Tram 5, 21, 22 (Marktplatz), Bus 31, 32"
+  },
+  {
+    id: "39",
+    name: "Marktplatz Mannheim",
+    address: "Marktplatz G1",
+    city: "Mannheim",
+    postalCode: "68159",
+    openingHours: "Dienstag, Donnerstag, Samstag 7-14",
+    features: ["Quadratestadt", "Modern"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 7-14"),
+    description: "Moderner Markt in der Quadratestadt mit internationaler Ausstrahlung.",
+    phone: "+49 621 12345678",
+    email: "info@markt-mannheim.de",
+    website: "www.markt-mannheim.de",
+    specialties: ["Internationale Küche", "Kurpfälzer Spezialitäten"],
+    facilities: ["Barockschloss", "Wasserturm"],
+    transport: "S-Bahn: Hauptbahnhof, Tram 1, 3, 7 (Paradeplatz)"
+  },
+  {
+    id: "40",
+    name: "Marktplatz Karlsruhe",
+    address: "Marktplatz",
+    city: "Karlsruhe",
+    postalCode: "76133",
+    openingHours: "Mittwoch, Samstag 7-14",
+    features: ["Fächerstadt", "Schloss"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 7-14"),
+    description: "Markt in der Fächerstadt vor dem Barockschloss.",
+    phone: "+49 721 12345678",
+    email: "info@markt-karlsruhe.de",
+    website: "www.markt-karlsruhe.de",
+    specialties: ["Badische Küche", "Schwarzwald-Produkte", "Wein"],
+    facilities: ["Barockschloss", "Pyramide"],
+    transport: "S-Bahn: Marktplatz, Tram 2, 3, 4, 5 (Marktplatz)"
+  },
+
+  // Norddeutsche Märkte
+  {
+    id: "41",
+    name: "Lübeck Markt",
+    address: "Marktplatz",
+    city: "Lübeck",
+    postalCode: "23552",
+    openingHours: "Montag, Donnerstag 7-14",
+    features: ["Hansestadt", "UNESCO"],
+    isOpen: isMarketOpen("Montag, Donnerstag 7-14"),
+    description: "Hanseatischer Markt in der UNESCO-Welterbe-Altstadt.",
+    phone: "+49 451 12345678",
+    email: "info@markt-luebeck.de",
+    website: "www.markt-luebeck.de",
+    specialties: ["Marzipan", "Fisch", "Hanseatische Spezialitäten"],
+    facilities: ["Rathaus", "Marienkirche"],
+    transport: "Bus 5, 6, 11, 12 (Koberg)"
+  },
+  {
+    id: "42",
+    name: "Rostock Markt",
+    address: "Neuer Markt",
+    city: "Rostock",
+    postalCode: "18055",
+    openingHours: "Dienstag, Donnerstag, Samstag 8-15",
+    features: ["Hansestadt", "Ostsee"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-15"),
+    description: "Traditionsmarkt in der Hansestadt an der Ostsee.",
+    phone: "+49 381 12345678",
+    email: "info@markt-rostock.de",
+    website: "www.markt-rostock.de",
+    specialties: ["Ostseefisch", "Mecklenburgische Küche", "Sanddorn"],
+    facilities: ["Rathaus", "Marienkirche"],
+    transport: "S-Bahn: Hauptbahnhof, Tram 1, 2, 3 (Neuer Markt)"
+  },
+  {
+    id: "43",
+    name: "Kiel Markt",
+    address: "Exerzierplatz",
+    city: "Kiel",
+    postalCode: "24103",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Seestadt", "Kieler Woche"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Maritimer Markt in der Landeshauptstadt Schleswig-Holsteins.",
+    phone: "+49 431 12345678",
+    email: "info@markt-kiel.de",
+    website: "www.markt-kiel.de",
+    specialties: ["Frischer Fisch", "Kieler Sprotten", "Holsteiner Spezialitäten"],
+    facilities: ["Hafen-Nähe", "Kieler Förde"],
+    transport: "Bus 11, 12, 21, 22 (Exerzierplatz)"
+  },
+  {
+    id: "44",
+    name: "Oldenburg Markt",
+    address: "Marktplatz",
+    city: "Oldenburg",
+    postalCode: "26122",
+    openingHours: "Freitag, Samstag 8-14",
+    features: ["Residenzstadt"],
+    isOpen: isMarketOpen("Freitag, Samstag 8-14"),
+    description: "Residenzstädtischer Markt mit norddeutschem Charme.",
+    phone: "+49 441 12345678",
+    email: "info@markt-oldenburg.de",
+    website: "www.markt-oldenburg.de",
+    specialties: ["Oldenburger Spezialitäten", "Gemüse", "Kunsthandwerk"],
+    facilities: ["Schloss", "Lappan"],
+    transport: "Bus 301, 302, 303 (Schlossplatz)"
+  },
+
+  // Ostdeutsche Märkte
+  {
+    id: "45",
+    name: "Erfurt Markt",
+    address: "Domplatz",
+    city: "Erfurt",
+    postalCode: "99084",
+    openingHours: "Mittwoch, Samstag 8-15",
+    features: ["Dom", "Mittelalterlich"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-15"),
+    description: "Mittelalterlicher Markt vor dem imposanten Dom und der Severikirche.",
+    phone: "+49 361 12345678",
+    email: "info@markt-erfurt.de",
+    website: "www.markt-erfurt.de",
+    specialties: ["Thüringer Rostbratwurst", "Regionale Produkte", "Kräuter"],
+    facilities: ["Dom", "Severikirche", "Domstufenfestspiele"],
+    transport: "Tram 1, 3, 4, 5 (Domplatz)"
+  },
+  {
+    id: "46",
+    name: "Weimar Markt",
+    address: "Marktplatz",
+    city: "Weimar",
+    postalCode: "99423",
+    openingHours: "Dienstag, Donnerstag, Samstag 8-13",
+    features: ["Kulturstadt", "Goethe"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-13"),
+    description: "Kulturhistorischer Markt in der Stadt der Dichter und Denker.",
+    phone: "+49 3643 12345678",
+    email: "info@markt-weimar.de",
+    website: "www.markt-weimar.de",
+    specialties: ["Thüringer Spezialitäten", "Kulturprodukte", "Bücher"],
+    facilities: ["Stadthaus", "Goethe-Museum"],
+    transport: "Bus 1, 2, 3, 6 (Goetheplatz)"
+  },
+  {
+    id: "47",
+    name: "Jena Markt",
+    address: "Marktplatz",
+    city: "Jena",
+    postalCode: "07743",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Universitätsstadt", "Optik"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Universitätsmarkt in der Stadt der Optik und Präzision.",
+    phone: "+49 3641 12345678",
+    email: "info@markt-jena.de",
+    website: "www.markt-jena.de",
+    specialties: ["Studentenfreundlich", "Thüringer Küche", "Bio-Produkte"],
+    facilities: ["Rathaus", "Universitäts-Nähe"],
+    transport: "Tram 2, 3, 4 (Markt), Bus 10, 11"
+  },
+  {
+    id: "48",
+    name: "Magdeburg Markt",
+    address: "Alten Markt",
+    city: "Magdeburg",
+    postalCode: "39104",
+    openingHours: "Dienstag, Freitag, Samstag 8-15",
+    features: ["Ottostadt", "Elbe"],
+    isOpen: isMarketOpen("Dienstag, Freitag, Samstag 8-15"),
+    description: "Traditioneller Markt in der Ottostadt an der Elbe.",
+    phone: "+49 391 12345678",
+    email: "info@markt-magdeburg.de",
+    website: "www.markt-magdeburg.de",
+    specialties: ["Sachsen-Anhalt Produkte", "Elbfisch", "Regionale Küche"],
+    facilities: ["Rathaus", "Dom", "Elbe-Nähe"],
+    transport: "Tram 1, 2, 8, 9 (Alter Markt)"
+  },
+  {
+    id: "49",
+    name: "Halle Markt",
+    address: "Marktplatz",
+    city: "Halle",
+    postalCode: "06108",
+    openingHours: "Dienstag, Donnerstag, Samstag 8-15",
+    features: ["Händel-Stadt", "Salz"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-15"),
+    description: "Markt in der Händel-Stadt mit salziger Tradition.",
+    phone: "+49 345 12345678",
+    email: "info@markt-halle.de",
+    website: "www.markt-halle.de",
+    specialties: ["Halloren-Schokolade", "Salzige Spezialitäten", "Musik"],
+    facilities: ["Marktkirche", "Händel-Haus"],
+    transport: "Tram 2, 3, 7, 9 (Marktplatz)"
+  },
+  {
+    id: "50",
+    name: "Chemnitz Markt",
+    address: "Marktplatz",
+    city: "Chemnitz",
+    postalCode: "09111",
+    openingHours: "Montag, Mittwoch, Freitag 8-14",
+    features: ["Industriestadt", "Modern"],
+    isOpen: isMarketOpen("Montag, Mittwoch, Freitag 8-14"),
+    description: "Moderner Markt in der sächsischen Industriestadt.",
+    phone: "+49 371 12345678",
+    email: "info@markt-chemnitz.de",
+    website: "www.markt-chemnitz.de",
+    specialties: ["Sächsische Küche", "Industrieller Charme", "Handwerk"],
+    facilities: ["Rathaus", "Opera"],
+    transport: "Tram 2, 3, 4 (Zentralhaltestelle)"
+  },
+
+  // Rheinland-Pfalz / Saarland
+  {
+    id: "51",
+    name: "Mainz Markt",
+    address: "Marktplatz",
+    city: "Mainz",
+    postalCode: "55116",
+    openingHours: "Dienstag, Freitag, Samstag 7-14",
+    features: ["Rhein", "Wein", "Dom"],
+    isOpen: isMarketOpen("Dienstag, Freitag, Samstag 7-14"),
+    description: "Weinmarkt am Rhein vor dem berühmten Dom.",
+    phone: "+49 6131 12345678",
+    email: "info@markt-mainz.de",
+    website: "www.markt-mainz.de",
+    specialties: ["Rheinhessischer Wein", "Rhein-Spezialitäten", "Dom-Ambiente"],
+    facilities: ["Dom", "Rhein-Nähe", "Gutenberg-Museum"],
+    transport: "Bus 6, 9, 10, 11 (Markt)"
+  },
+  {
+    id: "52",
+    name: "Koblenz Markt",
+    address: "Zentralplatz",
+    city: "Koblenz",
+    postalCode: "56068",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Deutsches Eck", "UNESCO"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Markt am Deutschen Eck im UNESCO-Welterbe Oberes Mittelrheintal.",
+    phone: "+49 261 12345678",
+    email: "info@markt-koblenz.de",
+    website: "www.markt-koblenz.de",
+    specialties: ["Rheinische Küche", "Mosel-Wein", "UNESCO-Flair"],
+    facilities: ["Deutsches Eck", "Kaiser-Wilhelm-Denkmal"],
+    transport: "Bus 1, 2, 3 (Zentralplatz)"
+  },
+  {
+    id: "53",
+    name: "Saarbrücken Markt",
+    address: "St. Johanner Markt",
+    city: "Saarbrücken",
+    postalCode: "66111",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Französisch", "Grenzregion"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Französisch inspirierter Markt in der Grenzregion.",
+    phone: "+49 681 12345678",
+    email: "info@markt-saarbruecken.de",
+    website: "www.markt-saarbruecken.de",
+    specialties: ["Französische Spezialitäten", "Grenz-Küche", "Saarländisches"],
+    facilities: ["Ludwigskirche", "Grenzregion-Flair"],
+    transport: "Bus 1, 2, 3 (St. Johanner Markt)"
+  },
+  {
+    id: "54",
+    name: "Trier Markt",
+    address: "Hauptmarkt",
+    city: "Trier",
+    postalCode: "54290",
+    openingHours: "Montag-Samstag 9-18",
+    features: ["Römisch", "UNESCO", "Älteste Stadt"],
+    isOpen: isMarketOpen("Montag-Samstag 9-18"),
+    description: "Römischer Markt in Deutschlands ältester Stadt.",
+    phone: "+49 651 12345678",
+    email: "info@markt-trier.de",
+    website: "www.markt-trier.de",
+    specialties: ["Römische Tradition", "Mosel-Wein", "Antike Spezialitäten"],
+    facilities: ["Porta Nigra", "Römerbrücke", "UNESCO-Welterbe"],
+    transport: "Bus 1, 2, 3, 12 (Hauptmarkt)"
+  },
+
+  // Hessen - weitere Städte
+  {
+    id: "55",
+    name: "Kassel Markt",
+    address: "Königsplatz",
+    city: "Kassel",
+    postalCode: "34117",
+    openingHours: "Dienstag, Donnerstag, Samstag 7-14",
+    features: ["documenta", "Bergpark"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 7-14"),
+    description: "Kunstmarkt in der documenta-Stadt mit Bergpark Wilhelmshöhe.",
+    phone: "+49 561 12345678",
+    email: "info@markt-kassel.de",
+    website: "www.markt-kassel.de",
+    specialties: ["Nordhessische Küche", "Kunsthandwerk", "Bio-Produkte"],
+    facilities: ["Königsplatz", "documenta-Halle"],
+    transport: "Tram 1, 3, 4, 5 (Königsplatz)"
+  },
+  {
+    id: "56",
+    name: "Darmstadt Markt",
+    address: "Marktplatz",
+    city: "Darmstadt",
+    postalCode: "64283",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Jugendstil", "Wissenschaft"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Jugendstil-Markt in der Wissenschaftsstadt.",
+    phone: "+49 6151 12345678",
+    email: "info@markt-darmstadt.de",
+    website: "www.markt-darmstadt.de",
+    specialties: ["Südhessische Küche", "Wissenschafts-Flair", "Modern"],
+    facilities: ["Luisenplatz", "Mathildenhöhe"],
+    transport: "Tram 2, 3, 4, 9 (Luisenplatz)"
+  },
+  {
+    id: "57",
+    name: "Gießen Markt",
+    address: "Marktplatz",
+    city: "Gießen",
+    postalCode: "35390",
+    openingHours: "Dienstag, Donnerstag, Samstag 8-14",
+    features: ["Universitätsstadt"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-14"),
+    description: "Universitätsmarkt in der mittelhessischen Studentenstadt.",
+    phone: "+49 641 12345678",
+    email: "info@markt-giessen.de",
+    website: "www.markt-giessen.de",
+    specialties: ["Studentenfreundlich", "Mittelhessische Küche", "Jung"],
+    facilities: ["Rathaus", "Universitäts-Nähe"],
+    transport: "Bus 1, 2, 3 (Marktplatz)"
+  },
+
+  // Niedersachsen - weitere Städte
+  {
+    id: "58",
+    name: "Braunschweig Markt",
+    address: "Kohlmarkt",
+    city: "Braunschweig",
+    postalCode: "38100",
+    openingHours: "Dienstag, Donnerstag, Samstag 8-15",
+    features: ["Löwenstadt", "Heinrich"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-15"),
+    description: "Löwenstadt-Markt mit Heinrich dem Löwen-Tradition.",
+    phone: "+49 531 12345678",
+    email: "info@markt-braunschweig.de",
+    website: "www.markt-braunschweig.de",
+    specialties: ["Niedersächsische Küche", "Löwenstadt-Flair", "Tradition"],
+    facilities: ["Dom", "Burg Dankwarderode"],
+    transport: "Tram 1, 2, 3 (Kohlmarkt)"
+  },
+  {
+    id: "59",
+    name: "Osnabrück Markt",
+    address: "Marktplatz",
+    city: "Osnabrück",
+    postalCode: "49074",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Friedensstadt", "Westfälisch"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Friedensstadt-Markt mit westfälischem Flair.",
+    phone: "+49 541 12345678",
+    email: "info@markt-osnabrueck.de",
+    website: "www.markt-osnabrueck.de",
+    specialties: ["Westfälische Spezialitäten", "Friedens-Geschichte"],
+    facilities: ["Rathaus", "Dom"],
+    transport: "Bus 21, 22, 23 (Neumarkt)"
+  },
+  {
+    id: "60",
+    name: "Göttingen Markt",
+    address: "Marktplatz",
+    city: "Göttingen",
+    postalCode: "37073",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Universitätsstadt", "Gänseliesel"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Universitätsmarkt am berühmten Gänseliesel-Brunnen.",
+    phone: "+49 551 12345678",
+    email: "info@markt-goettingen.de",
+    website: "www.markt-goettingen.de",
+    specialties: ["Studentenstadt-Flair", "Niedersächsische Küche"],
+    facilities: ["Gänseliesel", "Altes Rathaus"],
+    transport: "Bus 21, 22, 23 (Markt)"
+  },
+
+  // Schleswig-Holstein - weitere Städte
+  {
+    id: "61",
+    name: "Flensburg Markt",
+    address: "Südermarkt",
+    city: "Flensburg",
+    postalCode: "24937",
+    openingHours: "Donnerstag, Samstag 8-14",
+    features: ["Grenzstadt", "Dänisch"],
+    isOpen: isMarketOpen("Donnerstag, Samstag 8-14"),
+    description: "Deutsch-dänischer Grenzmarkt mit skandinavischem Flair.",
+    phone: "+49 461 12345678",
+    email: "info@markt-flensburg.de",
+    website: "www.markt-flensburg.de",
+    specialties: ["Dänische Spezialitäten", "Grenz-Küche", "Skandinavisch"],
+    facilities: ["Nordertor", "Grenzregion"],
+    transport: "Bus 1, 2, 3 (Südermarkt)"
+  },
+  {
+    id: "62",
+    name: "Neumünster Markt",
+    address: "Großflecken",
+    city: "Neumünster",
+    postalCode: "24534",
+    openingHours: "Freitag, Samstag 8-14",
+    features: ["Holsteinisch"],
+    isOpen: isMarketOpen("Freitag, Samstag 8-14"),
+    description: "Holsteinischer Markt im Herzen Schleswig-Holsteins.",
+    phone: "+49 4321 12345678",
+    email: "info@markt-neumuenster.de",
+    website: "www.markt-neumuenster.de",
+    specialties: ["Holsteiner Küche", "Norddeutsche Tradition"],
+    facilities: ["Großflecken", "Tuch + Technik Museum"],
+    transport: "Bus 7711, 7712 (Großflecken)"
+  },
+
+  // Mecklenburg-Vorpommern - weitere Städte
+  {
+    id: "63",
+    name: "Schwerin Markt",
+    address: "Marktplatz",
+    city: "Schwerin",
+    postalCode: "19055",
+    openingHours: "Dienstag, Donnerstag, Samstag 8-15",
+    features: ["Schloss", "Seen"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-15"),
+    description: "Märchenschloss-Markt in der Stadt der Seen.",
+    phone: "+49 385 12345678",
+    email: "info@markt-schwerin.de",
+    website: "www.markt-schwerin.de",
+    specialties: ["Mecklenburgische Küche", "Seenplatte-Fisch", "Schloss-Flair"],
+    facilities: ["Schloss", "Dom", "Seen"],
+    transport: "Bus 10, 11, 14 (Markt)"
+  },
+  {
+    id: "64",
+    name: "Stralsund Markt",
+    address: "Alter Markt",
+    city: "Stralsund",
+    postalCode: "18439",
+    openingHours: "Dienstag, Freitag 8-14",
+    features: ["Hansestadt", "UNESCO", "Rügen"],
+    isOpen: isMarketOpen("Dienstag, Freitag 8-14"),
+    description: "Hanseatischer UNESCO-Markt am Tor zur Insel Rügen.",
+    phone: "+49 3831 12345678",
+    email: "info@markt-stralsund.de",
+    website: "www.markt-stralsund.de",
+    specialties: ["Hanseatische Küche", "Rügen-Fisch", "Bernstein"],
+    facilities: ["Rathaus", "Nikolaikirche", "UNESCO"],
+    transport: "Bus 1, 2, 3 (Alter Markt)"
+  },
+  {
+    id: "65",
+    name: "Greifswald Markt",
+    address: "Marktplatz",
+    city: "Greifswald",
+    postalCode: "17489",
+    openingHours: "Dienstag, Freitag 8-14",
+    features: ["Universitätsstadt", "Backstein"],
+    isOpen: isMarketOpen("Dienstag, Freitag 8-14"),
+    description: "Backstein-Universitätsmarkt an der Ostsee.",
+    phone: "+49 3834 12345678",
+    email: "info@markt-greifswald.de",
+    website: "www.markt-greifswald.de",
+    specialties: ["Universitäts-Flair", "Pommersche Küche", "Backstein"],
+    facilities: ["Dom", "Universität", "Backstein-Gotik"],
+    transport: "Bus 1, 2, 3 (Markt)"
+  },
+
+  // Brandenburg
+  {
+    id: "66",
+    name: "Potsdam Markt",
+    address: "Alter Markt",
+    city: "Potsdam",
+    postalCode: "14467",
+    openingHours: "Mittwoch, Samstag 9-15",
+    features: ["Schlösser", "UNESCO", "Sanssouci"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 9-15"),
+    description: "Königlicher Markt in der Stadt der Schlösser und Gärten.",
+    phone: "+49 331 12345678",
+    email: "info@markt-potsdam.de",
+    website: "www.markt-potsdam.de",
+    specialties: ["Preußische Tradition", "Schloss-Flair", "Garten-Produkte"],
+    facilities: ["Sanssouci", "Neues Palais", "UNESCO"],
+    transport: "Tram 91, 92, 96 (Alter Markt/Landtag)"
+  },
+  {
+    id: "67",
+    name: "Cottbus Markt",
+    address: "Altmarkt",
+    city: "Cottbus",
+    postalCode: "03046",
+    openingHours: "Dienstag, Donnerstag, Samstag 8-14",
+    features: ["Lausitz", "Sorbisch"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-14"),
+    description: "Sorbischer Markt in der Lausitz mit wendischer Tradition.",
+    phone: "+49 355 12345678",
+    email: "info@markt-cottbus.de",
+    website: "www.markt-cottbus.de",
+    specialties: ["Sorbische Spezialitäten", "Lausitzer Küche", "Wendische Kultur"],
+    facilities: ["Wendisches Museum", "Spremberger Turm"],
+    transport: "Tram 1, 2, 3 (Altmarkt)"
+  },
+  {
+    id: "68",
+    name: "Brandenburg Markt",
+    address: "Neustädtischer Markt",
+    city: "Brandenburg an der Havel",
+    postalCode: "14776",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Havel", "Dom", "Wiege Brandenburgs"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Historischer Markt in der Wiege Brandenburgs an der Havel.",
+    phone: "+49 3381 12345678",
+    email: "info@markt-brandenburg.de",
+    website: "www.markt-brandenburg-havel.de",
+    specialties: ["Havelländische Küche", "Dom-Tradition", "Brandenburger"],
+    facilities: ["Dom", "Havel", "Altstädtisches Rathaus"],
+    transport: "Bus 551, 552 (Neustädtischer Markt)"
+  },
+
+  // Weitere bayerische Städte
+  {
+    id: "69",
+    name: "Bamberg Markt",
+    address: "Grüner Markt",
+    city: "Bamberg",
+    postalCode: "96047",
+    openingHours: "Montag, Mittwoch, Samstag 7-17",
+    features: ["UNESCO", "Bier", "Mittelalterlich"],
+    isOpen: isMarketOpen("Montag, Mittwoch, Samstag 7-17"),
+    description: "Mittelalterlicher UNESCO-Markt in der Bierstadt Bamberg.",
+    phone: "+49 951 12345678",
+    email: "info@markt-bamberg.de",
+    website: "www.markt-bamberg.de",
+    specialties: ["Bamberger Bier", "Fränkische Küche", "UNESCO-Flair"],
+    facilities: ["Dom", "Altes Rathaus", "Klein-Venedig"],
+    transport: "Bus 901, 902 (Grüner Markt)"
+  },
+  {
+    id: "70",
+    name: "Passau Markt",
+    address: "Domplatz",
+    city: "Passau",
+    postalCode: "94032",
+    openingHours: "Freitag, Samstag 7-13",
+    features: ["Drei-Flüsse-Stadt", "Barock"],
+    isOpen: isMarketOpen("Freitag, Samstag 7-13"),
+    description: "Barocker Markt in der Drei-Flüsse-Stadt am Domplatz.",
+    phone: "+49 851 12345678",
+    email: "info@markt-passau.de",
+    website: "www.markt-passau.de",
+    specialties: ["Drei-Flüsse-Küche", "Bayerisch-Österreichisch", "Donau"],
+    facilities: ["Dom St. Stephan", "Drei Flüsse", "Veste Oberhaus"],
+    transport: "Bus 1, 2, 3 (Domplatz)"
+  },
+  {
+    id: "71",
+    name: "Ingolstadt Markt",
+    address: "Theaterplatz",
+    city: "Ingolstadt",
+    postalCode: "85049",
+    openingHours: "Mittwoch, Samstag 7-13",
+    features: ["Audi-Stadt", "Universitätsstadt"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 7-13"),
+    description: "Moderner Markt in der Audi- und Universitätsstadt.",
+    phone: "+49 841 12345678",
+    email: "info@markt-ingolstadt.de",
+    website: "www.markt-ingolstadt.de",
+    specialties: ["Moderne Küche", "Bayerische Tradition", "Donau-Region"],
+    facilities: ["Neues Schloss", "Audi Forum"],
+    transport: "Bus 10, 11, 16 (Theaterplatz)"
+  },
+
+  // Baden-Württemberg - weitere Städte
+  {
+    id: "72",
+    name: "Freiburg Markt",
+    address: "Münsterplatz",
+    city: "Freiburg",
+    postalCode: "79098",
+    openingHours: "Montag-Samstag 7:30-13:30",
+    features: ["Münster", "Schwarzwald", "Universitätsstadt"],
+    isOpen: isMarketOpen("Montag-Samstag 7:30-13:30"),
+    description: "Münstermarkt vor dem berühmten Freiburger Münster.",
+    phone: "+49 761 12345678",
+    email: "info@markt-freiburg.de",
+    website: "www.muenstermarkt-freiburg.de",
+    specialties: ["Schwarzwald-Produkte", "Bio-Fokus", "Universitäts-Flair"],
+    facilities: ["Münster", "Bächle", "Historisches Kaufhaus"],
+    transport: "Tram 1, 3, 5 (Bertoldsbrunnen)"
+  },
+  {
+    id: "73",
+    name: "Konstanz Markt",
+    address: "Marktstätte",
+    city: "Konstanz",
+    postalCode: "78462",
+    openingHours: "Mittwoch, Samstag 7-13",
+    features: ["Bodensee", "Schweiz-Grenze", "Konzil"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 7-13"),
+    description: "Bodensee-Markt an der Schweizer Grenze mit Konzil-Geschichte.",
+    phone: "+49 7531 12345678",
+    email: "info@markt-konstanz.de",
+    website: "www.markt-konstanz.de",
+    specialties: ["Bodensee-Fisch", "Schweizer Einfluss", "Seeblick"],
+    facilities: ["Konzil", "Imperia", "Bodensee"],
+    transport: "Bus 1, 5, 9 (Marktstätte)"
+  },
+  {
+    id: "74",
+    name: "Ulm Markt",
+    address: "Marktplatz",
+    city: "Ulm",
+    postalCode: "89073",
+    openingHours: "Mittwoch, Samstag 7-13",
+    features: ["Münster", "Donau", "Einstein"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 7-13"),
+    description: "Münstermarkt in Einstein's Geburtsstadt an der Donau.",
+    phone: "+49 731 12345678",
+    email: "info@markt-ulm.de",
+    website: "www.markt-ulm.de",
+    specialties: ["Schwäbische Küche", "Donau-Region", "Einstein-Flair"],
+    facilities: ["Münster", "Rathaus", "Donau"],
+    transport: "Tram 1, 2 (Rathaus)"
+  },
+  {
+    id: "75",
+    name: "Tübingen Markt",
+    address: "Marktplatz",
+    city: "Tübingen",
+    postalCode: "72070",
+    openingHours: "Montag, Mittwoch, Freitag 7-14, Samstag 7-15",
+    features: ["Universitätsstadt", "Neckar", "Stocherkahn"],
+    isOpen: isMarketOpen("Montag, Mittwoch, Freitag 7-14, Samstag 7-15"),
+    description: "Universitätsmarkt am Neckar mit Stocherkahn-Romantik.",
+    phone: "+49 7071 12345678",
+    email: "info@markt-tuebingen.de",
+    website: "www.markt-tuebingen.de",
+    specialties: ["Studentenstadt", "Neckar-Flair", "Schwäbische Tradition"],
+    facilities: ["Rathaus", "Stiftskirche", "Neckarfront"],
+    transport: "Bus 1, 2, 5 (Marktplatz)"
+  },
+
+  // Weitere NRW Städte
+  {
+    id: "76",
+    name: "Münster Markt",
+    address: "Domplatz",
+    city: "Münster",
+    postalCode: "48143",
+    openingHours: "Mittwoch, Samstag 7-14",
+    features: ["Fahrradstadt", "Dom", "Westfälisch"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 7-14"),
+    description: "Fahrradstadt-Markt vor dem imposanten St. Paulus Dom.",
+    phone: "+49 251 12345678",
+    email: "info@markt-muenster.de",
+    website: "www.markt-muenster.de",
+    specialties: ["Westfälische Küche", "Fahrrad-freundlich", "Dom-Ambiente"],
+    facilities: ["Dom", "Rathaus", "Prinzipalmarkt"],
+    transport: "Bus 11, 12, 14 (Domplatz)"
+  },
+  {
+    id: "77",
+    name: "Wuppertal Markt",
+    address: "Laurentiusplatz",
+    city: "Wuppertal",
+    postalCode: "42103",
+    openingHours: "Dienstag, Donnerstag, Samstag 8-14",
+    features: ["Schwebebahn", "Bergisch"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-14"),
+    description: "Bergischer Markt in der Stadt der Schwebebahn.",
+    phone: "+49 202 12345678",
+    email: "info@markt-wuppertal.de",
+    website: "www.markt-wuppertal.de",
+    specialties: ["Bergische Küche", "Schwebebahn-Flair", "Tal-Lage"],
+    facilities: ["Schwebebahn", "Laurentiuskirche"],
+    transport: "Schwebebahn: Laurentiusplatz, Bus 603, 611"
+  },
+  {
+    id: "78",
+    name: "Aachen Markt",
+    address: "Marktplatz",
+    city: "Aachen",
+    postalCode: "52062",
+    openingHours: "Dienstag, Donnerstag, Samstag 8-14",
+    features: ["Karlsstadt", "Dom", "Grenzstadt"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-14"),
+    description: "Kaiserlicher Markt in der Karlsstadt vor dem Weltkulturerbe-Dom.",
+    phone: "+49 241 12345678",
+    email: "info@markt-aachen.de",
+    website: "www.markt-aachen.de",
+    specialties: ["Aachener Printen", "Karlsgeschichte", "Grenz-Küche"],
+    facilities: ["Dom", "Rathaus", "Elisenbrunnen"],
+    transport: "Bus 11, 21, 31 (Elisenbrunnen)"
+  },
+  {
+    id: "79",
+    name: "Bielefeld Markt",
+    address: "Alter Markt",
+    city: "Bielefeld",
+    postalCode: "33602",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Ostwestfalen", "Sparrenburg"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Ostwestfälischer Markt im Schatten der Sparrenburg.",
+    phone: "+49 521 12345678",
+    email: "info@markt-bielefeld.de",
+    website: "www.markt-bielefeld.de",
+    specialties: ["Ostwestfälische Küche", "Sparrenburg-Blick", "Regional"],
+    facilities: ["Sparrenburg", "Altstädter Nicolaikirche"],
+    transport: "Stadtbahn 1, 2, 3 (Jahnplatz)"
+  },
+  {
+    id: "80",
+    name: "Bochum Markt",
+    address: "Dr.-Ruer-Platz",
+    city: "Bochum",
+    postalCode: "44787",
+    openingHours: "Dienstag, Donnerstag, Samstag 8-14",
+    features: ["Ruhrgebiet", "Bergbau", "Musical"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-14"),
+    description: "Ruhrgebiets-Markt mit Bergbau-Geschichte und Musical-Flair.",
+    phone: "+49 234 12345678",
+    email: "info@markt-bochum.de",
+    website: "www.markt-bochum.de",
+    specialties: ["Ruhrgebiets-Küche", "Bergbau-Tradition", "Starlight Express"],
+    facilities: ["Deutsches Bergbau-Museum", "Starlight Express"],
+    transport: "U-Bahn U35 (Hauptbahnhof), Tram 302, 310"
+  },
+
+  // Mehr kleinere und mittlere Städte
+  {
+    id: "81",
+    name: "Heilbronn Markt",
+    address: "Marktplatz",
+    city: "Heilbronn",
+    postalCode: "74072",
+    openingHours: "Dienstag, Donnerstag, Samstag 7-13",
+    features: ["Käthchenstadt", "Neckar"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 7-13"),
+    description: "Käthchen-Markt an der Neckar in der Weinbauregion.",
+    phone: "+49 7131 12345678",
+    email: "info@markt-heilbronn.de",
+    website: "www.markt-heilbronn.de",
+    specialties: ["Württemberger Wein", "Käthchen-Flair", "Neckar-Region"],
+    facilities: ["Kilianskirche", "Deutschhof"],
+    transport: "Stadtbahn S4, S41, S42 (Hauptbahnhof)"
+  },
+  {
+    id: "82",
+    name: "Reutlingen Markt",
+    address: "Marktplatz",
+    city: "Reutlingen",
+    postalCode: "72764",
+    openingHours: "Dienstag, Donnerstag, Samstag 7-13",
+    features: ["Tor zur Schwäbischen Alb"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 7-13"),
+    description: "Markt am Tor zur Schwäbischen Alb mit Panoramablick.",
+    phone: "+49 7121 12345678",
+    email: "info@markt-reutlingen.de",
+    website: "www.markt-reutlingen.de",
+    specialties: ["Schwäbische Alb", "Bergblick", "Wanderer-Versorgung"],
+    facilities: ["Marienkirche", "Heimatmuseum"],
+    transport: "Bus 1, 2, 7 (Marktplatz)"
+  },
+  {
+    id: "83",
+    name: "Pforzheim Markt",
+    address: "Marktplatz",
+    city: "Pforzheim",
+    postalCode: "75172",
+    openingHours: "Dienstag, Donnerstag, Samstag 7-13",
+    features: ["Goldstadt", "Schmuck"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 7-13"),
+    description: "Goldstadt-Markt mit Schmuck- und Uhrentradition.",
+    phone: "+49 7231 12345678",
+    email: "info@markt-pforzheim.de",
+    website: "www.markt-pforzheim.de",
+    specialties: ["Goldstadt-Flair", "Schwarzwald-Nähe", "Uhren & Schmuck"],
+    facilities: ["Schmuckmuseum", "Stadtkirche"],
+    transport: "Stadtbahn S5, S6 (Hauptbahnhof)"
+  },
+  {
+    id: "84",
+    name: "Hildesheim Markt",
+    address: "Marktplatz",
+    city: "Hildesheim",
+    postalCode: "31134",
+    openingHours: "Dienstag, Freitag, Samstag 8-14",
+    features: ["UNESCO", "Rosenstock", "Dom"],
+    isOpen: isMarketOpen("Dienstag, Freitag, Samstag 8-14"),
+    description: "UNESCO-Markt mit dem berühmten 1000jährigen Rosenstock.",
+    phone: "+49 5121 12345678",
+    email: "info@markt-hildesheim.de",
+    website: "www.markt-hildesheim.de",
+    specialties: ["Niedersächsische Küche", "Rosenstock-Legende", "Dom-Geschichte"],
+    facilities: ["Dom", "Michaeliskirche", "UNESCO-Welterbe"],
+    transport: "Bus 1, 2, 3 (Marktplatz)"
+  },
+  {
+    id: "85",
+    name: "Celle Markt",
+    address: "Marktplatz",
+    city: "Celle",
+    postalCode: "29221",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Fachwerkstadt", "Schloss"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Märchenhafter Fachwerkmarkt vor dem barocken Schloss.",
+    phone: "+49 5141 12345678",
+    email: "info@markt-celle.de",
+    website: "www.markt-celle.de",
+    specialties: ["Heidschnucke", "Heidehonig", "Fachwerkcharme"],
+    facilities: ["Schloss", "Hundertwasser-Bahnhof", "Fachwerk"],
+    transport: "Bus 1, 2, 11 (Markt)"
+  },
+  {
+    id: "86",
+    name: "Lüneburg Markt",
+    address: "Am Markt",
+    city: "Lüneburg",
+    postalCode: "21335",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Salzstadt", "Hansestadt", "Backstein"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Salzstadt-Markt in der Hansestadt mit Backstein-Gotik.",
+    phone: "+49 4131 12345678",
+    email: "info@markt-lueneburg.de",
+    website: "www.markt-lueneburg.de",
+    specialties: ["Salzige Spezialitäten", "Hanseatische Küche", "Heide-Produkte"],
+    facilities: ["Rathaus", "Wasserturm", "Salzmuseum"],
+    transport: "Bus 5001, 5002 (Marktplatz)"
+  },
+  {
+    id: "87",
+    name: "Wolfsburg Markt",
+    address: "Rathausplatz",
+    city: "Wolfsburg",
+    postalCode: "38440",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Autostadt", "Modern", "VW"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Moderner Markt in der Autostadt mit Volkswagen-Tradition.",
+    phone: "+49 5361 12345678",
+    email: "info@markt-wolfsburg.de",
+    website: "www.markt-wolfsburg.de",
+    specialties: ["Moderne Küche", "International", "Autostadt-Flair"],
+    facilities: ["Autostadt", "phaeno", "VW Arena"],
+    transport: "Bus 201, 202, 230 (Hauptbahnhof)"
+  },
+  {
+    id: "88",
+    name: "Paderborn Markt",
+    address: "Marktplatz",
+    city: "Paderborn",
+    postalCode: "33098",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Domstadt", "Quellen", "Universität"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Pader-Quellen-Markt in der westfälischen Domstadt.",
+    phone: "+49 5251 12345678",
+    email: "info@markt-paderborn.de",
+    website: "www.markt-paderborn.de",
+    specialties: ["Westfälische Küche", "Paderquellen", "Universitäts-Flair"],
+    facilities: ["Dom", "Kaiserpfalz", "Paderquellen"],
+    transport: "Bus 4, 5, 9 (Marktplatz)"
+  },
+  {
+    id: "89",
+    name: "Siegen Markt",
+    address: "Marktplatz",
+    city: "Siegen",
+    postalCode: "57072",
+    openingHours: "Dienstag, Freitag, Samstag 8-14",
+    features: ["Rubens-Stadt", "Sauerland"],
+    isOpen: isMarketOpen("Dienstag, Freitag, Samstag 8-14"),
+    description: "Sauerländer Markt in der Rubens-Stadt mit bergischem Flair.",
+    phone: "+49 271 12345678",
+    email: "info@markt-siegen.de",
+    website: "www.markt-siegen.de",
+    specialties: ["Sauerländer Küche", "Rubens-Kunst", "Bergisches"],
+    facilities: ["Oberes Schloss", "Nikolaikirche"],
+    transport: "Bus C101, C102 (Marktplatz)"
+  },
+  {
+    id: "90",
+    name: "Gera Markt",
+    address: "Markt",
+    city: "Gera",
+    postalCode: "07545",
+    openingHours: "Dienstag, Freitag 8-14",
+    features: ["Otto-Dix-Stadt", "Thüringen"],
+    isOpen: isMarketOpen("Dienstag, Freitag 8-14"),
+    description: "Thüringer Markt in der Otto-Dix-Stadt mit Kunsttradition.",
+    phone: "+49 365 12345678",
+    email: "info@markt-gera.de",
+    website: "www.markt-gera.de",
+    specialties: ["Thüringer Spezialitäten", "Otto-Dix-Kunst", "Regional"],
+    facilities: ["Rathaus", "Otto-Dix-Haus"],
+    transport: "Tram 1, 2, 3 (Markt)"
+  },
+  {
+    id: "91",
+    name: "Zwickau Markt",
+    address: "Hauptmarkt",
+    city: "Zwickau",
+    postalCode: "08056",
+    openingHours: "Dienstag, Donnerstag, Samstag 8-14",
+    features: ["Robert-Schumann-Stadt", "Auto-Tradition"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-14"),
+    description: "Sächsischer Markt in der Robert-Schumann-Stadt mit Auto-Tradition.",
+    phone: "+49 375 12345678",
+    email: "info@markt-zwickau.de",
+    website: "www.markt-zwickau.de",
+    specialties: ["Sächsische Küche", "Schumann-Musik", "Automobil-Geschichte"],
+    facilities: ["Gewandhaus", "Robert-Schumann-Haus"],
+    transport: "Tram 1, 2, 3 (Hauptmarkt)"
+  },
+  {
+    id: "92",
+    name: "Plauen Markt",
+    address: "Altmarkt",
+    city: "Plauen",
+    postalCode: "08523",
+    openingHours: "Dienstag, Freitag 8-14",
+    features: ["Spitzenstadt", "Vogtland"],
+    isOpen: isMarketOpen("Dienstag, Freitag 8-14"),
+    description: "Vogtländischer Spitzenmarkt mit textiler Tradition.",
+    phone: "+49 3741 12345678",
+    email: "info@markt-plauen.de",
+    website: "www.markt-plauen.de",
+    specialties: ["Plauener Spitze", "Vogtländische Küche", "Textil-Tradition"],
+    facilities: ["Rathaus", "Spitzenmuseum"],
+    transport: "Tram 2, 3, 4 (Tunnel)"
+  },
+  {
+    id: "93",
+    name: "Görlitz Markt",
+    address: "Untermarkt",
+    city: "Görlitz",
+    postalCode: "02826",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Europastadt", "Film-Kulisse", "Polen-Grenze"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Grenzmarkt in der Europastadt Görlitz-Zgorzelec mit Film-Kulissen.",
+    phone: "+49 3581 12345678",
+    email: "info@markt-goerlitz.de",
+    website: "www.markt-goerlitz.de",
+    specialties: ["Schlesische Küche", "Polnische Einflüsse", "Film-Flair"],
+    facilities: ["Rathaus", "Peterskirche", "Neiße-Grenze"],
+    transport: "Tram 1, 2 (Demianiplatz)"
+  },
+  {
+    id: "94",
+    name: "Bautzen Markt",
+    address: "Hauptmarkt",
+    city: "Bautzen",
+    postalCode: "02625",
+    openingHours: "Dienstag, Freitag 8-14",
+    features: ["Sorbische Stadt", "1000 Jahre"],
+    isOpen: isMarketOpen("Dienstag, Freitag 8-14"),
+    description: "Sorbischer Markt in der 1000-jährigen Stadt der Türme.",
+    phone: "+49 3591 12345678",
+    email: "info@markt-bautzen.de",
+    website: "www.markt-bautzen.de",
+    specialties: ["Sorbische Spezialitäten", "Lausitzer Küche", "Türme-Stadt"],
+    facilities: ["Dom", "Ortenburg", "Sorbisches Museum"],
+    transport: "Bus 1, 2, 3 (Kornmarkt)"
+  },
+  {
+    id: "95",
+    name: "Dessau Markt",
+    address: "Marktplatz",
+    city: "Dessau-Roßlau",
+    postalCode: "06844",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Bauhaus", "Gartenreich"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Bauhaus-Markt im UNESCO-Gartenreich Dessau-Wörlitz.",
+    phone: "+49 340 12345678",
+    email: "info@markt-dessau.de",
+    website: "www.markt-dessau.de",
+    specialties: ["Anhaltische Küche", "Bauhaus-Design", "Gartenreich"],
+    facilities: ["Bauhaus", "Georgium", "Gartenreich"],
+    transport: "Bus 10, 11, 12 (Marktplatz)"
+  },
+  {
+    id: "96",
+    name: "Stendal Markt",
+    address: "Marktplatz",
+    city: "Stendal",
+    postalCode: "39576",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Hansestadt", "Altmark"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Hanseatischer Altmark-Markt mit mittelalterlichem Charme.",
+    phone: "+49 3931 12345678",
+    email: "info@markt-stendal.de",
+    website: "www.markt-stendal.de",
+    specialties: ["Altmärkische Küche", "Hanseatische Tradition", "Backstein"],
+    facilities: ["Dom", "Rathaus", "Stadtwall"],
+    transport: "Bus 1, 2, 3 (Marktplatz)"
+  },
+  {
+    id: "97",
+    name: "Neubrandenburg Markt",
+    address: "Marktplatz",
+    city: "Neubrandenburg",
+    postalCode: "17033",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Vier-Tore-Stadt", "Seenplatte"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Seenplatten-Markt in der Vier-Tore-Stadt der Backsteingotik.",
+    phone: "+49 395 12345678",
+    email: "info@markt-neubrandenburg.de",
+    website: "www.markt-neubrandenburg.de",
+    specialties: ["Mecklenburgische Küche", "Seenplatten-Fisch", "Vier Tore"],
+    facilities: ["Vier Tore", "Konzertkirche", "Stadtwall"],
+    transport: "Bus 1, 2, 3 (Marktplatz)"
+  },
+  {
+    id: "98",
+    name: "Bad Kreuznach Markt",
+    address: "Kornmarkt",
+    city: "Bad Kreuznach",
+    postalCode: "55543",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Kurstadt", "Nahe-Wein"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Kurstadt-Markt an der Nahe mit berühmten Brückenhäusern.",
+    phone: "+49 671 12345678",
+    email: "info@markt-bad-kreuznach.de",
+    website: "www.markt-bad-kreuznach.de",
+    specialties: ["Nahe-Wein", "Kur-Spezialitäten", "Brückenhäuser"],
+    facilities: ["Brückenhäuser", "Kurpark", "Salinental"],
+    transport: "Bus 260, 261 (Kornmarkt)"
+  },
+  {
+    id: "99",
+    name: "Worms Markt",
+    address: "Marktplatz",
+    city: "Worms",
+    postalCode: "67547",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Nibelungenstadt", "Dom", "Luther"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Nibelungen-Markt in der Lutherstadt mit Kaiser-Dom.",
+    phone: "+49 6241 12345678",
+    email: "info@markt-worms.de",
+    website: "www.markt-worms.de",
+    specialties: ["Rheinhessischer Wein", "Nibelungen-Saga", "Luther-Geschichte"],
+    facilities: ["Dom", "Luther-Denkmal", "Nibelungenmuseum"],
+    transport: "Bus 401, 402 (Marktplatz)"
+  },
+  {
+    id: "100",
+    name: "Speyer Markt",
+    address: "Maximilianstraße",
+    city: "Speyer",
+    postalCode: "67346",
+    openingHours: "Dienstag, Samstag 7-14",
+    features: ["Kaiserdom", "UNESCO", "Rhein"],
+    isOpen: isMarketOpen("Dienstag, Samstag 7-14"),
+    description: "Kaisermarkt vor dem UNESCO-Welterbe Dom zu Speyer.",
+    phone: "+49 6232 12345678",
+    email: "info@markt-speyer.de",
+    website: "www.markt-speyer.de",
+    specialties: ["Pfälzer Küche", "Kaiserdom-Flair", "Rhein-Spezialitäten"],
+    facilities: ["Kaiserdom", "Historisches Museum", "Rhein-Nähe"],
+    transport: "Bus 565, 566 (Dom)"
+  },
+  {
+    id: "101",
+    name: "Landau Markt",
+    address: "Rathausplatz",
+    city: "Landau",
+    postalCode: "76829",
+    openingHours: "Dienstag, Donnerstag, Samstag 7-13",
+    features: ["Südpfalz", "Wein", "Universität"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 7-13"),
+    description: "Südpfälzer Wein-Markt in der Universitätsstadt.",
+    phone: "+49 6341 12345678",
+    email: "info@markt-landau.de",
+    website: "www.markt-landau.de",
+    specialties: ["Südpfälzer Wein", "Deutsche Weinstraße", "Universitäts-Flair"],
+    facilities: ["Rotes Rathaus", "Stiftskirche"],
+    transport: "Bus 540, 541 (Rathausplatz)"
+  },
+  {
+    id: "102",
+    name: "Neustadt Markt",
+    address: "Marktplatz",
+    city: "Neustadt an der Weinstraße",
+    postalCode: "67433",
+    openingHours: "Dienstag, Donnerstag, Samstag 7-13",
+    features: ["Deutsche Weinstraße", "Hambacher Schloss"],
+    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 7-13"),
+    description: "Weinstraßen-Markt unter dem Hambacher Schloss der Demokratie.",
+    phone: "+49 6321 12345678",
+    email: "info@markt-neustadt-weinstrasse.de",
+    website: "www.markt-neustadt-weinstrasse.de",
+    specialties: ["Deutsche Weinstraße", "Hambacher Fest", "Pfälzer Wein"],
+    facilities: ["Hambacher Schloss", "Stiftskirche"],
+    transport: "Bus 515, 516 (Marktplatz)"
+  },
+  {
+    id: "103",
+    name: "Pirmasens Markt",
+    address: "Schloßplatz",
+    city: "Pirmasens",
+    postalCode: "66953",
+    openingHours: "Mittwoch, Samstag 8-14",
+    features: ["Schuhstadt", "Westpfalz"],
+    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
+    description: "Schuhstadt-Markt in der Westpfalz mit Industrietradition.",
+    phone: "+49 6331 12345678",
+    email: "info@markt-pirmasens.de",
+    website: "www.markt-pirmasens.de",
+    specialties: ["Westpfälzer Küche", "Schuh-Tradition", "Industrie-Charme"],
+    facilities: ["Schloss", "Deutsches Schuhmuseum"],
+    transport: "Bus 260, 261 (Schloßplatz)"
+  },
+  {
+    id: "104",
+    name: "Gerresheimer Markt",
+    address: "Neusser Tor",
+    city: "Düsseldorf",
+    postalCode: "40625",
+    openingHours: "Dienstag 7-18, Donnerstag 7-18, Samstag 7-18",
+    features: ["Lebensmittel", "Dekor", "mediterrane Spezialitäten"],
+    isOpen: isMarketOpen("Dienstag 7-18, Donnerstag 7-18, Samstag 7-18"),
+    description: "Der Gerresheimer Markt bietet ein umfangreiches Angebot von Haushaltswaren über Lebensmittel bis zum Dekor. Regionale Spezialitäten sind hier ebenso vertreten wie Altbekanntes. Die langen Öffnungszeiten bis 18 Uhr ermöglichen es auch Berufstätigen, den Markt zu besuchen.",
+    phone: "N/A",
+    email: "N/A",
+    website: "https://duesseldorf-magazin.de/guide/wochenmaerkte-und-troedelmaerkte/wochenmarkt-neusser-tor-gerresheim",
+    specialties: ["Bio", "Regional", "Schmuck", "Fisch"],
+    facilities: ["Traditionsmarkt", "Nachbarschaftscharakter"],
+    transport: "Ab S-Bahnhaltestelle Gerresheim an Bahnsteig 1 in die Straßenbahn 703 einsteigen und bis zur Station Gerresheim Rathhaus fahren. Nach zwei Gehminuten erreicht man den Markt auf der rechten Seite."
+  },
   // Köln Markets
   {
-    id: "22",
-    slug: "wilhelmplatz-koeln",
+    id: "105",
     name: "Wilhelmplatz Markt",
     address: "Wilhelmplatz",
     city: "Köln",
@@ -527,8 +1911,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Wilhelmplatz, Bus: Linie 140, 147"
   },
   {
-    id: "23", 
-    slug: "wiener-platz-koeln",
+    id: "106", 
     name: "Wiener Platz Markt",
     address: "Wiener Platz",
     city: "Köln",
@@ -545,8 +1928,7 @@ export const marketData: Market[] = [
     transport: "S-Bahn: Mülheim, U-Bahn: Wiener Platz"
   },
   {
-    id: "24",
-    slug: "rudolfplatz-oekomarkt-koeln", 
+    id: "107",
     name: "Rudolfplatz Ökomarkt", 
     address: "Rudolfplatz",
     city: "Köln",
@@ -563,8 +1945,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Rudolfplatz, Bus: Linie 106, 146"
   },
   {
-    id: "25",
-    slug: "maternusplatz-koeln",
+    id: "108",
     name: "Maternusplatz Markt",
     address: "Maternusplatz", 
     city: "Köln",
@@ -581,8 +1962,7 @@ export const marketData: Market[] = [
     transport: "S-Bahn: Rodenkirchen, Bus: Linie 132, 133"
   },
   {
-    id: "26",
-    slug: "chlodwigplatz-koeln",
+    id: "109",
     name: "Chlodwigplatz Markt",
     address: "Chlodwigplatz",
     city: "Köln", 
@@ -599,8 +1979,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Chlodwigplatz, Bus: Linie 106, 132"
   },
   {
-    id: "27",
-    slug: "klettenbergguertel-koeln",
+    id: "110",
     name: "Klettenberggürtel Markt",
     address: "Klettenberggürtel/Siebengebirgsallee",
     city: "Köln",
@@ -617,8 +1996,7 @@ export const marketData: Market[] = [
     transport: "Stadtbahn: Klettenberg, Bus: Linie 136, 146"
   },
   {
-    id: "28",
-    slug: "severinskirchplatz-oekomarkt-koeln",
+    id: "111",
     name: "Severinskirchplatz Ökomarkt",
     address: "Severinskirchplatz",
     city: "Köln",
@@ -635,8 +2013,7 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Severinstraße, Bus: Linie 106, 132"
   },
   {
-    id: "29",
-    slug: "deutzer-freiheit-koeln", 
+    id: "112",
     name: "Deutzer Freiheit Markt", 
     address: "Deutzer Freiheit",
     city: "Köln",
@@ -654,16 +2031,6 @@ export const marketData: Market[] = [
   }
   
 ];
-
-// Helper function to find market by slug
-export const findMarketBySlug = (slug: string): Market | undefined => {
-  return marketData.find(market => market.slug === slug);
-};
-
-// Helper function to find market by ID (for backward compatibility)
-export const findMarketById = (id: string): Market | undefined => {
-  return marketData.find(market => market.id === id);
-};
 
 // Export default market data
 export default marketData;
