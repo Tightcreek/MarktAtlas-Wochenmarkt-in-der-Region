@@ -419,59 +419,6 @@ export const marketData: Market[] = [
     transport: "S-Bahn: Hauptbahnhof, U-Bahn: Hauptbahnhof"
   },
 
-  // Köln Markets
-  {
-    id: "18",
-    name: "Wilhelmsplatz",
-    address: "Wilhelmsplatz",
-    city: "Köln",
-    postalCode: "50670",
-    openingHours: "Dienstag, Donnerstag, Samstag 7-14",
-    features: ["Regional", "Traditionsmarkt"],
-    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 7-14"),
-    description: "Traditioneller Wochenmarkt im Herzen von Köln mit über 100 Jahren Geschichte.",
-    phone: "+49 221 12345678",
-    email: "info@wilhelmsplatz-markt.de",
-    website: "www.wilhelmsplatz-koeln.de",
-    specialties: ["Rheinische Spezialitäten", "Gemüse", "Fleischwaren", "Backwaren"],
-    facilities: ["Historischer Platz", "Toiletten"],
-    transport: "U-Bahn: Wilhelmsplatz (U3, U4), Bus 106, 132"
-  },
-  {
-    id: "19",
-    name: "Nippes Markt",
-    address: "Neusser Straße",
-    city: "Köln",
-    postalCode: "50733",
-    openingHours: "Mittwoch, Samstag 8-14",
-    features: ["Stadtteilmarkt", "Bio"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
-    description: "Beliebter Stadtteilmarkt in Nippes mit starkem Fokus auf Bio-Produkte.",
-    phone: "+49 221 23456789",
-    email: "info@nippes-markt.de",
-    website: "www.nippes-markt.de",
-    specialties: ["Bio-Gemüse", "Lokale Produkte", "Handwerk", "Backwaren"],
-    facilities: ["Fahrradständer", "Café-Ecke"],
-    transport: "S-Bahn: Nippes (S6, S11), Bus 140, 141"
-  },
-  {
-    id: "20",
-    name: "Südstadt Markt",
-    address: "Chlodwigplatz",
-    city: "Köln",
-    postalCode: "50678",
-    openingHours: "Donnerstag 12-18, Samstag 8-15",
-    features: ["Bio", "International"],
-    isOpen: isMarketOpen("Donnerstag 12-18, Samstag 8-15"),
-    description: "Multikultureller Markt in der Südstadt mit internationalen Spezialitäten.",
-    phone: "+49 221 34567890",
-    email: "info@suedstadt-markt.de",
-    website: "www.suedstadt-markt-koeln.de",
-    specialties: ["Internationale Küche", "Bio-Produkte", "Gewürze", "Streetfood"],
-    facilities: ["Sitzbereich", "Imbissstände"],
-    transport: "U-Bahn: Chlodwigplatz (U16, U17), Bus 132, 133"
-  },
-
   // Frankfurt Markets
   {
     id: "21",
@@ -1944,7 +1891,9 @@ export const marketData: Market[] = [
     specialties: ["Bio", "Regional", "Schmuck", "Fisch"],
     facilities: ["Traditionsmarkt", "Nachbarschaftscharakter"],
     transport: "Ab S-Bahnhaltestelle Gerresheim an Bahnsteig 1 in die Straßenbahn 703 einsteigen und bis zur Station Gerresheim Rathhaus fahren. Nach zwei Gehminuten erreicht man den Markt auf der rechten Seite."
-  }
+  },
+  // Köln Markets
+  
 ];
 
 // Export default market data
