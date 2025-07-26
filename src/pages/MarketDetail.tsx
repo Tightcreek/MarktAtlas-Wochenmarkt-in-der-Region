@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Clock, Phone, Mail, Globe, Car } from 'lucide-react';
+import { MapPin, Clock, Phone, Mail, Globe, Car, ArrowLeft } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
 import { marketData, isMarketOpen, getMarketBySlug, type Market } from '@/data/marketdata';
 
@@ -54,6 +54,17 @@ const MarketDetail = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">
+          {/* Back Button */}
+          <div className="mb-4">
+            <button 
+              onClick={() => window.location.href = '/markets'}
+              className="flex items-center gap-2 text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 font-medium transition-colors duration-200 group"
+            >
+              <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform duration-200" />
+              Zurück zur Marktübersicht
+            </button>
+          </div>
+
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
             <div className="flex-1">
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
