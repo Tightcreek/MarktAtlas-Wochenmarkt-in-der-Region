@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Clock, Phone, Mail, Globe, Car } from 'lucide-react';
@@ -6,22 +6,23 @@ import SEOHead from '@/components/SEOHead';
 import { marketData, isMarketOpen, getMarketBySlug, type Market } from '@/data/marketdata';
 
 const MarketDetail = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const MarketDetailPage: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>()
+  const navigate = useNavigate();
+  const [market, setMarket] = useState<Market | undefined>(undefined);
   
   if (!slug) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Fehler: Markt-Slug nicht gefunden
-          </h1>
-          <p className="text-gray-600 dark:text-gray-300">
-            Bitte wählen Sie einen Markt aus der Liste aus.
-          </p>
-        </div>
-      </div>
-    );
-  }
+      <div className="container mx-auto p-4">
+        {/* NEUER "Zurück"-Button oben links */}
+        <button
+      onClick={() => navigate('/markets')}
+      className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mb-4 inline-block"
+    >
+      ← Zurück zur Marktübersicht
+    </button>
+
+    <h1 className="text-3xl font-bold mb-4">{market.name}</h1> {/* <--- Dieser ist dann Zeile 28 */}
 
   const market = getMarketBySlug(slug);
 
