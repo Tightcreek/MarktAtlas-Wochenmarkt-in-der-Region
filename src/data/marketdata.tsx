@@ -2037,22 +2037,22 @@ export const marketData: Market[] = [
   },
     // Dortmund Markets
   {
-    "id": "113",
-    "slug": "hansa-markt-dortmund",
-    "name": "Hansa-Markt (Hauptwochenmarkt)",
-    "address": "Hansaplatz",
-    "city": "Dortmund",
-    "postalCode": "44137",
-    "openingHours": "Mittwoch 7-14:00, Freitag 8-15:00, Samstag 7-15:00",
-    "features": ["Regional", "Produkte", "Imbisse", "Blumen"],
-    "isOpen": "isMarketOpen(\"Mittwoch 7-14:00, Freitag 8-15:00, Samstag 7-15:00\")",
-    "description": "Der Hauptwochenmarkt auf dem Hansaplatz ist der größte Wochenmarkt in Dortmund mit einem vielfältigen Angebot an frischen Lebensmitteln, regionalen Produkten und Blumen.",
-    "phone": "N/A",
-    "email": "N/A",
-    "website": "www.dortmunder-wochenmarkt.de",
-    "specialties": ["Nahrungs- und Genussmittel", "Blumen", "Pflanzen", "Regionale Produkte"],
-    "facilities": ["Sitzgelegenheiten"],
-    "transport": "U-Bahn: U41, U42, U43, U44, U45, U46, U47, U49; Bus: 412, 455, 456, 460; S-Bahn: S2, S4; RE-Bahnen: RE1, RE3, RE6, RE11"
+    id: "113",
+    slug: "hansa-markt-dortmund",
+    name: "Hansa-Markt (Hauptwochenmarkt)",
+    address: "Hansaplatz",
+    city: "Dortmund",
+    postalCode: "44137",
+    openingHours: "Mittwoch 7-14:00, Freitag 8-15:00, Samstag 7-15:00",
+    features: ["Regional", "Produkte", "Imbisse", "Blumen"],
+    isOpen: "isMarketOpen(\"Mittwoch 7-14:00, Freitag 8-15:00, Samstag 7-15:00\")",
+    description: "Der Hauptwochenmarkt auf dem Hansaplatz ist der größte Wochenmarkt in Dortmund mit einem vielfältigen Angebot an frischen Lebensmitteln, regionalen Produkten und Blumen.",
+    phone: "N/A",
+    email: "N/A",
+    website: "www.dortmunder-wochenmarkt.de",
+    specialties: ["Nahrungs- und Genussmittel", "Blumen", "Pflanzen", "Regionale Produkte"],
+    facilities: ["Sitzgelegenheiten"],
+    transport: "U-Bahn: U41, U42, U43, U44, U45, U46, U47, U49; Bus: 412, 455, 456, 460; S-Bahn: S2, S4; RE-Bahnen: RE1, RE3, RE6, RE11"
   }
 ];
 
