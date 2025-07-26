@@ -204,14 +204,19 @@ const Markets = () => {
                       ))}
                     </div>
 
-                    <Button 
-                      variant="default"
-                      size="sm"
-                      className="w-full bg-green-600 hover:bg-green-700"
-                      onClick={() => window.location.href = `/markets/${market.id}`}
-                    >
-                      Details anzeigen
-                    </Button>
+                     <Button 
+                       variant="default"
+                       size="sm"
+                       className="w-full bg-green-600 hover:bg-green-700"
+                       onClick={() => {
+                         const slug = market.slug || market.name.toLowerCase()
+                           .replace(/ü/g, 'ue').replace(/ö/g, 'oe').replace(/ä/g, 'ae').replace(/ß/g, 'ss')
+                           .replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
+                         window.location.href = `/market/${slug}`;
+                       }}
+                     >
+                       Details anzeigen
+                     </Button>
                   </div>
                 </CardContent>
               </Card>

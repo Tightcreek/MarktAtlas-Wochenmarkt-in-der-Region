@@ -3,17 +3,17 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Clock, Phone, Mail, Globe, Car } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
-import { marketData, isMarketOpen, getMarketById, type Market } from '@/data/marketdata';
+import { marketData, isMarketOpen, getMarketBySlug, type Market } from '@/data/marketdata';
 
 const MarketDetail = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   
-  if (!id) {
+  if (!slug) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Fehler: Markt-ID nicht gefunden
+            Fehler: Markt-Slug nicht gefunden
           </h1>
           <p className="text-gray-600 dark:text-gray-300">
             Bitte wählen Sie einen Markt aus der Liste aus.
@@ -23,7 +23,7 @@ const MarketDetail = () => {
     );
   }
 
-  const market = getMarketById(id);
+  const market = getMarketBySlug(slug);
 
   if (!market) {
     return (
@@ -48,7 +48,7 @@ const MarketDetail = () => {
         title={`${market.name} - Wochenmarkt in ${market.city} | MarktAtlas`}
         description={`${market.name} in ${market.city}: ${market.description.substring(0, 150)}... Öffnungszeiten: ${market.openingHours}. Spezialitäten: ${market.specialties.join(', ')}.`}
         keywords={`${market.name}, wochenmarkt ${market.city.toLowerCase()}, ${market.features.join(', ')}, ${market.specialties.join(', ')}`}
-        canonicalUrl={`https://markt-atlas-finden.lovable.app/markets/${market.name}`}
+        canonicalUrl={`https://markt-atlas-finden.lovable.app/market/${market.slug || market.name.toLowerCase().replace(/ü/g, 'ue').replace(/ö/g, 'oe').replace(/ä/g, 'ae').replace(/ß/g, 'ss').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-')}`}
       />
 
       <div className="container mx-auto px-4 py-8">

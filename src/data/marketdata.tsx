@@ -3,6 +3,7 @@
 
 export interface Market {
   id: string;
+  slug?: string;
   name: string;
   address: string;
   city: string;
@@ -93,9 +94,29 @@ export const isMarketOpen = (openingHours: string): boolean => {
   return false;
 };
 
+// Function to generate URL-friendly slug from name
+const generateSlug = (name: string): string => {
+  return name
+    .toLowerCase()
+    .replace(/ü/g, 'ue')
+    .replace(/ö/g, 'oe')
+    .replace(/ä/g, 'ae')
+    .replace(/ß/g, 'ss')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+};
+
 // Helper function to get market by ID
 export const getMarketById = (id: string): Market | undefined => {
   return marketData.find(market => market.id === id);
+};
+
+// Helper function to get market by slug
+export const getMarketBySlug = (slug: string): Market | undefined => {
+  return marketData.find(market => (market.slug || generateSlug(market.name)) === slug);
 };
 
 // Helper function to generate SEO keywords from markets
@@ -125,6 +146,7 @@ export const marketData: Market[] = [
   // Berlin Markets
   {
     id: "1",
+    slug: "winterfeldtmarkt",
     name: "Winterfeldtmarkt",
     address: "Winterfeldtplatz",
     city: "Berlin",
@@ -142,6 +164,7 @@ export const marketData: Market[] = [
   },
   {
     id: "2",
+    slug: "kollwitzplatz",
     name: "Kollwitzplatz",
     address: "Kollwitzplatz",
     city: "Berlin",
@@ -176,6 +199,7 @@ export const marketData: Market[] = [
   },
   {
     id: "4",
+    slug: "boxhagener-platz",
     name: "Boxhagener Platz",
     address: "Boxhagener Platz",
     city: "Berlin",
@@ -193,6 +217,7 @@ export const marketData: Market[] = [
   },
   {
     id: "5",
+    slug: "arkonaplatz",
     name: "Arkonaplatz",
     address: "Arkonaplatz",
     city: "Berlin",
