@@ -683,25 +683,6 @@ export const marketData: Market[] = [
     transport: "U-Bahn: Hauptbahnhof (U11-U18), S-Bahn: Hauptbahnhof"
   },
 
-  // Dortmund Markets
-  {
-    id: "34",
-    name: "Hansaplatz",
-    address: "Hansaplatz",
-    city: "Dortmund",
-    postalCode: "44137",
-    openingHours: "Dienstag, Freitag, Samstag 8-14",
-    features: ["Groß", "Zentral"],
-    isOpen: isMarketOpen("Dienstag, Freitag, Samstag 8-14"),
-    description: "Dortmunds größter Wochenmarkt mit über 170 Ständen.",
-    phone: "+49 231 12345678",
-    email: "info@hansaplatz-markt.de",
-    website: "www.hansaplatz-dortmund.de",
-    specialties: ["Westfälische Spezialitäten", "Internationale Küche", "Blumen"],
-    facilities: ["Große Auswahl", "Parkplätze"],
-    transport: "U-Bahn: Hansaplatz (U41-U49), Bus 440, 445"
-  },
-
   // Weitere deutsche Städte
   {
     id: "35",
@@ -2053,8 +2034,26 @@ export const marketData: Market[] = [
     specialties: ["Obst & Gemüse", "Fleisch & Wurst", "Backwaren", "Käse"],
     facilities: ["Toiletten", "Fahrradständer"], 
     transport: "S-Bahn: Köln Messe/Deutz, U-Bahn: Deutzer Freiheit"
+  },
+    // Dortmund Markets
+  {
+    "id": "113",
+    "slug": "hansa-markt-dortmund",
+    "name": "Hansa-Markt (Hauptwochenmarkt)",
+    "address": "Hansaplatz",
+    "city": "Dortmund",
+    "postalCode": "44137",
+    "openingHours": "Mittwoch 7-14:00, Freitag 8-15:00, Samstag 7-15:00",
+    "features": ["Regional", "Produkte", "Imbisse", "Blumen"],
+    "isOpen": "isMarketOpen(\"Mittwoch 7-14:00, Freitag 8-15:00, Samstag 7-15:00\")",
+    "description": "Der Hauptwochenmarkt auf dem Hansaplatz ist der größte Wochenmarkt in Dortmund mit einem vielfältigen Angebot an frischen Lebensmitteln, regionalen Produkten und Blumen.",
+    "phone": "N/A",
+    "email": "N/A",
+    "website": "www.dortmunder-wochenmarkt.de",
+    "specialties": ["Nahrungs- und Genussmittel", "Blumen", "Pflanzen", "Regionale Produkte"],
+    "facilities": ["Sitzgelegenheiten"],
+    "transport": "U-Bahn: U41, U42, U43, U44, U45, U46, U47, U49; Bus: 412, 455, 456, 460; S-Bahn: S2, S4; RE-Bahnen: RE1, RE3, RE6, RE11"
   }
-  
 ];
 
 // Export default market data
