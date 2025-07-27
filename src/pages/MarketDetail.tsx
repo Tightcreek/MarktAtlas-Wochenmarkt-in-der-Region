@@ -90,8 +90,13 @@ const MarketDetail = () => {
       <SEOHead 
         title={`${market.name} - Wochenmarkt in ${market.city} | MarktAtlas`}
         description={`${market.name} in ${market.city}: ${market.description.substring(0, 150)}... Öffnungszeiten: ${market.openingHours}. Spezialitäten: ${market.specialties.join(', ')}.`}
-        keywords={`${market.name}, wochenmarkt ${market.city.toLowerCase()}, ${market.features.join(', ')}, ${market.specialties.join(', ')}`}
+        keywords={`${market.name}, wochenmarkt ${market.city.toLowerCase()}, ${market.features.join(', ')}, ${market.specialties.join(', ')}, märkte ${market.city.toLowerCase()}, bauernmarkt ${market.city.toLowerCase()}`}
         canonicalUrl={`https://markt-atlas-finden.lovable.app/market/${market.slug || market.name.toLowerCase().replace(/ü/g, 'ue').replace(/ö/g, 'oe').replace(/ä/g, 'ae').replace(/ß/g, 'ss').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-')}`}
+        ogType="place"
+        ogImage="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
+        locale="de_DE"
+        siteName="MarktAtlas Deutschland"
+        twitterSite="@MarktAtlas"
         schemaData={generateStructuredData()}
       />
 

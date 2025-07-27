@@ -7,6 +7,12 @@ interface SEOHeadProps {
   canonicalUrl?: string;
   ogImage?: string;
   schemaData?: object;
+  ogType?: string;
+  locale?: string;
+  siteName?: string;
+  twitterSite?: string;
+  articlePublishedTime?: string;
+  articleModifiedTime?: string;
 }
 
 const SEOHead = ({ 
@@ -15,7 +21,13 @@ const SEOHead = ({
   keywords = "wochenmarkt, bauernmarkt, märkte deutschland, markt heute geöffnet, wochenmarkt öffnungszeiten, frische produkte, regional einkaufen",
   canonicalUrl,
   ogImage = "https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
-  schemaData
+  schemaData,
+  ogType = "website",
+  locale = "de_DE", 
+  siteName = "MarktAtlas Deutschland",
+  twitterSite = "@MarktAtlas",
+  articlePublishedTime,
+  articleModifiedTime
 }: SEOHeadProps) => {
   
   useEffect(() => {
@@ -43,18 +55,38 @@ const SEOHead = ({
     // Update basic meta tags
     updateMetaTag('description', description);
     updateMetaTag('keywords', keywords);
+    updateMetaTag('robots', 'index, follow');
+    updateMetaTag('language', 'de');
+    updateMetaTag('author', siteName);
     
     // Update Open Graph tags
     updateMetaTag('og:title', title, true);
     updateMetaTag('og:description', description, true);
     updateMetaTag('og:image', ogImage, true);
-    updateMetaTag('og:type', 'website', true);
+    updateMetaTag('og:type', ogType, true);
+    updateMetaTag('og:locale', locale, true);
+    updateMetaTag('og:site_name', siteName, true);
+    if (canonicalUrl) {
+      updateMetaTag('og:url', canonicalUrl, true);
+    }
     
-    // Update Twitter tags
+    // Article-specific meta tags if provided
+    if (articlePublishedTime) {
+      updateMetaTag('article:published_time', articlePublishedTime, true);
+    }
+    if (articleModifiedTime) {
+      updateMetaTag('article:modified_time', articleModifiedTime, true);
+    }
+    
+    // Enhanced Twitter tags
+    updateMetaTag('twitter:card', 'summary_large_image');
     updateMetaTag('twitter:title', title);
     updateMetaTag('twitter:description', description);
     updateMetaTag('twitter:image', ogImage);
-    updateMetaTag('twitter:card', 'summary_large_image');
+    updateMetaTag('twitter:image:alt', `${title} - ${siteName}`);
+    if (twitterSite) {
+      updateMetaTag('twitter:site', twitterSite);
+    }
     
     // Update canonical URL if provided
     if (canonicalUrl) {
