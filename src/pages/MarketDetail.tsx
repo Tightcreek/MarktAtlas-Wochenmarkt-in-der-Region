@@ -42,6 +42,49 @@ const MarketDetail = () => {
 
   const marketIsOpen = isMarketOpen(market.openingHours);
 
+  // Generate structured data for the market
+  const generateStructuredData = () => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": market.name,
+      "description": market.description,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": market.address,
+        "addressLocality": market.city,
+        "postalCode": market.postalCode,
+        "addressCountry": "DE"
+      },
+      "telephone": market.phone,
+      "email": market.email,
+      "url": market.website.startsWith('http') ? market.website : `https://${market.website}`,
+      "openingHours": market.openingHours,
+      "priceRange": "€",
+      "paymentAccepted": ["Cash", "Credit Card"],
+      "currenciesAccepted": "EUR",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "addressCountry": "DE"
+      },
+      "amenityFeature": market.facilities.map(facility => ({
+        "@type": "LocationFeatureSpecification",
+        "name": facility
+      })),
+      "makesOffer": market.specialties.map(specialty => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": specialty
+        }
+      })),
+      "keywords": market.features.join(', '),
+      "sameAs": [
+        market.website.startsWith('http') ? market.website : `https://${market.website}`
+      ]
+    };
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       <SEOHead 
@@ -49,6 +92,7 @@ const MarketDetail = () => {
         description={`${market.name} in ${market.city}: ${market.description.substring(0, 150)}... Öffnungszeiten: ${market.openingHours}. Spezialitäten: ${market.specialties.join(', ')}.`}
         keywords={`${market.name}, wochenmarkt ${market.city.toLowerCase()}, ${market.features.join(', ')}, ${market.specialties.join(', ')}`}
         canonicalUrl={`https://markt-atlas-finden.lovable.app/market/${market.slug || market.name.toLowerCase().replace(/ü/g, 'ue').replace(/ö/g, 'oe').replace(/ä/g, 'ae').replace(/ß/g, 'ss').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-')}`}
+        schemaData={generateStructuredData()}
       />
 
       <div className="container mx-auto px-4 py-8">
