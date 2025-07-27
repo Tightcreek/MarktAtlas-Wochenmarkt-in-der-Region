@@ -1,8 +1,13 @@
+User-agent: *
+Allow: /
+
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -10,5 +15,12 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Additional SEO optimizations
 User-agent: *
-Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /*.json$
+
+# Sitemap location
+Sitemap: https://markt-atlas-finden.lovable.app/sitemap.xml
