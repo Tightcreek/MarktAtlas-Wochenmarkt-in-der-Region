@@ -18,6 +18,8 @@ export interface Market {
   specialties: string[];
   facilities: string[];
   transport: string;
+  latitude?: number;
+  longitude?: number;
 }
 
 // Helper function to determine if a market is currently open
