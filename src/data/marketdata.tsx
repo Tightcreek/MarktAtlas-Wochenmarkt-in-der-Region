@@ -6351,7 +6351,7 @@ export const marketData: Market[] = [
   postalCode: "79098",
   latitude: 47.9959,
   longitude: 7.8522,
-  openingHours: "Montag bis Freitag 7-13, Samstag 7-14",
+  openingHours: "Montag 7-13, Dienstag 7-13, Mittwoch 7-13, Donnerstag 7-13, Freitag 7-13, Samstag 7-14",
   features: ["Regional", "Produkte", "Stadtteil"],
   asopen: ["Marktveranstaltungen("Montag bis Samstag 7-14")"],
   description: "Größter Wochenmarkt Freiburgs rund um das Münster mit regionalen Produkten",
