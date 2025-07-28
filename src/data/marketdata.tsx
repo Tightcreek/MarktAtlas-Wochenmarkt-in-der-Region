@@ -6338,12 +6338,12 @@ export const marketData: Market[] = [
   specialties: ["Lokale Anbieter", "Regionaler Fokus", "Mittwochs-Markt"],
   facilities: ["Siegmarer Hauptstraße", "Wöchentlicher Markt", "Ortsteilversorgung"],
   transport: "Bus: Siegmar; Regionalbahn: Siegmar"
-},
+  },
 
     // Freiburg Markets  
 
   {
-  id: "355",
+  id: "365",
   slug: "muenstermarkt-freiburg",
   name: "Münstermarkt Freiburg",
   address: "Münsterplatz",
