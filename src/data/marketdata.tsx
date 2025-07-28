@@ -5276,7 +5276,7 @@ export const marketData: Market[] = [
   specialties: ["Türkische Spezialitäten", "Griechische Spezialitäten", "Fisch"],
   facilities: ["Zweimal wöchentlich", "Parkplätze", "Stadtbahnhaltestelle"],
   transport: "Straßenbahn: Christ-König-Kirche; Bus: Weststadt"
-  }
+  },
 
  // Augsburg Markets
 
@@ -5489,7 +5489,6 @@ export const marketData: Market[] = [
   facilities: ["Teil des Stadtmarktes", "Mobile Stände", "Samstagsmarkt"],
   transport: "Straßenbahn und Bus: Königsplatz (2 Gehminuten)"
   }
-
 
  // Aachen Markets
 
