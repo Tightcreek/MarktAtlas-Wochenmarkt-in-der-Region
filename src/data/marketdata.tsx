@@ -8,8 +8,6 @@ export interface Market {
   address: string;
   city: string;
   postalCode: string;
-  latitude: number;
-  longitude; number;
   openingHours: string;
   features: string[];
   isOpen: boolean;
