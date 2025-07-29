@@ -22,7 +22,7 @@ const MarketMap: React.FC<MarketMapProps> = ({
 }) => {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
-  const { isLoaded, isLoading, error } = useGoogleMaps('AIzaSyCowLTBLlhP7SfUI5zp6Lki32QVZshYkK8');
+  const { isLoaded, isLoading, error } = useGoogleMaps('dummy');
   const [mapError, setMapError] = useState<string | null>(null);
 
   useEffect(() => {
