@@ -94,7 +94,7 @@ const Index = () => {
                   Wochenmarkt Finder Deutschland - Alle Wochenmärkte in deiner Nähe
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  Entdecke über 500 Wochenmärkte und Bauernmärkte in Deutschland. Finde Märkte heute geöffnet, aktuelle Öffnungszeiten und frische Produkte direkt vom Erzeuger - ganz in deiner Nähe.
+                  Entdecke über 500 Wochenmärkte und Bauernmärkte in Deutschland, Österreich und der Schweiz. Finde Märkte heute geöffnet, aktuelle Öffnungszeiten und frische Produkte direkt vom Erzeuger - ganz in deiner Nähe.
                 </p>
               </div>
               <Link to="/markets">
