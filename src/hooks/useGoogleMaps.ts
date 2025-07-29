@@ -35,7 +35,7 @@ export const useGoogleMaps = (apiKey: string) => {
 
     // Create and load script
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=geometry&callback=initGoogleMaps`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=geometry&callback=initGoogleMaps&loading=async`;
     script.async = true;
     script.defer = true;
     
