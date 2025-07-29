@@ -838,23 +838,6 @@ export const marketData: Market[] = [
 
   // Baden-Württemberg - weitere Städte
   {
-    id: "72",
-    name: "Freiburg Markt",
-    address: "Münsterplatz",
-    city: "Freiburg",
-    postalCode: "79098",
-    openingHours: "Montag-Samstag 7:30-13:30",
-    features: ["Münster", "Schwarzwald", "Universitätsstadt"],
-    isOpen: isMarketOpen("Montag-Samstag 7:30-13:30"),
-    description: "Münstermarkt vor dem berühmten Freiburger Münster.",
-    phone: "+49 761 12345678",
-    email: "info@markt-freiburg.de",
-    website: "www.muenstermarkt-freiburg.de",
-    specialties: ["Schwarzwald-Produkte", "Bio-Fokus", "Universitäts-Flair"],
-    facilities: ["Münster", "Bächle", "Historisches Kaufhaus"],
-    transport: "Tram 1, 3, 5 (Bertoldsbrunnen)"
-  },
-  {
     id: "73",
     name: "Konstanz Markt",
     address: "Marktstätte",
