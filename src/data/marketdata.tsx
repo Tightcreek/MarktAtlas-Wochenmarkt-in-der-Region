@@ -126,6 +126,8 @@ export const generateSEOKeywords = (markets: Market[]): string => {
   const baseKeywords = [
     "wochenmarkt finder",
     "bauernmarkt deutschland", 
+    "wochenmarkt österreich",
+    "wochenmarkt schweiz",
     "märkte heute geöffnet",
     "wochenmarkt öffnungszeiten",
     "frische produkte markt",
