@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { MapPin, Clock, Phone, Mail, Globe, Car, ArrowLeft } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
 import { marketData, isMarketOpen, getMarketBySlug, type Market } from '@/data/marketdata';
+import MarketMap from '@/components/MarketMap';
 
 const MarketDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -279,6 +280,16 @@ const MarketDetail = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Location Map */}
+            <MarketMap 
+              latitude={market.latitude}
+              longitude={market.longitude}
+              address={market.address}
+              marketName={market.name}
+              city={market.city}
+              postalCode={market.postalCode}
+            />
 
             {/* Transport */}
             <Card>
