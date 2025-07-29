@@ -100,7 +100,7 @@ const Markets = () => {
             Wochenmarkt Finder Deutschland
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Entdecke über {marketData.length} Wochenmärkte und Bauernmärkte in ganz Deutschland. 
+            Entdecke über {marketData.length} Wochenmärkte und Bauernmärkte in ganz Deutschland, Österreich und der Schweiz. 
             Finde frische Produkte, regionale Spezialitäten und lokale Erzeuger in deiner Nähe.
           </p>
         </div>
