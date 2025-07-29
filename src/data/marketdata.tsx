@@ -7292,8 +7292,136 @@ export const marketData: Market[] = [
   specialties: ["Regionale Produkte", "Stadtteilversorgung", "Donnerstag-Markt"],
   facilities: ["Alstadener Zentrum", "Stadtteilmarkt"],
   transport: "Bus: verschiedene Linien bis Alstaden"
+},
+
+ // Rostock Markets   
+
+{
+  id: "401",
+  slug: "wochenmarkt-rostock-neuer-markt",
+  name: "Wochenmarkt Neuer Markt",
+  address: "Neuer Markt",
+  city: "Rostock",
+  postalCode: "18055",
+  latitude: 54.0886,
+  longitude: 12.1336,
+  openingHours: "Montag 8-17, Dienstag 8-17, Mittwoch 8-17, Donnerstag 8-17, Freitag 8-17, Samstag 8-13",
+  features: ["Zentral", "Täglich", "Rathaus-Nähe"],
+  isOpen: isMarketOpen("Montag 8-17, Dienstag 8-17, Mittwoch 8-17, Donnerstag 8-17, Freitag 8-17, Samstag 8-13"),
+  description: "Der zentrale Wochenmarkt im Rostocker Stadtzentrum gegenüber dem Rathaus mit frischem Obst und Gemüse, Kräutern, Blumen, Käse, Eiern und Fleisch aus vorwiegend regionaler Produktion",
+  phone: "0381 3814030",
+  email: "info@rostocker-wochenmaerkte.de",
+  website: "www.rostocker-wochenmaerkte.de",
+  specialties: ["Regionale Produkte", "Obst und Gemüse", "Kräuter und Blumen"],
+  facilities: ["Neuer Markt", "Rathaus gegenüber", "Täglich geöffnet"],
+  transport: "Straßenbahn: verschiedene Linien bis Neuer Markt; S-Bahn: Rostock Hbf"
+},
+
+{
+  id: "402",
+  slug: "wochenmarkt-rostock-doberaner-platz",
+  name: "Wochenmarkt Doberaner Platz",
+  address: "Doberaner Platz",
+  city: "Rostock",
+  postalCode: "18057",
+  latitude: 54.0922,
+  longitude: 12.1089,
+  openingHours: "Montag 8-18, Donnerstag 8-18",
+  features: ["Bio-Sortiment", "Manufakturmarkt", "Zentral"],
+  isOpen: isMarketOpen("Montag 8-18, Donnerstag 8-18"),
+  description: "Wochenmarkt am Doberaner Platz mit vielfältigem Bio-Sortiment von Biofrisch Nordost - mittwochs als reiner Bio- und Manufakturmarkt geöffnet",
+  phone: "0381 3814030",
+  email: "info@rostocker-wochenmaerkte.de",
+  website: "www.rostocker-wochenmaerkte.de",
+  specialties: ["Bio-Sortiment", "Manufakturprodukte", "Biofrisch Nordost"],
+  facilities: ["Doberaner Platz", "Bio- und Manufakturmarkt", "Straßenbahnanbindung"],
+  transport: "Straßenbahn: alle Linien bis Haltestelle Doberaner Platz"
+},
+
+{
+  id: "403",
+  slug: "wochenmarkt-rostock-suedstadtcenter",
+  name: "Wochenmarkt Südstadtcenter",
+  address: "Südstadtcenter, Speicherstraße",
+  city: "Rostock-Südstadt",
+  postalCode: "18057",
+  latitude: 54.0669,
+  longitude: 12.1356,
+  openingHours: "Freitag 8-18",
+  features: ["Shopping-Center", "Stadtteil", "Freitag"],
+  isOpen: isMarketOpen("Freitag 8-18"),
+  description: "Wochenmarkt am Südstadtcenter mit regionalen Produkten und praktischer Anbindung an das Shopping-Center",
+  phone: "0381 3814030",
+  email: "info@rostocker-wochenmaerkte.de",
+  website: "www.rostocker-wochenmaerkte.de",
+  specialties: ["Regionale Produkte", "Shopping-Center-Nähe", "Freitag-Markt"],
+  facilities: ["Südstadtcenter", "Parkplätze", "Shopping-Anbindung"],
+  transport: "Straßenbahn: verschiedene Linien bis Südstadt"
+},
+
+{
+  id: "404",
+  slug: "wochenmarkt-rostock-dierkow",
+  name: "Wochenmarkt Dierkow",
+  address: "Hannes-Meyer-Platz",
+  city: "Rostock-Dierkow",
+  postalCode: "18146",
+  latitude: 54.1122,
+  longitude: 12.1689,
+  openingHours: "Mittwoch 8-14",
+  features: ["Stadtteil", "Hannes-Meyer-Platz", "Regional"],
+  isOpen: isMarketOpen("Mittwoch 8-14"),
+  description: "Stadtteilmarkt in Dierkow am Hannes-Meyer-Platz mit regionalen Produkten und frischen Lebensmitteln für die Stadtteilversorgung",
+  phone: "0381 3814030",
+  email: "info@rostocker-wochenmaerkte.de",
+  website: "www.rostocker-wochenmaerkte.de",
+  specialties: ["Regionale Produkte", "Stadtteilversorgung", "Mittwoch-Markt"],
+  facilities: ["Hannes-Meyer-Platz", "Stadtteilzentrum"],
+  transport: "Bus: verschiedene Linien bis Dierkow"
+},
+
+{
+  id: "405",
+  slug: "wochenmarkt-rostock-gehlsdorf",
+  name: "Wochenmarkt Gehlsdorf",
+  address: "Kirchenplatz 1",
+  city: "Rostock-Gehlsdorf",
+  postalCode: "18147",
+  latitude: 54.1378,
+  longitude: 12.1111,
+  openingHours: "Donnerstag 13-18",
+  features: ["Kirchenplatz", "Nachmittag", "Stadtteil"],
+  isOpen: isMarketOpen("Donnerstag 13-18"),
+  description: "Nachmittagsmarkt in Gehlsdorf am Kirchenplatz - ideal für Berufstätige mit regionalen Produkten und frischen Lebensmitteln",
+  phone: "0381 3814030",
+  email: "info@rostocker-wochenmaerkte.de",
+  website: "www.rostocker-wochenmaerkte.de",
+  specialties: ["Nachmittags-Shopping", "Regionale Produkte", "Kirchenplatz"],
+  facilities: ["Kirchenplatz", "Nachmittagsöffnung"],
+  transport: "Bus: verschiedene Linien bis Gehlsdorf"
+},
+
+{
+  id: "406",
+  slug: "wochenmarkt-rostock-reutershagen",
+  name: "Wochenmarkt Reutershagen",
+  address: "Reutershagen Zentrum",
+  city: "Rostock-Reutershagen",
+  postalCode: "18069",
+  latitude: 54.1033,
+  longitude: 12.0689,
+  openingHours: "Dienstag 8-14",
+  features: ["Stadtteil", "Reutershagen", "Regional"],
+  isOpen: isMarketOpen("Dienstag 8-14"),
+  description: "Stadtteilmarkt in Reutershagen mit regionalen Produkten und frischen Lebensmitteln - im Stadtteil, der auch das bekannte Fischerfest ausrichtet",
+  phone: "0381 3814030",
+  email: "info@rostocker-wochenmaerkte.de",
+  website: "www.rostocker-wochenmaerkte.de",
+  specialties: ["Regionale Produkte", "Stadtteilversorgung", "Fischerfest-Stadtteil"],
+  facilities: ["Reutershagen Zentrum", "Stadtteilmarkt"],
+  transport: "Straßenbahn: verschiedene Linien bis Reutershagen"
 }
-  
+
   
 ];
 
