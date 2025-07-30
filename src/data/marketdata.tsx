@@ -7836,9 +7836,93 @@ export const marketData: Market[] = [
   specialties: ["Bio-Lebensmittel", "Naturkost", "Fair Trade", "Regionale Produkte"],
   facilities: ["Marktplatz", "Neptunbrunnen", "Zentral"],
   transport: "Bus: verschiedene Linien bis Paderborn Zentrum; S-Bahn: Paderborn Hbf"
-}
+},
 
- // Paderborn Markets 
+ // Herne Markets 
+
+{
+  id: "427",
+  slug: "wochenmarkt-herne-mitte",
+  name: "Wochenmarkt Herne-Mitte",
+  address: "Friedrich-Ebert-Platz",
+  city: "Herne",
+  postalCode: "44623",
+  latitude: 51.5384,
+  longitude: 7.2185,
+  openingHours: "Dienstag 7:30-13, Freitag 7:30-13",
+  features: ["Zentral", "Regional", "Groß"],
+  isOpen: isMarketOpen("Dienstag 7:30-13, Freitag 7:30-13"),
+  description: "Großer Wochenmarkt im Zentrum von Herne mit frischen Lebensmitteln des täglichen Bedarfs wie Obst, Gemüse, Fleisch, Eier, Käse und Honig",
+  phone: "N/A",
+  email: "N/A",
+  website: "https://www.herne.de/Rathaus/Buergerservice/Wochenm%C3%A4rkte/",
+  specialties: ["Frisches Obst", "Gemüse", "Fleisch", "Eier", "Käse", "Honig"],
+  facilities: ["Friedrich-Ebert-Platz", "Zentral", "Groß"],
+  transport: "Bus: verschiedene Linien bis Herne Zentrum; S-Bahn: Herne"
+},
+
+{
+  id: "428",
+  slug: "wochenmarkt-herne-horsthausen",
+  name: "Wochenmarkt Herne-Horsthausen",
+  address: "Langforthstraße",
+  city: "Herne",
+  postalCode: "44628",
+  latitude: 51.5275,
+  longitude: 7.1889,
+  openingHours: "Donnerstag 7:30-13",
+  features: ["Regional", "Ortsteil", "Klein"],
+  isOpen: isMarketOpen("Donnerstag 7:30-13"),
+  description: "Wochenmarkt im Ortsteil Horsthausen mit regionalen Bauern und Händlern sowie frischen Lebensmitteln des täglichen Bedarfs",
+  phone: "N/A",
+  email: "N/A",
+  website: "N/A",
+  specialties: ["Bio-Lebensmittel", "Eier", "Fleisch", "Gemüse", "Honig", "Käse"],
+  facilities: ["Langforthstraße", "Ortsteil", "Klein"],
+  transport: "Bus: verschiedene Linien bis Horsthausen"
+},
+
+{
+  id: "429",
+  slug: "wochenmarkt-herne-sodingen",
+  name: "Wochenmarkt Herne-Sodingen",
+  address: "Mont-Cenis-Platz",
+  city: "Herne",
+  postalCode: "44627",
+  latitude: 51.5156,
+  longitude: 7.1678,
+  openingHours: "Mittwoch 7:30-13, Samstag 7:30-13",
+  features: ["Regional", "Ortsteil", "Bergwerk"],
+  isOpen: isMarketOpen("Mittwoch 7:30-13, Samstag 7:30-13"),
+  description: "Wochenmarkt im Ortsteil Sodingen am Mont-Cenis-Platz mit regionalen Erzeugnissen und frischen Lebensmitteln",
+  phone: "N/A",
+  email: "N/A",
+  website: "N/A",
+  specialties: ["Regionale Produkte", "Frisches Obst", "Gemüse", "Fleisch"],
+  facilities: ["Mont-Cenis-Platz", "Ortsteil", "Bergwerk-Nähe"],
+  transport: "Bus: verschiedene Linien bis Sodingen; Nähe Zeche Mont-Cenis"
+},
+
+{
+  id: "430",
+  slug: "wochenmarkt-wanne-eickel",
+  name: "Wochenmarkt Wanne-Eickel",
+  address: "St.-Jörgen-Platz",
+  city: "Herne",
+  postalCode: "44651",
+  latitude: 51.5495,
+  longitude: 7.1789,
+  openingHours: "Dienstag 7:30-13, Freitag 7:30-13",
+  features: ["Stadtteil", "Regional", "Groß"],
+  isOpen: isMarketOpen("Dienstag 7:30-13, Freitag 7:30-13"),
+  description: "Wochenmarkt im Stadtteil Wanne-Eickel mit Bio-Lebensmitteln, Blumen, Eiern, Fleisch, Gemüse und regionalen Produkten",
+  phone: "N/A",
+  email: "N/A",
+  website: "N/A",
+  specialties: ["Bio-Lebensmittel", "Blumen", "Eier", "Fleisch", "Gemüse"],
+  facilities: ["St.-Jörgen-Platz", "Stadtteil", "Groß"],
+  transport: "Bus: verschiedene Linien bis Wanne-Eickel; S-Bahn: Wanne-Eickel"
+}
   
 ];
 
