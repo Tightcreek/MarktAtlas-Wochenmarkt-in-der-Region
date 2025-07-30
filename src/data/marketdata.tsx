@@ -7751,8 +7751,90 @@ export const marketData: Market[] = [
   specialties: ["Nachbarschaftlich", "Frische Produkte", "Lokale Anbieter"],
   facilities: ["Marktplatz", "Klein", "Stadtteilmarkt"],
   transport: "Bus: verschiedene Linien bis Kreyenbrück; Bahn: Oldenburg Hbf"
-}
-  
+},
+
+ // Darmstadt Markets  
+
+{
+  id: "423",
+  slug: "wochenmarkt-darmstadt-marktplatz",
+  name: "Wochenmarkt am Marktplatz",
+  address: "Marktplatz",
+  city: "Darmstadt",
+  postalCode: "64283",
+  latitude: 49.8728,
+  longitude: 8.6512,
+  openingHours: "Mittwoch 8-14, Samstag 8-14",
+  features: ["Zentral", "Innenstadt", "Hauptmarkt"],
+  isOpen: isMarketOpen("Mittwoch 8-14, Samstag 8-14"),
+  description: "Der zentrale Wochenmarkt in der Darmstädter Innenstadt mit großer Auswahl an regionalen Produkten",
+  phone: "06151-132074",
+  email: "messen-maerkte@darmstadt.de",
+  website: "www.darmstadt.de",
+  specialties: ["Regionale Lebensmittel", "Bio-Gemüse", "Obst", "Saisonale Produkte"],
+  facilities: ["Marktplatz", "Zentral", "Innenstadt"],
+  transport: "Straßenbahn: verschiedene Linien bis Marktplatz; S-Bahn: Darmstadt Hbf"
+},
+{
+  id: "424",
+  slug: "wochenmarkt-johannesplatz",
+  name: "Wochenmarkt Johannesplatz",
+  address: "Johannesplatz",
+  city: "Darmstadt",
+  postalCode: "64293",
+  latitude: 49.8656,
+  longitude: 8.6234,
+  openingHours: "Donnerstag 13:30-18:30",
+  features: ["Johannesviertel", "Nachmittag", "Stadtteil"],
+  isOpen: isMarketOpen("Donnerstag 13:30-18:30"),
+  description: "Wochenmarkt im Johannesviertel am Johannesplatz mit Nachmittagsöffnung für Berufstätige",
+  phone: "06151-115",
+  email: "info@darmstadt.de",
+  website: "www.darmstadt.de",
+  specialties: ["Regionale Produkte", "Obst und Gemüse", "Backwaren", "Fleisch und Wurst"],
+  facilities: ["Johannesplatz", "Nachmittagsmarkt", "Stadtteilmarkt"],
+  transport: "Straßenbahn: verschiedene Linien bis Johannesviertel; S-Bahn: Darmstadt Hbf"
+},
+{
+  id: "425",
+  slug: "wochenmarkt-martinsviertel-riegerplatz",
+  name: "Wochenmarkt Martinsviertel",
+  address: "Riegerplatz",
+  city: "Darmstadt",
+  postalCode: "64289",
+  latitude: 49.8789,
+  longitude: 8.6678,
+  openingHours: "Mittwoch 8-13",
+  features: ["Klein", "Fein", "Martinsviertel"],
+  isOpen: isMarketOpen("Mittwoch 8-13"),
+  description: "Kleiner, feiner Markt im Martinsviertel mit vielen regionalen Spezialitäten und gemütlicher Atmosphäre",
+  phone: "06151-132074",
+  email: "messen-maerkte@darmstadt.de",
+  website: "N/A",
+  specialties: ["Regionale Spezialitäten", "Bio-Produkte", "Obst und Gemüse", "Backwaren"],
+  facilities: ["Riegerplatz", "Klein und fein", "Gemütlich"],
+  transport: "Straßenbahn: verschiedene Linien bis Martinsviertel; S-Bahn: Darmstadt Hbf"
+},
+{
+  id: "426",
+  slug: "wochenmarkt-bessungen-ludwighoehstrasse",
+  name: "Wochenmarkt Bessungen",
+  address: "Ludwighöhstraße",
+  city: "Darmstadt",
+  postalCode: "64285",
+  latitude: 49.8567,
+  longitude: 8.6456,
+  openingHours: "Freitag 14-18",
+  features: ["Bessungen", "Nachmittag", "Bauernmarkt"],
+  isOpen: isMarketOpen("Freitag 14-18"),
+  description: "Bauernmarkt in Bessungen mit regionalen Erzeugern und frischen Produkten am Freitagnachmittag",
+  phone: "06151-132074",
+  email: "messen-maerkte@darmstadt.de",
+  website: "N/A",
+  specialties: ["Bauernmarkt", "Regionale Erzeuger", "Frische Produkte", "Saisonales Gemüse"],
+  facilities: ["Ludwighöhstraße", "Bauernmarkt", "Nachmittagsmarkt"],
+  transport: "Straßenbahn: verschiedene Linien bis Bessungen; S-Bahn: Darmstadt Hbf"
+}  
   
 ];
 
