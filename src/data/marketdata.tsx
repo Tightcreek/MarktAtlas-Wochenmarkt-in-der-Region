@@ -7922,7 +7922,93 @@ export const marketData: Market[] = [
   specialties: ["Bio-Lebensmittel", "Blumen", "Eier", "Fleisch", "Gemüse"],
   facilities: ["St.-Jörgen-Platz", "Stadtteil", "Groß"],
   transport: "Bus: verschiedene Linien bis Wanne-Eickel; S-Bahn: Wanne-Eickel"
-}
+},
+
+// Heidelberg Markets  
+
+ {
+  id: "431",
+  slug: "wochenmarkt-heidelberg-friedrich-ebert-platz",
+  name: "Wochenmarkt Friedrich-Ebert-Platz",
+  address: "Friedrich-Ebert-Platz",
+  city: "Heidelberg",
+  postalCode: "69117",
+  latitude: 49.4089,
+  longitude: 8.7067,
+  openingHours: "Donnerstag 14-20, Freitag 7-13",
+  features: ["Altstadt", "Regional", "Abendmarkt"],
+  isOpen: isMarketOpen("Donnerstag 14-20, Freitag 7-13"),
+  description: "Heidelberger Altstadtmarkt mit regionalen Produkten, Obst, Gemüse, Fleisch und Backwaren. Donnerstags als Abendmarkt bis 20 Uhr",
+  phone: "N/A",
+  email: "N/A",
+  website: "http://www.wochenmarkt-heidelberg.de/",
+  specialties: ["Regionale Produkte", "Obst", "Gemüse", "Fleisch", "Backwaren"],
+  facilities: ["Friedrich-Ebert-Platz", "Altstadt", "Abendmarkt"],
+  transport: "Bus: verschiedene Linien bis Heidelberg Altstadt; S-Bahn: Heidelberg Hbf"
+},
+
+{
+  id: "432",
+  slug: "wochenmarkt-heidelberg-wilhelmsplatz",
+  name: "Wochenmarkt Wilhelmsplatz",
+  address: "Wilhelmsplatz",
+  city: "Heidelberg",
+  postalCode: "69115",
+  latitude: 49.4012,
+  longitude: 8.6889,
+  openingHours: "Montag 7-13, Donnerstag 7-13",
+  features: ["Weststadt", "Regional", "Groß"],
+  isOpen: isMarketOpen("Montag 7-13, Donnerstag 7-13"),
+  description: "Großer Wochenmarkt in der Weststadt mit frischen regionalen Produkten, Obst, Gemüse, Fleisch, Fisch und Blumen",
+  phone: "N/A",
+  email: "N/A",
+  website: "N/A",
+  specialties: ["Frisches Obst", "Gemüse", "Fleisch", "Fisch", "Blumen"],
+  facilities: ["Wilhelmsplatz", "Weststadt", "Groß"],
+  transport: "Bus: verschiedene Linien bis Wilhelmsplatz; Straßenbahn: verschiedene Linien"
+},
+
+{
+  id: "433",
+  slug: "wochenmarkt-heidelberg-marktplatz",
+  name: "Wochenmarkt Marktplatz Altstadt",
+  address: "Marktplatz",
+  city: "Heidelberg",
+  postalCode: "69117",
+  latitude: 49.4098,
+  longitude: 8.7081,
+  openingHours: "Samstag 7-14",
+  features: ["Altstadt", "Historisch", "Samstagsmarkt"],
+  isOpen: isMarketOpen("Samstag 7-14"),
+  description: "Traditioneller Samstagsmarkt auf dem historischen Marktplatz der Altstadt mit regionalen Erzeugnissen und frischen Produkten",
+  phone: "N/A",
+  email: "N/A",
+  website: "N/A",
+  specialties: ["Regionale Erzeugnisse", "Frische Produkte", "Traditionell", "Historisch"],
+  facilities: ["Marktplatz", "Altstadt", "Historisch"],
+  transport: "Bus: verschiedene Linien bis Heidelberg Altstadt; S-Bahn: Heidelberg Hbf"
+},
+
+{
+  id: "434",
+  slug: "oekomarkt-heidelberg-wilhelmsplatz",
+  name: "Ökomarkt Wilhelmsplatz",
+  address: "Wilhelmsplatz",
+  city: "Heidelberg",
+  postalCode: "69115",
+  latitude: 49.4012,
+  longitude: 8.6889,
+  openingHours: "Samstag 10-14",
+  features: ["Bio", "Öko", "Spezialitäten"],
+  isOpen: isMarketOpen("Samstag 10-14"),
+  description: "Heidelberger Spezialitätenmarkt mit Bio-Produkten, Öko-Lebensmitteln und regionalen Spezialitäten in der Weststadt",
+  phone: "N/A",
+  email: "N/A",
+  website: "N/A",
+  specialties: ["Bio-Produkte", "Öko-Lebensmittel", "Regionale Spezialitäten", "Naturkost"],
+  facilities: ["Wilhelmsplatz", "Weststadt", "Bio"],
+  transport: "Bus: verschiedene Linien bis Wilhelmsplatz; Straßenbahn: verschiedene Linien"
+} 
   
 ];
 
