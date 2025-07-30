@@ -1,13 +1,16 @@
 import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Clock, Phone, Mail, Globe, Car, ArrowLeft } from 'lucide-react';
+import { MapPin, Clock, Phone, Mail, Globe, Car, ArrowLeft, ExternalLink } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
 import { marketData, isMarketOpen, getMarketBySlug, type Market } from '@/data/marketdata';
+import { getBlogPostsForMarket, type BlogPost } from '@/data/blogdata';
 import MarketMap from '@/components/MarketMap';
 
 const MarketDetail = () => {
   const { slug } = useParams<{ slug: string }>();
+  const [relevantBlogPosts, setRelevantBlogPosts] = useState<BlogPost[]>([]);
   
   if (!slug) {
     return (
@@ -42,6 +45,14 @@ const MarketDetail = () => {
   }
 
   const marketIsOpen = isMarketOpen(market.openingHours);
+
+  // Load relevant blog posts for this market
+  useEffect(() => {
+    if (market && market.slug) {
+      const blogPosts = getBlogPostsForMarket(market.slug);
+      setRelevantBlogPosts(blogPosts);
+    }
+  }, [market]);
 
   // Generate structured data for the market
   const generateStructuredData = () => {
@@ -203,6 +214,50 @@ const MarketDetail = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Relevant Blog Posts */}
+            {relevantBlogPosts.length > 0 && (
+              <Card>
+                <CardHeader>
+                  <CardTitle>Relevante Blogbeiträge</CardTitle>
+                  <CardDescription>
+                    Interessante Artikel rund um diesen Markt
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {relevantBlogPosts.map((post) => (
+                      <div key={post.id} className="border rounded-lg p-4 shadow-md bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow duration-200">
+                        {post.imageUrl && (
+                          <div className="mb-3 overflow-hidden rounded-md">
+                            <img 
+                              src={post.imageUrl} 
+                              alt={post.title}
+                              className="w-full h-32 object-cover hover:scale-105 transition-transform duration-200"
+                            />
+                          </div>
+                        )}
+                        <h3 className="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 mb-3 line-clamp-3">
+                          {post.excerpt}
+                        </p>
+                        <a 
+                          href={post.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-200"
+                        >
+                          Weiterlesen
+                          <ExternalLink className="h-3 w-3" />
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
           </div>
 
           {/* Sidebar */}
