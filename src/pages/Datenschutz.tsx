@@ -153,9 +153,6 @@ const Datenschutz = () => {
                 <p className="text-muted-foreground">Pluwiger Str. 16</p>
                 <p className="text-muted-foreground">54296 Trier</p>
                 <p className="text-muted-foreground">Deutschland</p>
-                <p className="text-muted-foreground">Musterweg 10</p>
-                <p className="text-muted-foreground">90210 Musterstadt</p>
-                <p className="text-muted-foreground">Telefon: +49 (0) 123 44 55 66</p>
                 <p className="text-muted-foreground">E-Mail: tcservice.rental@gmail.com</p>
               </div>
               <p className="text-muted-foreground leading-relaxed mb-4">
