@@ -37,10 +37,10 @@ const Impressum = () => {
               {/* Company Information */}
               <section>
                 <div className="space-y-2">
-                  <p className="font-semibold">Max Mustermann</p>
+                  <p className="font-semibold">Luka Schmalenbach</p>
                   <p>MarktAtlas - Wochenmärkte in der Region</p>
-                  <p>Musterstraße 123</p>
-                  <p>12345 Musterstadt</p>
+                  <p>Pluwiger Str. 16</p>
+                  <p>54296 Trier</p>
                   <p>Deutschland</p>
                 </div>
               </section>
@@ -57,7 +57,7 @@ const Impressum = () => {
                       to="/" 
                       className="text-primary hover:text-primary/80 ml-2"
                     >
-                      https://markt-atlas-finden.lovable.app
+                      https://www.marktatlas.de
                     </Link>
                   </p>
                 </div>
@@ -66,16 +66,16 @@ const Impressum = () => {
               {/* Responsible Person */}
               <section>
                 <h2 className="text-xl font-semibold mb-4">Vertreten durch:</h2>
-                <p>Max Mustermann</p>
+                <p>Luka Schmalenbach</p>
               </section>
 
               {/* Legal Responsibility */}
               <section>
                 <h2 className="text-xl font-semibold mb-4">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</h2>
                 <div className="space-y-2">
-                  <p>Max Mustermann</p>
-                  <p>Musterstraße 123</p>
-                  <p>12345 Musterstadt</p>
+                  <p>Luka Schmalenbach</p>
+                  <p>Pluwiger Str. 16</p>
+                  <p>54296 Trier</p>
                 </div>
               </section>
 
