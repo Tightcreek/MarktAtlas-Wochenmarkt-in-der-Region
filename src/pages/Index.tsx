@@ -4,6 +4,7 @@ import { MapPin, Search, RefreshCw } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import heroImage from "@/assets/hero-market.jpg";
 import SEOHead from "@/components/SEOHead";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   const location = useLocation();
@@ -291,6 +292,7 @@ const Index = () => {
           </Link>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

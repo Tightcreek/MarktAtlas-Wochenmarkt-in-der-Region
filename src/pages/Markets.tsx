@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Search, MapPin, Clock, Filter } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import SEOHead from '@/components/SEOHead';
+import Footer from '@/components/Footer';
 import { marketData, isMarketOpen, generateSEOKeywords, type Market } from '@/data/marketdata';
 
 const Markets = () => {
@@ -237,6 +238,7 @@ const Markets = () => {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

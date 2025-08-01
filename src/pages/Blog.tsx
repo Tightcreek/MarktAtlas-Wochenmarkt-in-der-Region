@@ -3,6 +3,7 @@ import { ArrowLeft } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SEOHead from '@/components/SEOHead';
+import Footer from '@/components/Footer';
 import { getAllBlogPosts } from '@/data/blogdata';
 
 const Blog = () => {
@@ -123,6 +124,7 @@ const Blog = () => {
             </div>
           )}
         </div>
+        <Footer />
       </div>
     </>
   );
