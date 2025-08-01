@@ -8305,6 +8305,92 @@ export const marketData: Market[] = [
   specialties: ["Regionale Erzeugnisse", "Lokale Versorgung", "Stadtteil"],
   facilities: ["Nordwestlicher Stadtteil", "Wohngebiet", "Regional"],
   transport: "Bus: verschiedene Linien bis Nordwest Ingolstadt"
+},
+
+ // Pforzheim Markets    
+
+{
+  id: "449",
+  slug: "wochenmarkt-pforzheim-turnplatz",
+  name: "Wochenmarkt Turnplatz",
+  address: "Turnplatz",
+  city: "Pforzheim",
+  postalCode: "75175",
+  latitude: 48.8917,
+  longitude: 8.6985,
+  openingHours: "Mittwoch 7-13, Samstag 7-13",
+  features: ["Groß", "Regional", "60 Händler"],
+  isOpen: isMarketOpen("Mittwoch 7-13, Samstag 7-13"),
+  description: "Einer der größten Wochenmärkte des Landes mit ca. 60 Händlern und Erzeugern, die ihre Waren und Produkte auf dem Turnplatz anbieten",
+  phone: "07231 39-2374",
+  email: "presse@stadt-pforzheim.de",
+  website: "https://www.pforzheimer-wochenmarkt.de/",
+  specialties: ["60 Händler", "Erzeuger", "Große Auswahl", "Regionale Produkte"],
+  facilities: ["Turnplatz", "Groß", "60 Stände"],
+  transport: "Bus: verschiedene Linien bis Turnplatz; S-Bahn: Pforzheim Hbf"
+},
+
+{
+  id: "450",
+  slug: "wochenmarkt-pforzheim-marktplatz",
+  name: "Wochenmarkt Marktplatz",
+  address: "Marktplatz",
+  city: "Pforzheim",
+  postalCode: "75175",
+  latitude: 48.8934,
+  longitude: 8.7012,
+  openingHours: "Dienstag 7-14",
+  features: ["Zentral", "Innenstadt", "Traditionell"],
+  isOpen: isMarketOpen("Dienstag 7-14"),
+  description: "Der Wochenmarkt am Marktplatz mitten in der Innenstadt ist das Herzstück der Pforzheimer Marktkultur mit vielfältigen Sinneserlebnissen",
+  phone: "N/A",
+  email: "N/A",
+  website: "N/A",
+  specialties: ["Herzstück der Marktkultur", "Vielfältige Auswahl", "Traditionell"],
+  facilities: ["Marktplatz", "Innenstadt", "Zentral"],
+  transport: "Bus: verschiedene Linien bis Marktplatz; S-Bahn: Pforzheim Hbf"
+},
+
+{
+  id: "451",
+  slug: "bauernmarkt-pforzheim-rathaus",
+  name: "Bauernmarkt vor dem Rathaus",
+  address: "Bereich vor dem Rathaus",
+  city: "Pforzheim",
+  postalCode: "75175",
+  latitude: 48.8945,
+  longitude: 8.7023,
+  openingHours: "Freitag 9-14",
+  features: ["Bauernmarkt", "Regional", "Direktvermarkter"],
+  isOpen: isMarketOpen("Freitag 9-14"),
+  description: "Regionaler Bauernmarkt vor dem Rathaus mit Produkten von Landwirten aus dem Enzkreis, Bauern, Winzern, Imkern und Fischfarmern",
+  phone: "N/A",
+  email: "N/A",
+  website: "https://www.bauernmarkt-pforzheim.de/",
+  specialties: ["Regionale Produkte", "Landwirte Enzkreis", "Direktvermarkter", "Frische Waren"],
+  facilities: ["Rathaus", "Regional", "Bauernmarkt"],
+  transport: "Bus: verschiedene Linien bis Rathaus; S-Bahn: Pforzheim Hbf"
+},
+
+{
+  id: "452",
+  slug: "wochenmarkt-pforzheim-pfaelzerplatz",
+  name: "Wochenmarkt Pfälzerplatz",
+  address: "Pfälzerplatz",
+  city: "Pforzheim",
+  postalCode: "75175",
+  latitude: 48.8856,
+  longitude: 8.7134,
+  openingHours: "Freitag 7-13",
+  features: ["Stadtteil", "Regional", "Klein"],
+  isOpen: isMarketOpen("Freitag 7-13"),
+  description: "Wochenmarkt am Pfälzerplatz mit regionalem Angebot an Obst und Gemüse, Backwaren und weiteren frischen Produkten",
+  phone: "N/A",
+  email: "N/A",
+  website: "N/A",
+  specialties: ["Obst und Gemüse", "Backwaren", "Regionales Angebot"],
+  facilities: ["Pfälzerplatz", "Stadtteil", "Klein"],
+  transport: "Bus: verschiedene Linien bis Pfälzerplatz"
 }
   
 ];
