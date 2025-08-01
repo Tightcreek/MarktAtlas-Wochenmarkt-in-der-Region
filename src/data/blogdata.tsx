@@ -132,6 +132,7 @@ export const blogPosts: BlogPost[] = [
     
     <h3>Ein sozialer Treffpunkt</h3>
     <p>Der Markt ist mehr als ein Einkaufsort - er ist ein sozialer Raum, wo sich Menschen verschiedener Kulturen begegnen, austauschen und voneinander lernen. Diese Atmosphäre macht den besonderen Charme des Maybachufer-Marktes aus.</p>`,
+    imageUrl: "https://dam.destination.one/3226472/e64551943dfb95d3818ec818cc6fa4c379e96104f108dc73418f310837612809/wochenmarkt-in-m-lln-jpg.jpg",
     link: "/blog/maybachufer-berlin-internationale-kueche",
     marketSlugs: ["wochenmarkt-maybachufer-berlin", "wochenmarkt-suedstern-berlin"]
   },
