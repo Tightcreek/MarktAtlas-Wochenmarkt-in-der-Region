@@ -72,7 +72,7 @@ export const blogPosts: BlogPost[] = [
     
     <h3>Bio-Produzenten im Fokus</h3>
     <p>Über 80% der Stände verkaufen ausschließlich Bio-Produkte. Die Waren kommen größtenteils aus einem Umkreis von 50 Kilometern und werden teilweise noch am selben Tag geerntet.</p>`,
-    imageUrl: "/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png",
+    imageUrl: "https://geheimtipp-koeln.de/content/uploads/2020/12/markt-koeln-2-artikel-1024x683.jpg",
     link: "/blog/isemarkt-hamburg-nachhaltigkeit",
     marketSlugs: ["isemarkt-hamburg", "grossneumarkt-hamburg", "blankeneser-wochenmarkt-hamburg"]
   },
