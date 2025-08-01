@@ -15,6 +15,12 @@ const Footer = () => {
             >
               Impressum
             </Link>
+            <Link 
+              to="/datenschutz" 
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Datenschutz
+            </Link>
           </nav>
         </div>
       </div>
