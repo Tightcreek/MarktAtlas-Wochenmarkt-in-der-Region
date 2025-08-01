@@ -49,7 +49,6 @@ const Impressum = () => {
               <section>
                 <h2 className="text-xl font-semibold mb-4">Kontakt:</h2>
                 <div className="space-y-2">
-                  <p>Telefon: +49 (0)123 456789</p>
                   <p>E-Mail: info@markt-atlas.de</p>
                   <p>
                     Website: 
