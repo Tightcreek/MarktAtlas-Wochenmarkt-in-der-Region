@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
     
     <h3>Saisonale Highlights</h3>
     <p>Im Herbst locken frische Maronen und der erste Federweiße. Im Frühjahr begeistern Spargel aus Schrobenhausen und die ersten Erdbeeren. Jede Jahreszeit bringt ihre eigenen kulinarischen Schätze hervor.</p>`,
-    imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
+    imageUrl: "https://media.istockphoto.com/id/1448794844/de/foto/frisches-gem%C3%BCse-zum-verkauf-am-marktstand.jpg?s=612x612&w=0&k=20&c=AbFAyB2eMOtaOO_tyHz8ehXUaGBr6WRO5v6AxGYSYnc=",
     link: "/blog/viktualienmarkt-muenchen-regionale-produkte",
     marketSlugs: ["viktualienmarkt-muenchen", "markt-elisabethplatz-muenchen"]
   },
