@@ -133,7 +133,37 @@ export const blogPosts: BlogPost[] = [
     <p>Der Markt ist mehr als ein Einkaufsort - er ist ein sozialer Raum, wo sich Menschen verschiedener Kulturen begegnen, austauschen und voneinander lernen. Diese Atmosphäre macht den besonderen Charme des Maybachufer-Marktes aus.</p>`,
     link: "/blog/maybachufer-berlin-internationale-kueche",
     marketSlugs: ["wochenmarkt-maybachufer-berlin", "wochenmarkt-suedstern-berlin"]
+  },
+  {
+  id: "7",
+  slug: "wochenmarkt-wilhelmsplatz-koeln-nachhaltigkeit-vielfalt",
+  title: "Der Wochenmarkt am Wilhelmsplatz: Ein Juwel für regionales Essen in Köln",
+  excerpt: "Entdecken Sie, warum der Wochenmarkt am Wilhelmsplatz in Köln mehr als nur ein Einkaufsort ist – ein Ort für nachhaltige Produkte, Vielfalt und Gemeinschaft.",
+  content: `<h2>Willkommen am Wilhelmsplatz: Kölns grüner Treffpunkt</h2>
+  <p>Im Herzen des Kölner Stadtteils Nippes liegt der Wochenmarkt am Wilhelmsplatz, ein wahres Highlight für alle Liebhaber von frischen, regionalen und nachhaltigen Lebensmitteln. Zweimal pro Woche verwandelt sich der Platz in einen lebendigen Treffpunkt, der weit über die Grenzen des Veedels hinaus bekannt ist.</p>
+  
+  <h3>Die besten regionalen Anbieter</h3>
+  <p>Der Markt am Wilhelmsplatz zeichnet sich durch seine Vielfalt aus. Hier finden Sie nicht nur das klassische Obst und Gemüse, sondern auch eine beeindruckende Auswahl an Spezialitäten:</p>
+  <ul>
+    <li><strong>Käse aus dem Bergischen Land:</strong> Von mildem Ziegenkäse bis hin zu würzigem Schnittkäse.</li>
+    <li><strong>Frisches Geflügel vom Niederrhein:</strong> Freilandhähnchen und Enten direkt vom Erzeuger.</li>
+    <li><strong>Brot und Backwaren vom Bio-Bäcker:</strong> Handgebackenes Brot nach traditionellen Rezepten.</li>
+  </ul>
+  
+  <h3>Nachhaltigkeit im Fokus</h3>
+  <p>Viele Händler legen großen Wert auf Nachhaltigkeit. Sie fördern den Kauf von saisonalen Produkten, reduzieren Verpackungsmüll und bieten oft plastikfreie Alternativen an. Dieser Fokus macht den Wochenmarkt zu einer umweltbewussten Alternative zum Supermarkt und ist ein wichtiger Grund für seine Beliebtheit.</p>
+  
+  <h3>Mehr als nur einkaufen: Ein Ort der Begegnung</h3>
+  <p>Der Markt ist ein sozialer Treffpunkt. Man trifft Nachbarn, tauscht sich über Rezepte aus und genießt die lebendige Atmosphäre. Eine Kaffeebude lädt zum Verweilen ein und bietet die perfekte Gelegenheit, das bunte Treiben zu beobachten.</p>
+  
+  <h3>Anfahrt und Öffnungszeiten</h3>
+  <p>Der Wochenmarkt am Wilhelmsplatz ist gut mit öffentlichen Verkehrsmitteln erreichbar und findet in der Regel am <strong>Dienstag und Freitag von 7 bis 13 Uhr</strong> statt. Es empfiehlt sich, früh zu kommen, um die beste Auswahl zu haben.</p>`,
+  imageUrl: "/lovable-uploads/wilhelmsplatz-koeln-markt.jpg", // Passe den Pfad bei Bedarf an
+  link: "/blog/wochenmarkt-wilhelmsplatz-koeln-nachhaltigkeit-vielfalt",
+  marketSlugs: ["wochenmarkt-wilhelmsplatz-koeln"]
   }
+
+  
 ];
 
 // Helper function to get blog posts for a specific market
