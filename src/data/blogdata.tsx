@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
     
     <h3>Apfelernte in Düsseldorf</h3>
     <p>Der Carlsplatz feiert die Apfelernte mit über 40 regionalen Sorten. Von süßen Dessertäpfeln bis hin zu sauren Kochäpfeln - hier findet jeder seinen Favoriten.</p>`,
-    imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
+    imageUrl: "https://www.wolfenbuettel.de/media/custom/2672_576_1_g.JPG?1589294500",
     link: "/blog/herbst-spezialitaeten-deutsche-maerkte",
     marketSlugs: ["kleinmarkthalle-frankfurt", "wochenmarkt-marktplatz-stuttgart", "carlsplatz-duesseldorf"]
   },
@@ -112,6 +112,7 @@ export const blogPosts: BlogPost[] = [
     
     <h3>Modernisierung und Zukunft</h3>
     <p>2010 wurde die Halle grundlegend renoviert. Moderne Kühlung, bessere Belüftung und barrierefreie Zugänge machten sie fit für die Zukunft, ohne den traditionellen Charme zu verlieren.</p>`,
+    imageUrl: "https://www.stadt-remseck.de/resources/02%20Datenobjekte/Mitteilungen/Wochenmarkt-Obst-und%20Gem%C3%BCsestand.jpg",
     link: "/blog/kleinmarkthalle-frankfurt-geschichte",
     marketSlugs: ["kleinmarkthalle-frankfurt", "erzeugermarkt-konstablerwache-frankfurt"]
   },
