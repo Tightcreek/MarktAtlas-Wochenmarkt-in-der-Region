@@ -107,19 +107,15 @@ const Datenschutz = () => {
                 Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
               </p>
 
-              <h3 className="text-xl font-semibold mb-4">IONOS</h3>
+              <h3 className="text-xl font-semibold mb-4">Namecheap</h3>
+            
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Anbieter ist die IONOS SE, Eigentümer Str. 57, 56410 Montabaur (nachfolgend IONOS). Wenn Sie unsere 
-                Website besuchen, erfasst IONOS verschiedene Logfiles inklusive Ihrer IP-Adressen. Details entnehmen Sie 
-                der Datenschutzerklärung von IONOS:
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                <a href="https://www.ionos.de/terms-gtc/terms-privacy" className="text-primary hover:text-primary/80">
-                  https://www.ionos.de/terms-gtc/terms-privacy
+                <a href="https://https://www.namecheap.com/legal/general/privacy-policy/" className="text-primary hover:text-primary/80">
+                  https://https://www.namecheap.com/legal/general/privacy-policy/
                 </a>
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Die Verwendung von IONOS erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein 
+                Die Verwendung von Namecheap erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein 
                 berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Sofern eine 
                 entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 
                 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG. Die Einwilligung ist jederzeit widerrufbar.
