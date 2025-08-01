@@ -158,7 +158,7 @@ export const blogPosts: BlogPost[] = [
   
   <h3>Anfahrt und Öffnungszeiten</h3>
   <p>Der Wochenmarkt am Wilhelmsplatz ist gut mit öffentlichen Verkehrsmitteln erreichbar und findet in der Regel am <strong>Dienstag und Freitag von 7 bis 13 Uhr</strong> statt. Es empfiehlt sich, früh zu kommen, um die beste Auswahl zu haben.</p>`,
-  imageUrl: "/lovable-uploads/wilhelmsplatz-koeln-markt.jpg", // Passe den Pfad bei Bedarf an
+  imageUrl: "https://media.istockphoto.com/id/1448794844/de/foto/frisches-gem%C3%BCse-zum-verkauf-am-marktstand.jpg?s=612x612&w=0&k=20&c=AbFAyB2eMOtaOO_tyHz8ehXUaGBr6WRO5v6AxGYSYnc=", // Passe den Pfad bei Bedarf an
   link: "/blog/wochenmarkt-wilhelmsplatz-koeln-nachhaltigkeit-vielfalt",
   marketSlugs: ["wochenmarkt-wilhelmsplatz-koeln"]
   }
