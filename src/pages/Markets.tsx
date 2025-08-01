@@ -90,6 +90,16 @@ const Markets = () => {
             >
               Märkte
             </Link>
+            <Link
+              to="/blog"
+              className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                location.pathname === '/blog' 
+                  ? 'border-primary text-primary' 
+                  : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground'
+              }`}
+            >
+              Blog
+            </Link>
           </div>
         </div>
       </nav>
