@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +8,7 @@ import { getAllBlogPosts } from '@/data/blogdata';
 
 const Blog = () => {
   const allBlogPosts = getAllBlogPosts();
+  const location = useLocation();
 
   const generateStructuredData = () => {
     return {
@@ -41,17 +42,47 @@ const Blog = () => {
       />
       
       <div className="min-h-screen bg-background">
+        {/* Navigation */}
+        <nav className="bg-background border-b border-border">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex justify-center space-x-8">
+              <Link
+                to="/"
+                className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                  location.pathname === '/' 
+                    ? 'border-primary text-primary' 
+                    : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground'
+                }`}
+              >
+                Startseite
+              </Link>
+              <Link
+                to="/markets"
+                className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                  location.pathname === '/markets' 
+                    ? 'border-primary text-primary' 
+                    : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground'
+                }`}
+              >
+                Märkte
+              </Link>
+              <Link
+                to="/blog"
+                className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                  location.pathname === '/blog' 
+                    ? 'border-primary text-primary' 
+                    : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground'
+                }`}
+              >
+                Blog
+              </Link>
+            </div>
+          </div>
+        </nav>
+        
         <div className="container mx-auto px-4 py-8 max-w-6xl">
           {/* Header */}
           <div className="mb-8">
-            <Link 
-              to="/" 
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Zurück zur Startseite
-            </Link>
-            
             <div className="text-center mb-8">
               <h1 className="text-4xl font-bold mb-4">Marktfinder Blog</h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
