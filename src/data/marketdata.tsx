@@ -1063,6 +1063,7 @@ export const marketData: Market[] = [
   // Köln Markets
   {
     id: "105",
+    slug: "wochenmarkt-wilhelmsplatz-koeln",
     name: "Wilhelmplatz Markt",
     address: "Wilhelmplatz",
     city: "Köln",
