@@ -4,10 +4,15 @@ import { MapPin, Search, RefreshCw } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import heroImage from "@/assets/hero-market.jpg";
 import SEOHead from "@/components/SEOHead";
+import { WebsiteSchema, OrganizationSchema } from '@/components/StructuredData';
+import { useWebVitals } from '@/hooks/useSEO';
 import Footer from "@/components/Footer";
 
 const Index = () => {
   const location = useLocation();
+  
+  // Initialize Web Vitals monitoring
+  useWebVitals();
   
   const schemaData = {
     "@context": "https://schema.org",
@@ -52,6 +57,26 @@ const Index = () => {
         keywords="wochenmarkt finder, bauernmarkt deutschland, märkte heute geöffnet, wochenmarkt öffnungszeiten, frische produkte markt, regional einkaufen, markt samstag, wochenmarkt berlin hamburg münchen"
         canonicalUrl="https://markt-atlas-finden.lovable.app/"
         schemaData={schemaData}
+      />
+      
+      {/* Structured Data */}
+      <WebsiteSchema 
+        siteName="MarktAtlas Deutschland"
+        url="https://markt-atlas-finden.lovable.app"
+        description="Deutschlands umfassendste Plattform für Wochenmärkte und Bauernmärkte"
+        logo="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
+      />
+      
+      <OrganizationSchema 
+        name="MarktAtlas Deutschland"
+        url="https://markt-atlas-finden.lovable.app"
+        logo="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
+        sameAs={[
+          "https://facebook.com/marktatlas",
+          "https://twitter.com/marktatlas",
+          "https://instagram.com/marktatlas"
+        ]}
+        description="Deutschlands führende Plattform für die Suche nach Wochenmärkten und Bauernmärkten"
       />
       {/* Navigation */}
       <nav className="bg-background border-b border-border">

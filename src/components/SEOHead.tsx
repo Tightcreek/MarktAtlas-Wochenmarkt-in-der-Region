@@ -13,6 +13,9 @@ interface SEOHeadProps {
   twitterSite?: string;
   articlePublishedTime?: string;
   articleModifiedTime?: string;
+  alternateUrls?: { [lang: string]: string };
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  rating?: { value: number; bestRating: number; ratingCount: number };
 }
 
 const SEOHead = ({ 
@@ -27,7 +30,10 @@ const SEOHead = ({
   siteName = "MarktAtlas Deutschland",
   twitterSite = "@MarktAtlas",
   articlePublishedTime,
-  articleModifiedTime
+  articleModifiedTime,
+  alternateUrls,
+  breadcrumbs,
+  rating
 }: SEOHeadProps) => {
   
   useEffect(() => {
@@ -55,9 +61,15 @@ const SEOHead = ({
     // Update basic meta tags
     updateMetaTag('description', description);
     updateMetaTag('keywords', keywords);
-    updateMetaTag('robots', 'index, follow');
+    updateMetaTag('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
     updateMetaTag('language', 'de');
     updateMetaTag('author', siteName);
+    updateMetaTag('viewport', 'width=device-width, initial-scale=1.0');
+    updateMetaTag('theme-color', '#22c55e');
+    
+    // Performance and Core Web Vitals
+    updateMetaTag('format-detection', 'telephone=no');
+    updateMetaTag('dns-prefetch-control', 'on');
     
     // Update Open Graph tags
     updateMetaTag('og:title', title, true);
@@ -84,9 +96,17 @@ const SEOHead = ({
     updateMetaTag('twitter:description', description);
     updateMetaTag('twitter:image', ogImage);
     updateMetaTag('twitter:image:alt', `${title} - ${siteName}`);
+    updateMetaTag('twitter:creator', '@MarktAtlas');
     if (twitterSite) {
       updateMetaTag('twitter:site', twitterSite);
     }
+    
+    // Additional SEO meta tags
+    updateMetaTag('application-name', siteName);
+    updateMetaTag('msapplication-TileColor', '#22c55e');
+    updateMetaTag('apple-mobile-web-app-capable', 'yes');
+    updateMetaTag('apple-mobile-web-app-status-bar-style', 'default');
+    updateMetaTag('apple-mobile-web-app-title', siteName);
     
     // Update canonical URL if provided
     if (canonicalUrl) {
@@ -99,18 +119,69 @@ const SEOHead = ({
       linkTag.setAttribute('href', canonicalUrl);
     }
 
-    // Add JSON-LD schema if provided
-    if (schemaData) {
+    // Add alternate language URLs
+    if (alternateUrls) {
+      Object.entries(alternateUrls).forEach(([lang, url]) => {
+        let linkTag = document.querySelector(`link[hreflang="${lang}"]`) as HTMLLinkElement;
+        if (!linkTag) {
+          linkTag = document.createElement('link');
+          linkTag.setAttribute('rel', 'alternate');
+          linkTag.setAttribute('hreflang', lang);
+          document.head.appendChild(linkTag);
+        }
+        linkTag.setAttribute('href', url);
+      });
+    }
+
+    // Add enhanced JSON-LD schema
+    const enhancedSchema = schemaData ? {
+      ...schemaData,
+      ...(breadcrumbs && {
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          "itemListElement": breadcrumbs.map((crumb, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "name": crumb.name,
+            "item": crumb.url
+          }))
+        }
+      }),
+      ...(rating && {
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": rating.value,
+          "bestRating": rating.bestRating,
+          "ratingCount": rating.ratingCount
+        }
+      })
+    } : schemaData;
+
+    if (enhancedSchema) {
       let schemaScript = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
       if (!schemaScript) {
         schemaScript = document.createElement('script');
         schemaScript.setAttribute('type', 'application/ld+json');
         document.head.appendChild(schemaScript);
       }
-      schemaScript.textContent = JSON.stringify(schemaData);
+      schemaScript.textContent = JSON.stringify(enhancedSchema);
     }
     
-  }, [title, description, keywords, canonicalUrl, ogImage, schemaData]);
+    // Add DNS prefetch for external domains
+    const addDnsPrefetch = (domain: string) => {
+      if (!document.querySelector(`link[rel="dns-prefetch"][href="${domain}"]`)) {
+        const linkTag = document.createElement('link');
+        linkTag.setAttribute('rel', 'dns-prefetch');
+        linkTag.setAttribute('href', domain);
+        document.head.appendChild(linkTag);
+      }
+    };
+    
+    addDnsPrefetch('//fonts.googleapis.com');
+    addDnsPrefetch('//www.google-analytics.com');
+    addDnsPrefetch('//maps.googleapis.com');
+    
+  }, [title, description, keywords, canonicalUrl, ogImage, schemaData, alternateUrls, breadcrumbs, rating]);
 
   return null;
 };

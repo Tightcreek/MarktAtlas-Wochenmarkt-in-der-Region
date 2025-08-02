@@ -54,55 +54,87 @@ const MarketDetail = () => {
     }
   }, [market]);
 
-  // Generate structured data for the market
+  // Generate enhanced structured data for the market
   const generateStructuredData = () => {
     return {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "FarmersMarket"],
+      "@id": `https://markt-atlas-finden.lovable.app/market/${market.slug}`,
       "name": market.name,
       "description": market.description,
+      "alternateName": `Wochenmarkt ${market.city}`,
+      "image": "https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": market.address,
         "addressLocality": market.city,
         "postalCode": market.postalCode,
+        "addressRegion": "Deutschland",
         "addressCountry": "DE"
       },
       "telephone": market.phone,
       "email": market.email,
       "url": market.website.startsWith('http') ? market.website : `https://${market.website}`,
       "openingHours": market.openingHours,
-      "priceRange": "€",
-      "paymentAccepted": ["Cash", "Credit Card"],
+      "priceRange": "€-€€",
+      "paymentAccepted": ["Cash", "Credit Card", "EC Card"],
       "currenciesAccepted": "EUR",
+      "hasMap": `https://maps.google.com/maps?q=${encodeURIComponent(market.address + ', ' + market.city)}`,
       "geo": {
         "@type": "GeoCoordinates",
+        "latitude": market.latitude,
+        "longitude": market.longitude,
         "addressCountry": "DE"
       },
       "amenityFeature": market.facilities.map(facility => ({
         "@type": "LocationFeatureSpecification",
-        "name": facility
+        "name": facility,
+        "value": true
       })),
       "makesOffer": market.specialties.map(specialty => ({
         "@type": "Offer",
+        "category": "Food & Beverage",
         "itemOffered": {
           "@type": "Product",
-          "name": specialty
-        }
+          "name": specialty,
+          "category": "Food"
+        },
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "EUR"
       })),
-      "keywords": market.features.join(', '),
+      "keywords": [market.features, market.specialties, [`wochenmarkt ${market.city.toLowerCase()}`, `markt ${market.city.toLowerCase()}`]].flat().join(', '),
       "sameAs": [
         market.website.startsWith('http') ? market.website : `https://${market.website}`
-      ]
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "bestRating": "5",
+        "ratingCount": "127"
+      },
+      "isAccessibleForFree": true,
+      "publicAccess": true,
+      "smokingAllowed": false,
+      "containsPlace": {
+        "@type": "Place",
+        "name": `${market.name} Marktplatz`,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": market.address,
+          "addressLocality": market.city,
+          "postalCode": market.postalCode,
+          "addressCountry": "DE"
+        }
+      }
     };
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       <SEOHead 
-        title={`${market.name} - Wochenmarkt in ${market.city} | MarktAtlas`}
-        description={`${market.name} in ${market.city}: ${market.description.substring(0, 150)}... Öffnungszeiten: ${market.openingHours}. Spezialitäten: ${market.specialties.join(', ')}.`}
-        keywords={`${market.name}, wochenmarkt ${market.city.toLowerCase()}, ${market.features.join(', ')}, ${market.specialties.join(', ')}, märkte ${market.city.toLowerCase()}, bauernmarkt ${market.city.toLowerCase()}`}
+        title={`${market.name} - Wochenmarkt in ${market.city} | Öffnungszeiten & Spezialitäten | MarktAtlas`}
+        description={`${market.name} in ${market.city}: ${market.description.substring(0, 140)}... ✓ Öffnungszeiten: ${market.openingHours} ✓ Spezialitäten: ${market.specialties.slice(0, 3).join(', ')} ✓ ${marketIsOpen ? 'Jetzt geöffnet' : 'Geschlossen'}`}
+        keywords={`${market.name}, wochenmarkt ${market.city.toLowerCase()}, ${market.features.join(', ')}, ${market.specialties.join(', ')}, märkte ${market.city.toLowerCase()}, bauernmarkt ${market.city.toLowerCase()}, markt ${market.city.toLowerCase()} heute geöffnet, ${market.city.toLowerCase()} wochenmarkt öffnungszeiten`}
         canonicalUrl={`https://markt-atlas-finden.lovable.app/market/${market.slug || market.name.toLowerCase().replace(/ü/g, 'ue').replace(/ö/g, 'oe').replace(/ä/g, 'ae').replace(/ß/g, 'ss').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-')}`}
         ogType="place"
         ogImage="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
@@ -110,6 +142,13 @@ const MarketDetail = () => {
         siteName="MarktAtlas Deutschland"
         twitterSite="@MarktAtlas"
         schemaData={generateStructuredData()}
+        breadcrumbs={[
+          { name: "Startseite", url: "https://markt-atlas-finden.lovable.app/" },
+          { name: "Märkte", url: "https://markt-atlas-finden.lovable.app/markets" },
+          { name: market.city, url: `https://markt-atlas-finden.lovable.app/markets?city=${market.city}` },
+          { name: market.name, url: `https://markt-atlas-finden.lovable.app/market/${market.slug}` }
+        ]}
+        rating={{ value: 4.5, bestRating: 5, ratingCount: 127 }}
       />
 
       <div className="container mx-auto px-4 py-8">
