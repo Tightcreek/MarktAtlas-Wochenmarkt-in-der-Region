@@ -163,7 +163,33 @@ export const blogPosts: BlogPost[] = [
   imageUrl: "https://media.istockphoto.com/id/1448794844/de/foto/frisches-gem%C3%BCse-zum-verkauf-am-marktstand.jpg?s=612x612&w=0&k=20&c=AbFAyB2eMOtaOO_tyHz8ehXUaGBr6WRO5v6AxGYSYnc=", // Passe den Pfad bei Bedarf an
   link: "/blog/wochenmarkt-wilhelmsplatz-koeln-nachhaltigkeit-vielfalt",
   marketSlugs: ["wochenmarkt-wilhelmsplatz-koeln"]
-  }
+  },
+  {
+  id: "8",
+  slug: "markt-elisabethplatz-muenchen-schwabing",
+  title: "Der Wochenmarkt am Elisabethplatz: Ein charmanter Schatz in München-Schwabing",
+  excerpt: "Entdecken Sie die familiäre Atmosphäre und die exquisite Auswahl an frischen, hochwertigen Produkten auf dem Markt am Elisabethplatz in München.",
+  content: `<h2>Der Elisabethmarkt: Das Herz von Schwabing</h2>
+  <p>Versteckt in Schwabing, abseits der großen Touristenströme, liegt der Wochenmarkt am Elisabethplatz. Seit 1908 versorgt er die Nachbarschaft mit dem Besten, was die Region zu bieten hat und hat sich seinen ganz eigenen, charmanten Charakter bewahrt. Anders als der große Viktualienmarkt, punktet der Elisabethmarkt mit persönlicher Atmosphäre und einer übersichtlichen Auswahl.</p>
+  
+  <h3>Exklusive Produkte und persönliche Beratung</h3>
+  <p>Hier geht es um Qualität statt Quantität. Jeder Standbetreiber kennt seine Produkte und seine Kunden. Freuen Sie sich auf:</p>
+  <ul>
+    <li><strong>Spezialitätenkäse:</strong> Von kleinen Käsereien aus dem Umland, oft exklusiv auf diesem Markt erhältlich.</li>
+    <li><strong>Vielfältiges Bio-Gemüse:</strong> Frisches Gemüse direkt vom Bio-Bauern aus der Region, oft noch am selben Tag geerntet.</li>
+    <li><strong>Kunstvolle Blumenarrangements:</strong> Ein wahres Paradies für Blumenliebhaber mit einem Fokus auf Saisonalität.</li>
+    <li><strong>Wurstwaren aus eigener Herstellung:</strong> Metzgermeister, die ihre Produkte mit Leidenschaft herstellen und anbieten.</li>
+  </ul>
+  
+  <h3>Ein Treffpunkt für die Nachbarschaft</h3>
+  <p>Der Markt ist ein wichtiger sozialer Treffpunkt. Man trifft sich, tauscht Neuigkeiten aus und genießt die entspannte Stimmung. Viele Münchner kommen nicht nur zum Einkaufen, sondern auch, um die besondere Lebensqualität in Schwabing zu zelebrieren.</p>
+  
+  <h3>Geheimtipp: Die Kaffeestände</h3>
+  <p>Ein Besuch ist nicht komplett ohne eine Tasse Kaffee an einem der kleinen Kaffeestände. Es ist der perfekte Ort, um eine Pause zu machen, das Markttreiben zu beobachten und die frische Luft zu genießen.</p>`,
+  imageUrl: "/lovable-uploads/elisabethmarkt-muenchen.jpg", // Passe den Pfad bei Bedarf an
+  link: "/blog/markt-elisabethplatz-muenchen-schwabing",
+  marketSlugs: ["markt-elisabethplatz-muenchen"]
+}
 
   
 ];
