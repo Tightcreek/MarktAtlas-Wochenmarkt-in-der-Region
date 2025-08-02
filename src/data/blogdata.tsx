@@ -186,7 +186,7 @@ export const blogPosts: BlogPost[] = [
   
   <h3>Geheimtipp: Die Kaffeestände</h3>
   <p>Ein Besuch ist nicht komplett ohne eine Tasse Kaffee an einem der kleinen Kaffeestände. Es ist der perfekte Ort, um eine Pause zu machen, das Markttreiben zu beobachten und die frische Luft zu genießen.</p>`,
-  imageUrl: "https://sdmntprnortheu.oaiusercontent.com/files/00000000-4218-61f4-b128-4c68187c253f/raw?se=2025-08-02T17%3A51%3A52Z&sp=r&sv=2024-08-04&sr=b&scid=3fbef1e1-649b-5c34-9cde-3ba35b95f133&skoid=0a4a0f0c-99ac-4752-9d87-cfac036fa93f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-02T05%3A54%3A42Z&ske=2025-08-03T05%3A54%3A42Z&sks=b&skv=2024-08-04&sig=eoJA%2Byj1rpbk9vO1K9YnTk6T5rJuQ3s3/62ptq9oYWE%3D", // Passe den Pfad bei Bedarf an
+  imageUrl: "https://geheimtipp-koeln.de/content/uploads/2020/12/markt-koeln-2-artikel-1024x683.jpg", // Passe den Pfad bei Bedarf an
   link: "/blog/markt-elisabethplatz-muenchen-schwabing",
   marketSlugs: ["markt-elisabethplatz-muenchen"]
 }
