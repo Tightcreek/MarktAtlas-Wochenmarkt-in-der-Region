@@ -185,78 +185,7 @@ export const marketData: Market[] = [
     transport: "Tram 2, 3, 4 (Markt), Bus 10, 11"
   },
  
-  // Hessen - weitere Städte
-  {
-    id: "55",
-    name: "Kassel Markt",
-    address: "Königsplatz",
-    city: "Kassel",
-    postalCode: "34117",
-    openingHours: "Dienstag, Donnerstag, Samstag 7-14",
-    features: ["documenta", "Bergpark"],
-    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 7-14"),
-    description: "Kunstmarkt in der documenta-Stadt mit Bergpark Wilhelmshöhe.",
-    phone: "+49 561 12345678",
-    email: "info@markt-kassel.de",
-    website: "www.markt-kassel.de",
-    specialties: ["Nordhessische Küche", "Kunsthandwerk", "Bio-Produkte"],
-    facilities: ["Königsplatz", "documenta-Halle"],
-    transport: "Tram 1, 3, 4, 5 (Königsplatz)"
-  },
-  {
-    id: "56",
-    name: "Darmstadt Markt",
-    address: "Marktplatz",
-    city: "Darmstadt",
-    postalCode: "64283",
-    openingHours: "Mittwoch, Samstag 8-14",
-    features: ["Jugendstil", "Wissenschaft"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
-    description: "Jugendstil-Markt in der Wissenschaftsstadt.",
-    phone: "+49 6151 12345678",
-    email: "info@markt-darmstadt.de",
-    website: "www.markt-darmstadt.de",
-    specialties: ["Südhessische Küche", "Wissenschafts-Flair", "Modern"],
-    facilities: ["Luisenplatz", "Mathildenhöhe"],
-    transport: "Tram 2, 3, 4, 9 (Luisenplatz)"
-  },
-  {
-    id: "57",
-    name: "Gießen Markt",
-    address: "Marktplatz",
-    city: "Gießen",
-    postalCode: "35390",
-    openingHours: "Dienstag, Donnerstag, Samstag 8-14",
-    features: ["Universitätsstadt"],
-    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-14"),
-    description: "Universitätsmarkt in der mittelhessischen Studentenstadt.",
-    phone: "+49 641 12345678",
-    email: "info@markt-giessen.de",
-    website: "www.markt-giessen.de",
-    specialties: ["Studentenfreundlich", "Mittelhessische Küche", "Jung"],
-    facilities: ["Rathaus", "Universitäts-Nähe"],
-    transport: "Bus 1, 2, 3 (Marktplatz)"
-  },
-
- 
-  // Schleswig-Holstein - weitere Städte
-  {
-    id: "61",
-    name: "Flensburg Markt",
-    address: "Südermarkt",
-    city: "Flensburg",
-    postalCode: "24937",
-    openingHours: "Donnerstag, Samstag 8-14",
-    features: ["Grenzstadt", "Dänisch"],
-    isOpen: isMarketOpen("Donnerstag, Samstag 8-14"),
-    description: "Deutsch-dänischer Grenzmarkt mit skandinavischem Flair.",
-    phone: "+49 461 12345678",
-    email: "info@markt-flensburg.de",
-    website: "www.markt-flensburg.de",
-    specialties: ["Dänische Spezialitäten", "Grenz-Küche", "Skandinavisch"],
-    facilities: ["Nordertor", "Grenzregion"],
-    transport: "Bus 1, 2, 3 (Südermarkt)"
-  },
+  
   {
     id: "62",
     name: "Neumünster Markt",
@@ -275,24 +204,6 @@ export const marketData: Market[] = [
     transport: "Bus 7711, 7712 (Großflecken)"
   },
 
-  // Mecklenburg-Vorpommern - weitere Städte
-  {
-    id: "63",
-    name: "Schwerin Markt",
-    address: "Marktplatz",
-    city: "Schwerin",
-    postalCode: "19055",
-    openingHours: "Dienstag, Donnerstag, Samstag 8-15",
-    features: ["Schloss", "Seen"],
-    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-15"),
-    description: "Märchenschloss-Markt in der Stadt der Seen.",
-    phone: "+49 385 12345678",
-    email: "info@markt-schwerin.de",
-    website: "www.markt-schwerin.de",
-    specialties: ["Mecklenburgische Küche", "Seenplatte-Fisch", "Schloss-Flair"],
-    facilities: ["Schloss", "Dom", "Seen"],
-    transport: "Bus 10, 11, 14 (Markt)"
-  },
   {
     id: "64",
     name: "Stralsund Markt",
@@ -328,41 +239,6 @@ export const marketData: Market[] = [
     transport: "Bus 1, 2, 3 (Markt)"
   },
 
-  // Brandenburg
-  {
-    id: "66",
-    name: "Potsdam Markt",
-    address: "Alter Markt",
-    city: "Potsdam",
-    postalCode: "14467",
-    openingHours: "Mittwoch, Samstag 9-15",
-    features: ["Schlösser", "UNESCO", "Sanssouci"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 9-15"),
-    description: "Königlicher Markt in der Stadt der Schlösser und Gärten.",
-    phone: "+49 331 12345678",
-    email: "info@markt-potsdam.de",
-    website: "www.markt-potsdam.de",
-    specialties: ["Preußische Tradition", "Schloss-Flair", "Garten-Produkte"],
-    facilities: ["Sanssouci", "Neues Palais", "UNESCO"],
-    transport: "Tram 91, 92, 96 (Alter Markt/Landtag)"
-  },
-  {
-    id: "67",
-    name: "Cottbus Markt",
-    address: "Altmarkt",
-    city: "Cottbus",
-    postalCode: "03046",
-    openingHours: "Dienstag, Donnerstag, Samstag 8-14",
-    features: ["Lausitz", "Sorbisch"],
-    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-14"),
-    description: "Sorbischer Markt in der Lausitz mit wendischer Tradition.",
-    phone: "+49 355 12345678",
-    email: "info@markt-cottbus.de",
-    website: "www.markt-cottbus.de",
-    specialties: ["Sorbische Spezialitäten", "Lausitzer Küche", "Wendische Kultur"],
-    facilities: ["Wendisches Museum", "Spremberger Turm"],
-    transport: "Tram 1, 2, 3 (Altmarkt)"
-  },
   {
     id: "68",
     name: "Brandenburg Markt",
@@ -416,23 +292,7 @@ export const marketData: Market[] = [
     facilities: ["Dom St. Stephan", "Drei Flüsse", "Veste Oberhaus"],
     transport: "Bus 1, 2, 3 (Domplatz)"
   },
-  {
-    id: "71",
-    name: "Ingolstadt Markt",
-    address: "Theaterplatz",
-    city: "Ingolstadt",
-    postalCode: "85049",
-    openingHours: "Mittwoch, Samstag 7-13",
-    features: ["Audi-Stadt", "Universitätsstadt"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 7-13"),
-    description: "Moderner Markt in der Audi- und Universitätsstadt.",
-    phone: "+49 841 12345678",
-    email: "info@markt-ingolstadt.de",
-    website: "www.markt-ingolstadt.de",
-    specialties: ["Moderne Küche", "Bayerische Tradition", "Donau-Region"],
-    facilities: ["Neues Schloss", "Audi Forum"],
-    transport: "Bus 10, 11, 16 (Theaterplatz)"
-  },
+  
 
   // Baden-Württemberg - weitere Städte
   {
@@ -540,58 +400,6 @@ export const marketData: Market[] = [
     transport: "Stadtbahn 1, 2, 3 (Jahnplatz)"
   },
   
-
-  {
-    id: "82",
-    name: "Reutlingen Markt",
-    address: "Marktplatz",
-    city: "Reutlingen",
-    postalCode: "72764",
-    openingHours: "Dienstag, Donnerstag, Samstag 7-13",
-    features: ["Tor zur Schwäbischen Alb"],
-    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 7-13"),
-    description: "Markt am Tor zur Schwäbischen Alb mit Panoramablick.",
-    phone: "+49 7121 12345678",
-    email: "info@markt-reutlingen.de",
-    website: "www.markt-reutlingen.de",
-    specialties: ["Schwäbische Alb", "Bergblick", "Wanderer-Versorgung"],
-    facilities: ["Marienkirche", "Heimatmuseum"],
-    transport: "Bus 1, 2, 7 (Marktplatz)"
-  },
-  {
-    id: "83",
-    name: "Pforzheim Markt",
-    address: "Marktplatz",
-    city: "Pforzheim",
-    postalCode: "75172",
-    openingHours: "Dienstag, Donnerstag, Samstag 7-13",
-    features: ["Goldstadt", "Schmuck"],
-    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 7-13"),
-    description: "Goldstadt-Markt mit Schmuck- und Uhrentradition.",
-    phone: "+49 7231 12345678",
-    email: "info@markt-pforzheim.de",
-    website: "www.markt-pforzheim.de",
-    specialties: ["Goldstadt-Flair", "Schwarzwald-Nähe", "Uhren & Schmuck"],
-    facilities: ["Schmuckmuseum", "Stadtkirche"],
-    transport: "Stadtbahn S5, S6 (Hauptbahnhof)"
-  },
-  {
-    id: "84",
-    name: "Hildesheim Markt",
-    address: "Marktplatz",
-    city: "Hildesheim",
-    postalCode: "31134",
-    openingHours: "Dienstag, Freitag, Samstag 8-14",
-    features: ["UNESCO", "Rosenstock", "Dom"],
-    isOpen: isMarketOpen("Dienstag, Freitag, Samstag 8-14"),
-    description: "UNESCO-Markt mit dem berühmten 1000jährigen Rosenstock.",
-    phone: "+49 5121 12345678",
-    email: "info@markt-hildesheim.de",
-    website: "www.markt-hildesheim.de",
-    specialties: ["Niedersächsische Küche", "Rosenstock-Legende", "Dom-Geschichte"],
-    facilities: ["Dom", "Michaeliskirche", "UNESCO-Welterbe"],
-    transport: "Bus 1, 2, 3 (Marktplatz)"
-  },
   {
     id: "85",
     name: "Celle Markt",
