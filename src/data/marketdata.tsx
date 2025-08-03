@@ -292,27 +292,7 @@ export const marketData: Market[] = [
     facilities: ["Dom St. Stephan", "Drei Flüsse", "Veste Oberhaus"],
     transport: "Bus 1, 2, 3 (Domplatz)"
   },
-  
-
-  // Baden-Württemberg - weitere Städte
-  {
-    id: "73",
-    name: "Konstanz Markt",
-    address: "Marktstätte",
-    city: "Konstanz",
-    postalCode: "78462",
-    openingHours: "Mittwoch, Samstag 7-13",
-    features: ["Bodensee", "Schweiz-Grenze", "Konzil"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 7-13"),
-    description: "Bodensee-Markt an der Schweizer Grenze mit Konzil-Geschichte.",
-    phone: "+49 7531 12345678",
-    email: "info@markt-konstanz.de",
-    website: "www.markt-konstanz.de",
-    specialties: ["Bodensee-Fisch", "Schweizer Einfluss", "Seeblick"],
-    facilities: ["Konzil", "Imperia", "Bodensee"],
-    transport: "Bus 1, 5, 9 (Marktstätte)"
-  },
- 
+   
   {
     id: "85",
     name: "Celle Markt",
@@ -364,23 +344,7 @@ export const marketData: Market[] = [
     facilities: ["Rathaus", "Otto-Dix-Haus"],
     transport: "Tram 1, 2, 3 (Markt)"
   },
-  {
-    id: "91",
-    name: "Zwickau Markt",
-    address: "Hauptmarkt",
-    city: "Zwickau",
-    postalCode: "08056",
-    openingHours: "Dienstag, Donnerstag, Samstag 8-14",
-    features: ["Robert-Schumann-Stadt", "Auto-Tradition"],
-    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-14"),
-    description: "Sächsischer Markt in der Robert-Schumann-Stadt mit Auto-Tradition.",
-    phone: "+49 375 12345678",
-    email: "info@markt-zwickau.de",
-    website: "www.markt-zwickau.de",
-    specialties: ["Sächsische Küche", "Schumann-Musik", "Automobil-Geschichte"],
-    facilities: ["Gewandhaus", "Robert-Schumann-Haus"],
-    transport: "Tram 1, 2, 3 (Hauptmarkt)"
-  },
+  
   {
     id: "92",
     name: "Plauen Markt",
@@ -10664,6 +10628,176 @@ export const marketData: Market[] = [
   specialties: ["Frisch", "Regional", "Saisonal"],
   facilities: ["Brandplatz", "Altes Schloss", "Neues Schloss"],
   transport: "Bahnhof: Gießen; Bus: verschiedene Linien zum Brandplatz"
+},
+
+// Zwickau
+{
+  id: "598",
+  slug: "wochenmarkt-zwickau-marienplatz",
+  name: "Wochenmarkt Marienplatz",
+  address: "Innere Schneeberger Straße",
+  city: "Zwickau",
+  postalCode: "08056",
+  latitude: 50.7323,
+  longitude: 12.4964,
+  openingHours: "Donnerstag 8-16, Freitag 8-16",
+  features: ["Zentral", "Gemischter Markt", "Vorübergehend verlegt"],
+  isOpen: isMarketOpen("Donnerstag 8-16, Freitag 8-16"),
+  description: "Der Wochenmarkt Marienplatz ist vorübergehend in die Innere Schneeberger Straße verlegt und findet donnerstags und freitags von 8 bis 16 Uhr statt",
+  phone: "0375/834835",
+  email: "info@zwickautourist.de",
+  website: "https://www.zwickautourist.de",
+  specialties: ["Obst und Gemüse", "Fisch", "Fleisch"],
+  facilities: ["Verlegt", "Zentral", "Regionale Waren"],
+  transport: "Bahnhof: Zwickau Hbf; Bus: verschiedene Linien zum Zentrum"
+},
+
+{
+  id: "599",
+  slug: "wochenmarkt-zwickau-neuplanitz",
+  name: "Wochenmarkt Neuplanitz",
+  address: "Parkplatz Marchlewskistraße",
+  city: "Zwickau",
+  postalCode: "08064",
+  latitude: 50.7089,
+  longitude: 12.5278,
+  openingHours: "Freitag 8-14:30",
+  features: ["Stadtteil", "Neuplanitz", "Parkplatz"],
+  isOpen: isMarketOpen("Freitag 8-14:30"),
+  description: "Der Wochenmarkt in Zwickau-Neuplanitz findet freitags von 8 bis 14:30 Uhr auf dem Parkplatz Marchlewskistraße statt",
+  phone: "0375/834835",
+  email: "info@zwickautourist.de",
+  website: "https://www.zwickautourist.de",
+  specialties: ["Obst und Gemüse", "Backwaren", "Pflanzen"],
+  facilities: ["Stadtteil", "Parkplatz", "Freitags"],
+  transport: "Bus: verschiedene Linien nach Neuplanitz"
+},
+
+{
+  id: "600",
+  slug: "wochenmarkt-zwickau-marienthal",
+  name: "Wochenmarkt Marienthal",
+  address: "Parkplatz Julius-Seifert-Straße",
+  city: "Zwickau",
+  postalCode: "08060",
+  latitude: 50.7444,
+  longitude: 12.4722,
+  openingHours: "Donnerstag 8-14",
+  features: ["Stadtteil", "Marienthal", "Parkplatz"],
+  isOpen: isMarketOpen("Donnerstag 8-14"),
+  description: "Der Wochenmarkt in Zwickau-Marienthal findet donnerstags von 8 bis 14 Uhr auf dem Parkplatz Julius-Seifert-Straße statt",
+  phone: "0375/834835",
+  email: "info@zwickautourist.de",
+  website: "https://www.zwickautourist.de",
+  specialties: ["Frische Waren", "Regionale Produkte", "Stadtteilmarkt"],
+  facilities: ["Stadtteil", "Parkplatz", "Donnerstags"],
+  transport: "Bus: verschiedene Linien nach Marienthal"
+},
+
+{
+  id: "601",
+  slug: "wochenmarkt-zwickau-hauptmarkt",
+  name: "Mobiler Wochenmarkt Hauptmarkt",
+  address: "Hauptmarkt",
+  city: "Zwickau",
+  postalCode: "08056",
+  latitude: 50.7189,
+  longitude: 12.4936,
+  openingHours: "Mittwoch 9-15",
+  features: ["Mobil", "Hauptmarkt", "Klein"],
+  isOpen: isMarketOpen("Mittwoch 9-15"),
+  description: "Der kleine mobile Wochenmarkt findet jeden Mittwoch von 9 bis 15 Uhr auf dem Hauptmarkt vor dem Rathaus und Theater statt",
+  phone: "0375/834835",
+  email: "info@zwickautourist.de",
+  website: "https://www.zwickautourist.de",
+  specialties: ["Frisches Obst", "Gemüse", "Mobile Anbieter"],
+  facilities: ["Hauptmarkt", "Rathaus", "Theater"],
+  transport: "Bahnhof: Zwickau Hbf; Bus: verschiedene Linien zum Hauptmarkt"
+},
+
+// Konstanz
+{
+  id: "602",
+  slug: "wochenmarkt-konstanz-stephansplatz",
+  name: "Wochenmarkt Stephansplatz",
+  address: "Stephansplatz",
+  city: "Konstanz",
+  postalCode: "78462",
+  latitude: 47.6587,
+  longitude: 9.1750,
+  openingHours: "Dienstag 7-13, Freitag 7-13",
+  features: ["Zentral", "Stephansplatz", "Regional"],
+  isOpen: isMarketOpen("Dienstag 7-13, Freitag 7-13"),
+  description: "Der Wochenmarkt auf dem Stephansplatz in Konstanz findet dienstags und freitags von 7 bis 13 Uhr statt mit regionalen Produkten vom Bodensee",
+  phone: "07531/900-0",
+  email: "N/A",
+  website: "https://www.wochenmarkt-konstanz.de",
+  specialties: ["Regionale Produkte", "Bodensee-Spezialitäten", "Reichenauer Gemüse"],
+  facilities: ["Stephansplatz", "Zentral", "Bodenseenähe"],
+  transport: "Bahnhof: Konstanz; Bus: verschiedene Linien zum Stephansplatz"
+},
+
+{
+  id: "603",
+  slug: "wochenmarkt-konstanz-marktstatte",
+  name: "Wochenmarkt Marktstätte",
+  address: "Marktstätte",
+  city: "Konstanz",
+  postalCode: "78462",
+  latitude: 47.6594,
+  longitude: 9.1739,
+  openingHours: "Mittwoch 7-13, Samstag 7-13",
+  features: ["Zentral", "Marktstätte", "Heimische Produkte"],
+  isOpen: isMarketOpen("Mittwoch 7-13, Samstag 7-13"),
+  description: "Der Wochenmarkt auf der Marktstätte in Konstanz findet mittwochs und samstags von 7 bis 13 Uhr statt mit heimischen landwirtschaftlichen Produkten",
+  phone: "07531/900-0",
+  email: "N/A",
+  website: "https://www.wochenmarkt-konstanz.de",
+  specialties: ["Heimische Produkte", "Landwirtschaftliche Erzeugnisse", "Frisch und regional"],
+  facilities: ["Marktstätte", "Zentral", "Altstadt"],
+  transport: "Bahnhof: Konstanz; Bus: verschiedene Linien zur Marktstätte"
+},
+
+{
+  id: "604",
+  slug: "wochenmarkt-konstanz-bodensee",
+  name: "Bodensee Regionalmarkt",
+  address: "Stephansplatz",
+  city: "Konstanz",
+  postalCode: "78462",
+  latitude: 47.6587,
+  longitude: 9.1750,
+  openingHours: "Samstag 7-13",
+  features: ["Regional", "Bodensee", "Spezialitäten"],
+  isOpen: isMarketOpen("Samstag 7-13"),
+  description: "Der Bodensee Regionalmarkt auf dem Stephansplatz bietet samstags von 7 bis 13 Uhr regionale Spezialitäten vom Bodensee und der Insel Reichenau",
+  phone: "07531/900-0",
+  email: "N/A",
+  website: "https://www.konstanz-info.com",
+  specialties: ["Bodensee-Spezialitäten", "Insel Reichenau", "Regionale Köstlichkeiten"],
+  facilities: ["Stephansplatz", "Regional", "Bodensee-Fokus"],
+  transport: "Bahnhof: Konstanz; Bus: verschiedene Linien zum Stephansplatz"
+},
+
+{
+  id: "605",
+  slug: "wochenmarkt-konstanz-genuss",
+  name: "MarktGenuss Konstanz",
+  address: "Marktstätte und Stephansplatz",
+  city: "Konstanz",
+  postalCode: "78462",
+  latitude: 47.6591,
+  longitude: 9.1745,
+  openingHours: "Dienstag 7-13, Mittwoch 7-13, Freitag 7-13, Samstag 7-13",
+  features: ["Genuss", "Zwei Plätze", "Förderverein"],
+  isOpen: isMarketOpen("Dienstag 7-13, Mittwoch 7-13, Freitag 7-13, Samstag 7-13"),
+  description: "MarktGenuss Konstanz vereint die Wochenmärkte auf Marktstätte und Stephansplatz - ein Genusserlebnis für alle Marktliebhaber vom Förderverein Wochenmarkt Konstanz e.V.",
+  phone: "07531/900-0",
+  email: "N/A",
+  website: "https://www.wochenmarkt-konstanz.de",
+  specialties: ["Genusserlebnis", "Vielfältiges Angebot", "Förderverein"],
+  facilities: ["Zwei Standorte", "Förderverein", "Genuss-Fokus"],
+  transport: "Bahnhof: Konstanz; Bus: verschiedene Linien zu beiden Plätzen"
 }  
   
 ];
