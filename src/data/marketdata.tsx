@@ -9940,7 +9940,180 @@ export const marketData: Market[] = [
   specialties: ["Obst und Gemüse", "Fleischwaren", "Regionale Qualität"],
   facilities: ["Marienburger Platz", "Stadtteil", "Lebensmittel"],
   transport: "Bus: verschiedene Linien bis Marienburger Platz"
-}  
+},
+
+// Schwerin
+
+{
+  id: "542",
+  slug: "wochenmarkt-schwerin-altstädtischer-markt",
+  name: "Wochenmarkt Altstädtischer Markt",
+  address: "Altstädtischer Markt",
+  city: "Schwerin",
+  postalCode: "19055",
+  latitude: 53.6289,
+  longitude: 11.4067,
+  openingHours: "Mittwoch 9-17",
+  features: ["Historisch", "Rathaus", "Zentral"],
+  isOpen: isMarketOpen("Mittwoch 9-17"),
+  description: "Wochenmarkt vor dem historischen Schweriner Rathaus am Altstädtischen Markt mit regionalen Produkten",
+  phone: "0385 5451111",
+  email: "N/A",
+  website: "https://www.schwerin.de",
+  specialties: ["Regionale Produkte", "Historisches Rathaus", "Innenstadt"],
+  facilities: ["Altstädtischer Markt", "Rathaus", "Historisch"],
+  transport: "Bahnhof: Schwerin Hbf; Bus: verschiedene Linien zum Marktplatz"
+},
+
+{
+  id: "543",
+  slug: "wochenmarkt-schwerin-berliner-platz",
+  name: "Wochenmarkt Berliner Platz",
+  address: "Berliner Platz",
+  city: "Schwerin",
+  postalCode: "19063",
+  latitude: 53.6234,
+  longitude: 11.4123,
+  openingHours: "Samstag 8-13",
+  features: ["Stadtteil", "Regional", "Wöchentlich"],
+  isOpen: isMarketOpen("Samstag 8-13"),
+  description: "Stadtteilmarkt am Berliner Platz mit regionalen Erzeugnissen und frischen Produkten",
+  phone: "N/A",
+  email: "N/A",
+  website: "https://www.schwerin.de",
+  specialties: ["Regionale Erzeugnisse", "Frische Produkte", "Stadtteilmarkt"],
+  facilities: ["Berliner Platz", "Stadtteil", "Wöchentlich"],
+  transport: "Bus: verschiedene Linien bis Berliner Platz"
+},
+
+{
+  id: "544",
+  slug: "wochenmarkt-schwerin-bahnhof",
+  name: "Wochenmarkt vor dem Bahnhof",
+  address: "Grunthalplatz",
+  city: "Schwerin",
+  postalCode: "19053",
+  latitude: 53.6345,
+  longitude: 11.4089,
+  openingHours: "Donnerstag 8-14",
+  features: ["Bahnhofsnähe", "Regional", "Verkehrsgünstig"],
+  isOpen: isMarketOpen("Donnerstag 8-14"),
+  description: "Wochenmarkt vor dem Schweriner Hauptbahnhof mit guter Verkehrsanbindung und regionalen Produkten",
+  phone: "N/A",
+  email: "N/A",
+  website: "https://www.schwerin.de",
+  specialties: ["Verkehrsanbindung", "Regionale Produkte", "Bahnhofsnähe"],
+  facilities: ["Grunthalplatz", "Bahnhof", "Verkehrsgünstig"],
+  transport: "Bahnhof: Schwerin Hbf; Bus: alle Linien zum Hauptbahnhof"
+},
+
+{
+  id: "545",
+  slug: "wochenmarkt-schwerin-grosser-dreesch",
+  name: "Wochenmarkt Großer Dreesch",
+  address: "Platz der Freiheit",
+  city: "Schwerin",
+  postalCode: "19061",
+  latitude: 53.6123,
+  longitude: 11.3923,
+  openingHours: "Freitag 8-13",
+  features: ["Stadtteil", "Regional", "Plattenbau"],
+  isOpen: isMarketOpen("Freitag 8-13"),
+  description: "Stadtteilmarkt im Großen Dreesch mit regionalen Erzeugnissen für die Wohngebietsversorgung",
+  phone: "N/A",
+  email: "N/A",
+  website: "https://www.schwerin.de",
+  specialties: ["Wohngebietsversorgung", "Regionale Erzeugnisse", "Stadtteilmarkt"],
+  facilities: ["Platz der Freiheit", "Stadtteil", "Wohngebiet"],
+  transport: "Bus: verschiedene Linien bis Platz der Freiheit"
+},
+
+// Hanau
+
+{
+  id: "546",
+  slug: "wochenmarkt-hanau-neustaedter-marktplatz",
+  name: "Hanauer Wochenmarkt",
+  address: "Neustädter Marktplatz",
+  city: "Hanau",
+  postalCode: "63450",
+  latitude: 50.1356,
+  longitude: 8.9189,
+  openingHours: "Mittwoch 6-14, Samstag 6-14",
+  features: ["Groß", "Zentral", "100 Stände"],
+  isOpen: isMarketOpen("Mittwoch 6-14, Samstag 6-14"),
+  description: "Obst und Gemüse, Fleisch und Fisch, Blumen und Butter kennzeichnen das Angebot, das immer mittwochs und samstags von etwa 100 Ständen angeboten wird",
+  phone: "N/A",
+  email: "N/A",
+  website: "https://www.hanau.de/freizeit/maerkte/wochenmarkt/index.html",
+  specialties: ["100 Stände", "Obst und Gemüse", "Fleisch und Fisch"],
+  facilities: ["Neustädter Marktplatz", "Groß", "Zentral"],
+  transport: "S-Bahn: Hanau Hbf; Bus: verschiedene Linien zum Marktplatz"
+},
+
+{
+  id: "547",
+  slug: "wochenmarkt-hanau-rochusplatz",
+  name: "Wochenmarkt Rochusplatz",
+  address: "Rochusplatz",
+  city: "Hanau",
+  postalCode: "63452",
+  latitude: 50.1289,
+  longitude: 8.9234,
+  openingHours: "Donnerstag 6-13",
+  features: ["Stadtteil", "Regional", "Wöchentlich"],
+  isOpen: isMarketOpen("Donnerstag 6-13"),
+  description: "Wöchentlicher Stadtteilmarkt am Rochusplatz mit regionalen Produkten für die lokale Versorgung",
+  phone: "N/A",
+  email: "N/A",
+  website: "https://www.hanau.de",
+  specialties: ["Stadtteilmarkt", "Regionale Produkte", "Lokale Versorgung"],
+  facilities: ["Rochusplatz", "Stadtteil", "Wöchentlich"],
+  transport: "Bus: verschiedene Linien bis Rochusplatz"
+},
+
+{
+  id: "548",
+  slug: "wochenmarkt-hanau-kardinal-volk-platz",
+  name: "Wochenmarkt Kardinal-Volk-Platz",
+  address: "Kardinal-Volk-Platz",
+  city: "Hanau",
+  postalCode: "63454",
+  latitude: 50.1234,
+  longitude: 8.9156,
+  openingHours: "Freitag 8-13",
+  features: ["Stadtteil", "Regional", "Klein"],
+  isOpen: isMarketOpen("Freitag 8-13"),
+  description: "Kleiner Stadtteilmarkt am Kardinal-Volk-Platz mit regionalen Erzeugnissen und persönlicher Atmosphäre",
+  phone: "N/A",
+  email: "N/A",
+  website: "https://www.hanau.de",
+  specialties: ["Kleiner Markt", "Regionale Erzeugnisse", "Persönliche Atmosphäre"],
+  facilities: ["Kardinal-Volk-Platz", "Stadtteil", "Klein"],
+  transport: "Bus: verschiedene Linien bis Kardinal-Volk-Platz"
+},
+
+{
+  id: "549",
+  slug: "wochenmarkt-hanau-freiheitsplatz",
+  name: "Wochenmarkt Freiheitsplatz",
+  address: "Freiheitsplatz",
+  city: "Hanau",
+  postalCode: "63450",
+  latitude: 50.1323,
+  longitude: 8.9167,
+  openingHours: "Samstag 7-13",
+  features: ["Zentral", "Regional", "Ausweichplatz"],
+  isOpen: isMarketOpen("Samstag 7-13"),
+  description: "Wochenmarkt am Freiheitsplatz, der auch als Ausweichplatz bei Veranstaltungen dient, mit regionalen Produkten",
+  phone: "N/A",
+  email: "N/A",
+  website: "https://www.hanau.de",
+  specialties: ["Ausweichplatz", "Regionale Produkte", "Zentrale Lage"],
+  facilities: ["Freiheitsplatz", "Zentral", "Flexibel"],
+  transport: "S-Bahn: Hanau Hbf; Bus: verschiedene Linien zum Freiheitsplatz"
+}
+  
   
 ];
 
