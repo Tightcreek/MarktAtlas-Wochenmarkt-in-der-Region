@@ -10798,6 +10798,228 @@ export const marketData: Market[] = [
   specialties: ["Genusserlebnis", "Vielfältiges Angebot", "Förderverein"],
   facilities: ["Zwei Standorte", "Förderverein", "Genuss-Fokus"],
   transport: "Bahnhof: Konstanz; Bus: verschiedene Linien zu beiden Plätzen"
+},
+
+
+
+Wochenmärkte Marl Öffnungszeiten Standorte
+10 Ergebnisse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wochenmärkte Worms Öffnungszeiten Standorte
+10 Ergebnisse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Basierend auf meiner Recherche erstelle ich Ihnen die Wochenmarkt-Daten für Marl und Worms im gewünschten Format:
+
+javascript
+// Marl
+{
+  id: "606",
+  slug: "wochenmarkt-marl-brassert",
+  name: "Wochenmarkt Brassert",
+  address: "Brassertstraße",
+  city: "Marl",
+  postalCode: "45768",
+  latitude: 51.6747,
+  longitude: 7.0975,
+  openingHours: "Mittwoch 8-12:30, Samstag 8-12:30",
+  features: ["Stadtteil", "Beliebter Treffpunkt", "Farbtupfer"],
+  isOpen: isMarketOpen("Mittwoch 8-12:30, Samstag 8-12:30"),
+  description: "Rote Äpfel, grüne Zucchinis und bunte Schnittblumen: Der Wochenmarkt in Marl-Brassert mit seinem reichhaltigen Angebot ist ein beliebter Treffpunkt",
+  phone: "02365/990",
+  email: "N/A",
+  website: "https://www.marl.de",
+  specialties: ["Frische Produkte", "Obst und Gemüse", "Bunte Schnittblumen"],
+  facilities: ["Stadtteilzentrum", "Brassertstraße", "Beliebter Treffpunkt"],
+  transport: "Bus: verschiedene Linien nach Brassert"
+},
+
+{
+  id: "607",
+  slug: "wochenmarkt-marl-huels",
+  name: "Wochenmarkt Hüls",
+  address: "Friedrichstraße",
+  city: "Marl",
+  postalCode: "45772",
+  latitude: 51.6958,
+  longitude: 7.0639,
+  openingHours: "Dienstag 8-12:30, Freitag 8-12:30",
+  features: ["Stadtteil", "Beliebter Treffpunkt", "Reichhaltiges Angebot"],
+  isOpen: isMarketOpen("Dienstag 8-12:30, Freitag 8-12:30"),
+  description: "Der Wochenmarkt in Marl-Hüls mit seinem reichhaltigen Angebot an frischen Produkten ist ein beliebter Treffpunkt im Stadtteilzentrum",
+  phone: "02365/990",
+  email: "N/A",
+  website: "https://www.marl.de",
+  specialties: ["Frische Produkte", "Obst und Gemüse", "Reichhaltiges Angebot"],
+  facilities: ["Stadtteilzentrum", "Friedrichstraße", "Beliebter Treffpunkt"],
+  transport: "Bus: verschiedene Linien nach Hüls"
+},
+
+{
+  id: "608",
+  slug: "wochenmarkt-marl-hamm",
+  name: "Wochenmarkt Hamm",
+  address: "Kirchturm evangelische Kirche",
+  city: "Marl",
+  postalCode: "45770",
+  latitude: 51.6583,
+  longitude: 7.1083,
+  openingHours: "Mittwoch 8-12:30, Samstag 8-12:30",
+  features: ["40 Markthändler", "Kirchturm", "Verkehrsberuhigt"],
+  isOpen: isMarketOpen("Mittwoch 8-12:30, Samstag 8-12:30"),
+  description: "Auf dem Wochenmarkt in Marl-Hamm bauen ca. 40 Markthändler ihre Stände zu Füßen des Kirchturms der evangelischen Kirche im verkehrsberuhigten Areal auf",
+  phone: "02365/990",
+  email: "N/A",
+  website: "https://www.marl.de",
+  specialties: ["40 Markthändler", "Vielfältiges Angebot", "Frische Produkte"],
+  facilities: ["Kirchturm", "Verkehrsberuhigt", "Evangelische Kirche"],
+  transport: "Bus: verschiedene Linien nach Hamm"
+},
+
+{
+  id: "609",
+  slug: "wochenmarkt-marl-zentral",
+  name: "Wochenmarkt Marl Zentral",
+  address: "Marktplatz",
+  city: "Marl",
+  postalCode: "45768",
+  latitude: 51.6572,
+  longitude: 7.0947,
+  openingHours: "N/A",
+  features: ["Zentral", "Textilhändler", "Verlegt"],
+  isOpen: isMarketOpen("N/A"),
+  description: "Die Wochenmärkte in Marl ergänzen das Warenangebot in den Geschäften und sind willkommene Farbtupfer im Erscheinungsbild der Stadtteilzentren",
+  phone: "02365/990",
+  email: "N/A",
+  website: "https://www.marl.de",
+  specialties: ["Textilhändler", "Gemischter Markt", "Zentrale Lage"],
+  facilities: ["Marktplatz", "Zentral", "Standortverlegungen"],
+  transport: "Bahnhof: Marl; Bus: verschiedene Linien zum Zentrum"
+},
+
+// Worms
+{
+  id: "610",
+  slug: "wochenmarkt-worms-marktplatz",
+  name: "Wormser Wochenmarkt",
+  address: "Marktplatz",
+  city: "Worms",
+  postalCode: "67547",
+  latitude: 49.6308,
+  longitude: 8.3597,
+  openingHours: "Dienstag 8-13, Donnerstag 8-13, Samstag 8-13",
+  features: ["Zentral", "Marktplatz", "Dreimal wöchentlich"],
+  isOpen: isMarketOpen("Dienstag 8-13, Donnerstag 8-13, Samstag 8-13"),
+  description: "Der Wochenmarkt in Worms findet dienstags, donnerstags und samstags von 8 bis 13 Uhr auf dem Wormser Marktplatz statt",
+  phone: "06241/853-0",
+  email: "stadtverwaltung@worms.de",
+  website: "https://www.worms-erleben.de",
+  specialties: ["Frische Produkte", "Regionale Erzeugnisse", "Vielfältiges Angebot"],
+  facilities: ["Marktplatz", "Zentral", "Dreimal wöchentlich"],
+  transport: "Bahnhof: Worms Hbf; Bus: verschiedene Linien zum Marktplatz"
+},
+
+{
+  id: "611",
+  slug: "wochenmarkt-worms-dreifaltigkeitskirche",
+  name: "Wochenmarkt Dreifaltigkeitskirche",
+  address: "Marktplatz vor Dreifaltigkeitskirche",
+  city: "Worms",
+  postalCode: "67547",
+  latitude: 49.6308,
+  longitude: 8.3597,
+  openingHours: "Donnerstag 7-13, Samstag 7-13",
+  features: ["Kirchennähe", "Kulinarum", "Frische Produkte"],
+  isOpen: isMarketOpen("Donnerstag 7-13, Samstag 7-13"),
+  description: "Der Wochenmarkt vor der Dreifaltigkeitskirche in Worms findet donnerstags und samstags von 7 bis 13 Uhr statt",
+  phone: "06241/853-0",
+  email: "stadtverwaltung@worms.de",
+  website: "http://kulinarum-treiber.de",
+  specialties: ["Kulinarum", "Frische Produkte", "Kirchenumgebung"],
+  facilities: ["Dreifaltigkeitskirche", "Marktplatz", "Kulinarisches"],
+  transport: "Bahnhof: Worms Hbf; Bus: verschiedene Linien zum Marktplatz"
+},
+
+{
+  id: "612",
+  slug: "wochenmarkt-worms-obermarkt",
+  name: "Wochenmarkt Obermarkt",
+  address: "Obermarkt und Parmaplatz",
+  city: "Worms",
+  postalCode: "67547",
+  latitude: 49.6322,
+  longitude: 8.3583,
+  openingHours: "Dienstag 7-13",
+  features: ["Neuer Standort", "Zentral", "Verkehrsachse"],
+  isOpen: isMarketOpen("Dienstag 7-13"),
+  description: "Der Wormser Wochenmarkt mit neuem Standort am Dienstag auf dem Obermarkt und Parmaplatz - zentral in der Innenstadt gelegen",
+  phone: "06241/853-0",
+  email: "stadtverwaltung@worms.de",
+  website: "https://wo-magazin.de",
+  specialties: ["Neuer Standort", "Zentrale Lage", "Kompakter Marktplatz"],
+  facilities: ["Obermarkt", "Parmaplatz", "Verkehrsachse"],
+  transport: "Bahnhof: Worms Hbf; Bus: verschiedene Linien zum Obermarkt"
+},
+
+{
+  id: "613",
+  slug: "wochenmarkt-worms-weinmarkt",
+  name: "Wormser Weinmarkt",
+  address: "Marktplatz",
+  city: "Worms",
+  postalCode: "67547",
+  latitude: 49.6308,
+  longitude: 8.3597,
+  openingHours: "N/A",
+  features: ["Wein", "Marktwinzer", "Genuss"],
+  isOpen: isMarketOpen("N/A"),
+  description: "Ein Gläschen Wein von den Wormser Marktwinzern oder frische Produkte des Wormser Wochenmarktes genießen und erleben",
+  phone: "06241/853-0",
+  email: "stadtverwaltung@worms.de",
+  website: "https://www.worms-erleben.de",
+  specialties: ["Wormser Marktwinzer", "Wein", "Genusserlebnis"],
+  facilities: ["Marktplatz", "Weinstand", "Genuss"],
+  transport: "Bahnhof: Worms Hbf; Bus: verschiedene Linien zum Marktplatz"
 }  
   
 ];
