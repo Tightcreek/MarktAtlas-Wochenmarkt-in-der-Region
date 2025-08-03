@@ -150,46 +150,6 @@ export const marketData: Market[] = [
 
 
 
-  // Weitere deutsche Städte
-  {
-    id: "35",
-    name: "Marktplatz Augsburg",
-    address: "Marktplatz",
-    city: "Augsburg",
-    postalCode: "86150",
-    openingHours: "Mittwoch, Samstag 7-13",
-    features: ["Historisch", "Fuggerei"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 7-13"),
-    description: "Historischer Markt in der Fuggerstadt vor dem Renaissance-Rathaus.",
-    phone: "+49 821 12345678",
-    email: "info@markt-augsburg.de",
-    website: "www.markt-augsburg.de",
-    specialties: ["Schwäbische Küche", "Regionale Produkte", "Handwerk"],
-    facilities: ["Renaissance-Rathaus", "Perlachturm"],
-    transport: "Tram 1, 2, 3 (Rathausplatz), Bus 22, 23"
-  },
-
-  // Norddeutsche Märkte
-  {
-    id: "41",
-    name: "Lübeck Markt",
-    address: "Marktplatz",
-    city: "Lübeck",
-    postalCode: "23552",
-    openingHours: "Montag, Donnerstag 7-14",
-    features: ["Hansestadt", "UNESCO"],
-    isOpen: isMarketOpen("Montag, Donnerstag 7-14"),
-    description: "Hanseatischer Markt in der UNESCO-Welterbe-Altstadt.",
-    phone: "+49 451 12345678",
-    email: "info@markt-luebeck.de",
-    website: "www.markt-luebeck.de",
-    specialties: ["Marzipan", "Fisch", "Hanseatische Spezialitäten"],
-    facilities: ["Rathaus", "Marienkirche"],
-    transport: "Bus 5, 6, 11, 12 (Koberg)"
-  },
-
-  // Ostdeutsche Märkte
-
   {
     id: "46",
     name: "Weimar Markt",
@@ -224,60 +184,7 @@ export const marketData: Market[] = [
     facilities: ["Rathaus", "Universitäts-Nähe"],
     transport: "Tram 2, 3, 4 (Markt), Bus 10, 11"
   },
-  // Rheinland-Pfalz / Saarland
-
-  {
-    id: "52",
-    name: "Koblenz Markt",
-    address: "Zentralplatz",
-    city: "Koblenz",
-    postalCode: "56068",
-    openingHours: "Mittwoch, Samstag 8-14",
-    features: ["Deutsches Eck", "UNESCO"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
-    description: "Markt am Deutschen Eck im UNESCO-Welterbe Oberes Mittelrheintal.",
-    phone: "+49 261 12345678",
-    email: "info@markt-koblenz.de",
-    website: "www.markt-koblenz.de",
-    specialties: ["Rheinische Küche", "Mosel-Wein", "UNESCO-Flair"],
-    facilities: ["Deutsches Eck", "Kaiser-Wilhelm-Denkmal"],
-    transport: "Bus 1, 2, 3 (Zentralplatz)"
-  },
-  {
-    id: "53",
-    name: "Saarbrücken Markt",
-    address: "St. Johanner Markt",
-    city: "Saarbrücken",
-    postalCode: "66111",
-    openingHours: "Mittwoch, Samstag 8-14",
-    features: ["Französisch", "Grenzregion"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
-    description: "Französisch inspirierter Markt in der Grenzregion.",
-    phone: "+49 681 12345678",
-    email: "info@markt-saarbruecken.de",
-    website: "www.markt-saarbruecken.de",
-    specialties: ["Französische Spezialitäten", "Grenz-Küche", "Saarländisches"],
-    facilities: ["Ludwigskirche", "Grenzregion-Flair"],
-    transport: "Bus 1, 2, 3 (St. Johanner Markt)"
-  },
-  {
-    id: "54",
-    name: "Trier Markt",
-    address: "Hauptmarkt",
-    city: "Trier",
-    postalCode: "54290",
-    openingHours: "Montag-Samstag 9-18",
-    features: ["Römisch", "UNESCO", "Älteste Stadt"],
-    isOpen: isMarketOpen("Montag-Samstag 9-18"),
-    description: "Römischer Markt in Deutschlands ältester Stadt.",
-    phone: "+49 651 12345678",
-    email: "info@markt-trier.de",
-    website: "www.markt-trier.de",
-    specialties: ["Römische Tradition", "Mosel-Wein", "Antike Spezialitäten"],
-    facilities: ["Porta Nigra", "Römerbrücke", "UNESCO-Welterbe"],
-    transport: "Bus 1, 2, 3, 12 (Hauptmarkt)"
-  },
-
+ 
   // Hessen - weitere Städte
   {
     id: "55",
@@ -331,59 +238,7 @@ export const marketData: Market[] = [
     transport: "Bus 1, 2, 3 (Marktplatz)"
   },
 
-  // Niedersachsen - weitere Städte
-  {
-    id: "58",
-    name: "Braunschweig Markt",
-    address: "Kohlmarkt",
-    city: "Braunschweig",
-    postalCode: "38100",
-    openingHours: "Dienstag, Donnerstag, Samstag 8-15",
-    features: ["Löwenstadt", "Heinrich"],
-    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-15"),
-    description: "Löwenstadt-Markt mit Heinrich dem Löwen-Tradition.",
-    phone: "+49 531 12345678",
-    email: "info@markt-braunschweig.de",
-    website: "www.markt-braunschweig.de",
-    specialties: ["Niedersächsische Küche", "Löwenstadt-Flair", "Tradition"],
-    facilities: ["Dom", "Burg Dankwarderode"],
-    transport: "Tram 1, 2, 3 (Kohlmarkt)"
-  },
-  {
-    id: "59",
-    name: "Osnabrück Markt",
-    address: "Marktplatz",
-    city: "Osnabrück",
-    postalCode: "49074",
-    openingHours: "Mittwoch, Samstag 8-14",
-    features: ["Friedensstadt", "Westfälisch"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
-    description: "Friedensstadt-Markt mit westfälischem Flair.",
-    phone: "+49 541 12345678",
-    email: "info@markt-osnabrueck.de",
-    website: "www.markt-osnabrueck.de",
-    specialties: ["Westfälische Spezialitäten", "Friedens-Geschichte"],
-    facilities: ["Rathaus", "Dom"],
-    transport: "Bus 21, 22, 23 (Neumarkt)"
-  },
-  {
-    id: "60",
-    name: "Göttingen Markt",
-    address: "Marktplatz",
-    city: "Göttingen",
-    postalCode: "37073",
-    openingHours: "Mittwoch, Samstag 8-14",
-    features: ["Universitätsstadt", "Gänseliesel"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
-    description: "Universitätsmarkt am berühmten Gänseliesel-Brunnen.",
-    phone: "+49 551 12345678",
-    email: "info@markt-goettingen.de",
-    website: "www.markt-goettingen.de",
-    specialties: ["Studentenstadt-Flair", "Niedersächsische Küche"],
-    facilities: ["Gänseliesel", "Altes Rathaus"],
-    transport: "Bus 21, 22, 23 (Markt)"
-  },
-
+ 
   // Schleswig-Holstein - weitere Städte
   {
     id: "61",
