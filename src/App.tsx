@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Markets from "./pages/Markets";
 import MarketDetail from "./pages/MarketDetail";
+import ChristmasMarkets from "./pages/ChristmasMarkets";
+import ChristmasMarketDetail from "./pages/ChristmasMarketDetail";
 import Blog from "./pages/Blog";
 import BlogPostDetail from "./pages/BlogPostDetail";
 import Impressum from "./pages/Impressum";
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/markets" element={<Markets />} />
           <Route path="/market/:slug" element={<MarketDetail />} />
+          <Route path="/weihnachtsmaerkte" element={<ChristmasMarkets />} />
+          <Route path="/weihnachtsmaerkte/:slug" element={<ChristmasMarketDetail />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPostDetail />} />
           <Route path="/impressum" element={<Impressum />} />
