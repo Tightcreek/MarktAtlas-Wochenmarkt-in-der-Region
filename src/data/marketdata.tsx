@@ -10800,58 +10800,6 @@ export const marketData: Market[] = [
   transport: "Bahnhof: Konstanz; Bus: verschiedene Linien zu beiden Plätzen"
 },
 
-
-
-Wochenmärkte Marl Öffnungszeiten Standorte
-10 Ergebnisse
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Wochenmärkte Worms Öffnungszeiten Standorte
-10 Ergebnisse
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Basierend auf meiner Recherche erstelle ich Ihnen die Wochenmarkt-Daten für Marl und Worms im gewünschten Format:
-
-javascript
 // Marl
 {
   id: "606",
