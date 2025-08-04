@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, MapPin, ExternalLink, Globe } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import { BreadcrumbSchema } from "@/components/StructuredData";
 import Footer from "@/components/Footer";
 
 const ChristmasMarketDetailPage = () => {
@@ -41,13 +42,73 @@ const ChristmasMarketDetailPage = () => {
     );
   }
 
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : `https://marktatlas.lovable.app/weihnachtsmaerkte/${market.slug}`;
+  
+  const breadcrumbItems = [
+    { name: 'Startseite', url: 'https://marktatlas.lovable.app/' },
+    { name: 'Weihnachtsmärkte', url: 'https://marktatlas.lovable.app/weihnachtsmaerkte' },
+    { name: market.name, url: currentUrl }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title={`${market.name} - Weihnachtsmarkt in ${market.city}`}
-        description={`${market.description.substring(0, 160)}...`}
-        keywords={`${market.name}, Weihnachtsmarkt ${market.city}, ${market.specialties.join(', ')}`}
+        title={`${market.name} 2024 - Weihnachtsmarkt in ${market.city} | Öffnungszeiten & Info`}
+        description={`${market.description} Alle Infos zu Öffnungszeiten, Spezialitäten und Anfahrt zum ${market.name} in ${market.city}.`}
+        keywords={`${market.name}, Weihnachtsmarkt ${market.city}, ${market.specialties.join(', ')}, Öffnungszeiten, Advent 2024, ${market.city} Christkindlmarkt`}
+        canonicalUrl={currentUrl}
+        ogImage={market.imageUrl || "/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png"}
+        ogType="place"
+        siteName="MarktAtlas Deutschland"
+        breadcrumbs={breadcrumbItems}
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": market.name,
+          "description": market.description,
+          "url": currentUrl,
+          "image": market.imageUrl,
+          "startDate": "2024-11-25",
+          "endDate": "2024-12-23",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": market.name,
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": market.address,
+              "addressLocality": market.city,
+              "addressCountry": "DE"
+            }
+          },
+          "organizer": {
+            "@type": "Organization", 
+            "name": `${market.city} Stadtverwaltung`,
+            "url": market.website
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-11-25",
+            "validThrough": "2024-12-23"
+          },
+          "subEvent": market.specialties.map(specialty => ({
+            "@type": "Event",
+            "name": specialty,
+            "superEvent": market.name
+          })),
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Families, Tourists, Local Residents"
+          },
+          "inLanguage": "de-DE"
+        }}
       />
+      
+      <BreadcrumbSchema items={breadcrumbItems} />
       
       <div className="container mx-auto px-4 py-8">
         {/* Back Button */}
