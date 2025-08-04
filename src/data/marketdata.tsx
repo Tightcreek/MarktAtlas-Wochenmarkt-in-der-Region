@@ -220,24 +220,6 @@ export const marketData: Market[] = [
     transport: "Bus 1, 2, 3 (Markt)"
   },
 
-  {
-    id: "68",
-    name: "Brandenburg Markt",
-    address: "Neustädtischer Markt",
-    city: "Brandenburg an der Havel",
-    postalCode: "14776",
-    openingHours: "Mittwoch, Samstag 8-14",
-    features: ["Havel", "Dom", "Wiege Brandenburgs"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
-    description: "Historischer Markt in der Wiege Brandenburgs an der Havel.",
-    phone: "+49 3381 12345678",
-    email: "info@markt-brandenburg.de",
-    website: "www.markt-brandenburg-havel.de",
-    specialties: ["Havelländische Küche", "Dom-Tradition", "Brandenburger"],
-    facilities: ["Dom", "Havel", "Altstädtisches Rathaus"],
-    transport: "Bus 551, 552 (Neustädtischer Markt)"
-  },
-
     {
     id: "70",
     name: "Passau Markt",
