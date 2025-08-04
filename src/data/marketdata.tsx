@@ -11139,57 +11139,6 @@ export const marketData: Market[] = [
   transport: "Bahnhof: Minden; Bus: verschiedene Linien zum Zentrum"
 },
 
-
-Wochenmärkte Norderstedt Öffnungszeiten Standorte
-10 Ergebnisse
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Wochenmärkte Velbert Öffnungszeiten Standorte
-10 Ergebnisse
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Basierend auf meiner Recherche erstelle ich Ihnen die Wochenmarkt-Daten für Norderstedt und Velbert im gewünschten Format:
-
-javascript
 // Norderstedt
 {
   id: "622",
