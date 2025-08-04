@@ -5,18 +5,97 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, ExternalLink } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import { BreadcrumbSchema, FAQSchema } from "@/components/StructuredData";
 import Footer from "@/components/Footer";
 
 const ChristmasMarketsPage = () => {
   const location = useLocation();
   
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://marktatlas.lovable.app/weihnachtsmaerkte';
+  
+  const breadcrumbItems = [
+    { name: 'Startseite', url: 'https://marktatlas.lovable.app/' },
+    { name: 'Weihnachtsmärkte', url: currentUrl }
+  ];
+
+  const faqs = [
+    {
+      question: "Wann öffnen die Weihnachtsmärkte in Deutschland?",
+      answer: "Die meisten Weihnachtsmärkte in Deutschland öffnen Ende November und bleiben bis zum 23. Dezember geöffnet. Einige beginnen bereits Anfang November und wenige bleiben bis nach Neujahr geöffnet."
+    },
+    {
+      question: "Was sind die bekanntesten Weihnachtsmärkte Deutschlands?",
+      answer: "Zu den bekanntesten gehören der Nürnberger Christkindlmarkt, der Dresdner Striezelmarkt und der Kölner Weihnachtsmarkt. Jeder hat seine eigenen Traditionen und Spezialitäten."
+    },
+    {
+      question: "Welche Spezialitäten gibt es auf deutschen Weihnachtsmärkten?",
+      answer: "Typische Spezialitäten sind Glühwein, geröstete Mandeln, Lebkuchen, Stollen, Bratwurst, Reibekuchen und handwerkliche Weihnachtsdekoration."
+    }
+  ];
+  
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-green-50 dark:from-red-950/20 dark:to-green-950/20">
       <SEOHead 
-        title="Weihnachtsmärkte - Übersicht der schönsten Märkte Deutschlands"
-        description="Entdecken Sie die schönsten Weihnachtsmärkte Deutschlands. Von Nürnberg bis Dresden - alle Infos zu Öffnungszeiten, Spezialitäten und Standorten."
-        keywords="Weihnachtsmärkte, Christkindlmärkte, Weihnachtsmarkt Deutschland, Advent, Glühwein"
+        title="Weihnachtsmärkte Deutschland 2024 | Übersicht der schönsten Christkindlmärkte"
+        description="Entdecken Sie die schönsten Weihnachtsmärkte Deutschlands 2024. Komplette Übersicht mit Öffnungszeiten, Spezialitäten, Standorten und Insider-Tipps für Nürnberg, Dresden, Köln und mehr."
+        keywords="Weihnachtsmärkte Deutschland 2024, Christkindlmärkte, Advent, Glühwein, Nürnberger Christkindlmarkt, Dresdner Striezelmarkt, Weihnachtsmarkt Köln, Öffnungszeiten, Lebkuchen, Stollen"
+        canonicalUrl={currentUrl}
+        ogImage="/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png"
+        ogType="website"
+        siteName="MarktAtlas Deutschland - Weihnachtsmärkte"
+        breadcrumbs={breadcrumbItems}
+        schemaData={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Weihnachtsmärkte Deutschland",
+          "description": "Übersicht der schönsten Weihnachtsmärkte in Deutschland mit Öffnungszeiten und Spezialitäten",
+          "url": currentUrl,
+          "inLanguage": "de-DE",
+          "about": {
+            "@type": "Thing",
+            "name": "Weihnachtsmärkte",
+            "description": "Traditionelle deutsche Weihnachtsmärkte mit Glühwein, Lebkuchen und Kunsthandwerk"
+          },
+          "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": christmasMarkets.length,
+            "itemListElement": christmasMarkets.map((market, index) => ({
+              "@type": "Event",
+              "name": market.name,
+              "location": {
+                "@type": "Place",
+                "name": market.city,
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": market.city,
+                  "addressCountry": "DE"
+                }
+              },
+              "description": market.description,
+              "startDate": "2024-11-25",
+              "endDate": "2024-12-23",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "organizer": {
+                "@type": "Organization",
+                "name": market.city + " Stadtverwaltung"
+              },
+              "position": index + 1
+            }))
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://marktatlas.lovable.app/weihnachtsmaerkte?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }}
       />
+      
+      <BreadcrumbSchema items={breadcrumbItems} />
+      <FAQSchema faqs={faqs} />
       
       {/* Navigation */}
       <nav className="bg-background border-b border-border">
