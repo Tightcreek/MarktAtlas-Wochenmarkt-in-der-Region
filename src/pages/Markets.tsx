@@ -91,6 +91,16 @@ const Markets = () => {
               Märkte
             </Link>
             <Link
+              to="/weihnachtsmaerkte"
+              className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                location.pathname === '/weihnachtsmaerkte' 
+                  ? 'border-primary text-primary' 
+                  : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground'
+              }`}
+            >
+              Weihnachtsmärkte
+            </Link>
+            <Link
               to="/blog"
               className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
                 location.pathname === '/blog' 

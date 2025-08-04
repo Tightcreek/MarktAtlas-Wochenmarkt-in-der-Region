@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { christmasMarkets } from "@/data/weihnachtsmarktdata";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +8,8 @@ import SEOHead from "@/components/SEOHead";
 import Footer from "@/components/Footer";
 
 const ChristmasMarketsPage = () => {
+  const location = useLocation();
+  
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-green-50 dark:from-red-950/20 dark:to-green-950/20">
       <SEOHead 
@@ -16,17 +18,55 @@ const ChristmasMarketsPage = () => {
         keywords="Weihnachtsmärkte, Christkindlmärkte, Weihnachtsmarkt Deutschland, Advent, Glühwein"
       />
       
-      <div className="container mx-auto px-4 py-8">
-        {/* Navigation */}
-        <nav className="mb-8">
-          <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-red-600 transition-colors">
+      {/* Navigation */}
+      <nav className="bg-background border-b border-border">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-center space-x-8">
+            <Link
+              to="/"
+              className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                location.pathname === '/' 
+                  ? 'border-primary text-primary' 
+                  : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground'
+              }`}
+            >
               Startseite
             </Link>
-            <span>/</span>
-            <span className="text-red-700 dark:text-red-400 font-medium">Weihnachtsmärkte</span>
+            <Link
+              to="/markets"
+              className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                location.pathname === '/markets' 
+                  ? 'border-primary text-primary' 
+                  : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground'
+              }`}
+            >
+              Märkte
+            </Link>
+            <Link
+              to="/weihnachtsmaerkte"
+              className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                location.pathname === '/weihnachtsmaerkte' 
+                  ? 'border-primary text-primary' 
+                  : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground'
+              }`}
+            >
+              Weihnachtsmärkte
+            </Link>
+            <Link
+              to="/blog"
+              className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                location.pathname === '/blog' 
+                  ? 'border-primary text-primary' 
+                  : 'border-transparent text-muted-foreground hover:border-muted-foreground'
+              }`}
+            >
+              Blog
+            </Link>
           </div>
-        </nav>
+        </div>
+      </nav>
+
+      <div className="container mx-auto px-4 py-8">
 
         {/* Header */}
         <div className="text-center mb-12 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-2xl p-8 border border-red-200 dark:border-red-800 shadow-lg">
