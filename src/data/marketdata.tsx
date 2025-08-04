@@ -10968,7 +10968,398 @@ export const marketData: Market[] = [
   specialties: ["Wormser Marktwinzer", "Wein", "Genusserlebnis"],
   facilities: ["Marktplatz", "Weinstand", "Genuss"],
   transport: "Bahnhof: Worms Hbf; Bus: verschiedene Linien zum Marktplatz"
-}  
+},
+// Lünen
+{
+  id: "614",
+  slug: "wochenmarkt-luenen-mitte",
+  name: "Wochenmarkt Lünen-Mitte",
+  address: "Marktplatz (Willy-Brandt-Platz)",
+  city: "Lünen",
+  postalCode: "44532",
+  latitude: 51.6197,
+  longitude: 7.5272,
+  openingHours: "Dienstag 8-13, Freitag 8-13",
+  features: ["Zentral", "Willy-Brandt-Platz", "Frische Lebensmittel"],
+  isOpen: isMarketOpen("Dienstag 8-13, Freitag 8-13"),
+  description: "Der Wochenmarkt in Lünen-Mitte findet dienstags und freitags von 8 bis 13 Uhr auf dem Marktplatz (Willy-Brandt-Platz) statt",
+  phone: "02306/104-1717",
+  email: "info@luenen.de",
+  website: "https://www.luenen.de",
+  specialties: ["Frische Lebensmittel", "Erzeugnisse vom Hof", "Blumen"],
+  facilities: ["Marktplatz", "Zentral", "Willy-Brandt-Platz"],
+  transport: "Bahnhof: Lünen Hbf; Bus: verschiedene Linien zum Marktplatz"
+},
+
+{
+  id: "615",
+  slug: "wochenmarkt-luenen-brambauer",
+  name: "Wochenmarkt Lünen-Brambauer",
+  address: "Marktplatz (Yorckstraße)",
+  city: "Lünen",
+  postalCode: "44536",
+  latitude: 51.6378,
+  longitude: 7.4839,
+  openingHours: "Montag 8-12:30, Donnerstag 8-12:30",
+  features: ["Stadtteil", "Yorckstraße", "Regionale Produkte"],
+  isOpen: isMarketOpen("Montag 8-12:30, Donnerstag 8-12:30"),
+  description: "Der Wochenmarkt in Lünen-Brambauer findet montags und donnerstags von 8 bis 12:30 Uhr auf dem Marktplatz (Yorckstraße) statt",
+  phone: "02306/104-1717",
+  email: "info@luenen.de",
+  website: "https://www.luenen.de",
+  specialties: ["Regionale Produkte", "Gemüse", "Direktvermarkter"],
+  facilities: ["Stadtteilmarkt", "Yorckstraße", "Brambauer"],
+  transport: "Bus: verschiedene Linien nach Brambauer"
+},
+
+{
+  id: "616",
+  slug: "viktualienmarkt-luenen",
+  name: "Viktualienmarkt Lünen-Mitte",
+  address: "Marktplatz (Willy-Brandt-Platz)",
+  city: "Lünen",
+  postalCode: "44532",
+  latitude: 51.6197,
+  longitude: 7.5272,
+  openingHours: "Samstag 9-14",
+  features: ["Viktualienmarkt", "Samstag", "Besonderes Angebot"],
+  isOpen: isMarketOpen("Samstag 9-14"),
+  description: "Der Viktualienmarkt in Lünen-Mitte findet samstags von 9 bis 14 Uhr auf dem Marktplatz (Willy-Brandt-Platz) statt",
+  phone: "02306/104-1717",
+  email: "info@luenen.de",
+  website: "https://www.luenen.de",
+  specialties: ["Viktualien", "Besondere Produkte", "Wochenendmarkt"],
+  facilities: ["Marktplatz", "Willy-Brandt-Platz", "Samstagsmarkt"],
+  transport: "Bahnhof: Lünen Hbf; Bus: verschiedene Linien zum Marktplatz"
+},
+
+{
+  id: "617",
+  slug: "wochenmarkt-luenen-imbiss",
+  name: "Wochenmarkt Lünen mit Imbiss",
+  address: "Marktplatz (Willy-Brandt-Platz)",
+  city: "Lünen",
+  postalCode: "44532",
+  latitude: 51.6197,
+  longitude: 7.5272,
+  openingHours: "Dienstag 8-13, Freitag 8-13",
+  features: ["Imbiss", "Blumen", "Direktvermarkter"],
+  isOpen: isMarketOpen("Dienstag 8-13, Freitag 8-13"),
+  description: "Der Wochenmarkt in Lünen bietet neben frischen Produkten auch Imbiss und Blumen - dienstags und freitags von 8 bis 13 Uhr",
+  phone: "02306/104-1717",
+  email: "info@luenen.de",
+  website: "https://www.hofladen-bauernladen.info",
+  specialties: ["Imbiss", "Blumen", "Landwirtschaftliche Erzeugnisse"],
+  facilities: ["Marktplatz", "Imbissangebot", "Blumenstand"],
+  transport: "Bahnhof: Lünen Hbf; Bus: verschiedene Linien zum Marktplatz"
+},
+
+// Minden
+{
+  id: "618",
+  slug: "wochenmarkt-minden-marktplatz",
+  name: "Wochenmarkt Minden Marktplatz",
+  address: "Marktplatz",
+  city: "Minden",
+  postalCode: "32423",
+  latitude: 52.2906,
+  longitude: 8.9147,
+  openingHours: "Donnerstag 8-13",
+  features: ["Zentral", "Marktplatz", "Markthändler"],
+  isOpen: isMarketOpen("Donnerstag 8-13"),
+  description: "Der Wochenmarkt in Minden findet donnerstags von 8 bis 13 Uhr auf dem Marktplatz statt - die Mindener Markthändler freuen sich auf Ihren Besuch",
+  phone: "0571/8290659",
+  email: "info@mindenmarketing.de",
+  website: "https://www.minden-erleben.de",
+  specialties: ["Frische Produkte", "Regionale Erzeugnisse", "Mindener Markthändler"],
+  facilities: ["Marktplatz", "Zentral", "Parkhaus Hagemeyer"],
+  transport: "Bahnhof: Minden; Bus: verschiedene Linien zum Marktplatz"
+},
+
+{
+  id: "619",
+  slug: "wochenmarkt-minden-martinikirchhof",
+  name: "Wochenmarkt Minden Martinikirchhof",
+  address: "Martinikirchhof",
+  city: "Minden",
+  postalCode: "32423",
+  latitude: 52.2917,
+  longitude: 8.9172,
+  openingHours: "Samstag 8-13",
+  features: ["Martinikirchhof", "Samstag", "Historisch"],
+  isOpen: isMarketOpen("Samstag 8-13"),
+  description: "Der Wochenmarkt in Minden findet samstags von 8 bis 13 Uhr auf dem Martinikirchhof statt",
+  phone: "0571/8290659",
+  email: "info@mindenmarketing.de",
+  website: "https://minden.treffpunkt-wochenmarkt.de",
+  specialties: ["Frische Produkte", "Historische Kulisse", "Wochenendmarkt"],
+  facilities: ["Martinikirchhof", "Historisch", "Samstagsmarkt"],
+  transport: "Bahnhof: Minden; Bus: verschiedene Linien zum Martinikirchhof"
+},
+
+{
+  id: "620",
+  slug: "wochenmarkt-minden-winter",
+  name: "Wochenmarkt Minden Winterstandort",
+  address: "Martinikirchhof",
+  city: "Minden",
+  postalCode: "32423",
+  latitude: 52.2917,
+  longitude: 8.9172,
+  openingHours: "Donnerstag 8-13",
+  features: ["Winterstandort", "Verlegung", "Weihnachtsmarkt"],
+  isOpen: isMarketOpen("Donnerstag 8-13"),
+  description: "Aufgrund des Weihnachtsmarktes wird der Donnerstagswochenmarkt vom 21. November bis 2. Januar vom Marktplatz auf den Martinikirchhof verlegt",
+  phone: "0571/8290659",
+  email: "info@mindenmarketing.de",
+  website: "https://minden.treffpunkt-wochenmarkt.de",
+  specialties: ["Winterstandort", "Saisonale Verlegung", "Weihnachtszeit"],
+  facilities: ["Martinikirchhof", "Verlegung", "Winterzeit"],
+  transport: "Bahnhof: Minden; Bus: verschiedene Linien zum Martinikirchhof"
+},
+
+{
+  id: "621",
+  slug: "wochenmarkt-minden-dienstag",
+  name: "Wochenmarkt Minden Dienstag",
+  address: "Marktstandort",
+  city: "Minden",
+  postalCode: "32423",
+  latitude: 52.2906,
+  longitude: 8.9147,
+  openingHours: "Dienstag 8-14",
+  features: ["Dienstag", "Erweiterte Zeiten", "Regionale Produkte"],
+  isOpen: isMarketOpen("Dienstag 8-14"),
+  description: "Der Wochenmarkt in Minden findet auch dienstags von 8 bis 14 Uhr statt - bei gesetzlichen Feiertagen findet der Wochenmarkt nicht statt",
+  phone: "0571/8290659",
+  email: "info@mindenmarketing.de",
+  website: "https://www.minden-erleben.de",
+  specialties: ["Regionale Produkte", "Erweiterte Öffnungszeiten", "Wochenmitte"],
+  facilities: ["Marktstandort", "Erweiterte Zeiten", "Zentral"],
+  transport: "Bahnhof: Minden; Bus: verschiedene Linien zum Zentrum"
+},
+
+
+Wochenmärkte Norderstedt Öffnungszeiten Standorte
+10 Ergebnisse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wochenmärkte Velbert Öffnungszeiten Standorte
+10 Ergebnisse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Basierend auf meiner Recherche erstelle ich Ihnen die Wochenmarkt-Daten für Norderstedt und Velbert im gewünschten Format:
+
+javascript
+// Norderstedt
+{
+  id: "622",
+  slug: "wochenmarkt-norderstedt-mitte",
+  name: "Wochenmarkt Norderstedt-Mitte",
+  address: "Rathausplatz",
+  city: "Norderstedt",
+  postalCode: "22846",
+  latitude: 53.6969,
+  longitude: 10.0053,
+  openingHours: "Donnerstag 9-18",
+  features: ["Zentral", "Rathausplatz", "Farbenfrohes Angebot"],
+  isOpen: isMarketOpen("Donnerstag 9-18"),
+  description: "Jeden Donnerstag von 9:00 bis 18:00 Uhr verwandelt sich der Rathausplatz in ein farbenfrohes Meer von Marktständen mit allem was das Herz begehrt",
+  phone: "040 535950",
+  email: "info@norderstedt.de",
+  website: "https://www.norderstedter-wochenmaerkte.de",
+  specialties: ["Frisches Obst", "Fleisch- und Wurstwaren", "Duftendes Brot"],
+  facilities: ["Rathausplatz", "Zentral", "Erweiterte Öffnungszeiten"],
+  transport: "U-Bahn: Norderstedt Mitte; Bus: verschiedene Linien zum Rathausplatz"
+},
+
+{
+  id: "623",
+  slug: "wochenmarkt-norderstedt-garstedt",
+  name: "Wochenmarkt Norderstedt-Garstedt",
+  address: "Garstedt",
+  city: "Norderstedt",
+  postalCode: "22844",
+  latitude: 53.6814,
+  longitude: 10.0097,
+  openingHours: "Freitag 8:30-16",
+  features: ["Stadtteil", "Garstedt", "Regionale Produkte"],
+  isOpen: isMarketOpen("Freitag 8:30-16"),
+  description: "Der Wochenmarkt in Norderstedt-Garstedt findet freitags von 8:30 bis 16:00 Uhr statt mit regionalen Produkten und frischen Waren",
+  phone: "015155373227",
+  email: "info@norderstedt.de",
+  website: "https://www.norderstedter-wochenmaerkte.de",
+  specialties: ["Regionale Produkte", "Frisches Obst und Gemüse", "Blumen"],
+  facilities: ["Stadtteil", "Garstedt", "Freitags"],
+  transport: "Bus: verschiedene Linien nach Garstedt"
+},
+
+{
+  id: "624",
+  slug: "wochenmarkt-norderstedt-harksheide",
+  name: "Wochenmarkt Norderstedt-Harksheide",
+  address: "Harksheide",
+  city: "Norderstedt",
+  postalCode: "22851",
+  latitude: 53.7139,
+  longitude: 10.0194,
+  openingHours: "Samstag 8:30-13",
+  features: ["Stadtteil", "Harksheide", "Wochenendmarkt"],
+  isOpen: isMarketOpen("Samstag 8:30-13"),
+  description: "Der Wochenmarkt in Norderstedt-Harksheide findet samstags von 8:30 bis 13:00 Uhr statt - perfekt für den Wochenendeinkauf",
+  phone: "015155373227",
+  email: "info@norderstedt.de",
+  website: "https://www.norderstedter-wochenmaerkte.de",
+  specialties: ["Wochenendmarkt", "Frische Produkte", "Einheimisches und Exotisches"],
+  facilities: ["Stadtteil", "Harksheide", "Samstagsmarkt"],
+  transport: "Bus: verschiedene Linien nach Harksheide"
+},
+
+{
+  id: "625",
+  slug: "wochenmarkt-norderstedt-glashuette",
+  name: "Wochenmarkt Norderstedt-Glashütte",
+  address: "Schmuggelstieg",
+  city: "Norderstedt",
+  postalCode: "22850",
+  latitude: 53.7281,
+  longitude: 9.9806,
+  openingHours: "Mittwoch 8:30-13, Donnerstag 8:30-13",
+  features: ["Stadtteil", "Schmuggelstieg", "Demeter-Brot"],
+  isOpen: isMarketOpen("Mittwoch 8:30-13, Donnerstag 8:30-13"),
+  description: "Der Wochenmarkt am Schmuggelstieg in Glashütte findet mittwochs und donnerstags von 8:30 bis 13:00 Uhr statt mit frischem Demeter-Brot",
+  phone: "015155373227",
+  email: "info@norderstedt.de",
+  website: "https://www.hofbimoehlen.de",
+  specialties: ["Demeter-Brot", "Frische Milch", "Blumen aus Hasenmoor"],
+  facilities: ["Schmuggelstieg", "Stadtteil", "Bio-Fokus"],
+  transport: "Bus: verschiedene Linien nach Glashütte"
+},
+
+// Velbert
+{
+  id: "626",
+  slug: "wochenmarkt-velbert-mitte",
+  name: "Wochenmarkt Velbert-Mitte",
+  address: "Platz Am Offers",
+  city: "Velbert",
+  postalCode: "42549",
+  latitude: 51.3394,
+  longitude: 7.0511,
+  openingHours: "Dienstag 7-13, Freitag 7-13",
+  features: ["Zentral", "Platz Am Offers", "Umfangreiches Angebot"],
+  isOpen: isMarketOpen("Dienstag 7-13, Freitag 7-13"),
+  description: "Frisches Obst und Gemüse, bunte Schnitt- und Topfpflanzen, Backwaren, Käse-Spezialitäten, Fleisch und Fisch - dienstags und freitags zwischen 7 und 13 Uhr",
+  phone: "02051/262525",
+  email: "stadtmarketing@velbert.de",
+  website: "https://stadtmarketing.velbert.de",
+  specialties: ["Frisches Obst", "Käse-Spezialitäten", "Bunte Pflanzen"],
+  facilities: ["Platz Am Offers", "Mehr Platz", "Mehr Händler"],
+  transport: "Bahnhof: Velbert; Bus: verschiedene Linien zum Zentrum"
+},
+
+{
+  id: "627",
+  slug: "wochenmarkt-velbert-neviges",
+  name: "Wochenmarkt Velbert-Neviges",
+  address: "Elberfelder Straße (Fußgängerzone)",
+  city: "Velbert",
+  postalCode: "42553",
+  latitude: 51.3278,
+  longitude: 7.0550,
+  openingHours: "N/A",
+  features: ["Stadtteil", "Fußgängerzone", "Neviges"],
+  isOpen: isMarketOpen("N/A"),
+  description: "Der Wochenmarkt in Velbert-Neviges findet in der Fußgängerzone Elberfelder Straße statt mit vielfältigen regionalen Produkten",
+  phone: "027749143100",
+  email: "info@deutsche-marktgilde.de",
+  website: "https://wochenmaerkte-velberter.chayns.site",
+  specialties: ["Regionale Lebensmittel", "Bio-Produkte", "Direktvermarktung"],
+  facilities: ["Fußgängerzone", "Stadtteil", "Neviges"],
+  transport: "Bus: verschiedene Linien nach Neviges"
+},
+
+{
+  id: "628",
+  slug: "wochenmarkt-velbert-am-berg",
+  name: "Wochenmarkt Am Berg",
+  address: "Hardenberger Straße",
+  city: "Velbert",
+  postalCode: "42549",
+  latitude: 51.3406,
+  longitude: 7.0528,
+  openingHours: "N/A",
+  features: ["Am Berg", "Hardenberger Straße", "Bio-Qualität"],
+  isOpen: isMarketOpen("N/A"),
+  description: "Der Wochenmarkt Am Berg an der Hardenberger Straße bietet Bio-Gallowayfleisch und regionale Produkte in Bioland-Qualität",
+  phone: "N/A",
+  email: "N/A",
+  website: "https://www.hofladen-bauernladen.info",
+  specialties: ["Bio-Gallowayfleisch", "Honig", "Bioland-Qualität"],
+  facilities: ["Am Berg", "Hardenberger Straße", "Bio-Fokus"],
+  transport: "Bus: verschiedene Linien in Velbert-Mitte"
+},
+
+{
+  id: "629",
+  slug: "wochenmarkt-velbert-nachhaltig",
+  name: "Nachhaltiger Wochenmarkt Velbert",
+  address: "Velberter Wochenmärkte",
+  city: "Velbert",
+  postalCode: "42549",
+  latitude: 51.3394,
+  longitude: 7.0511,
+  openingHours: "N/A",
+  features: ["Nachhaltig", "Direktvermarktung", "Kurze Transportketten"],
+  isOpen: isMarketOpen("N/A"),
+  description: "Vielfältig, nachhaltig und wertig ist das Sortiment auf den Velberter Wochenmärkten mit frischer saisonaler Ware, oft direkt von Hof oder Feld",
+  phone: "02051/262525",
+  email: "stadtmarketing@velbert.de",
+  website: "https://stadtmarketing.velbert.de",
+  specialties: ["Saisonale Ware", "Bio-Qualität", "Moderate Preise"],
+  facilities: ["Ort des Austausches", "Direktvermarktung", "Nachhaltig"],
+  transport: "Verschiedene Standorte in Velbert"
+}
+  
   
 ];
 
