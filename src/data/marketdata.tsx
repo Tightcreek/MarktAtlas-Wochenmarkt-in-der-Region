@@ -238,25 +238,7 @@ export const marketData: Market[] = [
     transport: "Bus 551, 552 (Neustädtischer Markt)"
   },
 
-  // Weitere bayerische Städte
-  {
-    id: "69",
-    name: "Bamberg Markt",
-    address: "Grüner Markt",
-    city: "Bamberg",
-    postalCode: "96047",
-    openingHours: "Montag, Mittwoch, Samstag 7-17",
-    features: ["UNESCO", "Bier", "Mittelalterlich"],
-    isOpen: isMarketOpen("Montag, Mittwoch, Samstag 7-17"),
-    description: "Mittelalterlicher UNESCO-Markt in der Bierstadt Bamberg.",
-    phone: "+49 951 12345678",
-    email: "info@markt-bamberg.de",
-    website: "www.markt-bamberg.de",
-    specialties: ["Bamberger Bier", "Fränkische Küche", "UNESCO-Flair"],
-    facilities: ["Dom", "Altes Rathaus", "Klein-Venedig"],
-    transport: "Bus 901, 902 (Grüner Markt)"
-  },
-  {
+    {
     id: "70",
     name: "Passau Markt",
     address: "Domplatz",
