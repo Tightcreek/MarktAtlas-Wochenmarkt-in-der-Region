@@ -66,19 +66,27 @@ const ChristmasMarketsPage = () => {
         </div>
       </nav>
 
-      <div className="container mx-auto px-4 py-8">
-
-        {/* Header */}
-        <div className="text-center mb-12 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-2xl p-8 border border-red-200 dark:border-red-800 shadow-lg">
-          <h1 className="text-4xl font-bold text-red-800 dark:text-red-200 mb-4">
-            🎄 Übersicht der Weihnachtsmärkte 🎄
-          </h1>
-          <p className="text-lg text-red-600 dark:text-red-300 max-w-2xl mx-auto">
-            Entdecken Sie die zauberhafte Welt der deutschen Weihnachtsmärkte. 
-            Von traditionellen Christkindlmärkten bis hin zu modernen Wintermärkten - 
-            hier finden Sie alle Informationen für Ihre Adventszeit.
-          </p>
+      {/* Hero Banner */}
+      <div className="relative w-full h-96 mb-12 rounded-2xl overflow-hidden">
+        <img 
+          src="/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png"
+          alt="Weihnachtsmarkt mit festlicher Beleuchtung"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-5xl font-bold mb-4 drop-shadow-lg">
+              🎄 Weihnachtsmärkte Deutschland 🎄
+            </h1>
+            <p className="text-xl max-w-2xl mx-auto drop-shadow-lg">
+              Entdecken Sie die zauberhafte Welt der deutschen Weihnachtsmärkte
+            </p>
+          </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-8">
 
         {/* Markets Count */}
         <div className="mb-8">
