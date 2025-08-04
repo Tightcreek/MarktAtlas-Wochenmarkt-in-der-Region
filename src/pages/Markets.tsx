@@ -138,14 +138,6 @@ const Markets = () => {
                 className="pl-10"
               />
             </div>
-            <Button 
-              onClick={() => setIsListView(!isListView)}
-              variant="outline"
-              className="flex items-center gap-2"
-            >
-              <Filter className="h-4 w-4" />
-              {isListView ? 'Kartenansicht' : 'Listenansicht'}
-            </Button>
           </div>
 
           {/* Day Filter */}
