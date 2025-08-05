@@ -116,6 +116,71 @@ export const christmasMarkets: ChristmasMarket[] = [
     imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
     specialties: ["Stuttgarter Weihnachtsstollen", "Zwiebelrostbraten", "Spätzle", "Schwäbische Maultaschen", "Handwerkskunst"],
     website: "https://stuttgart.de/weihnachtsmarkt"
+  },
+  {
+    id: "heidelberger-weihnachtsmarkt",
+    slug: "heidelberger-weihnachtsmarkt",
+    name: "Heidelberger Weihnachtsmarkt",
+    city: "Heidelberg",
+    address: "Kornmarkt/Universitätsplatz, 69117 Heidelberg",
+    description: "Der romantische Heidelberger Weihnachtsmarkt vor der Kulisse des weltberühmten Schlosses ist ein wahres Märchenland. Mit seinem besonderen Charme zwischen Neckar und Schloss bietet er eine der schönsten Weihnachtsmarkt-Atmosphären Deutschlands.",
+    openingDates: "27.11.2025 - 22.12.2025",
+    openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 11-20 Uhr",
+    imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
+    specialties: ["Heidelberger Studentenkuss", "Glühwein", "Kunsthandwerk", "Regionale Spezialitäten", "Weihnachtsbaumschmuck"],
+    website: "https://heidelberg.de/weihnachtsmarkt"
+  },
+  {
+    id: "luebecker-weihnachtsmarkt",
+    slug: "luebecker-weihnachtsmarkt",
+    name: "Lübecker Weihnachtsmarkt",
+    city: "Lübeck",
+    address: "Koberg/Breite Straße, 23552 Lübeck",
+    description: "Der traditionelle Lübecker Weihnachtsmarkt in der UNESCO-Welterbestadt verzaubert mit hanseatischem Flair. Zwischen den historischen Backsteingebäuden der Altstadt bietet er eine besondere norddeutsche Weihnachtsatmosphäre mit maritimen Akzenten.",
+    openingDates: "25.11.2025 - 30.12.2025",
+    openingHours: "Mo-Sa 10-21 Uhr, So 11-21 Uhr",
+    imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
+    specialties: ["Lübecker Marzipan", "Glögg", "Punsch", "Nordsee-Delikatessen", "Handwerkskunst"],
+    website: "https://luebeck.de/weihnachtsmarkt"
+  },
+  {
+    id: "augsburger-christkindlmarkt",
+    slug: "augsburger-christkindlmarkt",
+    name: "Augsburger Christkindlmarkt",
+    city: "Augsburg",
+    address: "Rathausplatz, 86150 Augsburg",
+    description: "Der Augsburger Christkindlmarkt vor dem prächtigen Renaissance-Rathaus ist einer der schönsten Weihnachtsmärkte Bayerns. Mit über 80 Ständen und der besonderen Atmosphäre der historischen Fuggerstadt bietet er schwäbische Gemütlichkeit und Tradition.",
+    openingDates: "29.11.2025 - 24.12.2025",
+    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
+    imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
+    specialties: ["Lebkuchen", "Augsburger Zwetschgenmännle", "Glühwein", "Schwäbische Spezialitäten", "Christbaumschmuck"],
+    website: "https://augsburg.de/christkindlmarkt"
+  },
+  {
+    id: "erfurter-weihnachtsmarkt",
+    slug: "erfurter-weihnachtsmarkt",
+    name: "Erfurter Weihnachtsmarkt",
+    city: "Erfurt",
+    address: "Domplatz, 99084 Erfurt",
+    description: "Der Erfurter Weihnachtsmarkt vor der imposanten Kulisse von Dom und Severikirche gilt als einer der schönsten Deutschlands. Mit über 200 Ständen auf dem historischen Domplatz bietet er thüringische Gemütlichkeit und eine einzigartige mittelalterliche Atmosphäre.",
+    openingDates: "28.11.2025 - 22.12.2025",
+    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
+    imageUrl: "/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png",
+    specialties: ["Thüringer Rostbratwurst", "Feuerzangenbowle", "Stollen", "Töpferware", "Weihnachtspyramiden"],
+    website: "https://erfurt.de/weihnachtsmarkt"
+  },
+  {
+    id: "rothenburg-reiterlesmarkt",
+    slug: "rothenburg-reiterlesmarkt",
+    name: "Reiterlesmarkt Rothenburg",
+    city: "Rothenburg ob der Tauber",
+    address: "Marktplatz, 91541 Rothenburg ob der Tauber",
+    description: "Der Reiterlesmarkt in Rothenburg ob der Tauber gilt als einer der romantischsten Weihnachtsmärkte Deutschlands. Eingebettet in die mittelalterliche Kulisse der besterhaltenen Stadtmauer Deutschlands bietet er ein märchenhaftes Weihnachtserlebnis.",
+    openingDates: "21.11.2025 - 23.12.2025",
+    openingHours: "Fr-So 11-19 Uhr, täglich in der Adventszeit 11-19 Uhr",
+    imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
+    specialties: ["Lebkuchen", "Glühwein", "Schneeballen", "Weihnachtsschmuck", "Mittelalterliche Handwerkskunst"],
+    website: "https://rothenburg.de/reiterlesmarkt"
   }
 ];
 
