@@ -10,6 +10,9 @@ export interface ChristmasMarket {
   imageUrl: string; // Optionales Bild des Marktes
   specialties: string[]; // z.B. ["Glühwein", "Kunsthandwerk", "Kulinarisches"]
   website?: string;
+  phone: string;
+  email: string;
+  transport: string;
 }
 
 export const christmasMarkets: ChristmasMarket[] = [
@@ -24,7 +27,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 10-21 Uhr, Fr-Sa 10-22 Uhr, So 10-21 Uhr",
     imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
     specialties: ["Lebkuchen", "Glühwein", "Rostbratwürste", "Handwerkskunst", "Christbaumschmuck"],
-    website: "https://christkindlesmarkt.de"
+    website: "https://christkindlesmarkt.de",
+    phone: "+49 911 2336055",
+    email: "info@christkindlesmarkt.de",
+    transport: "U-Bahn: Linie U1 bis Lorenzkirche, S-Bahn: S1, S2, S3, S4 bis Hauptbahnhof"
   },
   {
     id: "dresdner-striezelmarkt",
@@ -37,7 +43,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Täglich 10-21 Uhr, 24.12. 10-14 Uhr",
     imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
     specialties: ["Dresdner Stollen", "Glühwein", "Erzgebirgische Volkskunst", "Pflaumentoffel", "Gebackene Muscheln"],
-    website: "https://striezelmarkt.dresden.de"
+    website: "https://striezelmarkt.dresden.de",
+    phone: "+49 351 4914025",
+    email: "striezelmarkt@dresden.de",
+    transport: "S-Bahn: S1, S2, S3 bis Bahnhof Dresden-Mitte, Straßenbahn: Linien 1, 2, 4 bis Altmarkt"
   },
   {
     id: "koelner-weihnachtsmaerkte",
@@ -50,7 +59,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 11-21 Uhr, Fr-Sa 11-22 Uhr, So 11-21 Uhr",
     imageUrl: "/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png",
     specialties: ["Feuerzangenbowle", "Reibekuchen", "Kölsch", "Kunsthandwerk", "Süßwaren"],
-    website: "https://koeln.de/weihnachtsmaerkte"
+    website: "https://koeln.de/weihnachtsmaerkte",
+    phone: "+49 221 22123456",
+    email: "weihnachtsmarkt@koeln.de",
+    transport: "U-Bahn: Linien U5, U16, U18 bis Dom/Hbf, S-Bahn: S6, S11, S12, S13, S19 bis Köln Hbf"
   },
   {
     id: "muenchner-christkindlmarkt",
@@ -63,7 +75,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Sa 10-21 Uhr, So 10-20 Uhr, 24.12. 10-14 Uhr",
     imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
     specialties: ["Gebrannte Mandeln", "Lebkuchenherzen", "Münchner Weißwurst", "Handwerk", "Christbaumschmuck"],
-    website: "https://christkindlmarkt-muenchen.de"
+    website: "https://christkindlmarkt-muenchen.de",
+    phone: "+49 89 23300272",
+    email: "christkindlmarkt@muenchen.de",
+    transport: "U-Bahn/S-Bahn: Linien U3, U6, S1-S8 bis Marienplatz"
   },
   {
     id: "frankfurter-weihnachtsmarkt",
@@ -76,7 +91,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Sa 10-21 Uhr, So 11-21 Uhr",
     imageUrl: "/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png",
     specialties: ["Frankfurter Bethmännchen", "Glühwein", "Brannte Mandeln", "Kunsthandwerk", "Riesenbrezeln"],
-    website: "https://frankfurt-tourismus.de/weihnachtsmarkt"
+    website: "https://frankfurt-tourismus.de/weihnachtsmarkt",
+    phone: "+49 69 21238800",
+    email: "weihnachtsmarkt@frankfurt.de",
+    transport: "U-Bahn: Linien U4, U5 bis Dom/Römer, S-Bahn: S1-S9 bis Hauptwache"
   },
   {
     id: "berliner-weihnachtszauber",
@@ -89,7 +107,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 11-22 Uhr, Fr-Sa 11-23 Uhr, So 11-22 Uhr",
     imageUrl: "/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png",
     specialties: ["Currywurst", "Stollen", "Feuerzangenbowle", "Berliner Weisse", "Handwerkskunst"],
-    website: "https://weihnachtszeit-berlin.de"
+    website: "https://weihnachtszeit-berlin.de",
+    phone: "+49 30 25002333",
+    email: "info@weihnachtszeit-berlin.de",
+    transport: "U-Bahn: Linie U6 bis Französische Straße, Linie U2 bis Stadtmitte"
   },
   {
     id: "hamburger-weihnachtsmarkt",
@@ -102,7 +123,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Sa 10-21 Uhr, So 10-20 Uhr",
     imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
     specialties: ["Fischbrötchen", "Glögg", "Geröstete Maronen", "Nordsee-Spezialitäten", "Maritime Geschenke"],
-    website: "https://hamburg.de/weihnachtsmarkt"
+    website: "https://hamburg.de/weihnachtsmarkt",
+    phone: "+49 40 30051401",
+    email: "weihnachtsmarkt@hamburg.de",
+    transport: "U-Bahn: Linien U1, U3 bis Rathaus, S-Bahn: S1, S3 bis Jungfernstieg"
   },
   {
     id: "stuttgarter-weihnachtsmarkt",
@@ -115,7 +139,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 10-21 Uhr, Fr-Sa 10-22 Uhr, So 11-21 Uhr",
     imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
     specialties: ["Stuttgarter Weihnachtsstollen", "Zwiebelrostbraten", "Spätzle", "Schwäbische Maultaschen", "Handwerkskunst"],
-    website: "https://stuttgart.de/weihnachtsmarkt"
+    website: "https://stuttgart.de/weihnachtsmarkt",
+    phone: "+49 711 22228460",
+    email: "weihnachtsmarkt@stuttgart.de",
+    transport: "U-Bahn: Linien U5, U6, U7, U12 bis Staatsgalerie, S-Bahn: S1-S6 bis Hauptbahnhof"
   },
   {
     id: "heidelberger-weihnachtsmarkt",
@@ -128,7 +155,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 11-20 Uhr",
     imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
     specialties: ["Heidelberger Studentenkuss", "Glühwein", "Kunsthandwerk", "Regionale Spezialitäten", "Weihnachtsbaumschmuck"],
-    website: "https://heidelberg.de/weihnachtsmarkt"
+    website: "https://heidelberg.de/weihnachtsmarkt",
+    phone: "+49 6221 5844444",
+    email: "weihnachtsmarkt@heidelberg.de",
+    transport: "Straßenbahn: Linien 5, 21, 22 bis Bismarckplatz, Bus: Linien 31, 32 bis Universitätsplatz"
   },
   {
     id: "luebecker-weihnachtsmarkt",
@@ -141,7 +171,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Sa 10-21 Uhr, So 11-21 Uhr",
     imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
     specialties: ["Lübecker Marzipan", "Glögg", "Punsch", "Nordsee-Delikatessen", "Handwerkskunst"],
-    website: "https://luebeck.de/weihnachtsmarkt"
+    website: "https://luebeck.de/weihnachtsmarkt",
+    phone: "+49 451 8899700",
+    email: "weihnachtsmarkt@luebeck.de",
+    transport: "Bus: Linien 1, 3, 11 bis Koberg, Regionalbahn: bis Lübeck Hbf"
   },
   {
     id: "augsburger-christkindlmarkt",
@@ -154,7 +187,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
     imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
     specialties: ["Lebkuchen", "Augsburger Zwetschgenmännle", "Glühwein", "Schwäbische Spezialitäten", "Christbaumschmuck"],
-    website: "https://augsburg.de/christkindlmarkt"
+    website: "https://augsburg.de/christkindlmarkt",
+    phone: "+49 821 502070",
+    email: "christkindlmarkt@augsburg.de",
+    transport: "Straßenbahn: Linien 1, 2 bis Rathausplatz, Bus: Linie 22 bis Fuggerstraße"
   },
   {
     id: "erfurter-weihnachtsmarkt",
@@ -167,7 +203,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
     imageUrl: "/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png",
     specialties: ["Thüringer Rostbratwurst", "Feuerzangenbowle", "Stollen", "Töpferware", "Weihnachtspyramiden"],
-    website: "https://erfurt.de/weihnachtsmarkt"
+    website: "https://erfurt.de/weihnachtsmarkt",
+    phone: "+49 361 6642265",
+    email: "weihnachtsmarkt@erfurt.de",
+    transport: "Straßenbahn: Linien 1, 3, 5 bis Domplatz, Bus: Linie 9 bis Domplatz"
   },
   {
     id: "rothenburg-reiterlesmarkt",
@@ -180,7 +219,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Fr-So 11-19 Uhr, täglich in der Adventszeit 11-19 Uhr",
     imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
     specialties: ["Lebkuchen", "Glühwein", "Schneeballen", "Weihnachtsschmuck", "Mittelalterliche Handwerkskunst"],
-    website: "https://rothenburg.de/reiterlesmarkt"
+    website: "https://rothenburg.de/reiterlesmarkt",
+    phone: "+49 9861 404800",
+    email: "reiterlesmarkt@rothenburg.de",
+    transport: "Bus: Regionalbus bis Marktplatz, Auto: A7 Ausfahrt Rothenburg"
   },
   {
     id: "bremer-weihnachtsmarkt",
@@ -193,7 +235,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 11-20:30 Uhr, Fr-Sa 11-21:30 Uhr, So 11-20:30 Uhr",
     imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
     specialties: ["Bremer Klaben", "Glühwein", "Fischbrötchen", "Maritime Geschenke", "Nordsee-Spezialitäten"],
-    website: "https://bremen.de/weihnachtsmarkt"
+    website: "https://bremen.de/weihnachtsmarkt",
+    phone: "+49 421 30800010",
+    email: "weihnachtsmarkt@bremen.de",
+    transport: "Straßenbahn: Linien 1, 8 bis Domsheide, S-Bahn: RS1, RS4 bis Bremen Hbf"
   },
   {
     id: "hannoverscher-weihnachtsmarkt",
@@ -206,7 +251,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Täglich 11-21 Uhr, 24.12. bis 14 Uhr, 25.12. geschlossen",
     imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
     specialties: ["Lüneburger Heidekartoffeln", "Glühwein", "Handwerkskunst", "Regionale Spezialitäten", "Weihnachtsbaumschmuck"],
-    website: "https://weihnachtsdorf-hannover.de"
+    website: "https://weihnachtsdorf-hannover.de",
+    phone: "+49 511 12345150",
+    email: "weihnachtsdorf@hannover.de",
+    transport: "S-Bahn: S1-S7 bis Hannover Hbf, U-Bahn: U1-U9 bis Hauptbahnhof"
   },
   {
     id: "wuerzburger-weihnachtsmarkt",
@@ -219,7 +267,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Sa 10-20:30 Uhr, So 11-20:30 Uhr",
     imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
     specialties: ["Fränkischer Sauerbraten", "Glühwein", "Lebkuchen", "Kunsthandwerk", "Weihnachtspyramiden"],
-    website: "https://wuerzburg.de/weihnachtsmarkt"
+    website: "https://wuerzburg.de/weihnachtsmarkt",
+    phone: "+49 931 372398",
+    email: "weihnachtsmarkt@wuerzburg.de",
+    transport: "Straßenbahn: Linien 1, 3, 5 bis Juliuspromenade, Bus: Linien 8, 14 bis Marktplatz"
   },
   {
     id: "regensburger-christkindlmarkt",
@@ -232,7 +283,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 9:30-20 Uhr, Fr-Sa 9:30-21 Uhr, So 11-20 Uhr",
     imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
     specialties: ["Regensburger Wurst", "Lebkuchen", "Glühwein", "Bayerische Spezialitäten", "Christbaumschmuck"],
-    website: "https://regensburg.de/christkindlmarkt"
+    website: "https://regensburg.de/christkindlmarkt",
+    phone: "+49 941 5073410",
+    email: "christkindlmarkt@regensburg.de",
+    transport: "Bus: Linien 1, 2, 6 bis Neupfarrplatz, Regionalbahn: bis Regensburg Hbf"
   },
   {
     id: "bamberger-weihnachtsmarkt",
@@ -245,7 +299,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 9:30-20 Uhr, Fr-Sa 9:30-21 Uhr, So 11-20 Uhr",
     imageUrl: "/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png",
     specialties: ["Bamberger Hörnla", "Rauchbier", "Lebkuchen", "Fränkische Spezialitäten", "Kunsthandwerk"],
-    website: "https://bamberg.info/weihnachtsmarkt"
+    website: "https://bamberg.info/weihnachtsmarkt",
+    phone: "+49 951 29760200",
+    email: "weihnachtsmarkt@bamberg.info",
+    transport: "Bus: Linien 901, 902 bis Maxplatz, Regionalbahn: bis Bamberg Hbf"
   },
   {
     id: "freiburger-weihnachtsmarkt",
@@ -258,7 +315,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
     imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
     specialties: ["Schwarzwälder Kirschtorte", "Glühwein", "Geröstete Maronen", "Badische Spezialitäten", "Kuckucksuhren"],
-    website: "https://weihnachtsmarkt.freiburg.de"
+    website: "https://weihnachtsmarkt.freiburg.de",
+    phone: "+49 761 388150",
+    email: "weihnachtsmarkt@freiburg.de",
+    transport: "Straßenbahn: Linien 1, 3 bis Bertoldsbrunnen, Bus: Linien 11, 27 bis Rathausplatz"
   },
   {
     id: "duesseldorfer-weihnachtsmarkt",
@@ -271,7 +331,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Sa 11-21 Uhr, So 12-21 Uhr, Fr-Sa bis 22 Uhr",
     imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
     specialties: ["Rheinischer Sauerbraten", "Altbier", "Himmel un Ääd", "Internationale Spezialitäten", "Modeaccessoires"],
-    website: "https://visitduesseldorf.de/weihnachtsmarkt"
+    website: "https://visitduesseldorf.de/weihnachtsmarkt",
+    phone: "+49 211 8994077",
+    email: "weihnachtsmarkt@duesseldorf.de",
+    transport: "U-Bahn: Linien U70, U74, U75, U76, U77, U78, U79 bis Heinrich-Heine-Allee"
   },
   {
     id: "essener-weihnachtsmarkt",
@@ -284,7 +347,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 11-21 Uhr, Fr-Sa 11-22 Uhr, So 12-21 Uhr",
     imageUrl: "/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png",
     specialties: ["Currywurst", "Pfefferpotthast", "Glühwein", "Internationale Küche", "Ruhrpott-Souvenirs"],
-    website: "https://visitessen.de/weihnachtsmarkt"
+    website: "https://visitessen.de/weihnachtsmarkt",
+    phone: "+49 201 8877220",
+    email: "weihnachtsmarkt@essen.de",
+    transport: "U-Bahn: Linien U11, U17, U18 bis Hauptbahnhof, S-Bahn: S1, S3, S9 bis Essen Hbf"
   },
   {
     id: "dortmunder-weihnachtsmarkt",
@@ -297,7 +363,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 11-21 Uhr, Fr-Sa 11-22 Uhr, So 12-21 Uhr",
     imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
     specialties: ["Currywurst", "Dortmunder Bier", "Pfefferpotthast", "Ruhrgebiet-Spezialitäten", "BVB-Fanartikei"],
-    website: "https://weihnachtsstadt-do.de"
+    website: "https://weihnachtsstadt-do.de",
+    phone: "+49 231 54755333",
+    email: "weihnachtsstadt@dortmund.de",
+    transport: "U-Bahn: Linien U41, U45, U47, U49 bis Stadtgarten, S-Bahn: S1, S2, S4, S5 bis Dortmund Hbf"
   },
   {
     id: "leipziger-weihnachtsmarkt",
@@ -310,7 +379,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
     imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
     specialties: ["Leipziger Lerchen", "Sächsischer Stollen", "Glühwein", "Pulsnitzer Lebkuchen", "Erzgebirgische Volkskunst"],
-    website: "https://leipzig.de/weihnachtsmarkt"
+    website: "https://leipzig.de/weihnachtsmarkt",
+    phone: "+49 341 7104260",
+    email: "weihnachtsmarkt@leipzig.de",
+    transport: "Straßenbahn: Linien 4, 7, 12, 15 bis Augustusplatz, S-Bahn: S1, S2, S3, S4, S5 bis Leipzig Hbf"
   },
   {
     id: "mainzer-weihnachtsmarkt",
@@ -323,7 +395,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 10-20:30 Uhr, Fr-Sa 10-21:30 Uhr, So 11-20:30 Uhr",
     imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
     specialties: ["Rheinischer Döppekuchen", "Glühwein", "Mainzer Fastnachtskrapfen", "Rheinland-Pfälzer Spezialitäten", "Gutenberg-Souvenirs"],
-    website: "https://mainz.de/weihnachtsmarkt"
+    website: "https://mainz.de/weihnachtsmarkt",
+    phone: "+49 6131 122647",
+    email: "weihnachtsmarkt@mainz.de",
+    transport: "S-Bahn: S8 bis Mainz Hauptbahnhof, Bus: Linien 6, 50, 54, 55 bis Höfchen/Markt"
   },
   {
     id: "trierer-weihnachtsmarkt",
@@ -336,7 +411,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 12-20 Uhr",
     imageUrl: "/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png",
     specialties: ["Trierer Weinbergspfirsiche", "Moselwein-Glühwein", "Römerbrot", "Eifel-Spezialitäten", "Antike Handwerkskunst"],
-    website: "https://trier.de/weihnachtsmarkt"
+    website: "https://trier.de/weihnachtsmarkt",
+    phone: "+49 651 97808520",
+    email: "weihnachtsmarkt@trier.de",
+    transport: "Bus: Linien 1, 2, 12 bis Porta Nigra, Regionalbahn: bis Trier Hauptbahnhof"
   },
   {
     id: "konstanzer-weihnachtsmarkt",
@@ -349,7 +427,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 11-20 Uhr",
     imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
     specialties: ["Bodensee-Fischspezialitäten", "Schnapsbrenner-Erzeugnisse", "Schweizer Rösti", "Alpen-Käse", "Seehas-Lebkuchen"],
-    website: "https://konstanz.de/weihnachtsmarkt"
+    website: "https://konstanz.de/weihnachtsmarkt",
+    phone: "+49 7531 900160",
+    email: "weihnachtsmarkt@konstanz.de",
+    transport: "Bus: Linien 1, 4, 13 bis Marktstätte, Regionalbahn: bis Konstanz Bahnhof"
   },
   {
     id: "goettinger-weihnachtsmarkt",
@@ -362,7 +443,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Sa 10-20 Uhr, So 11-20 Uhr, Fr-Sa bis 21 Uhr",
     imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
     specialties: ["Göttinger Pökelfleisch", "Studenten-Feuerzange", "Niedersächsischer Honig", "Universitäts-Souvenirs", "Harz-Spezialitäten"],
-    website: "https://goettingen.de/weihnachtsmarkt"
+    website: "https://goettingen.de/weihnachtsmarkt",
+    phone: "+49 551 4996800",
+    email: "weihnachtsmarkt@goettingen.de",
+    transport: "Bus: Linien 21, 22, 23 bis Markt, Regionalbahn: bis Göttingen Bahnhof"
   },
   {
     id: "kieler-weihnachtsmarkt",
@@ -375,11 +459,14 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Sa 11-20:30 Uhr, So 12-20:30 Uhr, Fr-Sa bis 21:30 Uhr",
     imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
     specialties: ["Kieler Sprotten", "Förde-Fisch", "Pharisäer", "Maritime Geschenke", "Schleswig-Holstein Spezialitäten"],
-    website: "https://kiel.de/weihnachtsmarkt"
+    website: "https://kiel.de/weihnachtsmarkt",
+    phone: "+49 431 901901",
+    email: "weihnachtsmarkt@kiel.de",
+    transport: "Bus: Linien 4, 11, 12 bis Rathausplatz, S-Bahn: S3 bis Kiel Hauptbahnhof"
   },
   {
-    id: "bremer-weihnachtsmarkt",
-    slug: "bremer-weihnachtsmarkt",
+    id: "bremer-weihnachtsmarkt-2",
+    slug: "bremer-weihnachtsmarkt-2",
     name: "Bremer Weihnachtsmarkt",
     city: "Bremen",
     address: "Marktplatz/Liebfrauenkirchhof, 28195 Bremen",
@@ -388,11 +475,14 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Sa 10-20:30 Uhr, So 11-20:30 Uhr, Fr-Sa bis 21:30 Uhr",
     imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
     specialties: ["Bremer Klaben", "Knipp", "Beck's Glühbier", "Hanseatische Spezialitäten", "Stadtmusikanten-Souvenirs"],
-    website: "https://bremen.de/weihnachtsmarkt"
+    website: "https://bremen.de/weihnachtsmarkt",
+    phone: "+49 421 30800010",
+    email: "weihnachtsmarkt@bremen.de",
+    transport: "Straßenbahn: Linien 1, 8 bis Domsheide, S-Bahn: RS1, RS4 bis Bremen Hbf"
   },
   {
-    id: "erfurter-weihnachtsmarkt",
-    slug: "erfurter-weihnachtsmarkt",
+    id: "erfurter-weihnachtsmarkt-2",
+    slug: "erfurter-weihnachtsmarkt-2",
     name: "Erfurter Weihnachtsmarkt",
     city: "Erfurt",
     address: "Domplatz/Fischmarkt, 99084 Erfurt",
@@ -401,7 +491,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
     imageUrl: "/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png",
     specialties: ["Thüringer Bratwurst", "Erfurter Schittchen", "Glühwein", "Thüringer Lebkuchen", "Blaudruckerei-Produkte"],
-    website: "https://erfurt.de/weihnachtsmarkt"
+    website: "https://erfurt.de/weihnachtsmarkt",
+    phone: "+49 361 6642265",
+    email: "weihnachtsmarkt@erfurt.de",
+    transport: "Straßenbahn: Linien 1, 3, 5 bis Domplatz, Bus: Linie 9 bis Domplatz"
   },
   {
     id: "potsdamer-weihnachtsmarkt",
@@ -414,7 +507,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 11-20 Uhr",
     imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
     specialties: ["Brandenburger Spezialitäten", "Preußische Leckereien", "Glühwein", "Sanssouci-Souvenirs", "Kunsthandwerk"],
-    website: "https://potsdam.de/weihnachtsmarkt"
+    website: "https://potsdam.de/weihnachtsmarkt",
+    phone: "+49 331 2755880",
+    email: "weihnachtsmarkt@potsdam.de",
+    transport: "Straßenbahn: Linien 91, 92, 96 bis Brandenburger Tor, S-Bahn: S1, S7 bis Potsdam Hbf"
   },
   {
     id: "magdeburger-weihnachtsmarkt",
@@ -427,7 +523,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Sa 10-20 Uhr, So 11-20 Uhr, Fr-Sa bis 21 Uhr",
     imageUrl: "/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png",
     specialties: ["Magdeburger Halver Hahn", "Baumkuchen", "Glühwein", "Otto-Souvenirs", "Altmark-Spezialitäten"],
-    website: "https://magdeburg.de/weihnachtsmarkt"
+    website: "https://magdeburg.de/weihnachtsmarkt",
+    phone: "+49 391 5403200",
+    email: "weihnachtsmarkt@magdeburg.de",
+    transport: "Straßenbahn: Linien 1, 2, 4, 6 bis Alter Markt, S-Bahn: S1 bis Magdeburg Hbf"
   },
   {
     id: "kasseler-weihnachtsmarkt",
@@ -440,7 +539,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 12-20 Uhr",
     imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
     specialties: ["Ahle Wurscht", "Hessischer Apfelwein-Glühwein", "Kasseler Streuselkuchen", "documenta-Souvenirs", "Nordhessische Spezialitäten"],
-    website: "https://kassel.de/weihnachtsmarkt"
+    website: "https://kassel.de/weihnachtsmarkt",
+    phone: "+49 561 787690",
+    email: "weihnachtsmarkt@kassel.de",
+    transport: "Straßenbahn: Linien 1, 3, 4, 5, 6, 7, 8 bis Königsplatz, RegioTram: RT1, RT4, RT5, RT9"
   },
   {
     id: "osnabruecker-weihnachtsmarkt",
@@ -453,11 +555,14 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Sa 10-20:30 Uhr, So 11-20:30 Uhr, Fr-Sa bis 21:30 Uhr",
     imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
     specialties: ["Westfälischer Schinken", "Pumpernickel", "Glühwein", "Friedens-Souvenirs", "Osnabrücker Möhrchen"],
-    website: "https://osnabrueck.de/weihnachtsmarkt"
+    website: "https://osnabrueck.de/weihnachtsmarkt",
+    phone: "+49 541 3234567",
+    email: "weihnachtsmarkt@osnabrueck.de",
+    transport: "Bus: Linien 21, 31, 32 bis Neumarkt, Regionalbahn: bis Osnabrück Hauptbahnhof"
   },
   {
-    id: "heidelberger-weihnachtsmarkt",
-    slug: "heidelberger-weihnachtsmarkt",
+    id: "heidelberger-weihnachtsmarkt-2",
+    slug: "heidelberger-weihnachtsmarkt-2",
     name: "Heidelberger Weihnachtsmarkt",
     city: "Heidelberg",
     address: "Marktplatz/Kornmarkt, 69117 Heidelberg",
@@ -466,7 +571,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Do 11-20:30 Uhr, Fr-Sa 11-21:30 Uhr, So 11-20:30 Uhr",
     imageUrl: "/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png",
     specialties: ["Heidelberger Studentenkuss", "Badische Spezialitäten", "Glühwein", "Schloss-Souvenirs", "Kurpfälzer Lebkuchen"],
-    website: "https://heidelberg.de/weihnachtsmarkt"
+    website: "https://heidelberg.de/weihnachtsmarkt",
+    phone: "+49 6221 5844444",
+    email: "weihnachtsmarkt@heidelberg.de",
+    transport: "Straßenbahn: Linien 5, 21, 22 bis Bismarckplatz, Bus: Linien 31, 32 bis Universitätsplatz"
   },
   {
     id: "rostacker-weihnachtsmarkt",
@@ -479,7 +587,10 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingHours: "Mo-Sa 10-20 Uhr, So 11-20 Uhr, Fr-Sa bis 21 Uhr",
     imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
     specialties: ["Rostocker Bratwurst", "Fischbrötchen", "Ostsee-Sanddorn-Glühwein", "Maritime Geschenke", "Mecklenburger Spezialitäten"],
-    website: "https://rostock.de/weihnachtsmarkt"
+    website: "https://rostock.de/weihnachtsmarkt",
+    phone: "+49 381 3814444",
+    email: "weihnachtsmarkt@rostock.de",
+    transport: "Straßenbahn: Linien 1, 2, 3, 5, 6 bis Neuer Markt, S-Bahn: S1, S2 bis Rostock Hbf"
   }
 ];
 
