@@ -13229,6 +13229,43 @@ export const marketData: Market[] = [
   transport: "Bus: Linien 1, 2, 3, 4 Haltestelle Stadtmitte"
 },
 
+{
+  id: "742",
+  slug: "wochenmarkt-huerth-hermuelheim",
+  name: "Wochenmarkt Hürth",
+  address: "Otto-Räcke-Platz",
+  city: "Hürth",
+  postalCode: "50354",
+  openingHours: "Donnerstag 9-15",
+  features: ["Bürgerhaus", "20 Händler", "Vielfältig"],
+  isOpen: isMarketOpen("Donnerstag 9-15"),
+  description: Wochenmarkt mit bis zu 20 Händlern auf dem Otto-Räcke-Platz in Hürth-Hermülheim mit regionalem Sortiment von Fisch und Feinkost bis zu Bekleidung ,
+  phone: "N/A",
+  email: "N/A",
+  website: "www.wochenmarkthuerth.de",
+  specialties: ["Regionale Produkte", "Fisch", "Feinkost", "Bekleidung"],
+  facilities: ["Otto-Räcke-Platz", "Bürgerhaus", "20 Händler"],
+  transport: "Bus: Linien 718, 719 Haltestelle Bürgerhaus Hermülheim"
+},
+{
+  id: "743",
+  slug: "wochenmarkt-huerth-gertrudenhof",
+  name: "Bauernmarkt Gertrudenhof",
+  address: "Lortzingstraße 160",
+  city: "Hürth",
+  postalCode: "50354",
+  openingHours: "Samstag 9-17, Sonntag 10-17",
+  features: ["Erlebnisbauernhof", "Bauernmarkt", "Wochenende"],
+  isOpen: isMarketOpen("Samstag 9-17, Sonntag 10-17"),
+  description: "Bauernmarkt am Erlebnisbauernhof Gertrudenhof mit regionalen Produkten und Erlebnisangebot",
+  phone: "02233 70760",
+  email: "N/A",
+  website: "erlebnisbauernhof-gertrudenhof.de",
+  specialties: ["Hofprodukte", "Regionale Spezialitäten", "Erlebnisbauernhof"],
+  facilities: ["Erlebnisbauernhof", "Floristikwerkstatt", "Erlebnisgelände"],
+  transport: "Bus: Linie 18 Haltestelle Gertrudenhof"
+},  
+
 // Bergheim
 {
   id: "744",
