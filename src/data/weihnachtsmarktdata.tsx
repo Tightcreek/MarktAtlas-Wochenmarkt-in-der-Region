@@ -311,6 +311,71 @@ export const christmasMarkets: ChristmasMarket[] = [
     imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
     specialties: ["Leipziger Lerchen", "Sächsischer Stollen", "Glühwein", "Pulsnitzer Lebkuchen", "Erzgebirgische Volkskunst"],
     website: "https://leipzig.de/weihnachtsmarkt"
+  },
+  {
+    id: "mainzer-weihnachtsmarkt",
+    slug: "mainzer-weihnachtsmarkt",
+    name: "Mainzer Weihnachtsmarkt",
+    city: "Mainz",
+    address: "Markt/Leichhof, 55116 Mainz",
+    description: "Der Mainzer Weihnachtsmarkt vor dem imposanten Dom St. Martin gehört zu den schönsten Rheinland-Pfalz'. Mit über 120 Ständen und der besonderen rheinischen Atmosphäre bietet er eine perfekte Mischung aus Tradition und lebendiger Universitätsstadt-Kultur.",
+    openingDates: "22.11.2025 - 23.12.2025",
+    openingHours: "Mo-Do 10-20:30 Uhr, Fr-Sa 10-21:30 Uhr, So 11-20:30 Uhr",
+    imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
+    specialties: ["Rheinischer Döppekuchen", "Glühwein", "Mainzer Fastnachtskrapfen", "Rheinland-Pfälzer Spezialitäten", "Gutenberg-Souvenirs"],
+    website: "https://mainz.de/weihnachtsmarkt"
+  },
+  {
+    id: "trierer-weihnachtsmarkt",
+    slug: "trierer-weihnachtsmarkt",
+    name: "Trierer Weihnachtsmarkt",
+    city: "Trier",
+    address: "Hauptmarkt/Domfreihof, 54290 Trier",
+    description: "Der Trierer Weihnachtsmarkt in Deutschlands ältester Stadt verbindet 2000 Jahre Geschichte mit weihnachtlicher Gemütlichkeit. Vor der Kulisse der Porta Nigra und des Doms bietet er eine einzigartige römisch-mittelalterliche Atmosphäre.",
+    openingDates: "19.11.2025 - 22.12.2025",
+    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 12-20 Uhr",
+    imageUrl: "/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png",
+    specialties: ["Trierer Weinbergspfirsiche", "Moselwein-Glühwein", "Römerbrot", "Eifel-Spezialitäten", "Antike Handwerkskunst"],
+    website: "https://trier.de/weihnachtsmarkt"
+  },
+  {
+    id: "konstanzer-weihnachtsmarkt",
+    slug: "konstanzer-weihnachtsmarkt",
+    name: "Konstanzer Weihnachtsmarkt",
+    city: "Konstanz",
+    address: "Münsterplatz/Marktstätte, 78462 Konstanz",
+    description: "Der Konstanzer Weihnachtsmarkt am Bodensee bietet eine einzigartige Alpenkulisse mit Schweizer Flair. Mit direktem Blick auf den See und die Alpen verzaubert er Besucher mit süddeutscher Gemütlichkeit und internationaler Atmosphäre.",
+    openingDates: "21.11.2025 - 22.12.2025",
+    openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 11-20 Uhr",
+    imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
+    specialties: ["Bodensee-Fischspezialitäten", "Schnapsbrenner-Erzeugnisse", "Schweizer Rösti", "Alpen-Käse", "Seehas-Lebkuchen"],
+    website: "https://konstanz.de/weihnachtsmarkt"
+  },
+  {
+    id: "goettinger-weihnachtsmarkt",
+    slug: "goettinger-weihnachtsmarkt",
+    name: "Göttinger Weihnachtsmarkt",
+    city: "Göttingen",
+    address: "Markt/Wilhelmsplatz, 37073 Göttingen",
+    description: "Der Göttinger Weihnachtsmarkt in der traditionsreichen Universitätsstadt bietet eine besondere Mischung aus studentischem Leben und niedersächsischer Tradition. Vor dem historischen Gänseliesel-Brunnen entfaltet sich eine gemütliche Adventsatmosphäre.",
+    openingDates: "22.11.2025 - 30.12.2025",
+    openingHours: "Mo-Sa 10-20 Uhr, So 11-20 Uhr, Fr-Sa bis 21 Uhr",
+    imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
+    specialties: ["Göttinger Pökelfleisch", "Studenten-Feuerzange", "Niedersächsischer Honig", "Universitäts-Souvenirs", "Harz-Spezialitäten"],
+    website: "https://goettingen.de/weihnachtsmarkt"
+  },
+  {
+    id: "kieler-weihnachtsmarkt",
+    slug: "kieler-weihnachtsmarkt",
+    name: "Kieler Weihnachtsmarkt",
+    city: "Kiel",
+    address: "Asmus-Bremer-Platz/Rathausplatz, 24103 Kiel",
+    description: "Der Kieler Weihnachtsmarkt an der Förde verbindet maritime Tradition mit schleswig-holsteinischer Gemütlichkeit. Als Landeshauptstadt und Hafenstadt bietet Kiel eine besondere norddeutsche Weihnachtsatmosphäre mit Meeresblick.",
+    openingDates: "20.11.2025 - 30.12.2025",
+    openingHours: "Mo-Sa 11-20:30 Uhr, So 12-20:30 Uhr, Fr-Sa bis 21:30 Uhr",
+    imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
+    specialties: ["Kieler Sprotten", "Förde-Fisch", "Pharisäer", "Maritime Geschenke", "Schleswig-Holstein Spezialitäten"],
+    website: "https://kiel.de/weihnachtsmarkt"
   }
 ];
 
