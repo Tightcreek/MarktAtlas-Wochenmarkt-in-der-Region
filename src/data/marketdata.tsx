@@ -13239,7 +13239,7 @@ export const marketData: Market[] = [
   openingHours: "Donnerstag 9-15",
   features: ["Bürgerhaus", "20 Händler", "Vielfältig"],
   isOpen: isMarketOpen("Donnerstag 9-15"),
-  description: "Wochenmarkt mit bis zu 20 Händlern auf dem Otto-Räcke-Platz in Hürth-Hermülheim mit regionalem Sortiment von Fisch und Feinkost bis zu Bekleidung",
+  description: Wochenmarkt mit bis zu 20 Händlern auf dem Otto-Räcke-Platz in Hürth-Hermülheim mit regionalem Sortiment von Fisch und Feinkost bis zu Bekleidung ,
   phone: "N/A",
   email: "N/A",
   website: "www.wochenmarkthuerth.de",
