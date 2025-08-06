@@ -13363,7 +13363,7 @@ export const marketData: Market[] = [
   transport: "Bus: Linien 224, 225, 226 Haltestelle Marktplatz"
 },
 {
-  id: "749",
+  id: "7491",
   slug: "wochenmarkt-herten-westerholt",
   name: "Wochenmarkt Westerholt",
   address: "Marktplatz",
