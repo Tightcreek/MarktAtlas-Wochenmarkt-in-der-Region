@@ -149,41 +149,6 @@ export const generateSEOKeywords = (markets: Market[]): string => {
 export const marketData: Market[] = [
 
 
-
-  {
-    id: "46",
-    name: "Weimar Markt",
-    address: "Marktplatz",
-    city: "Weimar",
-    postalCode: "99423",
-    openingHours: "Dienstag, Donnerstag, Samstag 8-13",
-    features: ["Kulturstadt", "Goethe"],
-    isOpen: isMarketOpen("Dienstag, Donnerstag, Samstag 8-13"),
-    description: "Kulturhistorischer Markt in der Stadt der Dichter und Denker.",
-    phone: "+49 3643 12345678",
-    email: "info@markt-weimar.de",
-    website: "www.markt-weimar.de",
-    specialties: ["Thüringer Spezialitäten", "Kulturprodukte", "Bücher"],
-    facilities: ["Stadthaus", "Goethe-Museum"],
-    transport: "Bus 1, 2, 3, 6 (Goetheplatz)"
-  },
-  {
-    id: "47",
-    name: "Jena Markt",
-    address: "Marktplatz",
-    city: "Jena",
-    postalCode: "07743",
-    openingHours: "Mittwoch, Samstag 8-14",
-    features: ["Universitätsstadt", "Optik"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
-    description: "Universitätsmarkt in der Stadt der Optik und Präzision.",
-    phone: "+49 3641 12345678",
-    email: "info@markt-jena.de",
-    website: "www.markt-jena.de",
-    specialties: ["Studentenfreundlich", "Thüringer Küche", "Bio-Produkte"],
-    facilities: ["Rathaus", "Universitäts-Nähe"],
-    transport: "Tram 2, 3, 4 (Markt), Bus 10, 11"
-  },
  
   {
     id: "64",
@@ -256,23 +221,6 @@ export const marketData: Market[] = [
     transport: "Bus 1, 2, 11 (Markt)"
   },
   {
-    id: "86",
-    name: "Lüneburg Markt",
-    address: "Am Markt",
-    city: "Lüneburg",
-    postalCode: "21335",
-    openingHours: "Mittwoch, Samstag 8-14",
-    features: ["Salzstadt", "Hansestadt", "Backstein"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
-    description: "Salzstadt-Markt in der Hansestadt mit Backstein-Gotik.",
-    phone: "+49 4131 12345678",
-    email: "info@markt-lueneburg.de",
-    website: "www.markt-lueneburg.de",
-    specialties: ["Salzige Spezialitäten", "Hanseatische Küche", "Heide-Produkte"],
-    facilities: ["Rathaus", "Wasserturm", "Salzmuseum"],
-    transport: "Bus 5001, 5002 (Marktplatz)"
-  },
-  {
     id: "90",
     name: "Gera Markt",
     address: "Markt",
@@ -288,24 +236,6 @@ export const marketData: Market[] = [
     specialties: ["Thüringer Spezialitäten", "Otto-Dix-Kunst", "Regional"],
     facilities: ["Rathaus", "Otto-Dix-Haus"],
     transport: "Tram 1, 2, 3 (Markt)"
-  },
-  
-  {
-    id: "92",
-    name: "Plauen Markt",
-    address: "Altmarkt",
-    city: "Plauen",
-    postalCode: "08523",
-    openingHours: "Dienstag, Freitag 8-14",
-    features: ["Spitzenstadt", "Vogtland"],
-    isOpen: isMarketOpen("Dienstag, Freitag 8-14"),
-    description: "Vogtländischer Spitzenmarkt mit textiler Tradition.",
-    phone: "+49 3741 12345678",
-    email: "info@markt-plauen.de",
-    website: "www.markt-plauen.de",
-    specialties: ["Plauener Spitze", "Vogtländische Küche", "Textil-Tradition"],
-    facilities: ["Rathaus", "Spitzenmuseum"],
-    transport: "Tram 2, 3, 4 (Tunnel)"
   },
   {
     id: "93",
@@ -12994,7 +12924,159 @@ export const marketData: Market[] = [
   specialties: ["Breites Warenangebot", "Regionale Spezialitäten", "Stadtmitte"],
   facilities: ["Rathaus", "Stadtmitte", "Vielfältiges Angebot"],
   transport: "Bus: Linien 1, 2, 3, 4 Haltestelle Rathaus"
-}  
+},
+// Plauen
+{
+  id: "726",
+  slug: "wochenmarkt-plauen-altmarkt",
+  name: "Wochenmarkt Altmarkt Plauen",
+  address: "Altmarkt",
+  city: "Plauen",
+  postalCode: "08523",
+  openingHours: "Donnerstag 8-13, Samstag 9-14",
+  features: ["Altmarkt", "Regional", "Vogtland"],
+  isOpen: isMarketOpen("Donnerstag 8-13, Samstag 9-14"),
+  description: "Traditioneller Wochenmarkt auf dem Altmarkt in Plauen mit regionalen Produkten aus dem Vogtland",
+  phone: "03741 291-2745",
+  email: "N/A",
+  website: "www.plauen.de",
+  specialties: ["Regionale Produkte", "Vogtländische Spezialitäten", "Frische Lebensmittel"],
+  facilities: ["Altmarkt", "Stadtzentrum", "Traditioneller Standort"],
+  transport: "Bus: Linien 1, 2, 3, 4 Haltestelle Altmarkt"
+},
+{
+  id: "727",
+  slug: "wochenmarkt-plauen-klostermarkt",
+  name: "Wochenmarkt Klostermarkt Plauen",
+  address: "Klostermarkt",
+  city: "Plauen",
+  postalCode: "08523",
+  openingHours: "Montag 8-13, Mittwoch 8-13",
+  features: ["Klostermarkt", "Regional", "Wöchentlich"],
+  isOpen: isMarketOpen("Montag 8-13, Mittwoch 8-13"),
+  description: "Wochenmarkt auf dem Klostermarkt in Plauen mit frischen Produkten und regionalen Spezialitäten",
+  phone: "03741 291-2745",
+  email: "N/A",
+  website: "www.plauen.de",
+  specialties: ["Regionale Spezialitäten", "Frische Produkte", "Kloster-Atmosphäre"],
+  facilities: ["Klostermarkt", "Historischer Standort", "Zentral gelegen"],
+  transport: "Bus: Linien 2, 3, 5 Haltestelle Klostermarkt"
+},
+
+// Fulda
+{
+  id: "728",
+  slug: "wochenmarkt-fulda-gemuesemarkt",
+  name: "Wochenmarkt Fulda",
+  address: "Gemüsemarkt",
+  city: "Fulda",
+  postalCode: "36037",
+  openingHours: "Mittwoch 7-13:30, Samstag 7-13:30",
+  features: ["Gemüsemarkt", "Zentral", "Traditionell"],
+  isOpen: isMarketOpen("Mittwoch 7-13:30, Samstag 7-13:30"),
+  description: "Traditioneller Wochenmarkt am Gemüsemarkt in Fulda mit frischen regionalen Produkten",
+  phone: "0661 102-0",
+  email: "N/A",
+  website: "wochenmarkt-fulda.de",
+  specialties: ["Regionale Produkte", "Frisches Obst", "Gemüse", "Rhöner Spezialitäten"],
+  facilities: ["Gemüsemarkt", "Stadtzentrum", "Traditioneller Marktplatz"],
+  transport: "Bus: Linien 1, 2, 3, 4, 5, 6 Haltestelle Gemüsemarkt"
+},
+{
+  id: "729",
+  slug: "wochenmarkt-fulda-regio-markt",
+  name: "Regio'markt Fulda",
+  address: "Gemüsemarkt/Innenstadt",
+  city: "Fulda",
+  postalCode: "36037",
+  openingHours: "Mittwoch 7-13:30, Samstag 7-13:30",
+  features: ["Regional", "Rhön", "Spezialitäten"],
+  isOpen: isMarketOpen("Mittwoch 7-13:30, Samstag 7-13:30"),
+  description: "Regionaler Markt in Fulda mit Produkten aus der Rhön und Osthessen",
+  phone: "0661 102-0",
+  email: "N/A",
+  website: "www.fulda.de",
+  specialties: ["Rhöner Produkte", "Osthessische Spezialitäten", "Bio-Produkte"],
+  facilities: ["Regionale Erzeuger", "Rhön-Produkte", "Spezialitätenmarkt"],
+  transport: "Bus: Linien 1, 2, 3, 4, 5, 6 Haltestelle Gemüsemarkt"
+},
+
+// Rosenheim
+{
+  id: "730",
+  slug: "wochenmarkt-rosenheim-ludwigsplatz",
+  name: "Grüner Markt Rosenheim",
+  address: "Ludwigsplatz",
+  city: "Rosenheim",
+  postalCode: "83022",
+  openingHours: "Montag 7:30-13, Dienstag 7:30-13, Mittwoch 7:30-13, Donnerstag 7:30-13, Freitag 7:30-13, Samstag 7:30-13",
+  features: ["Grüner Markt", "Täglich", "Regionale Spezialitäten"],
+  isOpen: isMarketOpen("Montag 7:30-13, Dienstag 7:30-13, Mittwoch 7:30-13, Donnerstag 7:30-13, Freitag 7:30-13, Samstag 7:30-13"),
+  description: "Täglicher Grüner Markt am Ludwigsplatz mit regionalen Spezialitäten aus dem Chiemgau und Alpenvorland",
+  phone: "08031 34612",
+  email: "N/A",
+  website: "markt-rosenheim.de",
+  specialties: ["Chiemgauer Spezialitäten", "Honig", "Käse", "Regionale Köstlichkeiten"],
+  facilities: ["Ludwigsplatz", "Täglich geöffnet", "Parkhaus P7"],
+  transport: "Bus: Linien 1, 2, 3, 4 Haltestelle Ludwigsplatz"
+},
+{
+  id: "731",
+  slug: "wochenmarkt-rosenheim-max-josefs-platz",
+  name: "Wochenmarkt Max-Josefs-Platz",
+  address: "Max-Josefs-Platz",
+  city: "Rosenheim",
+  postalCode: "83022",
+  openingHours: "Samstag 7:30-13",
+  features: ["Historisch", "Max-Josefs-Platz", "Erweitert"],
+  isOpen: isMarketOpen("Samstag 7:30-13"),
+  description: "Erweiterter Wochenmarkt am historischen Max-Josefs-Platz mit Inn-Salzach-Architektur als Kulisse",
+  phone: "08031 34612",
+  email: "N/A",
+  website: "www.rosenheim.de",
+  specialties: ["Weißwurstfrühstück", "Musikalischer Frühschoppen", "Erweiterte Auswahl"],
+  facilities: ["Max-Josefs-Platz", "Inn-Salzach-Stil", "Fußgängerzone"],
+  transport: "Bus: Linien 1, 2, 3, 4 Haltestelle Max-Josefs-Platz"
+},
+
+// Schwäbisch Gmünd
+{
+  id: "732",
+  slug: "wochenmarkt-schwaebisch-gmuend-muensterplatz",
+  name: "Wochenmarkt Schwäbisch Gmünd",
+  address: "Münsterplatz",
+  city: "Schwäbisch Gmünd",
+  postalCode: "73525",
+  openingHours: "Mittwoch 7-12:30, Samstag 7-12:30",
+  features: ["Historisch", "Münsterplatz", "Innenstadt"],
+  isOpen: isMarketOpen("Mittwoch 7-12:30, Samstag 7-12:30"),
+  description: "Innenstadt-Wochenmarkt auf dem historischen Münsterplatz in wunderschöner architektonischer Kulisse",
+  phone: "07171 603-0",
+  email: "N/A",
+  website: "www.schwaebisch-gmuend.de",
+  specialties: ["Historische Kulisse", "Architektonische Atmosphäre", "Regionale Produkte"],
+  facilities: ["Münsterplatz", "Historisch", "Innenstadt"],
+  transport: "Bus: Linien 1, 2, 3 Haltestelle Münsterplatz"
+},
+{
+  id: "733",
+  slug: "wochenmarkt-schwaebisch-gmuend-stadtteile",
+  name: "Stadtteil-Wochenmärkte Schwäbisch Gmünd",
+  address: "Verschiedene Stadtteile",
+  city: "Schwäbisch Gmünd",
+  postalCode: "73525",
+  openingHours: "Mittwoch 7-12:30, Samstag 7-12:30",
+  features: ["Stadtteile", "Regional", "Dezentral"],
+  isOpen: isMarketOpen("Mittwoch 7-12:30, Samstag 7-12:30"),
+  description: "Wochenmärkte in verschiedenen Stadtteilen von Schwäbisch Gmünd mit regionalem Angebot",
+  phone: "07171 603-0",
+  email: "N/A",
+  website: "www.schwaebisch-gmuend.de",
+  specialties: ["Stadtteilmärkte", "Regionale Produkte", "Dezentral"],
+  facilities: ["Verschiedene Stadtteile", "Regionale Märkte", "Bürgernah"],
+  transport: "Bus: Verschiedene Linien je nach Stadtteil"
+}
+  
   
 ];
 
