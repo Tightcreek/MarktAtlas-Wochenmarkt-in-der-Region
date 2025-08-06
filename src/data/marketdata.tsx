@@ -13229,6 +13229,7 @@ export const marketData: Market[] = [
   transport: "Bus: Linien 1, 2, 3, 4 Haltestelle Stadtmitte"
 },
 
+// Hürth
 {
   id: "742",
   slug: "wochenmarkt-huerth-hermuelheim",
@@ -13264,7 +13265,7 @@ export const marketData: Market[] = [
   specialties: ["Hofprodukte", "Regionale Spezialitäten", "Erlebnisbauernhof"],
   facilities: ["Erlebnisbauernhof", "Floristikwerkstatt", "Erlebnisgelände"],
   transport: "Bus: Linie 18 Haltestelle Gertrudenhof"
-},  
+},
 
 // Bergheim
 {
@@ -13362,7 +13363,7 @@ export const marketData: Market[] = [
   transport: "Bus: Linien 224, 225, 226 Haltestelle Marktplatz"
 },
 {
-  id: "749",
+  id: "7491",
   slug: "wochenmarkt-herten-westerholt",
   name: "Wochenmarkt Westerholt",
   address: "Marktplatz",
