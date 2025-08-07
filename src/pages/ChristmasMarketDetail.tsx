@@ -3,7 +3,7 @@ import { getChristmasMarketBySlug } from "@/data/weihnachtsmarktdata";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, MapPin, ExternalLink, Globe } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, MapPin, ExternalLink, Globe, Phone, Mail, Car } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 import Footer from "@/components/Footer";
@@ -218,25 +218,60 @@ const ChristmasMarketDetailPage = () => {
               </CardContent>
             </Card>
 
-            {/* Website */}
-            {market.website && (
+            {/* Contact Information */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Kontakt</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {market.phone && (
+                  <div className="flex items-center gap-3">
+                    <Phone className="h-4 w-4 text-muted-foreground" />
+                    <span className="text-sm text-foreground">
+                      {market.phone}
+                    </span>
+                  </div>
+                )}
+                {market.email && (
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-4 w-4 text-muted-foreground" />
+                    <a 
+                      href={`mailto:${market.email}`}
+                      className="text-sm text-primary hover:underline"
+                    >
+                      {market.email}
+                    </a>
+                  </div>
+                )}
+                {market.website && (
+                  <div className="flex items-center gap-3">
+                    <Globe className="h-4 w-4 text-muted-foreground" />
+                    <a 
+                      href={market.website.startsWith('http') ? market.website : `https://${market.website}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-primary hover:underline cursor-pointer"
+                    >
+                      {market.website}
+                    </a>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* Transport */}
+            {market.transport && (
               <Card>
                 <CardHeader>
-                  <CardTitle>Website</CardTitle>
+                  <CardTitle className="flex items-center gap-2">
+                    <Car className="h-5 w-5" />
+                    Anfahrt
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Button asChild className="w-full">
-                    <a 
-                      href={market.website} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2"
-                    >
-                      <Globe className="h-4 w-4" />
-                      Offizielle Website besuchen
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                  </Button>
+                  <div className="text-sm text-muted-foreground">
+                    {market.transport}
+                  </div>
                 </CardContent>
               </Card>
             )}
