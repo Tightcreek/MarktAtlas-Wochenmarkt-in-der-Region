@@ -212,36 +212,10 @@ export const blogPosts: BlogPost[] = [
   
   <h3>Tipps für Ihren Besuch</h3>
   <p>Planen Sie genügend Zeit ein, um die Vielfalt in Ruhe zu entdecken. Viele Händler bieten kleine Kostproben an, und ein Besuch einer der umliegenden Cafés rundet das Markterlebnis perfekt ab.</p>`,
-  imageUrl: "/lovable-uploads/marktplatz-stuttgart.jpg", // Passe den Pfad bei Bedarf an
+  imageUrl: "https://geheimtipp-koeln.de/content/uploads/2020/12/markt-koeln-2-artikel-1024x683.jpg",
   link: "/blog/wochenmarkt-marktplatz-stuttgart-mitte",
   marketSlugs: ["wochenmarkt-marktplatz-stuttgart-mitte"]
-},
-{
-  id: "11",
-  slug: "bonner-wochenmarkt-historisches-flair-muensterplatz",
-  title: "Der Bonner Wochenmarkt: Historisches Flair und regionale Schätze auf dem Münsterplatz",
-  excerpt: "Erleben Sie die traditionsreiche Atmosphäre des Bonner Wochenmarktes, der seit Jahrhunderten frische, regionale Produkte im Herzen der Stadt anbietet.",
-  content: `<h2>Ein Markt mit Geschichte: Tradition seit 1079</h2>
-  <p>Der Bonner Wochenmarkt auf dem Münsterplatz ist nicht nur ein Einkaufserlebnis, sondern auch eine Zeitreise. Seine Geschichte reicht bis ins Jahr 1079 zurück, was ihn zu einem der ältesten Märkte Deutschlands macht. Direkt vor dem Bonner Münster und dem alten Rathaus entfaltet sich hier mehrmals pro Woche ein lebendiges Treiben, das die Stadt mit Leben und Duft erfüllt.</p>
-  
-  <h3>Die Vielfalt der Region am Rhein</h3>
-  <p>Die Händler am Bonner Wochenmarkt stammen größtenteils aus der Region und bieten eine beeindruckende Palette an saisonalen Produkten an. Der Markt ist bekannt für:</p>
-  <ul>
-    <li><strong>Vielfältiges Obst und Gemüse:</strong> Direkt von den Feldern des Rhein-Sieg-Kreises und der umliegenden Landwirtschaft.</li>
-    <li><strong>Schnittblumen und Pflanzen:</strong> Ein farbenprächtiges Angebot, das für Freude sorgt.</li>
-    <li><strong>Käse, Fleisch und Fisch:</strong> Handwerklich hergestellte Spezialitäten, die die Qualität und Leidenschaft der Erzeuger widerspiegeln.</li>
-    <li><strong>Backwaren und Feinkost:</strong> Von frischem Bauernbrot bis zu eingelegten Antipasti-Spezialitäten.</li>
-  </ul>
-  
-  <h3>Ein sozialer Mittelpunkt der Stadt</h3>
-  <p>Für Bonner ist der Wochenmarkt ein wichtiger sozialer Treffpunkt. Man trifft sich, genießt eine Tasse Kaffee an einem der Stände und tauscht sich aus. Die freundliche und persönliche Atmosphäre macht den Einkauf hier zu einem besonderen Erlebnis, bei dem man die Menschen hinter den Produkten kennenlernt.</p>
-  
-  <h3>Tipps für Ihren Besuch</h3>
-  <p>Der Markt findet dienstags und freitags sowie samstags von morgens bis in den frühen Nachmittag statt. Es empfiehlt sich, vor allem am Samstag früh da zu sein, um die größte Auswahl zu haben und dem Gedränge zu entgehen.</p>`,
-  imageUrl: "/lovable-uploads/bonner-wochenmarkt.jpg", // Passe den Pfad bei Bedarf an
-  link: "/blog/bonner-wochenmarkt-historisches-flair-muensterplatz",
-  marketSlugs: ["wochenmarkt-bonn"]
-}  
+}
   
 
   
