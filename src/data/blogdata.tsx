@@ -242,7 +242,7 @@ export const blogPosts: BlogPost[] = [
   <p>Der Markt findet dienstags und freitags sowie samstags von morgens bis in den frühen Nachmittag statt. Es empfiehlt sich, vor allem am Samstag früh da zu sein, um die größte Auswahl zu haben und dem Gedränge zu entgehen.</p>`,
   imageUrl: "https://geheimtipp-koeln.de/content/uploads/2020/12/markt-koeln-2-artikel-1024x683.jpg", // Passe den Pfad bei Bedarf an
   link: "/blog/bonner-wochenmarkt-historisches-flair-muensterplatz",
-  marketSlugs: ["wochenmarkt-bonn"]
+  marketSlugs: ["wochenmarkt-bonn-marktplatz"]
 },  
 // Ein neuer Eintrag für deine blogPosts-Array in blogdata.tsx
 
