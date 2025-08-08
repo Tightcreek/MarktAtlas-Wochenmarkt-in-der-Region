@@ -12,6 +12,7 @@ import { marketData, isMarketOpen, generateSEOKeywords, type Market } from '@/da
 const Markets = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDay, setSelectedDay] = useState('');
+  const [selectedStatus, setSelectedStatus] = useState('');
   const [isListView, setIsListView] = useState(true);
   const [currentTime, setCurrentTime] = useState(new Date());
   const location = useLocation();
@@ -40,7 +41,12 @@ const Markets = () => {
       const matchesDay = selectedDay === '' || 
         market.openingHours.toLowerCase().includes(selectedDay.toLowerCase());
       
-      return matchesSearch && matchesDay;
+      const marketIsOpen = isMarketOpen(market.openingHours);
+      const matchesStatus = selectedStatus === '' || 
+        (selectedStatus === 'geöffnet' && marketIsOpen) ||
+        (selectedStatus === 'geschlossen' && !marketIsOpen);
+      
+      return matchesSearch && matchesDay && matchesStatus;
     });
   };
 
@@ -55,6 +61,12 @@ const Markets = () => {
     { value: 'freitag', label: 'Freitag' },
     { value: 'samstag', label: 'Samstag' },
     { value: 'sonntag', label: 'Sonntag' }
+  ];
+
+  const statusButtons = [
+    { value: '', label: 'Alle' },
+    { value: 'geöffnet', label: 'Geöffnet' },
+    { value: 'geschlossen', label: 'Geschlossen' }
   ];
 
   return (
@@ -155,6 +167,26 @@ const Markets = () => {
                   className="text-xs"
                 >
                   {day.label}
+                </Button>
+              ))}
+            </div>
+          </div>
+
+          {/* Status Filter */}
+          <div className="mb-4">
+            <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Filter nach Status:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {statusButtons.map(status => (
+                <Button
+                  key={status.value}
+                  variant={selectedStatus === status.value ? "green" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedStatus(status.value)}
+                  className="text-xs"
+                >
+                  {status.label}
                 </Button>
               ))}
             </div>
