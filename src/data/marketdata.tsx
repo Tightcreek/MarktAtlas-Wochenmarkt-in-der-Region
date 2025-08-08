@@ -13960,7 +13960,6 @@ export const marketData: Market[] = [
   transport: "Bus: Sankt Augustin Hangelar; Straßenbahn: N/A"
 }
   
-  
 ];
 
 // Export default market data
