@@ -243,6 +243,34 @@ export const blogPosts: BlogPost[] = [
   imageUrl: "https://geheimtipp-koeln.de/content/uploads/2020/12/markt-koeln-2-artikel-1024x683.jpg", // Passe den Pfad bei Bedarf an
   link: "/blog/bonner-wochenmarkt-historisches-flair-muensterplatz",
   marketSlugs: ["wochenmarkt-bonn"]
+},  
+// Ein neuer Eintrag für deine blogPosts-Array in blogdata.tsx
+
+{
+  id: "12",
+  slug: "wochenmarkt-mainz-domplatz-tradition-genuss",
+  title: "Der Wochenmarkt in Mainz: Ein Fest für die Sinne vor historischer Kulisse",
+  excerpt: "Entdecken Sie den legendären Mainzer Wochenmarkt auf dem Domplatz, ein Treffpunkt für Genießer und Liebhaber von regionalen Spezialitäten aus Rheinhessen.",
+  content: `<h2>Der Mainzer Wochenmarkt: Mehr als nur Einkaufen</h2>
+  <p>Jeden Dienstag, Freitag und Samstag erwacht der Domplatz in Mainz zu neuem Leben, wenn der Wochenmarkt seine Tore öffnet. Er gilt als einer der schönsten und traditionsreichsten Märkte Deutschlands und zieht nicht nur Mainzer, sondern auch Besucher aus der gesamten Region an. Die beeindruckende Kulisse des tausendjährigen Mainzer Doms verleiht dem Markt ein unvergleichliches Ambiente.</p>
+  
+  <h3>Die Vielfalt von Rheinhessen</h3>
+  <p>Der Markt ist ein Spiegelbild der landwirtschaftlichen Vielfalt der Region Rheinhessen. Hier finden Sie eine Fülle an frischen, saisonalen Produkten direkt von den Erzeugern:</p>
+  <ul>
+    <li><strong>Weine und Säfte:</strong> Direkt vom Winzer aus der größten Weinbauregion Deutschlands.</li>
+    <li><strong>Frisches Obst und Gemüse:</strong> Angebaut in der fruchtbaren Region rund um Mainz.</li>
+    <li><strong>Handwerklich hergestellte Wurst und Käse:</strong> Spezialitäten von lokalen Metzgern und Käsereien.</li>
+    <li><strong>Blumen und Pflanzen:</strong> Ein farbenfrohes Angebot, das den Platz zum Strahlen bringt.</li>
+  </ul>
+  
+  <h3>Der "Schoppen am Dom": Eine besondere Tradition</h3>
+  <p>Ein Highlight für viele Besucher ist der "Marktfrühschoppen" am Samstag. Winzer aus der Region bieten an ihren Ständen ihren Wein im traditionellen Schoppenglas an. Dieser Brauch macht den Markt zu einem wichtigen sozialen Treffpunkt, bei dem man sich entspannt austauscht und die Atmosphäre genießt.</p>
+  
+  <h3>Tipps für Ihren Besuch</h3>
+  <p>Nehmen Sie sich Zeit, um über den Markt zu schlendern und die vielen regionalen Köstlichkeiten zu probieren. Planen Sie vor allem am Samstag genügend Zeit ein, um die besondere Stimmung zu erleben und den traditionellen Schoppen zu genießen.</p>`,
+  imageUrl: "https://media.istockphoto.com/id/1448794844/de/foto/frisches-gem%C3%BCse-zum-verkauf-am-marktstand.jpg?s=612x612&w=0&k=20&c=AbFAyB2eMOtaOO_tyHz8ehXUaGBr6WRO5v6AxGYSYnc=", // Passe den Pfad bei Bedarf an
+  link: "/blog/wochenmarkt-mainz-domplatz-tradition-genuss",
+  marketSlugs: ["wochenmarkt-mainz-domplatz"]
 }  
   
 
