@@ -167,23 +167,7 @@ export const marketData: Market[] = [
     facilities: ["Rathaus", "Nikolaikirche", "UNESCO"],
     transport: "Bus 1, 2, 3 (Alter Markt)"
   },
-  {
-    id: "65",
-    name: "Greifswald Markt",
-    address: "Marktplatz",
-    city: "Greifswald",
-    postalCode: "17489",
-    openingHours: "Dienstag, Freitag 8-14",
-    features: ["Universitätsstadt", "Backstein"],
-    isOpen: isMarketOpen("Dienstag, Freitag 8-14"),
-    description: "Backstein-Universitätsmarkt an der Ostsee.",
-    phone: "+49 3834 12345678",
-    email: "info@markt-greifswald.de",
-    website: "www.markt-greifswald.de",
-    specialties: ["Universitäts-Flair", "Pommersche Küche", "Backstein"],
-    facilities: ["Dom", "Universität", "Backstein-Gotik"],
-    transport: "Bus 1, 2, 3 (Markt)"
-  },
+
 
     {
     id: "70",
@@ -238,40 +222,6 @@ export const marketData: Market[] = [
     transport: "Tram 1, 2, 3 (Markt)"
   },
   {
-    id: "93",
-    name: "Görlitz Markt",
-    address: "Untermarkt",
-    city: "Görlitz",
-    postalCode: "02826",
-    openingHours: "Mittwoch, Samstag 8-14",
-    features: ["Europastadt", "Film-Kulisse", "Polen-Grenze"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
-    description: "Grenzmarkt in der Europastadt Görlitz-Zgorzelec mit Film-Kulissen.",
-    phone: "+49 3581 12345678",
-    email: "info@markt-goerlitz.de",
-    website: "www.markt-goerlitz.de",
-    specialties: ["Schlesische Küche", "Polnische Einflüsse", "Film-Flair"],
-    facilities: ["Rathaus", "Peterskirche", "Neiße-Grenze"],
-    transport: "Tram 1, 2 (Demianiplatz)"
-  },
-  {
-    id: "94",
-    name: "Bautzen Markt",
-    address: "Hauptmarkt",
-    city: "Bautzen",
-    postalCode: "02625",
-    openingHours: "Dienstag, Freitag 8-14",
-    features: ["Sorbische Stadt", "1000 Jahre"],
-    isOpen: isMarketOpen("Dienstag, Freitag 8-14"),
-    description: "Sorbischer Markt in der 1000-jährigen Stadt der Türme.",
-    phone: "+49 3591 12345678",
-    email: "info@markt-bautzen.de",
-    website: "www.markt-bautzen.de",
-    specialties: ["Sorbische Spezialitäten", "Lausitzer Küche", "Türme-Stadt"],
-    facilities: ["Dom", "Ortenburg", "Sorbisches Museum"],
-    transport: "Bus 1, 2, 3 (Kornmarkt)"
-  },
-  {
     id: "95",
     name: "Dessau Markt",
     address: "Marktplatz",
@@ -304,40 +254,6 @@ export const marketData: Market[] = [
     specialties: ["Altmärkische Küche", "Hanseatische Tradition", "Backstein"],
     facilities: ["Dom", "Rathaus", "Stadtwall"],
     transport: "Bus 1, 2, 3 (Marktplatz)"
-  },
-  {
-    id: "97",
-    name: "Neubrandenburg Markt",
-    address: "Marktplatz",
-    city: "Neubrandenburg",
-    postalCode: "17033",
-    openingHours: "Mittwoch, Samstag 8-14",
-    features: ["Vier-Tore-Stadt", "Seenplatte"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
-    description: "Seenplatten-Markt in der Vier-Tore-Stadt der Backsteingotik.",
-    phone: "+49 395 12345678",
-    email: "info@markt-neubrandenburg.de",
-    website: "www.markt-neubrandenburg.de",
-    specialties: ["Mecklenburgische Küche", "Seenplatten-Fisch", "Vier Tore"],
-    facilities: ["Vier Tore", "Konzertkirche", "Stadtwall"],
-    transport: "Bus 1, 2, 3 (Marktplatz)"
-  },
-  {
-    id: "98",
-    name: "Bad Kreuznach Markt",
-    address: "Kornmarkt",
-    city: "Bad Kreuznach",
-    postalCode: "55543",
-    openingHours: "Mittwoch, Samstag 8-14",
-    features: ["Kurstadt", "Nahe-Wein"],
-    isOpen: isMarketOpen("Mittwoch, Samstag 8-14"),
-    description: "Kurstadt-Markt an der Nahe mit berühmten Brückenhäusern.",
-    phone: "+49 671 12345678",
-    email: "info@markt-bad-kreuznach.de",
-    website: "www.markt-bad-kreuznach.de",
-    specialties: ["Nahe-Wein", "Kur-Spezialitäten", "Brückenhäuser"],
-    facilities: ["Brückenhäuser", "Kurpark", "Salinental"],
-    transport: "Bus 260, 261 (Kornmarkt)"
   },
   {
     id: "99",
