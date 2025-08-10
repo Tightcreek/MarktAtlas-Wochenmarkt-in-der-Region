@@ -271,6 +271,35 @@ export const blogPosts: BlogPost[] = [
   imageUrl: "https://media.istockphoto.com/id/1448794844/de/foto/frisches-gem%C3%BCse-zum-verkauf-am-marktstand.jpg?s=612x612&w=0&k=20&c=AbFAyB2eMOtaOO_tyHz8ehXUaGBr6WRO5v6AxGYSYnc=", // Passe den Pfad bei Bedarf an
   link: "/blog/wochenmarkt-mainz-domplatz-tradition-genuss",
   marketSlugs: ["wochenmarkt-mainz-domplatz"]
+},  
+
+// Ein neuer Eintrag für deine blogPosts-Array in blogdata.tsx
+
+{
+  id: "13",
+  slug: "wochenmarkt-domshof-bremen-historische-mitte",
+  title: "Der Wochenmarkt am Domshof: Bremens kulinarisches Herz in historischer Kulisse",
+  excerpt: "Entdecken Sie den zentralen Wochenmarkt auf dem Domshof in Bremen, wo Tradition, hanseatischer Charme und frische regionale Produkte aufeinandertreffen.",
+  content: `<h2>Der Domshof: Zentrum des Bremer Markttreibens</h2>
+  <p>Im Herzen der Hansestadt Bremen, umgeben von bedeutenden Bauwerken wie dem St. Petri Dom und dem Rathaus, findet mehrmals pro Woche der Wochenmarkt am Domshof statt. Seit seiner Gründung ist dieser historische Platz der zentrale Anlaufpunkt für alle, die Wert auf Frische, Vielfalt und Qualität legen. Der Markt ist ein lebendiger Treffpunkt, der die lange Handelstradition Bremens fortführt.</p>
+  
+  <h3>Regionale Vielfalt trifft hanseatische Qualität</h3>
+  <p>Das Angebot auf dem Wochenmarkt am Domshof ist geprägt von Händlern aus der Region, die ihre Produkte direkt anbieten. Kunden schätzen die persönliche Beratung und die Möglichkeit, die Herkunft der Waren zu erfahren:</p>
+  <ul>
+    <li><strong>Fisch aus der Nordsee:</strong> Frischer Fisch und Meeresfrüchte von lokalen Anbietern.</li>
+    <li><strong>Saisonales Obst und Gemüse:</strong> Angebaut in der Umgebung Bremens.</li>
+    <li><strong>Käse- und Wurstspezialitäten:</strong> Handwerklich hergestellte Delikatessen.</li>
+    <li><strong>Brot und Backwaren:</strong> Von traditionellen Bäckern, oft nach alten Rezepten gebacken.</li>
+  </ul>
+  
+  <h3>Mehr als nur ein Markt: Ein Erlebnis</h3>
+  <p>Die besondere Atmosphäre des Domshofs macht den Einkauf zu einem echten Erlebnis. Bei einem Kaffee oder einer Fischbrötchenpause kann man dem Treiben zuschauen und die historischen Gebäude bewundern. Der Wochenmarkt ist ein wichtiger Bestandteil des Stadtlebens und ein beliebter Treffpunkt für Einheimische und Touristen.</p>
+  
+  <h3>Tipps für Ihren Besuch</h3>
+  <p>Der Markt findet in der Regel dienstags und samstags von 8 bis 14 Uhr statt. Ein früher Besuch am Samstagmorgen ist besonders zu empfehlen, um die größte Auswahl zu genießen. Nutzen Sie die zentrale Lage, um Ihren Markteinkauf mit einem Spaziergang durch die historische Innenstadt Bremens zu verbinden.</p>`,
+  imageUrl: "/lovable-uploads/bremer-domshof-wochenmarkt.jpg", // Passe den Pfad bei Bedarf an
+  link: "/blog/wochenmarkt-domshof-bremen-historische-mitte",
+  marketSlugs: ["wochenmarkt-domshof-bremen"]
 }  
   
 
