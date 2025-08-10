@@ -36,19 +36,19 @@ const ChristmasMarketsPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-green-50 dark:from-red-950/20 dark:to-green-950/20">
       <SEOHead 
-        title="Weihnachtsmärkte Deutschland 2024 | Übersicht der schönsten Christkindlmärkte"
-        description="Entdecken Sie die schönsten Weihnachtsmärkte Deutschlands 2024. Komplette Übersicht mit Öffnungszeiten, Spezialitäten, Standorten und Insider-Tipps für Nürnberg, Dresden, Köln und mehr."
-        keywords="Weihnachtsmärkte Deutschland 2024, Christkindlmärkte, Advent, Glühwein, Nürnberger Christkindlmarkt, Dresdner Striezelmarkt, Weihnachtsmarkt Köln, Öffnungszeiten, Lebkuchen, Stollen"
+        title="Die besten Weihnachtsmärkte Deutschland 2025 ✨ Alle Termine & Tipps"
+        description="🎄 Entdecken Sie die magischsten Weihnachtsmärkte Deutschlands 2025! ✨ Alle Termine, Öffnungszeiten, Spezialitäten und Anfahrt für Nürnberg, Dresden, München, Köln, Stuttgart & mehr. Der ultimative Weihnachtsmarkt-Guide!"
+        keywords="weihnachtsmärkte deutschland 2025, christkindlmärkte 2025, weihnachtsmarkt nürnberg 2025, dresdner striezelmarkt 2025, münchener christkindlmarkt 2025, weihnachtsmarkt köln 2025, advent märkte, glühwein, lebkuchen, stollen, weihnachtsmarkt öffnungszeiten, beste weihnachtsmärkte, weihnachtsmarkt termine 2025"
         canonicalUrl={currentUrl}
         ogImage="/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png"
         ogType="website"
-        siteName="MarktAtlas Deutschland - Weihnachtsmärkte"
+        siteName="MarktAtlas Deutschland - Die besten Weihnachtsmärkte 2025"
         breadcrumbs={breadcrumbItems}
         schemaData={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          "name": "Weihnachtsmärkte Deutschland",
-          "description": "Übersicht der schönsten Weihnachtsmärkte in Deutschland mit Öffnungszeiten und Spezialitäten",
+          "name": "Die besten Weihnachtsmärkte Deutschland 2025",
+          "description": "Kompletter Guide zu den schönsten Weihnachtsmärkten in Deutschland 2025 mit allen Terminen, Öffnungszeiten, Spezialitäten und Anfahrtsinformationen",
           "url": currentUrl,
           "inLanguage": "de-DE",
           "about": {
@@ -72,8 +72,8 @@ const ChristmasMarketsPage = () => {
                 }
               },
               "description": market.description,
-              "startDate": "2024-11-25",
-              "endDate": "2024-12-23",
+              "startDate": "2025-11-25",
+              "endDate": "2025-12-23",
               "eventStatus": "https://schema.org/EventScheduled",
               "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
               "organizer": {
@@ -156,10 +156,10 @@ const ChristmasMarketsPage = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white">
             <h1 className="text-5xl font-bold mb-4 drop-shadow-lg">
-              🎄 Weihnachtsmärkte Deutschland 🎄
+              🎄 Die besten Weihnachtsmärkte 2025 🎄
             </h1>
             <p className="text-xl max-w-2xl mx-auto drop-shadow-lg">
-              Entdecken Sie die zauberhafte Welt der deutschen Weihnachtsmärkte
+              Entdecken Sie Deutschlands magischste Weihnachtsmärkte mit allen Terminen & Geheimtipps
             </p>
           </div>
         </div>

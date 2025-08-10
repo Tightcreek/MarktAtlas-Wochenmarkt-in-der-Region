@@ -53,9 +53,9 @@ const ChristmasMarketDetailPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title={`${market.name} 2024 - Weihnachtsmarkt in ${market.city} | Öffnungszeiten & Info`}
-        description={`${market.description} Alle Infos zu Öffnungszeiten, Spezialitäten und Anfahrt zum ${market.name} in ${market.city}.`}
-        keywords={`${market.name}, Weihnachtsmarkt ${market.city}, ${market.specialties.join(', ')}, Öffnungszeiten, Advent 2024, ${market.city} Christkindlmarkt`}
+        title={`${market.name} 2025 ✨ Weihnachtsmarkt ${market.city} | Alle Termine & Infos`}
+        description={`🎄 ${market.name} in ${market.city} 2025: ${market.description.substring(0, 120)}... ✨ Öffnungszeiten, Spezialitäten, Anfahrt & Insider-Tipps für Ihren perfekten Weihnachtsmarkt-Besuch!`}
+        keywords={`${market.name.toLowerCase()}, weihnachtsmarkt ${market.city.toLowerCase()} 2025, ${market.city.toLowerCase()} christkindlmarkt, ${market.specialties.slice(0, 5).join(', ').toLowerCase()}, weihnachtsmarkt öffnungszeiten ${market.city.toLowerCase()}, advent ${market.city.toLowerCase()}, glühwein ${market.city.toLowerCase()}, weihnachtsmarkt termine 2025`}
         canonicalUrl={currentUrl}
         ogImage={market.imageUrl || "/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png"}
         ogType="place"
@@ -68,8 +68,8 @@ const ChristmasMarketDetailPage = () => {
           "description": market.description,
           "url": currentUrl,
           "image": market.imageUrl,
-          "startDate": "2024-11-25",
-          "endDate": "2024-12-23",
+          "startDate": "2025-11-25",
+          "endDate": "2025-12-23",
           "eventStatus": "https://schema.org/EventScheduled",
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "location": {
@@ -92,8 +92,8 @@ const ChristmasMarketDetailPage = () => {
             "price": "0",
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
-            "validFrom": "2024-11-25",
-            "validThrough": "2024-12-23"
+            "validFrom": "2025-11-25",
+            "validThrough": "2025-12-23"
           },
           "subEvent": market.specialties.map(specialty => ({
             "@type": "Event",
