@@ -277,7 +277,7 @@ export const blogPosts: BlogPost[] = [
 
 {
   id: "13",
-  slug: "wochenmarkt-domshof-bremen-historische-mitte",
+  slug: "wochenmarkt-domshof-bremen",
   title: "Der Wochenmarkt am Domshof: Bremens kulinarisches Herz in historischer Kulisse",
   excerpt: "Entdecken Sie den zentralen Wochenmarkt auf dem Domshof in Bremen, wo Tradition, hanseatischer Charme und frische regionale Produkte aufeinandertreffen.",
   content: `<h2>Der Domshof: Zentrum des Bremer Markttreibens</h2>
@@ -297,7 +297,7 @@ export const blogPosts: BlogPost[] = [
   
   <h3>Tipps für Ihren Besuch</h3>
   <p>Der Markt findet in der Regel dienstags und samstags von 8 bis 14 Uhr statt. Ein früher Besuch am Samstagmorgen ist besonders zu empfehlen, um die größte Auswahl zu genießen. Nutzen Sie die zentrale Lage, um Ihren Markteinkauf mit einem Spaziergang durch die historische Innenstadt Bremens zu verbinden.</p>`,
-  imageUrl: "/lovable-uploads/bremer-domshof-wochenmarkt.jpg", // Passe den Pfad bei Bedarf an
+  imageUrl: "https://media.istockphoto.com/id/1448794844/de/foto/frisches-gem%C3%BCse-zum-verkauf-am-marktstand.jpg?s=612x612&w=0&k=20&c=AbFAyB2eMOtaOO_tyHz8ehXUaGBr6WRO5v6AxGYSYnc=", // Passe den Pfad bei Bedarf an
   link: "/blog/wochenmarkt-domshof-bremen-historische-mitte",
   marketSlugs: ["wochenmarkt-domshof-bremen"]
 }  
