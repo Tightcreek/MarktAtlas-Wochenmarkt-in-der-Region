@@ -149,42 +149,6 @@ export const generateSEOKeywords = (markets: Market[]): string => {
 export const marketData: Market[] = [
 
 
- 
-  {
-    id: "64",
-    name: "Stralsund Markt",
-    address: "Alter Markt",
-    city: "Stralsund",
-    postalCode: "18439",
-    openingHours: "Dienstag, Freitag 8-14",
-    features: ["Hansestadt", "UNESCO", "Rügen"],
-    isOpen: isMarketOpen("Dienstag, Freitag 8-14"),
-    description: "Hanseatischer UNESCO-Markt am Tor zur Insel Rügen.",
-    phone: "+49 3831 12345678",
-    email: "info@markt-stralsund.de",
-    website: "www.markt-stralsund.de",
-    specialties: ["Hanseatische Küche", "Rügen-Fisch", "Bernstein"],
-    facilities: ["Rathaus", "Nikolaikirche", "UNESCO"],
-    transport: "Bus 1, 2, 3 (Alter Markt)"
-  },
-  {
-    id: "65",
-    name: "Greifswald Markt",
-    address: "Marktplatz",
-    city: "Greifswald",
-    postalCode: "17489",
-    openingHours: "Dienstag, Freitag 8-14",
-    features: ["Universitätsstadt", "Backstein"],
-    isOpen: isMarketOpen("Dienstag, Freitag 8-14"),
-    description: "Backstein-Universitätsmarkt an der Ostsee.",
-    phone: "+49 3834 12345678",
-    email: "info@markt-greifswald.de",
-    website: "www.markt-greifswald.de",
-    specialties: ["Universitäts-Flair", "Pommersche Küche", "Backstein"],
-    facilities: ["Dom", "Universität", "Backstein-Gotik"],
-    transport: "Bus 1, 2, 3 (Markt)"
-  },
-
     {
     id: "70",
     name: "Passau Markt",
