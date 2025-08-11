@@ -326,7 +326,7 @@ export const blogPosts: BlogPost[] = [
 <h3>Tipps für Ihren Besuch</h3>
 <p>Der Markt hat von Montag bis Samstag geöffnet. Wenn Sie es vermeiden möchten, in die größte Menschenmenge zu geraten, empfehlen sich die frühen Morgenstunden oder die späten Nachmittagsstunden. Nehmen Sie sich Zeit, um alle Stände zu erkunden und die einzigartige kulinarische Welt des Carlsplatzes zu erleben.</p>`,
   imageUrl: "https://www.wolfenbuettel.de/media/custom/2672_576_1_g.JPG?1589294500",
-  link: "/blog/carlsplatz-duesseldorf-kulinarische-institution",
+  link: "/blog/carlsplatz-duesseldorf",
   marketSlugs: ["carlsplatz-duesseldorf"]
 }
   

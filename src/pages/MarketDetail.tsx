@@ -284,8 +284,6 @@ const MarketDetail = () => {
                         </p>
                         <a 
                           href={post.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-200"
                         >
                           Weiterlesen
