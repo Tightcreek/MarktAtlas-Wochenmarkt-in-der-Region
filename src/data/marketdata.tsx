@@ -13374,7 +13374,7 @@ export const marketData: Market[] = [
 
 // Eschweiler
 {
-  id: "766",
+  id: "13377",
   slug: "wochenmarkt-eschweiler-marktplatz",
   name: "Wochenmarkt Eschweiler",
   address: "Marktplatz",
