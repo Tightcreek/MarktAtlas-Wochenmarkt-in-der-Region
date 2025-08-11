@@ -38,55 +38,65 @@ const Markets = () => {
       if (searchTerm === '') {
         relevanceScore = 1; // Default relevance when no search term
       } else {
-        // Exact city match (highest priority)
+        // Exact city match (highest priority - 100 points)
         if (market.city.toLowerCase() === searchLower) {
           relevanceScore += 100;
         }
-        
-        // City starts with search term
-        if (market.city.toLowerCase().startsWith(searchLower)) {
-          relevanceScore += 50;
+        // City starts with search term (high priority - 70 points)
+        else if (market.city.toLowerCase().startsWith(searchLower)) {
+          relevanceScore += 70;
         }
         
-        // Exact name match
+        // Exact name match (high priority - 90 points)
         if (market.name.toLowerCase() === searchLower) {
-          relevanceScore += 80;
+          relevanceScore += 90;
         }
-        
-        // Name starts with search term
-        if (market.name.toLowerCase().startsWith(searchLower)) {
-          relevanceScore += 40;
-        }
-        
-        // Word boundary matches in name or city
-        const wordBoundaryRegex = new RegExp(`\\b${searchLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'i');
-        if (wordBoundaryRegex.test(market.name)) {
-          relevanceScore += 30;
-        }
-        if (wordBoundaryRegex.test(market.city)) {
-          relevanceScore += 35;
-        }
-        
-        // Postal code exact match
-        if (market.postalCode === searchTerm) {
+        // Name starts with search term (medium-high priority - 60 points)
+        else if (market.name.toLowerCase().startsWith(searchLower)) {
           relevanceScore += 60;
         }
         
-        // Postal code starts with search term
-        if (market.postalCode.startsWith(searchTerm)) {
-          relevanceScore += 25;
+        // Exact postal code match (medium priority - 50 points)
+        if (market.postalCode === searchTerm) {
+          relevanceScore += 50;
+        }
+        // Postal code starts with search term (medium priority - 40 points)
+        else if (market.postalCode.startsWith(searchTerm)) {
+          relevanceScore += 40;
         }
         
-        // Address word boundary match (lowest priority)
-        if (wordBoundaryRegex.test(market.address)) {
-          relevanceScore += 10;
+        // Word boundary matches in name (medium priority - 30 points)
+        // Only if not already matched exactly or by starting
+        if (relevanceScore < 60) {
+          const exactWordRegex = new RegExp(`\\b${searchLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+          if (exactWordRegex.test(market.name)) {
+            relevanceScore += 30;
+          }
+        }
+        
+        // Word boundary matches in city (medium priority - 35 points)
+        // Only if not already matched exactly or by starting
+        if (relevanceScore < 70) {
+          const exactWordRegex = new RegExp(`\\b${searchLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+          if (exactWordRegex.test(market.city)) {
+            relevanceScore += 35;
+          }
+        }
+        
+        // Address exact word match (lowest priority - 5 points)
+        // Only match if it's a complete word, not partial like "kölner" when searching "köln"
+        if (relevanceScore === 0) {
+          const exactWordRegex = new RegExp(`\\b${searchLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+          if (exactWordRegex.test(market.address)) {
+            relevanceScore += 5;
+          }
         }
       }
       
       return { ...market, relevanceScore };
     }).filter(market => {
-      // Only include markets with relevance score > 0 (unless no search term)
-      const matchesSearch = searchTerm === '' || market.relevanceScore > 0;
+      // Require minimum relevance score of 5 for search results (filters out weak address matches)
+      const matchesSearch = searchTerm === '' || market.relevanceScore >= 5;
       
       const matchesDay = selectedDay === '' || 
         market.openingHours.toLowerCase().includes(selectedDay.toLowerCase());
