@@ -304,7 +304,7 @@ export const blogPosts: BlogPost[] = [
 
 {
   id: "14",
-  slug: "carlsplatz-duesseldorf-kulinarische-institution",
+  slug: "carlsplatz-duesseldorf",
   title: "Der Carlsplatz Düsseldorf: Eine kulinarische Institution im Herzen der Altstadt",
   excerpt: "Entdecken Sie den Carlsplatz in Düsseldorf – mehr als nur ein Markt, sondern ein Treffpunkt für Feinschmecker und Liebhaber hochwertiger, regionaler und internationaler Spezialitäten.",
   content: `<h2>Ein Markt für alle Sinne: Der Carlsplatz in Düsseldorf</h2>
