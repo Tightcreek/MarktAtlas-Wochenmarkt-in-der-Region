@@ -300,6 +300,34 @@ export const blogPosts: BlogPost[] = [
   imageUrl: "https://media.istockphoto.com/id/1448794844/de/foto/frisches-gem%C3%BCse-zum-verkauf-am-marktstand.jpg?s=612x612&w=0&k=20&c=AbFAyB2eMOtaOO_tyHz8ehXUaGBr6WRO5v6AxGYSYnc=", // Passe den Pfad bei Bedarf an
   link: "/blog/wochenmarkt-domshof-bremen-historische-mitte",
   marketSlugs: ["wochenmarkt-domshof-bremen"]
+},
+
+{
+  id: "14",
+  slug: "carlsplatz-duesseldorf-kulinarische-institution",
+  title: "Der Carlsplatz Düsseldorf: Eine kulinarische Institution im Herzen der Altstadt",
+  excerpt: "Entdecken Sie den Carlsplatz in Düsseldorf – mehr als nur ein Markt, sondern ein Treffpunkt für Feinschmecker und Liebhaber hochwertiger, regionaler und internationaler Spezialitäten.",
+  content: `<h2>Ein Markt für alle Sinne: Der Carlsplatz in Düsseldorf</h2>
+  <p>Im pulsierenden Herzen der Düsseldorfer Altstadt, unweit des Rheinufers, befindet sich der Carlsplatz – eine kulinarische Institution, die weit über die Stadtgrenzen hinaus bekannt ist. Täglich, außer sonntags, verwandelt sich dieser Ort in ein Paradies für Feinschmecker. Der Carlsplatz ist kein einfacher Wochenmarkt, sondern ein dauerhafter Marktplatz, der mit seiner Qualität und Vielfalt besticht.</p>
+  
+  <h3>Die besten Spezialitäten auf einem Platz</h3>
+  <p>Was den Carlsplatz so besonders macht, ist das handverlesene Angebot der rund 60 Händler. Jeder Stand ist auf bestimmte Produkte spezialisiert und bietet höchste Qualität. Hier finden Sie:</p>
+  <ul>
+    <li><strong>Seltener Käse:</strong> Von kleinen Bauernhöfen und internationalen Käse-Manufakturen.</li>
+    <li><strong>Frischer Fisch und Meeresfrüchte:</strong> Fangfrische Delikatessen für Fischliebhaber.</li>
+    <li><strong>Exotische Gewürze und Tees:</strong> Eine riesige Auswahl, die zum Entdecken einlädt.</li>
+    <li><strong>Blumen und Floristik:</strong> Ein beeindruckendes Angebot, das den Markt farbenfroh und duftend macht.</li>
+    <li><strong>Regionale Feinkost:</strong> Von hausgemachten Marmeladen bis zu saisonalen Spezialitäten.</li>
+  </ul>
+  
+  <h3>Ein Treffpunkt mit Genussgarantie</h3>
+  <p>Der Carlsplatz ist der ideale Ort, um eine Pause einzulegen. Ob ein Glas Wein, eine herzhafte Suppe oder ein frisch gebrühter Kaffee – die kleinen Imbisse und Cafés laden zum Verweilen und Genießen ein. Die entspannte, aber lebendige Atmosphäre macht den Markt zu einem beliebten Treffpunkt für alle Generationen.</p>
+  
+  <h3>Tipps für Ihren Besuch</h3>
+  <p>Der Markt hat von Montag bis Samstag geöffnet. Wenn Sie es vermeiden möchten, in die größte Menschenmenge zu geraten, empfehlen sich die frühen Morgenstunden oder die späten Nachmittagsstunden. Nehmen Sie sich Zeit, um alle Stände zu erkunden und die einzigartige kulinarische Welt des Carlsplatzes zu erleben.</p>`,
+  imageUrl: "https://geheimtipp-koeln.de/content/uploads/2020/12/markt-koeln-2-artikel-1024x683.jpg", // Passe den Pfad bei Bedarf an
+  link: "/blog/carlsplatz-duesseldorf-kulinarische-institution",
+  marketSlugs: ["carlsplatz-duesseldorf"]
 }  
   
 
