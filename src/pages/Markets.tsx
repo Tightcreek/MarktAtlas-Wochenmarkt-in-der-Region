@@ -31,12 +31,62 @@ const Markets = () => {
   };
 
   const handleSearch = () => {
-    return marketData.filter(market => {
-      const matchesSearch = searchTerm === '' || 
-        market.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        market.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        market.address.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        market.postalCode.includes(searchTerm);
+    const searchResults = marketData.map(market => {
+      let relevanceScore = 0;
+      const searchLower = searchTerm.toLowerCase().trim();
+      
+      if (searchTerm === '') {
+        relevanceScore = 1; // Default relevance when no search term
+      } else {
+        // Exact city match (highest priority)
+        if (market.city.toLowerCase() === searchLower) {
+          relevanceScore += 100;
+        }
+        
+        // City starts with search term
+        if (market.city.toLowerCase().startsWith(searchLower)) {
+          relevanceScore += 50;
+        }
+        
+        // Exact name match
+        if (market.name.toLowerCase() === searchLower) {
+          relevanceScore += 80;
+        }
+        
+        // Name starts with search term
+        if (market.name.toLowerCase().startsWith(searchLower)) {
+          relevanceScore += 40;
+        }
+        
+        // Word boundary matches in name or city
+        const wordBoundaryRegex = new RegExp(`\\b${searchLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'i');
+        if (wordBoundaryRegex.test(market.name)) {
+          relevanceScore += 30;
+        }
+        if (wordBoundaryRegex.test(market.city)) {
+          relevanceScore += 35;
+        }
+        
+        // Postal code exact match
+        if (market.postalCode === searchTerm) {
+          relevanceScore += 60;
+        }
+        
+        // Postal code starts with search term
+        if (market.postalCode.startsWith(searchTerm)) {
+          relevanceScore += 25;
+        }
+        
+        // Address word boundary match (lowest priority)
+        if (wordBoundaryRegex.test(market.address)) {
+          relevanceScore += 10;
+        }
+      }
+      
+      return { ...market, relevanceScore };
+    }).filter(market => {
+      // Only include markets with relevance score > 0 (unless no search term)
+      const matchesSearch = searchTerm === '' || market.relevanceScore > 0;
       
       const matchesDay = selectedDay === '' || 
         market.openingHours.toLowerCase().includes(selectedDay.toLowerCase());
@@ -47,7 +97,9 @@ const Markets = () => {
         (selectedStatus === 'geschlossen' && !marketIsOpen);
       
       return matchesSearch && matchesDay && matchesStatus;
-    });
+    }).sort((a, b) => b.relevanceScore - a.relevanceScore); // Sort by relevance score descending
+    
+    return searchResults;
   };
 
   const filteredMarkets = handleSearch();
