@@ -3,7 +3,7 @@ import { getChristmasMarketBySlug } from "@/data/weihnachtsmarktdata";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, MapPin, ExternalLink, Globe, Phone, Mail, Car } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, MapPin, ExternalLink, Globe, Phone, Mail, Car, Wine, Cake, Coffee, Gift, Music, Star } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 import Footer from "@/components/Footer";
@@ -110,27 +110,41 @@ const ChristmasMarketDetailPage = () => {
       
       <BreadcrumbSchema items={breadcrumbItems} />
       
-      <div className="container mx-auto px-4 py-8">
-        {/* Back Button */}
-        <div className="mb-6">
-          <Button variant="outline" asChild>
-            <Link to="/weihnachtsmaerkte" className="flex items-center gap-2">
-              <ArrowLeft className="h-4 w-4" />
-              Zurück zur Übersicht
-            </Link>
-          </Button>
-        </div>
-
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
-            {market.name}
-          </h1>
-          <div className="flex items-center text-lg text-muted-foreground mb-2">
-            <MapPin className="h-5 w-5 mr-2" />
-            {market.address}, {market.city}
+      {/* Hero Section */}
+      <div className="relative h-96 lg:h-[500px] overflow-hidden">
+        {market.imageUrl ? (
+          <img 
+            src={market.imageUrl} 
+            alt={`${market.name} Weihnachtsmarkt`}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-primary" />
+        )}
+        
+        {/* Hero Overlay */}
+        <div className="absolute inset-0 bg-black/40">
+          <div className="container mx-auto px-4 h-full flex flex-col justify-end pb-12">
+            <div className="text-white">
+              <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+                {market.name}
+              </h1>
+              <div className="flex items-center text-lg lg:text-xl mb-6">
+                <MapPin className="h-6 w-6 mr-3" />
+                {market.address}, {market.city}
+              </div>
+              <Button variant="outline" asChild className="bg-white/10 border-white/20 text-white hover:bg-white/20">
+                <Link to="/weihnachtsmaerkte" className="flex items-center gap-2">
+                  <ArrowLeft className="h-4 w-4" />
+                  Zurück zur Übersicht
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-8">
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
@@ -153,50 +167,64 @@ const ChristmasMarketDetailPage = () => {
                 <CardTitle>Spezialitäten & Angebote</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {market.specialties.map((specialty, index) => (
-                    <Badge key={index} variant="secondary" className="text-sm">
-                      {specialty}
-                    </Badge>
-                  ))}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {market.specialties.map((specialty, index) => {
+                    const getSpecialtyIcon = (specialty: string) => {
+                      const lowerSpecialty = specialty.toLowerCase();
+                      if (lowerSpecialty.includes('glühwein') || lowerSpecialty.includes('wein')) return Wine;
+                      if (lowerSpecialty.includes('bratwurst') || lowerSpecialty.includes('wurst')) return Coffee;
+                      if (lowerSpecialty.includes('lebkuchen') || lowerSpecialty.includes('kuchen') || lowerSpecialty.includes('süß')) return Cake;
+                      if (lowerSpecialty.includes('kunsthandwerk') || lowerSpecialty.includes('geschenk')) return Gift;
+                      if (lowerSpecialty.includes('musik') || lowerSpecialty.includes('bühne')) return Music;
+                      return Star;
+                    };
+                    
+                    const IconComponent = getSpecialtyIcon(specialty);
+                    
+                    return (
+                      <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
+                        <IconComponent className="h-5 w-5 text-primary flex-shrink-0" />
+                        <span className="text-sm font-medium text-foreground">
+                          {specialty}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>
 
-            {/* Market Image */}
-            {market.imageUrl && (
-              <Card>
-                <CardContent className="p-0">
-                  <img 
-                    src={market.imageUrl} 
-                    alt={`${market.name} Weihnachtsmarkt`}
-                    className="w-full h-64 sm:h-80 object-cover rounded-lg"
-                  />
-                </CardContent>
-              </Card>
-            )}
           </div>
 
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Opening Hours & Dates */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Öffnungszeiten</CardTitle>
+            <Card className="border-l-4 border-l-primary bg-gradient-to-r from-primary/5 to-transparent">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-primary">
+                  <Calendar className="h-5 w-5" />
+                  Öffnungszeiten
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-start gap-2">
-                  <Calendar className="h-5 w-5 text-muted-foreground mt-0.5" />
-                  <div>
-                    <p className="font-medium text-foreground">Zeitraum</p>
-                    <p className="text-muted-foreground">{market.openingDates}</p>
+                <div className="bg-background/80 rounded-lg p-4 space-y-3">
+                  <div className="flex items-start gap-3">
+                    <div className="bg-primary/10 p-2 rounded-lg">
+                      <Calendar className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">Zeitraum</p>
+                      <p className="text-foreground text-lg">{market.openingDates}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Clock className="h-5 w-5 text-muted-foreground mt-0.5" />
-                  <div>
-                    <p className="font-medium text-foreground">Öffnungszeiten</p>
-                    <p className="text-muted-foreground">{market.openingHours}</p>
+                  <div className="flex items-start gap-3">
+                    <div className="bg-primary/10 p-2 rounded-lg">
+                      <Clock className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">Öffnungszeiten</p>
+                      <p className="text-foreground text-lg">{market.openingHours}</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
