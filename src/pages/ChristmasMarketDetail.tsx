@@ -3,7 +3,7 @@ import { getChristmasMarketBySlug } from "@/data/weihnachtsmarktdata";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, MapPin, ExternalLink, Globe, Phone, Mail, Car, Wine, Cake, Coffee, Gift, Music, Star } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, MapPin, ExternalLink, Globe, Phone, Mail, Car, Wine, Cake, Coffee, Gift, Music, Star, Ticket, ParkingCircle, Bus, Train } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 import Footer from "@/components/Footer";
@@ -194,10 +194,62 @@ const ChristmasMarketDetailPage = () => {
               </CardContent>
             </Card>
 
+            {/* Highlights & Programm */}
+            {market.highlights && market.highlights.length > 0 && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Star className="h-5 w-5 text-primary" />
+                    Highlights & Programm
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {market.highlights.map((highlight, index) => (
+                      <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-muted/30 border border-muted">
+                        <div className="bg-primary/10 p-1.5 rounded-full mt-0.5">
+                          <Star className="h-3 w-3 text-primary" />
+                        </div>
+                        <p className="text-sm text-foreground leading-relaxed">
+                          {highlight}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
           </div>
 
           {/* Sidebar */}
           <div className="space-y-6">
+            {/* Entry Price */}
+            <Card className="border-l-4 border-l-green-500 bg-gradient-to-r from-green-50 to-transparent dark:from-green-950/20">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-2 text-green-700 dark:text-green-400">
+                  <Ticket className="h-5 w-5" />
+                  Eintritt
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-3">
+                  <div className="bg-green-100 dark:bg-green-900/30 p-2 rounded-lg">
+                    <Ticket className="h-5 w-5 text-green-600 dark:text-green-400" />
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold text-green-700 dark:text-green-400">
+                      {market.entryPrice || "Eintritt frei"}
+                    </p>
+                    {!market.entryPrice && (
+                      <p className="text-sm text-green-600 dark:text-green-500">
+                        Kostenloser Zugang für alle Besucher
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
             {/* Opening Hours & Dates */}
             <Card className="border-l-4 border-l-primary bg-gradient-to-r from-primary/5 to-transparent">
               <CardHeader className="pb-4">
@@ -287,22 +339,52 @@ const ChristmasMarketDetailPage = () => {
               </CardContent>
             </Card>
 
-            {/* Transport */}
-            {market.transport && (
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Car className="h-5 w-5" />
-                    Anfahrt
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-sm text-muted-foreground">
-                    {market.transport}
+            {/* Parken & Anfahrt */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Car className="h-5 w-5" />
+                  Parken & Anfahrt
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {/* ÖPNV */}
+                <div className="bg-muted/30 rounded-lg p-4">
+                  <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <Bus className="h-4 w-4 text-primary" />
+                    Öffentliche Verkehrsmittel
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    {market.publicTransport || market.transport}
+                  </p>
+                </div>
+                
+                {/* Parking */}
+                {market.parking && (
+                  <div className="bg-muted/30 rounded-lg p-4">
+                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                      <ParkingCircle className="h-4 w-4 text-primary" />
+                      Parkplätze
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      {market.parking}
+                    </p>
                   </div>
-                </CardContent>
-              </Card>
-            )}
+                )}
+                
+                {!market.parking && (
+                  <div className="bg-muted/30 rounded-lg p-4">
+                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                      <ParkingCircle className="h-4 w-4 text-primary" />
+                      Parkplätze
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Wir empfehlen die Anreise mit öffentlichen Verkehrsmitteln. Parkplätze in der Innenstadt sind begrenzt und oft kostenpflichtig.
+                    </p>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
           </div>
         </div>
 

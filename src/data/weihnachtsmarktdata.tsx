@@ -13,6 +13,10 @@ export interface ChristmasMarket {
   phone: string;
   email: string;
   transport: string;
+  highlights?: string[]; // Besondere Events und Highlights
+  parking?: string; // Parkplatz-Informationen
+  publicTransport?: string; // ÖPNV-Informationen
+  entryPrice?: string; // Eintrittspreis oder "frei"
 }
 
 export const christmasMarkets: ChristmasMarket[] = [
@@ -30,7 +34,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://christkindlesmarkt.de",
     phone: "+49 911 2336055",
     email: "info@christkindlesmarkt.de",
-    transport: "U-Bahn: Linie U1 bis Lorenzkirche, S-Bahn: S1, S2, S3, S4 bis Hauptbahnhof"
+    transport: "U-Bahn: Linie U1 bis Lorenzkirche, S-Bahn: S1, S2, S3, S4 bis Hauptbahnhof",
+    highlights: [
+      "Eröffnung durch das weltberühmte Christkind am 29.11.2024 um 17:30 Uhr",
+      "Tägliche Auftritte des Christkinds auf dem Balkon der Hauptkirche um 17:30 Uhr",
+      "Traditioneller Weihnachtsmarkt für Kinder mit Karussell und Kinderständen",
+      "Lebkuchen-Werkstatt mit Live-Vorführungen täglich 14-18 Uhr",
+      "Historische Handwerksvorführungen: Glasbläser, Zuckerbäcker, Spielzeugmacher"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "U-Bahn: U1 bis Lorenzkirche (3 Min. Fußweg), S-Bahn: S1, S2, S3, S4 bis Hauptbahnhof (8 Min. Fußweg)",
+    parking: "Parkhaus Hauptmarkt (200m), Parkhaus Katharinenhof (300m), Tiefgarage am Hauptbahnhof (800m). Alle Parkplätze kostenpflichtig (2-3€/Std). An Wochenenden sehr begrenzt verfügbar."
   },
   {
     id: "dresdner-striezelmarkt",
@@ -78,7 +92,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://christkindlmarkt-muenchen.de",
     phone: "+49 89 23300272",
     email: "christkindlmarkt@muenchen.de",
-    transport: "U-Bahn/S-Bahn: Linien U3, U6, S1-S8 bis Marienplatz"
+    transport: "U-Bahn/S-Bahn: Linien U3, U6, S1-S8 bis Marienplatz",
+    highlights: [
+      "Tägliches Glockenspiel im Neuen Rathaus um 11, 12 und 17 Uhr (bis 21 Uhr in der Adventszeit)",
+      "Münchner Christkind-Auftritte jeden Samstag um 17 Uhr auf dem Rathausbalkon",
+      "Traditionelle Lebkuchen-Bäckerei mit Live-Vorführungen",
+      "Sternsinger-Auftritte am 6. Januar",
+      "Kinderprogramm mit Märchenerzählungen jeden Sonntag 15-16 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "U-Bahn: U3, U6 bis Marienplatz (direkt am Marktplatz), S-Bahn: S1-S8 bis Marienplatz (Fußgängerzone)",
+    parking: "Tiefgarage Marienplatz (direkt unter dem Platz), Parkhaus Quartier 206 (5 Min.), Parkhaus am Stachus (10 Min.). Kosten: 2-4€/Std. Sehr begrenzt, ÖPNV empfohlen."
   },
   {
     id: "frankfurter-weihnachtsmarkt",
