@@ -60,7 +60,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://striezelmarkt.dresden.de",
     phone: "+49 351 4914025",
     email: "striezelmarkt@dresden.de",
-    transport: "S-Bahn: S1, S2, S3 bis Bahnhof Dresden-Mitte, Straßenbahn: Linien 1, 2, 4 bis Altmarkt"
+    transport: "S-Bahn: S1, S2, S3 bis Bahnhof Dresden-Mitte, Straßenbahn: Linien 1, 2, 4 bis Altmarkt",
+    highlights: [
+      "Größte erzgebirgische Stufenpyramide der Welt (14,62 m hoch)",
+      "Traditionelles Stollenfest am 2. Advent mit 4-Tonnen-Riesenstollen", 
+      "Tägliche Handwerksvorführungen: Töpfern, Glasbläserei, Holzschnitzerei",
+      "Dresdner Christstollen-Museum mit historischen Exponaten",
+      "Märchenstunde für Kinder jeden Samstag 15 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "S-Bahn: S1, S2, S3 bis Dresden-Mitte (5 Min. Fußweg), Straßenbahn: 1, 2, 4 bis Altmarkt (direkt am Markt)",
+    parking: "Parkhaus Altmarkt-Galerie (200m), Q-Park Altstadt (400m). Kosten: 1,50-2€/Std. Begrenzte Kapazität, ÖPNV empfohlen."
   },
   {
     id: "koelner-weihnachtsmaerkte",

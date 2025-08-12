@@ -195,7 +195,7 @@ const ChristmasMarketDetailPage = () => {
             </Card>
 
             {/* Highlights & Programm */}
-            {market.highlights && market.highlights.length > 0 && (
+            {market.highlights && market.highlights.length > 0 ? (
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
@@ -215,6 +215,43 @@ const ChristmasMarketDetailPage = () => {
                         </p>
                       </div>
                     ))}
+                </div>
+              </CardContent>
+            </Card>
+            ) : (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Star className="h-5 w-5 text-primary" />
+                    Highlights & Programm
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/30 border border-muted">
+                      <div className="bg-primary/10 p-1.5 rounded-full mt-0.5">
+                        <Star className="h-3 w-3 text-primary" />
+                      </div>
+                      <p className="text-sm text-foreground leading-relaxed">
+                        Traditioneller Weihnachtsmarkt mit festlicher Atmosphäre
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/30 border border-muted">
+                      <div className="bg-primary/10 p-1.5 rounded-full mt-0.5">
+                        <Star className="h-3 w-3 text-primary" />
+                      </div>
+                      <p className="text-sm text-foreground leading-relaxed">
+                        Vielfältige Auswahl an lokalen Spezialitäten
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/30 border border-muted">
+                      <div className="bg-primary/10 p-1.5 rounded-full mt-0.5">
+                        <Star className="h-3 w-3 text-primary" />
+                      </div>
+                      <p className="text-sm text-foreground leading-relaxed">
+                        Handwerkskunst und weihnachtliche Geschenke
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
