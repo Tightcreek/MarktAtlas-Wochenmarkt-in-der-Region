@@ -332,7 +332,7 @@ export const blogPosts: BlogPost[] = [
 
 {
   id: "15",
-  slug: "hansa-markt-dortmund",
+  slug: "hansa-markt-dortmund-frische-tradition",
   title: "Der Hansa Markt in Dortmund: Der 'grünste' Markt im Herzen der Stadt",
   excerpt: "Entdecken Sie den Hauptwochenmarkt auf dem Dortmunder Hansaplatz – ein zentraler Treffpunkt für alle, die Frische, Qualität und regionale Produkte lieben.",
   content: `<h2>Der Hansa Markt: Dortmunds Hauptwochenmarkt</h2>
