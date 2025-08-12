@@ -57,7 +57,7 @@ const ChristmasMarketDetailPage = () => {
         description={`🎄 ${market.name} in ${market.city} 2025: ${market.description.substring(0, 120)}... ✨ Öffnungszeiten, Spezialitäten, Anfahrt & Insider-Tipps für Ihren perfekten Weihnachtsmarkt-Besuch!`}
         keywords={`${market.name.toLowerCase()}, weihnachtsmarkt ${market.city.toLowerCase()} 2025, ${market.city.toLowerCase()} christkindlmarkt, ${market.specialties.slice(0, 5).join(', ').toLowerCase()}, weihnachtsmarkt öffnungszeiten ${market.city.toLowerCase()}, advent ${market.city.toLowerCase()}, glühwein ${market.city.toLowerCase()}, weihnachtsmarkt termine 2025`}
         canonicalUrl={currentUrl}
-        ogImage={market.imageUrl || "/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png"}
+        ogImage={market.imageUrl || "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE="}
         ogType="place"
         siteName="MarktAtlas Deutschland"
         breadcrumbs={breadcrumbItems}
