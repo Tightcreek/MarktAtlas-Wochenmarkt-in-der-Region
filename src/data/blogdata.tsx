@@ -328,7 +328,34 @@ export const blogPosts: BlogPost[] = [
   imageUrl: "https://www.wolfenbuettel.de/media/custom/2672_576_1_g.JPG?1589294500",
   link: "/blog/carlsplatz-duesseldorf",
   marketSlugs: ["carlsplatz-duesseldorf"]
-}
+},
+
+{
+  id: "15",
+  slug: "hansa-markt-dortmund",
+  title: "Der Hansa Markt in Dortmund: Der 'grünste' Markt im Herzen der Stadt",
+  excerpt: "Entdecken Sie den Hauptwochenmarkt auf dem Dortmunder Hansaplatz – ein zentraler Treffpunkt für alle, die Frische, Qualität und regionale Produkte lieben.",
+  content: `<h2>Der Hansa Markt: Dortmunds Hauptwochenmarkt</h2>
+  <p>Im pulsierenden Herzen der Dortmunder Innenstadt, auf dem belebten Hansaplatz, findet mehrmals pro Woche der größte und traditionsreichste Wochenmarkt der Stadt statt: der Hansa Markt. Er ist nicht nur ein Ort für den täglichen Einkauf, sondern ein lebendiger Treffpunkt, der die lange Handelstradition der alten Hansestadt fortführt.</p>
+
+  <h3>Fokus auf Frische: Dortmunds 'grünster' Markt</h3>
+  <p>Was den Hansa Markt besonders auszeichnet, ist sein breites Angebot an frischen, regionalen Produkten. Er gilt als der "grünste" Markt der Stadt, mit einer beeindruckenden Auswahl an Obst, Gemüse und Pflanzen direkt von den umliegenden Feldern. Aber auch abseits davon gibt es eine Fülle an Spezialitäten:</p>
+  <ul>
+    <li><strong>Vielfältiges Obst und Gemüse:</strong> Saisonale Produkte von regionalen Anbietern.</li>
+    <li><strong>Backwaren und Käsesorten:</strong> Von traditionellen Bäckern und lokalen Käsereien.</li>
+    <li><strong>Frischer Fisch und Fleischwaren:</strong> Für Liebhaber von hochwertigen Delikatessen.</li>
+    <li><strong>Blumen und Pflanzen:</strong> Ein farbenfrohes Angebot, das den Platz erstrahlen lässt.</li>
+  </ul>
+
+  <h3>Ein zentraler Treffpunkt für alle</h3>
+  <p>Der Hansa Markt ist mehr als nur ein Einkaufsort – er ist ein wichtiger Bestandteil des Stadtlebens. Hier trifft man Nachbarn, tauscht Neuigkeiten aus und genießt die lebhafte Atmosphäre. Seine zentrale Lage macht ihn zum idealen Startpunkt, um den Markteinkauf mit einem Spaziergang durch die Innenstadt zu verbinden.</p>
+
+  <h3>Öffnungszeiten und Anfahrt</h3>
+  <p>Der Markt findet am **Mittwoch von 07:00 bis 14:00 Uhr**, am **Freitag von 08:00 bis 15:00 Uhr** und am **Samstag von 07:00 bis 15:00 Uhr** statt. Er ist hervorragend mit den öffentlichen Verkehrsmitteln erreichbar (U-Bahn-Haltestellen Stadtgarten oder Kampstraße).</p>`,
+  imageUrl: "https://geheimtipp-koeln.de/content/uploads/2020/12/markt-koeln-2-artikel-1024x683.jpg", // Passe den Pfad bei Bedarf an
+  link: "/blog/hansa-markt-dortmund-frische-tradition",
+  marketSlugs: ["hansa-markt-dortmund"]
+}  
   
 
   
