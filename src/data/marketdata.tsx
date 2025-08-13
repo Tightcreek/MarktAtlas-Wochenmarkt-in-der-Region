@@ -15555,7 +15555,7 @@ export const marketData: Market[] = [
   transport: "Bus: Domberg Freising; Parkplätze: Dom"
 },
 {
-  id: "867",
+  id: "875",
   slug: "wochenmarkt-bergkamen",
   name: "Wochenmarkt Bergkamen",
   address: "Ebertstraße",
