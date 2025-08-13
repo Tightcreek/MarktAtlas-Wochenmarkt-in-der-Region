@@ -135,7 +135,7 @@ const Markets = () => {
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       <SEOHead 
         title="Wochenmarkt Finder Deutschland - Alle Märkte in deiner Nähe"
-        description="Finde über 500 Wochenmärkte und Bauernmärkte in Deutschland, Österreich und der Schweiz. Aktuelle Öffnungszeiten, Standorte und frische Produkte direkt vom Erzeuger. Markt heute geöffnet in deiner Stadt."
+        description="Finde über 500 Wochenmärkte und Bauernmärkte in Deutschland, Österreich der Schweiz und Luxemburg. Aktuelle Öffnungszeiten, Standorte und frische Produkte direkt vom Erzeuger. Markt heute geöffnet in deiner Stadt."
         keywords={generateSEOKeywords(marketData)}
         canonicalUrl="https://markt-atlas-finden.lovable.app/markets"
       />
@@ -195,7 +195,7 @@ const Markets = () => {
             Wochenmarkt Finder Deutschland
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Entdecke über {marketData.length} Wochenmärkte und Bauernmärkte in ganz Deutschland, Österreich und der Schweiz. 
+            Entdecke über {marketData.length} Wochenmärkte und Bauernmärkte in ganz Deutschland, Österreich, der Schweiz und Luxemburg. 
             Finde frische Produkte, regionale Spezialitäten und lokale Erzeuger in deiner Nähe.
           </p>
         </div>
