@@ -380,7 +380,7 @@ export const blogPosts: BlogPost[] = [
 <h3>Öffnungszeiten und Anfahrt</h3>
 <p>Der Schlemmermarkt Wassenberg findet am **Dienstag und Freitag von 08:00 bis 18:00 Uhr** statt. Dank der zentralen Lage in der Roermonder Straße ist er gut zu erreichen und bietet die Möglichkeit, den Markteinkauf mit einem Spaziergang durch die schöne Innenstadt von Wassenberg zu verbinden.</p>`,
   imageUrl: "https://www.wassenberg.de/assets/2025/07/pm-25-41-stadt-wassenberg-schlemmermarkt-2025-credit-patrick-gawandtka-1030x687.jpg", // Passe den Pfad bei Bedarf an
-  link: "/blog/schlemmermarkt-wassenberg-regionale-spezialitaeten",
+  link: "/blog/schlemmermarkt-wassenberg",
   marketSlugs: ["schlemmermarkt-wassenberg"]
 }  
   
