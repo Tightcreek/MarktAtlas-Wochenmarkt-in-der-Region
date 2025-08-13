@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
     
     <h3>Fusion trifft Tradition</h3>
     <p>Besonders spannend ist die Verschmelzung traditioneller deutscher Produkte mit internationalen Geschmäckern. So entstehen Currywurst mit hausgemachten indischen Gewürzmischungen oder Döner mit regionalen Gemüse aus Brandenburg.</p>`,
-    imageUrl: "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
+    imageUrl: "https://www.wolfenbuettel.de/media/custom/2672_576_1_g.JPG?1589294500",
     link: "/blog/hackescher-markt-streetfood-trends",
     marketSlugs: ["wochenmarkt-hackescher-markt-berlin", "wochenmarkt-kollwitzplatz-berlin"]
   },
