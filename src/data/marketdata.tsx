@@ -16384,7 +16384,7 @@ export const marketData: Market[] = [
   transport: "Bahnhof: Kaufbeuren; Bus: Kaiser-Max-Straße"
 },
 {
-  id: "907",
+  id: "916",
   slug: "wochenmarkt-fellbach",
   name: "Wochenmarkt Fellbach",
   address: "Marktplatz",
