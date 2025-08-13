@@ -15394,6 +15394,25 @@ export const marketData: Market[] = [
   specialties: ["Stadtteilmarkt", "Ostfriesland", "Maritim"],
   facilities: ["Samstag", "Stadtteilplatz", "Kleiner Markt"],
   transport: "Bus: Emden Stadtteil; Bahn: Emden"
+},
+
+{
+  id: "867",
+  slug: "schlemmermarkt-wassenberg",
+  name: "Schlemmermarkt Wassenberg",
+  address: "Roermonder Straße 12",
+  city: "Wassenberg",
+  postalCode: "41849",
+  openingHours: "Dienstag 8-18, Freitag 8-18",
+  features: ["Regional", "Produkte", "Frische", "Spezialitäten"],
+  isOpen: isMarketOpen("Dienstag 8-12, Freitag 8-18"),
+  description: "Der Schlemmermarkt in Wassenberg bietet eine große Auswahl an frischen, regionalen Produkten. Von Obst und Gemüse bis hin zu Käse- und Wurstspezialitäten finden Besucher hier alles für den täglichen Bedarf. Ein beliebter Treffpunkt für Genießer in der Region.",
+  phone: "N/A",
+  email: "N/A",
+  website: "https://www.wassenberg.de/tourismus-freizeit/einkaufen-und-geniessen/wochenmarkt/",
+  specialties: ["Frische Lebensmittel", "Regionale Produkte", "Käse", "Wurst"],
+  facilities: ["Barrierefrei", "Parkplätze in der Nähe"],
+  transport: "Bus: Haltestelle Wassenberg Marktplatz"
 }  
   
   
