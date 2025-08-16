@@ -382,6 +382,30 @@ export const blogPosts: BlogPost[] = [
   imageUrl: "https://www.wassenberg.de/assets/2025/07/pm-25-41-stadt-wassenberg-schlemmermarkt-2025-credit-patrick-gawandtka-1030x687.jpg", // Passe den Pfad bei Bedarf an
   link: "/blog/schlemmermarkt-wassenberg",
   marketSlugs: ["schlemmermarkt-wassenberg"]
+},
+
+{
+  id: "17",
+  slug: "blankeneser-wochenmarkt",
+  title: "Der Blankeneser Wochenmarkt: Ein charmantes Dorf-Gefühl in der Großstadt",
+  excerpt: "Entdecken Sie, warum der Wochenmarkt in Blankenese mehr als nur ein Einkaufsort ist – ein Ort der Begegnung mit dörflichem Charme, frischen Produkten und Tradition.",
+  content: `<h2>Ein Markt mit langer Tradition</h2>
+<p>Im malerischen Stadtteil Blankenese, bekannt für sein Treppenviertel und die Elbchaussee, findet mehrmals pro Woche ein besonderer Wochenmarkt statt. Er ist das Herzstück des Viertels und hat sich seit seiner Gründung 1929 seinen familiären Charakter bewahrt. Viele Händler sind bereits in dritter oder vierter Generation hier, was eine persönliche und vertrauensvolle Atmosphäre schafft.</p>
+
+<h3>Qualität und Persönlichkeit stehen im Vordergrund</h3>
+<p>Der Blankeneser Wochenmarkt besticht durch eine handverlesene Auswahl an hochwertigen Produkten. Die Händler nehmen sich Zeit für ihre Kunden, beraten fachkundig und sind oft auch zu einem kleinen "Klönschnack" (Plausch) bereit. Das Angebot reicht von regionalen Köstlichkeiten bis hin zu internationalen Spezialitäten:</p>
+<ul>
+  <li><strong>Frisches Obst und Gemüse:</strong> Direkt aus dem Alten Land und den umliegenden Anbaugebieten.</li>
+  <li><strong>Fischdelikatessen:</strong> Fangfrischer Fisch und Fischbrötchen, die man direkt auf die Hand bekommt.</li>
+  <li><strong>Handgemachte Backwaren:</strong> Brot und Kuchen von kleinen, lokalen Bäckereien.</li>
+  <li><strong>Ausgefallene Feinkost:</strong> Seltene Käsesorten, Oliven und Antipasti.</li>
+</ul>
+
+<h3>Öffnungszeiten und Besonderheiten</h3>
+<p>Der Markt findet am **Dienstag von 07:30 - 14:00 Uhr**, am **Freitag von 07:30 - 18:00 Uhr** und am **Samstag von 07:30 - 13:30 Uhr** in der Blankeneser Bahnhofstraße statt. Die verlängerten Öffnungszeiten am Freitag sind besonders praktisch für Berufstätige. Die Lage in der belebten Bahnhofstraße macht den Markt zu einem zentralen und leicht erreichbaren Treffpunkt.</p>`,
+  imageUrl: "https://geheimtipp-koeln.de/content/uploads/2020/12/markt-koeln-2-artikel-1024x683.jpg", // Passe den Pfad bei Bedarf an
+  link: "/blog/blankeneser-wochenmarkt",
+  marketSlugs: ["blankeneser-wochenmarkt-hamburg"]
 }  
   
 
