@@ -8,6 +8,7 @@ import { Link, useLocation } from 'react-router-dom';
 import SEOHead from '@/components/SEOHead';
 import Footer from '@/components/Footer';
 import { marketData, isMarketOpen, generateSEOKeywords, type Market } from '@/data/marketdata';
+import organicProduceImage from '@/assets/organic-produce.jpg';
 
 const Markets = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -194,10 +195,19 @@ const Markets = () => {
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Wochenmarkt Finder Deutschland
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6">
             Entdecke über {marketData.length} Wochenmärkte und Bauernmärkte in ganz Deutschland, Österreich, der Schweiz und Luxemburg. 
             Finde frische Produkte, regionale Spezialitäten und lokale Erzeuger in deiner Nähe.
           </p>
+          
+          {/* Organic Produce Image */}
+          <div className="max-w-4xl mx-auto mb-6">
+            <img 
+              src={organicProduceImage} 
+              alt="Frische regionale Bio-Produkte vom Wochenmarkt - Obst, Gemüse und Kräuter direkt vom lokalen Erzeuger"
+              className="w-full h-64 object-cover rounded-lg shadow-lg"
+            />
+          </div>
         </div>
 
         {/* Search Section */}
