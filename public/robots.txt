@@ -1,26 +1,76 @@
+# Robots.txt for MarktAtlas Deutschland
+# Allow all search engines to crawl the entire site
+
+# Default crawling rules for all bots
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
+# Specific rules for major search engines
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0.5
 
-User-agent: Bingbot
+User-agent: Bingbot  
 Allow: /
 Crawl-delay: 1
 
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Social media crawlers
 User-agent: Twitterbot
 Allow: /
+Crawl-delay: 0
 
 User-agent: facebookexternalhit
 Allow: /
+Crawl-delay: 0
 
-# Additional SEO optimizations
+User-agent: LinkedInBot
+Allow: /
+
+# Block unnecessary paths and files
 User-agent: *
 Disallow: /api/
 Disallow: /admin/
 Disallow: /tmp/
+Disallow: /scripts/
+Disallow: /node_modules/
 Disallow: /*.json$
+Disallow: /*.ts$
+Disallow: /*.tsx$
+Disallow: /src/
+Disallow: /.git/
+Disallow: /.env*
 
-# Sitemap location
+# Allow important static assets
+Allow: /assets/
+Allow: /images/
+Allow: /lovable-uploads/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.ico$
+
+# Block common spam and malicious bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap references
 Sitemap: https://markt-atlas-finden.lovable.app/sitemap.xml
+
+# Host preference (helps with canonicalization)
+Host: markt-atlas-finden.lovable.app

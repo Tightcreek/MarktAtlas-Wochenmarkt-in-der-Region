@@ -1,146 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <!-- Homepage -->
+  <!-- Homepage - Highest priority, updated weekly -->
   <url>
     <loc>https://markt-atlas-finden.lovable.app/</loc>
-    <lastmod>2025-01-30</lastmod>
+    <lastmod>2025-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png</image:loc>
       <image:title>MarktAtlas Deutschland - Wochenmarkt Finder</image:title>
-      <image:caption>Finde Wochenmärkte und Bauernmärkte in Deutschland</image:caption>
+      <image:caption>Finde die besten Wochenmärkte und Bauernmärkte in Deutschland</image:caption>
     </image:image>
   </url>
   
-  <!-- Markets directory page -->
+  <!-- Main category pages - High priority -->
   <url>
     <loc>https://markt-atlas-finden.lovable.app/markets</loc>
-    <lastmod>2025-01-30</lastmod>
+    <lastmod>2025-08-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- Individual market pages -->
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/lingnermarkt</loc>
-    <lastmod>2025-01-30</lastmod>
+    <loc>https://markt-atlas-finden.lovable.app/weihnachtsmaerkte</loc>
+    <lastmod>2025-08-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://markt-atlas-finden.lovable.app/blog</loc>
+    <lastmod>2025-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- Individual market pages - High priority for local SEO -->
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/hauptmarkt-nuernberg</loc>
-    <lastmod>2025-01-30</lastmod>
+    <loc>https://markt-atlas-finden.lovable.app/market/wochenmarkt-wilhelmsplatz-koeln</loc>
+    <lastmod>2025-08-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png</image:loc>
+      <image:title>Wochenmarkt Wilhelmsplatz - Wochenmarkt in Köln</image:title>
+      <image:caption>Der traditionelle Wilhelmsplatz-Markt in Köln bietet eine vielfältige Auswahl an frischen, regionalen Produkten direkt im Herzen der Stadt</image:caption>
+    </image:image>
   </url>
+  
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/marktplatz-essen</loc>
-    <lastmod>2025-01-30</lastmod>
+    <loc>https://markt-atlas-finden.lovable.app/market/wiener-platz-markt</loc>
+    <lastmod>2025-08-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png</image:loc>
+      <image:title>Wiener Platz Markt - Wochenmarkt in Köln</image:title>
+      <image:caption>Der lebendige Wiener Platz Markt im Kölner Stadtteil Mülheim ist ein beliebter Treffpunkt für Einheimische und Besucher</image:caption>
+    </image:image>
   </url>
+  
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/marktplatz-augsburg</loc>
-    <lastmod>2025-01-30</lastmod>
+    <loc>https://markt-atlas-finden.lovable.app/market/rudolfplatz-okomarkt</loc>
+    <lastmod>2025-08-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png</image:loc>
+      <image:title>Rudolfplatz Ökomarkt - Wochenmarkt in Köln</image:title>
+      <image:caption>Der Rudolfplatz Ökomarkt in Köln ist ein Paradies für umweltbewusste Einkäufer</image:caption>
+    </image:image>
   </url>
+  
+  <!-- Christmas markets - Seasonal high priority (currently low season) -->
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/marktplatz-regensburg</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://markt-atlas-finden.lovable.app/weihnachtsmaerkte/nuernberger-christkindlmaerkte</loc>
+    <lastmod>2025-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png</image:loc>
+      <image:title>Nürnberger Christkindlmärkte - Weihnachtsmarkt in Nürnberg</image:title>
+      <image:caption>Einer der berühmtesten Weihnachtsmärkte der Welt! Der Nürnberger Christkindlesmarkt verzaubert seit 1628 mit seinem einzigartigen Ambiente</image:caption>
+    </image:image>
   </url>
+  
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/marktplatz-wuerzburg</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://markt-atlas-finden.lovable.app/weihnachtsmaerkte/dresdner-striezelmarkt</loc>
+    <lastmod>2025-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png</image:loc>
+      <image:title>Dresdner Striezelmarkt - Weihnachtsmarkt in Dresden</image:title>
+      <image:caption>Deutschlands ältester Weihnachtsmarkt! Der Dresdner Striezelmarkt begeistert seit 1434 mit traditionellem Handwerk und dem berühmten Dresdner Stollen</image:caption>
+    </image:image>
   </url>
+  
+  <!-- City-specific pages for local SEO -->
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/marktplatz-heidelberg</loc>
-    <lastmod>2025-01-30</lastmod>
+    <loc>https://markt-atlas-finden.lovable.app/markets?city=K%C3%B6ln</loc>
+    <lastmod>2025-08-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
+  
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/marktplatz-mannheim</loc>
-    <lastmod>2025-01-30</lastmod>
+    <loc>https://markt-atlas-finden.lovable.app/markets?city=Dortmund</loc>
+    <lastmod>2025-08-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
+  
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/marktplatz-karlsruhe</loc>
-    <lastmod>2025-01-30</lastmod>
+    <loc>https://markt-atlas-finden.lovable.app/markets?city=Leipzig</loc>
+    <lastmod>2025-08-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
+  
+  <!-- Blog posts with content-based priority -->
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/luebeck-markt</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://markt-atlas-finden.lovable.app/blog/viktualienmarkt-muenchen-regionale-produkte</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
+  
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/rostock-markt</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://markt-atlas-finden.lovable.app/blog/hackescher-markt-streetfood-trends</loc>
+    <lastmod>2024-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
+  
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/oldenburg-markt</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://markt-atlas-finden.lovable.app/blog/isemarkt-hamburg-nachhaltigkeit</loc>
+    <lastmod>2024-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
+  
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/erfurt-markt</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://markt-atlas-finden.lovable.app/blog/herbst-spezialitaeten-deutsche-maerkte</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
+  
+  <!-- Legal and informational pages - Lower priority -->
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/weimar-markt</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://markt-atlas-finden.lovable.app/impressum</loc>
+    <lastmod>2025-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
+  
   <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/jena-markt</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/magdeburg-markt</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/halle-markt</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/chemnitz-markt</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/mainz-markt</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://markt-atlas-finden.lovable.app/market/koblenz-markt</loc>
-    <lastmod>2025-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://markt-atlas-finden.lovable.app/datenschutz</loc>
+    <lastmod>2025-08-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
