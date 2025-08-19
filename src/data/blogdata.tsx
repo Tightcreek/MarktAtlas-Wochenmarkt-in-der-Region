@@ -406,6 +406,33 @@ export const blogPosts: BlogPost[] = [
   imageUrl: "https://geheimtipp-koeln.de/content/uploads/2020/12/markt-koeln-2-artikel-1024x683.jpg", // Passe den Pfad bei Bedarf an
   link: "/blog/blankeneser-wochenmarkt",
   marketSlugs: ["blankeneser-wochenmarkt-hamburg"]
+},
+
+{
+  id: "18",
+  slug: "bonner-wochenmarkt",
+  title: "Der Bonner Wochenmarkt: Ein lebendiger Treffpunkt für Genuss und Austausch",
+  excerpt: "Erleben Sie die einzigartige Atmosphäre des Bonner Wochenmarktes, der mehr ist als nur ein Ort zum Einkaufen – er ist ein Herzstück des städtischen Lebens.",
+  content: `<h2>Mehr als nur Einkaufen: Der Wochenmarkt als sozialer Hotspot</h2>
+  <p>Im Schatten des historischen Rathauses und des Bonner Münsters liegt der Wochenmarkt, der sich an drei Tagen in der Woche in einen lebendigen Treffpunkt für alle Generationen verwandelt. Was diesen Markt so besonders macht, ist seine entspannte und kommunikative Atmosphäre. Hier trifft man auf Freunde und Nachbarn, tauscht sich über Rezepte aus oder genießt einfach nur das bunte Treiben bei einem Kaffee.</p>
+
+  <h3>Eine Fülle an kulinarischen Entdeckungen</h3>
+  <p>Neben dem reichhaltigen Angebot an frischem Obst und Gemüse, das direkt aus der Region stammt, lockt der Markt mit einer Vielzahl an Ständen, die zum Verweilen einladen. Hier finden Sie:</p>
+  <ul>
+    <li><strong>Kaffeespezialitäten:</strong> Kleine Röstereien bieten frisch gebrühten Kaffee für eine entspannte Pause an.</li>
+    <li><strong>Regionale Snacks:</strong> Herzhafte Reibekuchen, frische Crêpes oder hausgemachte Waffeln.</li>
+    <li><strong>Kreatives Kunsthandwerk:</strong> Von regionalen Künstlern liebevoll gefertigte Produkte.</li>
+    <li><strong>Saisonale Spezialitäten:</strong> Je nach Jahreszeit finden sich besondere Angebote, von Spargel bis hin zu Wildpilzen.</li>
+  </ul>
+  
+  <h3>Von Tradition zu Moderne</h3>
+  <p>Der Bonner Wochenmarkt verbindet seine lange Geschichte nahtlos mit dem modernen Stadtleben. Während man hochwertige regionale Produkte einkauft, spürt man die pulsierende Energie der Stadt. Die Händler sind oft feste Gesichter auf dem Markt, die sich Zeit für ihre Kunden nehmen und mit ihrer Leidenschaft für gute Produkte anstecken.</p>
+  
+  <h3>Tipps für Ihren Besuch</h3>
+  <p>Planen Sie genügend Zeit ein, um nicht nur einzukaufen, sondern auch die Atmosphäre zu genießen. Ein Spaziergang über den Markt ist der perfekte Weg, um den Tag zu beginnen und sich inspirieren zu lassen. Der Markt ist am **Dienstag und Freitag von 8-18 Uhr** sowie am **Samstag von 8-14 Uhr** geöffnet.</p>`,
+  imageUrl: "https://dam.destination.one/3226472/e64551943dfb95d3818ec818cc6fa4c379e96104f108dc73418f310837612809/wochenmarkt-in-m-lln-jpg.jpg", // Passe den Pfad bei Bedarf an
+  link: "/blog/bonner-wochenmarkt",
+  marketSlugs: ["wochenmarkt-bonn"]
 }  
   
 
