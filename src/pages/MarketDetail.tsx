@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Clock, Phone, Mail, Globe, Car, ArrowLeft, ExternalLink } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
+import { OrganizationSchema } from '@/components/StructuredData';
 import { marketData, isMarketOpen, getMarketBySlug, type Market } from '@/data/marketdata';
 import { getBlogPostsForMarket, type BlogPost } from '@/data/blogdata';
 import MarketMap from '@/components/MarketMap';
@@ -149,6 +150,18 @@ const MarketDetail = () => {
           { name: market.name, url: `https://markt-atlas-finden.lovable.app/market/${market.slug}` }
         ]}
         rating={{ value: 4.5, bestRating: 5, ratingCount: 127 }}
+      />
+
+      <OrganizationSchema 
+        name="MarktAtlas Deutschland"
+        url="https://markt-atlas-finden.lovable.app"
+        logo="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
+        sameAs={[
+          "https://facebook.com/marktatlas",
+          "https://twitter.com/marktatlas",
+          "https://instagram.com/marktatlas"
+        ]}
+        description="Deutschlands führende Plattform für die Suche nach Wochenmärkten und Bauernmärkten"
       />
 
       <div className="container mx-auto px-4 py-8">

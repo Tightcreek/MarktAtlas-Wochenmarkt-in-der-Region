@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, MapPin, ExternalLink, Globe, Phone, Mail, Car, Wine, Cake, Coffee, Gift, Music, Star, Ticket, ParkingCircle, Bus, Train } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
-import { BreadcrumbSchema } from "@/components/StructuredData";
+import { BreadcrumbSchema, OrganizationSchema } from "@/components/StructuredData";
 import Footer from "@/components/Footer";
 
 const ChristmasMarketDetailPage = () => {
@@ -109,6 +109,17 @@ const ChristmasMarketDetailPage = () => {
       />
       
       <BreadcrumbSchema items={breadcrumbItems} />
+      <OrganizationSchema 
+        name="MarktAtlas Deutschland"
+        url="https://markt-atlas-finden.lovable.app"
+        logo="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
+        sameAs={[
+          "https://facebook.com/marktatlas",
+          "https://twitter.com/marktatlas",
+          "https://instagram.com/marktatlas"
+        ]}
+        description="Deutschlands führende Plattform für die Suche nach Wochenmärkten und Bauernmärkten"
+      />
       
       {/* Hero Section */}
       <div className="relative h-96 lg:h-[500px] overflow-hidden">

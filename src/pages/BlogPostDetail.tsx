@@ -3,6 +3,7 @@ import { ArrowLeft, Calendar, Tag } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SEOHead from '@/components/SEOHead';
+import { OrganizationSchema } from '@/components/StructuredData';
 import { blogPosts, type BlogPost } from '@/data/blogdata';
 
 const BlogPostDetail = () => {
@@ -77,6 +78,18 @@ const BlogPostDetail = () => {
         canonicalUrl={`${window.location.origin}/blog/${blogPost.slug}`}
         ogImage={blogPost.imageUrl}
         schemaData={generateStructuredData()}
+      />
+      
+      <OrganizationSchema 
+        name="MarktAtlas Deutschland"
+        url="https://markt-atlas-finden.lovable.app"
+        logo="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
+        sameAs={[
+          "https://facebook.com/marktatlas",
+          "https://twitter.com/marktatlas",
+          "https://instagram.com/marktatlas"
+        ]}
+        description="Deutschlands führende Plattform für die Suche nach Wochenmärkten und Bauernmärkten"
       />
       
       <div className="min-h-screen bg-background">

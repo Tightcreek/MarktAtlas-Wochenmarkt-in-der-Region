@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
+import { OrganizationSchema } from '@/components/StructuredData';
 
 const Datenschutz = () => {
   return (
@@ -10,6 +11,18 @@ const Datenschutz = () => {
         description="Datenschutzerklärung und Informationen zum Datenschutz für MarktAtlas Deutschland, dem umfassenden Wochenmarkt Finder."
         keywords="datenschutz, datenschutzerklärung, dsgvo, marktfinder, wochenmärkte"
         canonicalUrl={`${window.location.origin}/datenschutz`}
+      />
+      
+      <OrganizationSchema 
+        name="MarktAtlas Deutschland"
+        url="https://markt-atlas-finden.lovable.app"
+        logo="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
+        sameAs={[
+          "https://facebook.com/marktatlas",
+          "https://twitter.com/marktatlas",
+          "https://instagram.com/marktatlas"
+        ]}
+        description="Deutschlands führende Plattform für die Suche nach Wochenmärkten und Bauernmärkten"
       />
       
       <div className="min-h-screen bg-background">

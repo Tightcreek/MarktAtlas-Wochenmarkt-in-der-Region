@@ -7,6 +7,7 @@ import { Search, MapPin, Clock, Filter } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import SEOHead from '@/components/SEOHead';
 import Footer from '@/components/Footer';
+import { OrganizationSchema } from '@/components/StructuredData';
 import { marketData, isMarketOpen, generateSEOKeywords, type Market } from '@/data/marketdata';
 import organicProduceImage from '@/assets/organic-produce.jpg';
 
@@ -140,6 +141,18 @@ const Markets = () => {
         keywords="wochenmärkte deutschland, bauernmärkte suchen, markt heute offen, wochenmarkt finder, regionale produkte deutschland, frische lebensmittel"
         canonicalUrl="https://markt-atlas-finden.lovable.app/markets"
         ogImage="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
+      />
+      
+      <OrganizationSchema 
+        name="MarktAtlas Deutschland"
+        url="https://markt-atlas-finden.lovable.app"
+        logo="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
+        sameAs={[
+          "https://facebook.com/marktatlas",
+          "https://twitter.com/marktatlas", 
+          "https://instagram.com/marktatlas"
+        ]}
+        description="Deutschlands führende Plattform für die Suche nach Wochenmärkten und Bauernmärkten"
       />
       
       {/* Navigation */}
