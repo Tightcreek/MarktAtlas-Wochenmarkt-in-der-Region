@@ -34,10 +34,11 @@ const Blog = () => {
   return (
     <>
       <SEOHead
-        title="Blog - Marktfinder"
-        description="Entdecken Sie spannende Artikel rund um Wochenmärkte, regionale Produkte und kulinarische Trends in Deutschland."
-        keywords="blog, wochenmärkte, regionale produkte, kulinarik, märkte deutschland"
-        canonicalUrl={`${window.location.origin}/blog`}
+        title="Markt-Blog | Tipps & Trends für Wochenmarkt-Fans"
+        description="Entdecke Artikel über Wochenmärkte, regionale Spezialitäten, Nachhaltigkeit & lokale Produzenten. Expertentipps für den perfekten Marktbesuch."
+        keywords="markt blog, wochenmarkt tipps, regionale spezialitäten deutschland, nachhaltigkeit märkte, lokale produzenten, marktbesuch tipps"
+        canonicalUrl="https://markt-atlas-finden.lovable.app/blog"
+        ogImage="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
         schemaData={generateStructuredData()}
       />
       

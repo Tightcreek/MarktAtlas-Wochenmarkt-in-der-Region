@@ -36,13 +36,13 @@ const ChristmasMarketsPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-green-50 dark:from-red-950/20 dark:to-green-950/20">
       <SEOHead 
-        title="Die besten Weihnachtsmärkte Deutschland 2025 ✨ Alle Termine & Tipps"
-        description="🎄 Entdecken Sie die magischsten Weihnachtsmärkte Deutschlands 2025! ✨ Alle Termine, Öffnungszeiten, Spezialitäten und Anfahrt für Nürnberg, Dresden, München, Köln, Stuttgart & mehr. Der ultimative Weihnachtsmarkt-Guide!"
-        keywords="weihnachtsmärkte deutschland 2025, christkindlmärkte 2025, weihnachtsmarkt nürnberg 2025, dresdner striezelmarkt 2025, münchener christkindlmarkt 2025, weihnachtsmarkt köln 2025, advent märkte, glühwein, lebkuchen, stollen, weihnachtsmarkt öffnungszeiten, beste weihnachtsmärkte, weihnachtsmarkt termine 2025"
-        canonicalUrl={currentUrl}
-        ogImage="/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png"
+        title="Weihnachtsmärkte 2025 | Deutschland, Österreich & Schweiz"
+        description="Entdecke die schönsten Weihnachtsmärkte 2025 in Deutschland, Österreich & Schweiz. Termine, Öffnungszeiten & Highlights der besten Christkindlmärkte."
+        keywords="weihnachtsmärkte 2025, christkindlmärkte deutschland, weihnachtsmarkt termine 2025, advent märkte, weihnachtsmarkt öffnungszeiten"
+        canonicalUrl="https://markt-atlas-finden.lovable.app/weihnachtsmaerkte"
+        ogImage="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
         ogType="website"
-        siteName="MarktAtlas Deutschland - Die besten Weihnachtsmärkte 2025"
+        siteName="MarktAtlas Deutschland"
         breadcrumbs={breadcrumbItems}
         schemaData={{
           "@context": "https://schema.org",

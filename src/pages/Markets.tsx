@@ -135,10 +135,11 @@ const Markets = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       <SEOHead 
-        title="Wochenmarkt Finder Deutschland - Alle Märkte in deiner Nähe"
-        description="Finde über 500 Wochenmärkte und Bauernmärkte in Deutschland, Österreich der Schweiz und Luxemburg. Aktuelle Öffnungszeiten, Standorte und frische Produkte direkt vom Erzeuger. Markt heute geöffnet in deiner Stadt."
-        keywords={generateSEOKeywords(marketData)}
+        title="Alle Wochenmärkte Deutschland | 500+ Märkte durchsuchen"
+        description="Durchsuche über 500 Wochenmärkte & Bauernmärkte in Deutschland. Filter nach Stadt, Tag & Öffnungszeiten. Finde frische, regionale Produkte in deiner Nähe."
+        keywords="wochenmärkte deutschland, bauernmärkte suchen, markt heute offen, wochenmarkt finder, regionale produkte deutschland, frische lebensmittel"
         canonicalUrl="https://markt-atlas-finden.lovable.app/markets"
+        ogImage="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
       />
       
       {/* Navigation */}

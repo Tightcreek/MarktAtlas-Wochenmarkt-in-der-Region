@@ -52,10 +52,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Wochenmarkt Finder Deutschland - Alle Märkte in deiner Nähe | MarktAtlas"
-        description="Finde über 500 Wochenmärkte und Bauernmärkte in Deutschland. Aktuelle Öffnungszeiten, Standorte und frische Produkte direkt vom Erzeuger. Markt heute geöffnet in deiner Stadt."
-        keywords="wochenmarkt finder, bauernmarkt deutschland, märkte heute geöffnet, wochenmarkt öffnungszeiten, frische produkte markt, regional einkaufen, markt samstag, wochenmarkt berlin hamburg münchen"
+        title="Wochenmarkt Finder Deutschland | 500+ Märkte finden"
+        description="Finde über 500 Wochenmärkte & Bauernmärkte in Deutschland. Aktuelle Öffnungszeiten, Standorte und frische Produkte direkt vom Erzeuger. Jetzt entdecken!"
+        keywords="wochenmarkt finder, bauernmarkt deutschland, wochenmarkt öffnungszeiten heute, märkte deutschland, regionale produkte, frische lebensmittel"
         canonicalUrl="https://markt-atlas-finden.lovable.app/"
+        ogImage="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
         schemaData={schemaData}
       />
       
