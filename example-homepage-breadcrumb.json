@@ -1,0 +1,4 @@
+{
+  "comment": "Homepage does not need breadcrumb schema as it is the top level page",
+  "schema": null
+}

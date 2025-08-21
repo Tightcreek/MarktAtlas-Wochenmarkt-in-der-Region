@@ -3,7 +3,7 @@ import { ArrowLeft, Calendar, Tag } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SEOHead from '@/components/SEOHead';
-import { OrganizationSchema } from '@/components/StructuredData';
+import { OrganizationSchema, BreadcrumbSchema } from '@/components/StructuredData';
 import { blogPosts, type BlogPost } from '@/data/blogdata';
 
 const BlogPostDetail = () => {
@@ -91,6 +91,12 @@ const BlogPostDetail = () => {
         ]}
         description="Deutschlands führende Plattform für die Suche nach Wochenmärkten und Bauernmärkten"
       />
+      
+      <BreadcrumbSchema items={[
+        { name: "Startseite", url: "https://markt-atlas-finden.lovable.app/" },
+        { name: "Blog", url: "https://markt-atlas-finden.lovable.app/blog" },
+        { name: blogPost.title, url: `${window.location.origin}/blog/${blogPost.slug}` }
+      ]} />
       
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-8 max-w-4xl">

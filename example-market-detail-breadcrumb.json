@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": {
+        "@type": "WebPage",
+        "@id": "https://markt-atlas-finden.lovable.app/",
+        "name": "Startseite",
+        "url": "https://markt-atlas-finden.lovable.app/"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Wochenmärkte",
+      "item": {
+        "@type": "WebPage",
+        "@id": "https://markt-atlas-finden.lovable.app/markets",
+        "name": "Wochenmärkte",
+        "url": "https://markt-atlas-finden.lovable.app/markets"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wochenmarkt Wilhelmsplatz",
+      "item": {
+        "@type": "WebPage",
+        "@id": "https://markt-atlas-finden.lovable.app/market/wochenmarkt-wilhelmsplatz-koeln",
+        "name": "Wochenmarkt Wilhelmsplatz",
+        "url": "https://markt-atlas-finden.lovable.app/market/wochenmarkt-wilhelmsplatz-koeln"
+      }
+    }
+  ]
+}

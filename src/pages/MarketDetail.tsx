@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Clock, Phone, Mail, Globe, Car, ArrowLeft, ExternalLink } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
-import { OrganizationSchema } from '@/components/StructuredData';
+import { OrganizationSchema, BreadcrumbSchema } from '@/components/StructuredData';
 import { marketData, isMarketOpen, getMarketBySlug, type Market } from '@/data/marketdata';
 import { getBlogPostsForMarket, type BlogPost } from '@/data/blogdata';
 import MarketMap from '@/components/MarketMap';
@@ -163,6 +163,12 @@ const MarketDetail = () => {
         ]}
         description="Deutschlands führende Plattform für die Suche nach Wochenmärkten und Bauernmärkten"
       />
+      
+      <BreadcrumbSchema items={[
+        { name: "Startseite", url: "https://markt-atlas-finden.lovable.app/" },
+        { name: "Märkte", url: "https://markt-atlas-finden.lovable.app/markets" },
+        { name: market.name, url: `https://markt-atlas-finden.lovable.app/market/${market.slug}` }
+      ]} />
 
       <div className="container mx-auto px-4 py-8">
         {/* Header */}

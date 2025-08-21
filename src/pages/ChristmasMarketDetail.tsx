@@ -45,8 +45,8 @@ const ChristmasMarketDetailPage = () => {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : `https://marktatlas.lovable.app/weihnachtsmaerkte/${market.slug}`;
   
   const breadcrumbItems = [
-    { name: 'Startseite', url: 'https://marktatlas.lovable.app/' },
-    { name: 'Weihnachtsmärkte', url: 'https://marktatlas.lovable.app/weihnachtsmaerkte' },
+    { name: 'Startseite', url: 'https://markt-atlas-finden.lovable.app/' },
+    { name: 'Weihnachtsmärkte', url: 'https://markt-atlas-finden.lovable.app/weihnachtsmaerkte' },
     { name: market.name, url: currentUrl }
   ];
 
