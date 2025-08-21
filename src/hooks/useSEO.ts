@@ -101,7 +101,7 @@ export const useLazyImages = () => {
 // Hook for Web Vitals optimization
 export const useWebVitals = () => {
   useEffect(() => {
-    // Preconnect to external domains
+    // Preconnect to external domains for faster resource loading
     const preconnectDomains = [
       'https://fonts.googleapis.com',
       'https://fonts.gstatic.com',
@@ -120,12 +120,36 @@ export const useWebVitals = () => {
       }
     });
 
-    // Critical resource hints
-    const link = document.createElement('link');
-    link.rel = 'dns-prefetch';
-    link.href = '//cdn.jsdelivr.net';
-    if (!document.querySelector('link[href="//cdn.jsdelivr.net"]')) {
-      document.head.appendChild(link);
+    // DNS prefetch for CDN and external resources
+    const dnsPrefetchDomains = [
+      '//cdn.jsdelivr.net',
+      '//unpkg.com',
+      '//cdnjs.cloudflare.com'
+    ];
+
+    dnsPrefetchDomains.forEach(domain => {
+      const link = document.createElement('link');
+      link.rel = 'dns-prefetch';
+      link.href = domain;
+      if (!document.querySelector(`link[href="${domain}"]`)) {
+        document.head.appendChild(link);
+      }
+    });
+
+    // Optimize CSS delivery by removing unused styles (development helper)
+    if (process.env.NODE_ENV === 'development') {
+      const removeUnusedCSS = () => {
+        const stylesheets = document.querySelectorAll('link[rel="stylesheet"]');
+        stylesheets.forEach(stylesheet => {
+          (stylesheet as HTMLLinkElement).media = 'print';
+          (stylesheet as HTMLLinkElement).onload = function() {
+            (this as HTMLLinkElement).media = 'all';
+          };
+        });
+      };
+      
+      // Defer CSS loading for non-critical styles
+      setTimeout(removeUnusedCSS, 0);
     }
 
   }, []);

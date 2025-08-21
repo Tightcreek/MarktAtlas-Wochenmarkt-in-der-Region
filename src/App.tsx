@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PosthogProvider } from "@/components/PosthogProvider";
 import { usePageTracking } from "@/hooks/usePageTracking";
+import { registerServiceWorker } from "@/components/PerformanceMonitor";
 import Index from "./pages/Index";
 import Markets from "./pages/Markets";
 import MarketDetail from "./pages/MarketDetail";
@@ -38,18 +39,23 @@ const AppRoutes = () => {
   );
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <PosthogProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <AppRoutes />
-        </BrowserRouter>
-      </TooltipProvider>
-    </PosthogProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  // Register service worker for caching
+  registerServiceWorker();
+  
+  return (
+    <QueryClientProvider client={queryClient}>
+      <PosthogProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <AppRoutes />
+          </BrowserRouter>
+        </TooltipProvider>
+      </PosthogProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

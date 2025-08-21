@@ -20,13 +20,38 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
+    target: 'esnext',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log'],
+      },
+      mangle: true,
+      toplevel: true,
+    },
+    cssCodeSplit: true,
+    cssMinify: true,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
-        }
+          ui: ['@radix-ui/react-slot', '@radix-ui/react-toast'],
+          icons: ['lucide-react'],
+        },
+        assetFileNames: (assetInfo) => {
+          let extType = assetInfo.name?.split('.').at(1);
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType || '')) {
+            extType = 'img';
+          }
+          return `assets/${extType}/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       }
-    }
+    },
+    chunkSizeWarningLimit: 1000,
   }
 }));

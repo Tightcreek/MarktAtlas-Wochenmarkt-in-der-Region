@@ -6,6 +6,8 @@ import heroImage from "@/assets/hero-market.jpg";
 import SEOHead from "@/components/SEOHead";
 import { WebsiteSchema, OrganizationSchema } from '@/components/StructuredData';
 import { useWebVitals } from '@/hooks/useSEO';
+import { PerformanceMonitor } from '@/components/PerformanceMonitor';
+import OptimizedImage from '@/components/OptimizedImage';
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -51,6 +53,7 @@ const Index = () => {
   
   return (
     <div className="min-h-screen bg-background">
+      <PerformanceMonitor />
       <SEOHead 
         title="Wochenmarkt Finder Deutschland | 500+ Märkte finden"
         description="Finde über 500 Wochenmärkte & Bauernmärkte in Deutschland. Aktuelle Öffnungszeiten, Standorte und frische Produkte direkt vom Erzeuger. Jetzt entdecken!"
@@ -132,10 +135,13 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <img 
+                <OptimizedImage 
                   src="/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png" 
-                  alt="MarktAtlas Logo" 
+                  alt="MarktAtlas Logo - Deutschlands führender Wochenmarkt Finder" 
                   className="h-36 w-auto mb-18"
+                  width={144}
+                  height={144}
+                  priority={true}
                 />
                 <h1 className="text-4xl lg:text-hero font-bold text-foreground leading-tight tracking-tight-custom">
                   Wochenmarkt Finder Deutschland - Alle Wochenmärkte in deiner Nähe
@@ -152,10 +158,14 @@ const Index = () => {
               </Link>
             </div>
             <div className="lg:order-2">
-              <img
+              <OptimizedImage
                 src={heroImage}
-                alt="Wochenmarkt mit frischen Produkten und regionalen Spezialitäten"
+                alt="Wochenmarkt mit frischen Produkten und regionalen Spezialitäten - Direktvermarkter und Bauern verkaufen regionale Lebensmittel"
                 className="w-full h-[400px] lg:h-[500px] object-cover rounded-2xl shadow-card"
+                width={600}
+                height={500}
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
