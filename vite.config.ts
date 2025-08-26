@@ -26,59 +26,20 @@ export default defineConfig(({ mode }) => ({
       compress: {
         drop_console: true,
         drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.warn'],
-        passes: 2,
-        dead_code: true,
+        pure_funcs: ['console.log'],
       },
-      mangle: {
-        toplevel: true,
-        safari10: true,
-      },
-      format: {
-        comments: false,
-      }
+      mangle: true,
+      toplevel: true,
     },
     cssCodeSplit: true,
     cssMinify: true,
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // Core vendor libraries
-          if (id.includes('react') || id.includes('react-dom')) {
-            return 'vendor-react';
-          }
-          
-          // Router chunk
-          if (id.includes('react-router-dom')) {
-            return 'vendor-router';
-          }
-          
-          // UI library chunks
-          if (id.includes('@radix-ui') || id.includes('lucide-react')) {
-            return 'vendor-ui';
-          }
-          
-          // Analytics and tracking
-          if (id.includes('posthog')) {
-            return 'analytics';
-          }
-          
-          // Data chunks - split heavy data files
-          if (id.includes('/data/')) {
-            return 'data';
-          }
-          
-          // Page chunks - each page gets its own chunk for better caching
-          if (id.includes('/pages/Index')) return 'page-home';
-          if (id.includes('/pages/Markets')) return 'page-markets';
-          if (id.includes('/pages/Blog')) return 'page-blog';
-          if (id.includes('/pages/ChristmasMarkets')) return 'page-christmas';
-          if (id.includes('/pages/MarketDetail') || id.includes('/pages/ChristmasMarketDetail')) return 'page-details';
-          
-          // Other vendor libraries
-          if (id.includes('node_modules')) {
-            return 'vendor-libs';
-          }
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: ['@radix-ui/react-slot', '@radix-ui/react-toast'],
+          icons: ['lucide-react'],
         },
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.name?.split('.').at(1);

@@ -8,7 +8,6 @@ import { WebsiteSchema, OrganizationSchema } from '@/components/StructuredData';
 import { useWebVitals } from '@/hooks/useSEO';
 import { PerformanceMonitor } from '@/components/PerformanceMonitor';
 import OptimizedImage from '@/components/OptimizedImage';
-import { useResourcePreload, useDNSPrefetch } from '@/hooks/useResourcePreload';
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -16,18 +15,6 @@ const Index = () => {
   
   // Initialize Web Vitals monitoring
   useWebVitals();
-  
-  // Preload critical resources
-  useResourcePreload([
-    { href: '/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png', as: 'image', importance: 'high' },
-    { href: heroImage, as: 'image', importance: 'high' }
-  ]);
-  
-  // DNS prefetch for external domains
-  useDNSPrefetch([
-    'https://fonts.googleapis.com',
-    'https://fonts.gstatic.com'
-  ]);
   
   const schemaData = {
     "@context": "https://schema.org",

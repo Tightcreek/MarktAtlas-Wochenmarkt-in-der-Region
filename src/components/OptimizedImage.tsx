@@ -5,8 +5,8 @@ interface OptimizedImageProps {
   src: string;
   alt: string;
   className?: string;
-  width: number; // Required to prevent layout shift
-  height: number; // Required to prevent layout shift
+  width?: number;
+  height?: number;
   priority?: boolean;
   placeholder?: string;
   sizes?: string;
@@ -81,16 +81,13 @@ const OptimizedImage = ({
       height={height}
       loading={priority ? "eager" : "lazy"}
       decoding="async"
-      fetchPriority={priority ? "high" : "auto"}
       className={cn(
         "transition-opacity duration-300",
         isLoaded ? "opacity-100" : "opacity-70",
         className
       )}
       style={{
-        aspectRatio: `${width}/${height}`,
-        maxWidth: '100%',
-        height: 'auto'
+        aspectRatio: width && height ? `${width}/${height}` : undefined
       }}
     />
   );
