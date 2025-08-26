@@ -28,23 +28,14 @@ export default defineConfig(({ mode }) => ({
         drop_debugger: true,
         pure_funcs: ['console.log', 'console.info', 'console.warn'],
         passes: 2,
-        unsafe: true,
-        unsafe_comps: true,
-        unsafe_math: true,
-        unsafe_methods: true,
         dead_code: true,
-        drop_unused: true,
       },
       mangle: {
         toplevel: true,
         safari10: true,
-        properties: {
-          regex: /^_/
-        }
       },
       format: {
         comments: false,
-        ecma: 2020
       }
     },
     cssCodeSplit: true,
@@ -101,14 +92,5 @@ export default defineConfig(({ mode }) => ({
       }
     },
     chunkSizeWarningLimit: 1000,
-    
-    // Enable tree shaking
-    treeShaking: true,
-    
-    // Optimize dependencies
-    optimizeDeps: {
-      include: ['react', 'react-dom', 'react-router-dom'],
-      exclude: ['@google/maps']
-    }
   }
 }));
