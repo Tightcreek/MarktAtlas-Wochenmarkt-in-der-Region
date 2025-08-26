@@ -220,6 +220,10 @@ const Markets = () => {
               src={organicProduceImage} 
               alt="Frische regionale Bio-Produkte vom Wochenmarkt - Obst, Gemüse und Kräuter direkt vom lokalen Erzeuger"
               className="w-full h-64 object-cover rounded-lg shadow-lg"
+              width={896}
+              height={256}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
