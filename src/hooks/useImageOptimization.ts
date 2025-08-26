@@ -37,29 +37,22 @@ export const useImageOptimization = () => {
       imageObserver.observe(img);
     });
 
-    // Preload critical images above the fold with better error handling
+    // Preload critical images above the fold
     const criticalImages = [
       '/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png',
-      '/src/assets/hero-market.jpg'
+      '/assets/hero-market.jpg'
     ];
 
     criticalImages.forEach((src) => {
-      // Check if already preloaded
-      if (document.querySelector(`link[href="${src}"]`)) return;
-      
       const link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'image';
       link.href = src;
       link.setAttribute('importance', 'high');
-      link.setAttribute('fetchpriority', 'high');
       
-      // Add error handling
-      link.onerror = () => {
-        console.warn(`Failed to preload critical image: ${src}`);
-      };
-      
-      document.head.appendChild(link);
+      if (!document.querySelector(`link[href="${src}"]`)) {
+        document.head.appendChild(link);
+      }
     });
 
     return () => {
