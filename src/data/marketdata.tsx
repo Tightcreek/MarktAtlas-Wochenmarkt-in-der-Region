@@ -17330,6 +17330,68 @@ export const marketData: Market[] = [
     transport: "Bus: Linie 35 (Haltestelle Karlsplatz), S-Bahn: Heidelberg Hbf (15 Min. zu Fuß)",
     latitude: 49.4093,
     longitude: 8.7064
+  },
+
+  // Additional Germany/Austria/Switzerland Markets (2025)
+  {
+    id: "251",
+    slug: "wochenmarkt-friedrichshafen",
+    name: "Wochenmarkt Friedrichshafen",
+    address: "Buchhornplatz",
+    city: "Friedrichshafen",
+    postalCode: "88045",
+    openingHours: "Mittwoch 7-13, Samstag 7-14",
+    features: ["Regional", "Bio", "Bodensee-Spezialitäten"],
+    isOpen: isMarketOpen("Mittwoch 7-13, Samstag 7-14"),
+    description: "Traditioneller Wochenmarkt am Bodensee mit regionalen Produkten aus dem Bodenseeraum. Besonders bekannt für frische Äpfel, Bodenseefisch und lokale Weine.",
+    phone: "07541 203-2255",
+    email: "ordnungsamt@friedrichshafen.de",
+    website: "www.friedrichshafen.de",
+    specialties: ["Bodensee-Äpfel", "Frischer Fisch", "Regionale Weine", "Gemüse & Obst", "Blumen"],
+    facilities: ["Toiletten", "Fahrradständer", "Seeblick"],
+    transport: "Stadtbus: Linie 1, 2, 3, 7 - Haltestelle Buchhornplatz; Bahnhof Friedrichshafen Stadt 5 Min zu Fuß",
+    latitude: 47.6546,
+    longitude: 9.4777
+  },
+  {
+    id: "252",
+    slug: "wochenmarkt-klagenfurt",
+    name: "Wochenmarkt Klagenfurt Benediktinermarkt",
+    address: "Benediktinerplatz",
+    city: "Klagenfurt",
+    postalCode: "9020",
+    openingHours: "Dienstag 6-13, Freitag 6-13, Samstag 6-13",
+    features: ["Regional", "Bio", "Kärntner Spezialitäten"],
+    isOpen: isMarketOpen("Dienstag 6-13, Freitag 6-13, Samstag 6-13"),
+    description: "Der größte und traditionsreichste Markt in Klagenfurt bietet Kärntner Spezialitäten wie Reindling, Kasnudeln und regionale Produkte aus dem Alpe-Adria-Raum.",
+    phone: "+43 463 537-4600",
+    email: "magistrat@klagenfurt.at",
+    website: "www.klagenfurt.at",
+    specialties: ["Kärntner Reindling", "Kasnudeln", "Kürbiskernöl", "Bergkäse", "Honig", "Südtiroler Speck"],
+    facilities: ["Toiletten", "Parkplätze", "Gastgarten"],
+    transport: "Stadtbus: Linien 10, 11, 12, 40, 41, 42 - Haltestelle Benediktinerplatz; Hauptbahnhof 10 Min zu Fuß",
+    latitude: 46.6226,
+    longitude: 14.3077
+  },
+  {
+    id: "253",
+    slug: "wochenmarkt-st-gallen",
+    name: "Wochenmarkt St. Gallen",
+    address: "Marktplatz",
+    city: "St. Gallen",
+    postalCode: "9000",
+    openingHours: "Dienstag 7-17, Freitag 7-17, Samstag 7-16",
+    features: ["Regional", "Bio", "Schweizer Spezialitäten"],
+    isOpen: isMarketOpen("Dienstag 7-17, Freitag 7-17, Samstag 7-16"),
+    description: "Historischer Wochenmarkt in der UNESCO-Welterbe Altstadt von St. Gallen. Bekannt für hochwertige Schweizer Produkte, Appenzeller Käse und lokale Bioprodukte.",
+    phone: "+41 71 224 56 16",
+    email: "stadtpolizei@stadt.sg.ch",
+    website: "www.stadt.sg.ch",
+    specialties: ["Appenzeller Käse", "Bio-Gemüse", "Schweizer Fleisch", "Bündner Spezialitäten", "Alpenkräuter"],
+    facilities: ["Toiletten", "Parkhaus", "Altstadtambiente"],
+    transport: "Postauto: Haltestelle Marktplatz; S-Bahn: St. Gallen Hauptbahnhof 5 Min zu Fuß; Appenzeller Bahnen",
+    latitude: 47.4242,
+    longitude: 9.3767
   }
 ];
 
