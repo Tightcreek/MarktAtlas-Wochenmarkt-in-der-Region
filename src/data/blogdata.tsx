@@ -437,7 +437,7 @@ export const blogPosts: BlogPost[] = [
 
 {
   id: "19",
-  slug: "wochenmarkt-leipzig-innenstadt-vielfalt-tradition",
+  slug: "wochenmarkt-innenstadt-leipzig",
   title: "Der Leipziger Wochenmarkt: Frische Vielfalt und Tradition im Herzen der Stadt",
   excerpt: "Entdecken Sie den zentralen Wochenmarkt in der Leipziger Innenstadt, wo regionale Produkte und eine lebendige Atmosphäre auf Sie warten. Ein unverzichtbarer Treffpunkt für Genießer.",
   content: `<h2>Ein Markt mit zwei Gesichtern: Marktplatz und Richard-Wagner-Platz</h2>
