@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
     
     <h3>Modernisierung und Zukunft</h3>
     <p>2010 wurde die Halle grundlegend renoviert. Moderne Kühlung, bessere Belüftung und barrierefreie Zugänge machten sie fit für die Zukunft, ohne den traditionellen Charme zu verlieren.</p>`,
-    imageUrl: "https://www.stadt-remseck.de/resources/02%20Datenobjekte/Mitteilungen/Wochenmarkt-Obst-und%20Gem%C3%BCsestand.jpg",
+    imageUrl: "https://www.wolfenbuettel.de/media/custom/2672_576_1_g.JPG?1589294500",
     link: "/blog/kleinmarkthalle-frankfurt-geschichte",
     marketSlugs: ["kleinmarkthalle-frankfurt", "erzeugermarkt-konstablerwache-frankfurt"]
   },
