@@ -30,7 +30,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     openingDates: "28.11.2025 - 24.12.2025",
     openingHours: "Mo-Do 10-21 Uhr, Fr-Sa 10-22 Uhr, So 10-21 Uhr",
     imageUrl: "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
-    specialties: ["Lebkuchen", "Glühwein", "Rostbratwürste", "Handwerkskunst", "Christbaumschmuck"],
+    specialties: ["Lebkuchen", "Glühwein", "Rostbratwürste", "Handwerkskunst", "Christbaumschmuck", "Punsch"],
     website: "https://christkindlesmarkt.de",
     phone: "+49 911 2336055",
     email: "info@christkindlesmarkt.de",
