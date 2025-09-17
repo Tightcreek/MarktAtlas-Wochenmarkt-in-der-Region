@@ -2001,32 +2001,6 @@ export const christmasMarkets: ChristmasMarket[] = [
     parking: "Parkhaus am Bahnhof (800m), Atrium-Garage (400m). Kosten: 1,50-2€/Std."
   },
   {
-    id: "trierer-weihnachtsmarkt",
-    slug: "trierer-weihnachtsmarkt",
-    name: "Trierer Weihnachtsmarkt",
-    city: "Trier",
-    address: "Hauptmarkt/Porta Nigra, 54290 Trier",
-    description: "Der historische Trierer Weihnachtsmarkt in Deutschlands ältester Stadt bietet 2000 Jahre Geschichte als Kulisse. Zwischen Porta Nigra, Dom und Kaiserthermen vereint er römische Antike mit gemütlicher Weihnachtsatmosphäre. Die UNESCO-Welterbestätten machen ihn zu einem der geschichtsträchtigsten Weihnachtsmärkte Deutschlands.",
-    openingDates: "24.11.2025 - 22.12.2025",
-    openingHours: "Mo-Sa 10-20 Uhr, So 11-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjlJA1gSHE=",
-    specialties: ["Riesling aus der Moselregion", "Reibekuchen", "Rheinischer Sauerbraten", "Römische Honigplätzchen", "Antike Repliken"],
-    website: "https://trier.de/weihnachtsmarkt",
-    phone: "+49 651 9780852",
-    email: "weihnachtsmarkt@trier.de",
-    transport: "Regionalbahn: bis Trier Hauptbahnhof, Bus: Linien 1, 2, 8 bis Porta Nigra",
-    highlights: [
-      "Porta Nigra - besterhaltenes römisches Stadttor nördlich der Alpen",
-      "Trierer Dom - älteste Bischofskirche Deutschlands (1700 Jahre)",
-      "Kaiserthermen und Amphitheater aus römischer Zeit",
-      "Moselwein-Verkostung mit Winzern der Region jeden Donnerstag 17 Uhr",
-      "Römische Legionäre mit historischen Aufführungen jeden Samstag 15 Uhr"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "Regionalbahn bis Trier Hauptbahnhof (8 Min. Fußweg), Bus: 1, 2, 8 bis Porta Nigra (direkt)",
-    parking: "Parkhaus Porta Nigra (200m), Stadtbibliothek-Garage (300m). Kosten: 1-2€/Std."
-  },
-  {
     id: "koelner-heinzels-winter-maerchen",
     slug: "koelner-heinzels-winter-maerchen",
     name: "Kölner Heinzels Winter Märchen",
@@ -6150,32 +6124,6 @@ export const christmasMarkets: ChristmasMarket[] = [
     parking: "Parkhaus Marktstätte (200m), Tiefgarage Lago (300m). Kosten: 1,50€/Std. Mäßige Verfügbarkeit."
   },
   {
-    id: "trierer-weihnachtsmarkt",
-    slug: "trierer-weihnachtsmarkt",
-    name: "Trierer Weihnachtsmarkt",
-    city: "Trier",
-    address: "Hauptmarkt, 54290 Trier",
-    description: "Der Trierer Weihnachtsmarkt in Deutschlands ältester Stadt verzaubert mit 2000-jähriger Geschichte. Vor der Kulisse von Porta Nigra, Dom und Liebfrauenkirche bietet er eine einzigartige Zeitreise durch die Epochen und römische Weihnachtstradition.",
-    openingDates: "22.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 12-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Römischer Glühwein", "Döppekuchen", "Sauerbraten", "Viez", "Antike Handwerkskunst"],
-    website: "https://trier.de/weihnachtsmarkt",
-    phone: "+49 651 97808-52",
-    email: "weihnachtsmarkt@trier.de",
-    transport: "Regionalbahn bis Trier Hbf, Bus: Stadtwerke Linien 1, 2, 3 bis Porta Nigra",
-    highlights: [
-      "Römischer Weihnachtsmarkt mit historischen Kostümen",
-      "Gladiatoren-Aufführungen jeden Samstag 15 Uhr",
-      "Antike Handwerksvorführungen: Töpferei, Schmiedekunst",
-      "Weihnachtskonzerte im UNESCO-Welterbe Dom",
-      "Porta Nigra Lichtshow täglich ab 18 Uhr"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "Regionalbahn bis Trier Hbf (10 Min. Fußweg), Stadtbus: 1, 2, 3 bis Porta Nigra (5 Min.)",
-    parking: "Parkhaus Porta Nigra (200m), Tiefgarage Hauptmarkt (100m). Kosten: 1,20€/Std. Gute Verfügbarkeit."
-  },
-  {
     id: "schaffhauser-weihnachtsmarkt",
     slug: "schaffhauser-weihnachtsmarkt",
     name: "Schaffhauser Weihnachtsmarkt",
@@ -6382,32 +6330,6 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "Eintritt frei",
     publicTransport: "Bus: 1, 5 bis Münsterplatz (3 Min. Fußweg), Katamaran vom Bahnhof (5 Min.)",
     parking: "Parkhaus Lago (800m), Parkhaus Altstadt (600m). Kosten: 1,50€/Std. Am Wochenende begrenzt."
-  },
-  {
-    id: "trierer-weihnachtsmarkt",
-    slug: "trierer-weihnachtsmarkt",
-    name: "Trierer Weihnachtsmarkt",
-    city: "Trier",
-    address: "Hauptmarkt, 54290 Trier",
-    description: "Der Trierer Weihnachtsmarkt in Deutschlands ältester Stadt bietet eine einzigartige Atmosphäre vor römischen Monumenten. Mit über 90 Ständen rund um den Hauptmarkt, umgeben von der Steipe und den historischen Bürgerhäusern, verbindet er 2000 Jahre Geschichte mit weihnachtlicher Gemütlichkeit.",
-    openingDates: "24.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Reibekuchen", "Glühwein", "Döppekuchen", "Riesling-Punsch", "Römische Spezialitäten"],
-    website: "https://trier.de/weihnachtsmarkt",
-    phone: "+49 651 718436",
-    email: "weihnachtsmarkt@trier.de",
-    transport: "Bus: Linien 1, 3, 6, 30 bis Hauptmarkt, Regionalbahn: bis Trier Hbf",
-    highlights: [
-      "Römische Gladiatoren-Shows täglich 16 Uhr in historischen Kostümen",
-      "Weihnachtskonzerte im Dom jeden Donnerstag 19 Uhr",
-      "Mittelalterlicher Handwerkermarkt am 2. Adventswochenende",
-      "Römische Weihnachtsführung durch die Innenstadt täglich 15 Uhr",
-      "Mosella-Wein-Verkostung mit regionalen Winzern freitags 18 Uhr"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "Bus: 1, 3, 6, 30 bis Hauptmarkt (direkt am Markt), RB bis Trier Hbf (15 Min. Fußweg)",
-    parking: "Parkhaus Hauptmarkt (unter dem Platz), Parkhaus Zuckerberg (400m). Kosten: 1€/Std. Gut erreichbar."
   },
   {
     id: "osnabruecker-weihnachtsmarkt",
@@ -7172,32 +7094,6 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "Eintritt frei",
     publicTransport: "ÖBB: Bahnhof Kufstein (5 Min. zu Fuß), Bus: Linie 4010 bis Stadtplatz (direkt am Markt)",
     parking: "Parkplatz Festung (400m), Stadtplatz Garage (200m). Kosten: 1,20€/Std. Viele kostenlose Parkplätze am Stadtrand."
-  },
-  {
-    id: "trier-weihnachtsmarkt",
-    slug: "trier-weihnachtsmarkt",
-    name: "Trierer Weihnachtsmarkt",
-    city: "Trier",
-    address: "Hauptmarkt, 54290 Trier",
-    description: "Der Trierer Weihnachtsmarkt in Deutschlands ältester Stadt verzaubert vor der Kulisse von 2000 Jahre alten römischen Bauwerken. Zwischen Porta Nigra und Dom bietet er eine einzigartige Mischung aus römischer Geschichte und gemütlicher Weihnachtsatmosphäre.",
-    openingDates: "22.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Riesling-Glühwein", "Döppekuchen", "Sauerbraten", "Römisches Brot", "Moselwein"],
-    website: "https://trier.de/weihnachtsmarkt",
-    phone: "+49 651 97808052",
-    email: "weihnachtsmarkt@trier.de",
-    transport: "Bus: Linien 1, 2, 81 bis Hauptmarkt, Bahn: RE bis Trier Hbf",
-    highlights: [
-      "Römische Kulisse mit Porta Nigra und Dom",
-      "Moselwein-Verkostung mit über 20 regionalen Winzern",
-      "Historische Stadtführungen mit Weihnachtsmarkt-Besuch",
-      "Römische Handwerkskunst: Glasmacher, Töpfer, Schmiede",
-      "Mittelalterlicher Markt im Domfreihof"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "Bus: Linien 1, 2, 81 bis Hauptmarkt (direkt am Markt), Bahn: RE bis Trier Hbf (10 Min. zu Fuß)",
-    parking: "Tiefgarage Porta Nigra (300m), Galeria Trier (400m). Kosten: 1,50€/Std. Park+Ride Empfehlung."
   },
   {
     id: "appenzeller-weihnachtsmarkt",
