@@ -7,9 +7,30 @@ import { Calendar, MapPin, ExternalLink } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { BreadcrumbSchema, FAQSchema, OrganizationSchema } from "@/components/StructuredData";
 import Footer from "@/components/Footer";
+import { ChristmasMarketSearch } from "@/components/ChristmasMarketSearch";
+import { ChristmasMarketFilters } from "@/components/ChristmasMarketFilters";
+import { useChristmasMarketFilters, Filters } from "@/hooks/useChristmasMarketFilters";
+import { useState } from "react";
 
 const ChristmasMarketsPage = () => {
   const location = useLocation();
+  
+  const [filters, setFilters] = useState<Filters>({
+    searchQuery: '',
+    status: 'all',
+    admission: 'all',
+    features: []
+  });
+
+  const { filteredMarkets, resetFilters, resultCount } = useChristmasMarketFilters(christmasMarkets, filters);
+
+  const handleFiltersChange = (newFilters: Filters) => {
+    setFilters(newFilters);
+  };
+
+  const handleReset = () => {
+    setFilters(resetFilters());
+  };
   
   const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://marktatlas.lovable.app/weihnachtsmaerkte';
   
@@ -58,8 +79,8 @@ const ChristmasMarketsPage = () => {
           },
           "mainEntity": {
             "@type": "ItemList",
-            "numberOfItems": christmasMarkets.length,
-            "itemListElement": christmasMarkets.map((market, index) => ({
+           "numberOfItems": filteredMarkets.length,
+           "itemListElement": filteredMarkets.map((market, index) => ({
               "@type": "Event",
               "name": market.name,
               "location": {
@@ -178,16 +199,52 @@ const ChristmasMarketsPage = () => {
 
       <div className="container mx-auto px-4 py-8">
 
+        {/* Search and Filters Section */}
+        <div className="mb-8 space-y-6">
+          {/* Search Bar */}
+          <div className="max-w-2xl mx-auto">
+            <ChristmasMarketSearch
+              value={filters.searchQuery}
+              onChange={(value) => handleFiltersChange({ ...filters, searchQuery: value })}
+            />
+          </div>
+
+          {/* Filters */}
+          <div className="max-w-4xl mx-auto">
+            <ChristmasMarketFilters
+              filters={filters}
+              onFiltersChange={handleFiltersChange}
+              onReset={handleReset}
+            />
+          </div>
+        </div>
+
         {/* Markets Count */}
         <div className="mb-8">
           <p className="text-red-600 dark:text-red-400 font-medium">
-            🎅 {christmasMarkets.length} Weihnachtsmärkte gefunden
+            🎅 {resultCount} Weihnachtsmarkt{resultCount !== 1 ? 'märkte' : ''} gefunden
+            {resultCount !== christmasMarkets.length && (
+              <span className="text-muted-foreground"> (von {christmasMarkets.length} gesamt)</span>
+            )}
           </p>
         </div>
 
         {/* Markets Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {christmasMarkets.map((market) => (
+        {resultCount === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-lg text-muted-foreground mb-4">
+              🔍 Keine Weihnachtsmärkte gefunden
+            </p>
+            <p className="text-sm text-muted-foreground mb-6">
+              Versuchen Sie andere Suchbegriffe oder entfernen Sie einige Filter
+            </p>
+            <Button onClick={handleReset} variant="outline" className="border-red-300 text-red-600 hover:bg-red-50 dark:border-red-600 dark:text-red-400 dark:hover:bg-red-950/20">
+              Alle Filter zurücksetzen
+            </Button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {filteredMarkets.map((market) => (
             <Card key={market.id} className="hover:shadow-xl transition-all duration-300 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-red-200 dark:border-red-800 hover:border-red-300 dark:hover:border-red-600">
               <CardHeader className="bg-gradient-to-r from-red-50 to-green-50 dark:from-red-950/30 dark:to-green-950/30">
                 <div className="flex justify-between items-start mb-2">
@@ -250,8 +307,9 @@ const ChristmasMarketsPage = () => {
                 </div>
               </CardContent>
             </Card>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* Back to Markets Link */}
         <div className="text-center bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 border border-green-200 dark:border-green-800">
