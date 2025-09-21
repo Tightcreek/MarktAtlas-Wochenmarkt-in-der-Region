@@ -3521,34 +3521,8 @@ export const christmasMarkets: ChristmasMarket[] = [
       "Holländisches Viertel in Laufnähe"
     ],
     "entryPrice": "Eintritt frei"
-  },
-  {
-    "id": "126",
-    "slug": "rostocker-weihnachtsmarkt",
-    "name": "Rostocker Weihnachtsmarkt",
-    "city": "Rostock",
-    "address": "Neuer Markt/Universitätsplatz, 18055 Rostock",
-    "description": "Der maritime Rostocker Weihnachtsmarkt in der Hansestadt verbindet norddeutsche Tradition mit Ostsee-Flair. Mit über 140 Ständen rund um das gotische Rathaus und entlang der Kröpeliner Straße bietet er eine einzigartige hanseatische Weihnachtsatmosphäre.",
-    "openingDates": "25.11.2025 - 22.12.2025",
-    "openingHours": "Mo-Sa 10-20 Uhr, So 11-20 Uhr",
-    "imageUrl": "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
-    "specialties": [
-      "Rostocker Fischbrötchen",
-      "Glögg",
-      "Mecklenburger Leberwurst",
-      "Ostseeschmuck",
-      "Maritime Geschenke"
-    ],
-    "website": "https://rostock.de/weihnachtsmarkt",
-    "phone": "+49 381 3814040",
-    "email": "weihnachtsmarkt@rostock.de",
-    "transport": "Straßenbahn: Linien 1, 2, 3, 5 bis Neuer Markt, S-Bahn: S1, S2 bis Rostock Hbf",
-    "highlights": [
-      "Gotisches Rathaus der Hansestadt als Kulisse",
-      "Maritime Dekoration mit Ostsee-Bezug",
-      "Mecklenburger Spezialitäten-Verkostung",
-      "Fischbrötchen direkt vom Rostocker Hafen",
-      "H
+  }
+
 ];
 
 export const getChristmasMarketBySlug = (slug: string): ChristmasMarket | undefined => {
