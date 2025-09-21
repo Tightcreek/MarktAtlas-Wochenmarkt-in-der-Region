@@ -418,22 +418,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     email: "weihnachtsmarkt@leipzig.de",
     transport: "Straßenbahn: Linien 4, 7, 12, 15 bis Augustusplatz, S-Bahn: S1, S2, S3, S4, S5 bis Leipzig Hbf"
   },
-  {
-    id: "mainzer-weihnachtsmarkt",
-    slug: "mainzer-weihnachtsmarkt",
-    name: "Mainzer Weihnachtsmarkt",
-    city: "Mainz",
-    address: "Markt/Leichhof, 55116 Mainz",
-    description: "Der Mainzer Weihnachtsmarkt vor dem imposanten Dom St. Martin gehört zu den schönsten Rheinland-Pfalz'. Mit über 120 Ständen und der besonderen rheinischen Atmosphäre bietet er eine perfekte Mischung aus Tradition und lebendiger Universitätsstadt-Kultur.",
-    openingDates: "22.11.2025 - 23.12.2025",
-    openingHours: "Mo-Do 10-20:30 Uhr, Fr-Sa 10-21:30 Uhr, So 11-20:30 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Rheinischer Döppekuchen", "Glühwein", "Mainzer Fastnachtskrapfen", "Rheinland-Pfälzer Spezialitäten", "Gutenberg-Souvenirs"],
-    website: "https://mainz.de/weihnachtsmarkt",
-    phone: "+49 6131 122647",
-    email: "weihnachtsmarkt@mainz.de",
-    transport: "S-Bahn: S8 bis Mainz Hauptbahnhof, Bus: Linien 6, 50, 54, 55 bis Höfchen/Markt"
-  },
+  
   {
     id: "trierer-weihnachtsmarkt",
     slug: "trierer-weihnachtsmarkt",
@@ -1116,32 +1101,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     publicTransport: "S-Bahn: S1, S2, S3 bis Leipzig Markt (2 Min. Fußweg), Straßenbahn: 4, 7, 8, 9 bis Augustusplatz (3 Min.)",
     parking: "Parkhaus Marktgalerie (direkt am Markt), Q-Park Petersstraße (400m). Kosten: 1,50-2,50€/Std."
   },
-  {
-    id: "mainzer-weihnachtsmarkt",
-    slug: "mainzer-weihnachtsmarkt", 
-    name: "Mainzer Weihnachtsmarkt",
-    city: "Mainz",
-    address: "Markt/Liebfrauenplatz, 55116 Mainz",
-    description: "Der Mainzer Weihnachtsmarkt am Dom verzaubert mit rheinischer Gemütlichkeit und einer besonderen Atmosphäre rund um den majestätischen Mainzer Dom. Mit über 120 Ständen bietet er regionale Spezialitäten und Kunsthandwerk in historischer Kulisse.",
-    openingDates: "27.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 12-20 Uhr",
-    imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
-    specialties: ["Rheinhessischer Glühwein", "Döppekuchen", "Reibekuchen", "Mainzer Fastnachtsbrezeln", "Regionale Handwerkskunst"],
-    website: "https://mainz.de/weihnachtsmarkt",
-    phone: "+49 6131 122570",
-    email: "weihnachtsmarkt@mainz.de",
-    transport: "S-Bahn: S8 bis Mainz Hauptbahnhof, Bus: 6, 9, 50 bis Dom/Liebfrauenplatz",
-    highlights: [
-      "Mainzer Dom als imposante Kulisse mit abendlicher Beleuchtung",
-      "Weihnachtskonzerte im Dom jeden Sonntag um 16 Uhr",
-      "Fastnachtsmuseum-Sonderausstellung 'Weihnacht meets Fastnacht'",
-      "Traditioneller Christkindlmarkt mit handgeschnitzten Krippen",
-      "Rheinhessische Weinverkostung täglich 17-19 Uhr"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "S-Bahn: S8 bis Mainz Hbf (8 Min. Fußweg), Bus: 6, 9, 50 bis Dom (direkt am Markt)",
-    parking: "Parkhaus am Dom (200m), Parkhaus Römerpassage (500m). Kosten: 1-2€/Std."
-  },
+  
   {
     id: "aachener-weihnachtsmarkt",
     slug: "aachener-weihnachtsmarkt",
@@ -2338,32 +2298,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     publicTransport: "Straßenbahn: S1, S11, S4, S41, S42 bis Marktplatz (direkt am Markt), U-Bahn: U1, U2 bis Marktplatz",
     parking: "Tiefgarage Marktplatz (direkt unter dem Markt), Parkhaus Postgalerie (400m). Kosten: 1,80-3€/Std."
   },
-  {
-    id: "mainizer-weihnachtsmarkt",
-    slug: "mainzer-weihnachtsmarkt",
-    name: "Mainzer Weihnachtsmarkt",
-    city: "Mainz",
-    address: "Markt/Liebfrauenplatz, 55116 Mainz",
-    description: "Der traditionelle Mainzer Weihnachtsmarkt im Schatten des imposanten Doms zu St. Martin ist einer der stimmungsvollsten in Rheinland-Pfalz. Mit seinem rheinischen Charme und der über 1000-jährigen Geschichte der Domstadt bietet er pure Gemütlichkeit.",
-    openingDates: "27.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 12-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Rheinhessische Weine", "Döppekuchen", "Mainzer Kindl", "Feuerzangenbowle", "Gutenberg-Druckwerk"],
-    website: "https://mainz.de/weihnachtsmarkt",
-    phone: "+49 6131 12-2828",
-    email: "weihnachtsmarkt@mainz.de",
-    transport: "S-Bahn: S8 bis Mainz Hauptbahnhof, Bus: 6, 9, 10, 11 bis Markt/Dom",
-    highlights: [
-      "Dom-Konzerte mit Weihnachtsoratorium jeden Samstag 18 Uhr",
-      "Gutenberg-Museum Weihnachts-Sonderausstellung täglich 9-17 Uhr",
-      "Rheinhessische Weinverkostung jeden Donnerstag 18-20 Uhr (10€)",
-      "Mainzer Fastnacht Weihnachts-Bütt jeden Freitag 19 Uhr",
-      "St. Martins-Laternenumzug zum 1. Advent 17 Uhr"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "S-Bahn: S8 bis Mainz Hbf (10 Min. Fußweg), Bus: 6, 9, 10, 11 bis Markt/Dom (direkt am Markt)",
-    parking: "Parkhaus Am Markt (200m), Tiefgarage Rathaus (300m). Kosten: 1,50-2,50€/Std."
-  },
+  
   {
     id: "kasseler-weihnachtsmarkt",
     slug: "kasseler-weihnachtsmarkt",
@@ -3238,32 +3173,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     publicTransport: "Straßenbahn: S1, S11 bis Marktplatz (direkt am Markt), Bus: 10, 21 bis Marktplatz",
     parking: "Tiefgarage Marktplatz (direkt unter dem Platz), Parkhaus ECE (300m). Kosten: 1,50-2€/Std." 
   },
-  {
-    id: "mainzer-weihnachtsmarkt",
-    slug: "mainzer-weihnachtsmarkt",
-    name: "Mainzer Weihnachtsmarkt",
-    city: "Mainz", 
-    address: "Markt/Höfchen/Liebfrauenplatz, 55116 Mainz",
-    description: "Der Mainzer Weihnachtsmarkt rund um den Dom ist einer der stimmungsvollsten in Rheinland-Pfalz. Mit seinem besonderen rheinischen Flair und der 1000-jährigen Geschichte der Stadt bietet er eine einzigartige Weihnachtsatmosphäre im Herzen von Rheinhessen.",
-    openingDates: "25.11.2025 - 22.12.2025", 
-    openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 12-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Rheinhessischer Wein", "Döppekuchen", "Weckmänner", "Rheinischer Sauerbraten", "Weinbergschnecken"],
-    website: "https://mainz.de/weihnachtsmarkt",
-    phone: "+49 6131 286210",
-    email: "weihnachtsmarkt@mainz.de",
-    transport: "Bus: 6, 9, 50-68 bis Höfchen/Liebfrauenplatz, S-Bahn: S60 bis Mainz Römisches Theater",
-    highlights: [
-      "Rheinhessische Weinprobe mit Winzern der Region",
-      "Dom-Konzerte und Weihnachtsoratorium", 
-      "Gutenberg-Museum mit Weihnachtsausstellung",
-      "Mainzer Fastnacht meets Weihnacht (Büttensitzungen)"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "Bus: 6, 9, 50-68 bis Höfchen (2 Min. Fußweg), S-Bahn: S60 bis Römisches Theater (5 Min.)",
-    parking: "Parkhaus Am Brand (200m), Parkhaus Löwenhof (400m). Kosten: 1,20-2€/Std." 
-  },
-  {
+    {
     id: "wiesbadener-sternschnuppenmarkt",
     slug: "wiesbadener-sternschnuppenmarkt",
     name: "Wiesbadener Sternschnuppenmarkt",
@@ -3538,31 +3448,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     publicTransport: "Straßenbahn: S1, S11, S4, S5 bis Marktplatz (direkt am Markt), Bus: 10, 27 bis Marktplatz",
     parking: "Tiefgarage Marktplatz (100m), Parkhaus Ettlinger Tor (400m). Kosten: 1-2€/Std."
   },
-  {
-    id: "mainzer-weihnachtsmarkt",
-    slug: "mainzer-weihnachtsmarkt",
-    name: "Mainzer Weihnachtsmarkt",
-    city: "Mainz",
-    address: "Domplätze/Markt, 55116 Mainz",
-    description: "Der romantische Mainzer Weihnachtsmarkt rund um den 1000-jährigen Dom bietet rheinische Gemütlichkeit mit über 140 Ständen. Als eine der ältesten Städte Deutschlands verzaubert Mainz mit einer besonderen Mischung aus Geschichte, Wein und Weihnachtszauber.",
-    openingDates: "26.11.2025 - 23.12.2025",
-    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Rheinhessischer Glühwein", "Döppekuchen", "Weck, Worscht un Woi", "Fastnachts-Artikel", "Gutenberg-Souvenirs"],
-    website: "https://mainz.de/weihnachtsmarkt",
-    phone: "+49 6131 12212840",
-    email: "weihnachtsmarkt@mainz.de",
-    transport: "Straßenbahn: 50, 51, 52, 53, 54, 55 bis Dom, S-Bahn: S60 bis Mainz Hbf",
-    highlights: [
-      "Gutenberg-Museum Sonderausstellung zur Weihnachtszeit",
-      "Dom-Konzerte mit Weihnachtsmusik jeden Sonntag 17 Uhr",
-      "Rheinschifffahrt mit Glühwein täglich 15 und 17 Uhr",
-      "Mainzer Fastnacht meets Weihnacht Shows"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "Straßenbahn: 50-55 bis Dom (direkt am Markt), S-Bahn: S60 bis Hbf (10 Min. Fußweg)",
-    parking: "Tiefgarage am Brand (200m), Parkhaus Bonifazius-Türme (300m). Kosten: 1-2€/Std."
-  },
+  
   {
     id: "chemnitzer-weihnachtsmarkt",
     slug: "chemnitzer-weihnachtsmarkt",
@@ -5187,32 +5073,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     publicTransport: "RE1, RE9 bis Aachen Hbf (10 Min. Fußweg), Bus 1, 11, 21 bis Elisenbrunnen (2 Min. Fußweg)",
     parking: "Parkhaus Dom (200m), Parkhaus Elisenbrunnen (100m). Kosten: 1,50€/Std. An Wochenenden begrenzt."
   },
-  {
-    id: "mainzer-weihnachtsmarkt",
-    slug: "mainzer-weihnachtsmarkt",
-    name: "Mainzer Weihnachtsmarkt", 
-    city: "Mainz",
-    address: "Markt/Liebfrauenplatz, 55116 Mainz",
-    description: "Der Mainzer Weihnachtsmarkt vor dem imposanten Dom St. Martin gehört zu den schönsten Märkten in Rheinland-Pfalz. Mit seinem rheinischen Flair und der Nähe zum Rhein bietet er eine gemütliche Atmosphäre. Besonders bekannt ist der Markt für seine große Auswahl an regionalen Weinen und Sekten.",
-    openingDates: "25.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
-    imageUrl: "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
-    specialties: ["Mainzer Wein", "Riesling-Punsch", "Döppekuchen", "Reibekuchen", "Rheinische Spezialitäten"],
-    website: "https://mainz.de/weihnachtsmarkt",
-    phone: "+49 6131 122222",
-    email: "weihnachtsmarkt@mainz.de",
-    transport: "S-Bahn: S8 bis Mainz Hbf, Straßenbahn: 50, 51, 53 bis Schillerplatz",
-    highlights: [
-      "Glühwein aus lokalen Mainzer Weingütern",
-      "Fastnachts-Weihnachtsmarkt mit närrischen Elementen",
-      "Adventssingen im Dom jeden Sonntag 18 Uhr",
-      "Rheinischer Sauerbraten und Döppekuchen-Spezialitäten",
-      "Gutenberg-Museum Weihnachtsausstellung nebenan"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "S8 bis Mainz Hbf (8 Min. Fußweg), Straßenbahn 50, 51, 53 bis Schillerplatz (3 Min. Fußweg)",
-    parking: "Parkhaus Kaufhof (300m), Parkhaus Am Brand (400m). Kosten: 1,20€/Std. Begrenzte Kapazität."
-  },
+  
   {
     id: "wuerzburger-weihnachtsmarkt",
     slug: "wuerzburger-weihnachtsmarkt",
@@ -5499,33 +5360,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     publicTransport: "Bus: 1, 11, 21 bis Elisenbrunnen (3 Min. Fußweg), RE/RB bis Aachen Hbf (10 Min. Fußweg)",
     parking: "Parkhaus Katschhof (200m), Parkhaus Theater (400m). Kosten: 1,50-2€/Std."
   },
-  {
-    id: "mainzer-weihnachtsmarkt",
-    slug: "mainzer-weihnachtsmarkt",
-    name: "Mainzer Weihnachtsmarkt",
-    city: "Mainz",
-    address: "Markt/Höfchen/Schillerplatz, 55116 Mainz",
-    description: "Der Mainzer Weihnachtsmarkt rund um den majestätischen Dom ist einer der größten in Rheinland-Pfalz. Mit über 120 Ständen verteilt auf mehrere Plätze bietet er rheinische Gemütlichkeit und eine einzigartige Atmosphäre zwischen Dom und Rhein.",
-    openingDates: "25.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 10:30-20:30 Uhr, Fr-Sa 10:30-21:30 Uhr, So 11-20:30 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Rheinischer Sauerbraten", "Döppekuchen", "Glühwein", "Mainzer Weck", "Kunsthandwerk"],
-    website: "https://mainz.de/weihnachtsmarkt",
-    phone: "+49 6131 242888",
-    email: "weihnachtsmarkt@mainz.de",
-    transport: "S-Bahn: S8 bis Mainz Hbf, Straßenbahn: Linien 50, 53, 54 bis Dom/Markt",
-    highlights: [
-      "Weihnachtsmarkt verteilt auf 4 historische Plätze",
-      "Traditionelle Gutenberg-Werkstatt mit Buchdruckvorführungen",
-      "Rheinisches Adventssingen jeden Sonntag 16 Uhr",
-      "Karussell und Märchenbahn für Kinder",
-      "Live-Konzerte auf der Dombühne Fr-So 18 Uhr"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "S-Bahn: S8 bis Mainz Hbf (8 Min. Fußweg), Straßenbahn: 50, 53, 54 bis Dom (direkt am Markt)",
-    parking: "Parkhaus Am Brand (300m), Cityport (500m). Kosten: 1-2€/Std."
-  },
-  {
+    {
     id: "wuerzburger-weihnachtsmarkt",
     slug: "wuerzburger-weihnachtsmarkt",
     name: "Würzburger Weihnachtsmarkt",
@@ -6817,32 +6652,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     publicTransport: "SBB: bis Luzern (5 Min. Fußweg), Bus: 1, 2, 6, 7 bis Schwanenplatz (3 Min. Fußweg)",
     parking: "Parkhaus Altstadt (200m), Parkhaus Bahnhof (300m). Kosten: 2,80 CHF/Std."
   },
-  {
-    id: "mainzer-weihnachtsmarkt",
-    slug: "mainzer-weihnachtsmarkt",
-    name: "Mainzer Weihnachtsmarkt",
-    city: "Mainz",
-    address: "Liebfrauenplatz/Markt, 55116 Mainz",
-    description: "Der Mainzer Weihnachtsmarkt rund um den majestätischen Dom St. Martin ist einer der stimmungsvollsten in Rheinland-Pfalz. Mit über 120 Ständen vor der romanischen Kathedrale bietet er rheinische Gemütlichkeit, Mainzer Traditionen und eine einzigartige Atmosphäre in der Gutenbergstadt.",
-    openingDates: "26.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 11-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Mainzer Weck", "Glühwein", "Rheinischer Döppekuchen", "Gutenberg-Souvenirs", "Rheinland-Pfalz Weine"],
-    website: "https://mainz.de/weihnachtsmarkt",
-    phone: "+49 6131 12-2570",
-    email: "weihnachtsmarkt@mainz.de",
-    transport: "S-Bahn: S8 bis Mainz Römisches Theater, Bus: Linien 6, 9 bis Dom/Liebfrauenplatz",
-    highlights: [
-      "Weihnachtsmarkt rund um den 1000-jährigen Mainzer Dom",
-      "Gutenberg-Museum mit Weihnachts-Sonderausstellung",
-      "Domkonzerte mit Weihnachtsoratorium jeden Samstag 19:30 Uhr",
-      "Rheinische Weinverkostung jeden Freitag 17-19 Uhr",
-      "Mainzer Fastnacht trifft Weihnacht: humorvolle Buden und Auftritte"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "S-Bahn: S8 bis Römisches Theater (5 Min. Fußweg), Bus: 6, 9 bis Dom (direkt)",
-    parking: "Parkhaus Cityport (300m), Parkhaus Rheinpromenade (400m). Kosten: 1,80€/Std."
-  },
+  
   {
     id: "aachen-weihnachtsmarkt",
     slug: "aachen-weihnachtsmarkt",
@@ -7407,33 +7217,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     publicTransport: "Stadtbus: 1, 2, 3 bis Domplatz (direkt am Markt), vom Hbf 8 Min. Fußweg",
     parking: "Parkhaus Zentrum (4 Min.), Parkplatz Donaupark (6 Min.). Kosten: 1€/Std. Begrenzte Kapazität."
   },
-  {
-    id: "mainzer-weihnachtsmarkt",
-    slug: "mainzer-weihnachtsmarkt",
-    name: "Mainzer Weihnachtsmarkt",
-    city: "Mainz",
-    address: "Höfchen/Liebfrauenplatz, 55116 Mainz",
-    description: "Der Mainzer Weihnachtsmarkt rund um den Dom bietet rheinische Gemütlichkeit in historischer Kulisse. Mit über 100 Ständen zwischen Dom und Rhein verzaubert er mit regionalen Spezialitäten und dem besonderen Charme der Gutenberg-Stadt.",
-    openingDates: "25.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 12-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Rheinhessenwein", "Döppekuchen", "Glühwein", "Mainzer Leberwurst", "Kunsthandwerk"],
-    website: "https://mainz.de/weihnachtsmarkt",
-    phone: "+49 6131 242828",
-    email: "weihnachtsmarkt@mainz.de",
-    transport: "Bus: Linien 6, 7, 57 bis Dom/Höfchen, S-Bahn: S8 bis Mainz Römisches Theater",
-    highlights: [
-      "Gutenberg-Museum mit Weihnachtsdrucken",
-      "Rheinschifffahrt mit Glühweinausschank",
-      "Mainzer Domchor-Konzerte freitags 18 Uhr",
-      "Fastnachtsbrunnen mit weihnachtlicher Dekoration",
-      "Weinverkostung rheinhessischer Winzer samstags 16-18 Uhr"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "Bus: 6, 7, 57 bis Dom (direkt am Markt), S-Bahn: S8 bis Römisches Theater (5 Min.)",
-    parking: "Parkhaus Bonifazius (3 Min.), Parkhaus City Port (10 Min.). Kosten: 1,20€/Std."
-  },
-  {
+    {
     id: "bochumer-weihnachtsmarkt",
     slug: "bochumer-weihnachtsmarkt",
     name: "Bochumer Weihnachtsmarkt",
@@ -8593,33 +8377,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     publicTransport: "Bus: 1, 2, 9 bis Prinzipalmarkt (direkt am Markt), RB: RE6, RE7 bis Münster Hbf (10 Min. Fußweg)",
     parking: "Parkhaus Theater (200m), Parkhaus Karstadt (300m). Kosten: 1,60€/Std. Fahrradparkplätze kostenfrei überall verfügbar."
   },
-  {
-    id: "mainzer-weihnachtsmarkt",
-    slug: "mainzer-weihnachtsmarkt",
-    name: "Mainzer Weihnachtsmarkt",
-    city: "Mainz",
-    address: "Markt/Höfchen/Leichhof, 55116 Mainz",
-    description: "Der Mainzer Weihnachtsmarkt rund um den majestätischen Dom St. Martin ist einer der schönsten Rheinland-Pfalz'. Mit über 110 Ständen auf verschiedenen Plätzen der Altstadt verzaubert er mit rheinischer Gemütlichkeit, Mainzer Fastnacht-Flair und dem Charme der Gutenberg-Stadt.",
-    openingDates: "26.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Rheinischer Sauerbraten", "Riesling-Glühwein", "Mainzer Leberwurst", "Döppekuchen", "Gutenberg-Lebkuchen"],
-    website: "https://mainz.de/weihnachtsmarkt",
-    phone: "+49 6131 122810",
-    email: "weihnachtsmarkt@mainz.de",
-    transport: "Straßenbahn: Linien 50, 51, 52 bis Dom/Höfchen, S-Bahn: S8 bis Mainz Hbf",
-    highlights: [
-      "Weihnachtsmarkt im Schatten des 1000-jährigen Doms St. Martin",
-      "Riesling-Glühwein mit Weinen aus rheinhessischen Lagen",
-      "Gutenberg-Museum mit Weihnachtsausstellung",
-      "Mainzer Fastnachtsmuseum mit winterlichen Sonderführungen",
-      "Rheinschifffahrt zu anderen Weihnachtsmärkten am Rhein"
-    ],
-    entryPrice: "Eintritt frei",
-    publicTransport: "Straßenbahn: 50, 51, 52 bis Dom/Höfchen (direkt am Markt), S-Bahn: S8 bis Mainz Hbf (8 Min. Fußweg)",
-    parking: "Parkhaus Markt (100m), Parkhaus CityPort (400m). Kosten: 1,70€/Std. P+R am Stadtrand empfohlen."
-  },
-  {
+    {
     id: "oldenburger-weihnachtsmarkt",
     slug: "oldenburger-weihnachtsmarkt",
     name: "Oldenburger Weihnachtsmarkt",
