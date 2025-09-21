@@ -20,7 +20,6 @@ export interface ChristmasMarket {
 }
 
 export const christmasMarkets: ChristmasMarket[] = [
-[
   {
     "id": "1",
     "slug": "nuernberger-christkindlmaerkte",
