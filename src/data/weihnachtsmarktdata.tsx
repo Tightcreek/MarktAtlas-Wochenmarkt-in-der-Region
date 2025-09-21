@@ -86,7 +86,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://koeln.de/weihnachtsmaerkte",
     phone: "+49 221 22123456",
     email: "weihnachtsmarkt@koeln.de",
-    transport: "U-Bahn: Linien U5, U16, U18 bis Dom/Hbf, S-Bahn: S6, S11, S12, S13, S19 bis Köln Hbf"
+    transport: "U-Bahn: Linien U5, U16, U18 bis Dom/Hbf, S-Bahn: S6, S11, S12, S13, S19 bis Köln Hbf",
+    highlights: [
+      "Weihnachtsmarkt am Dom mit über 160 Ständen",
+      "Heinzels Winter Märchen mit Märchen-Atmosphäre",
+      "Weihnachtsmarkt am Neumarkt mit regionalen Produkten",
+      "Mittelaltermarkt am Rudolfplatz",
+      "Tägliche Konzerte im Kölner Dom um 18 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "U-Bahn: U5, U16, U18 bis Dom/Hbf (direkt am Dom), S-Bahn: S6, S11, S12, S13, S19 bis Köln Hbf",
+    parking: "Parkhaus Dom (300m), Parkhaus Groß St. Martin (400m). Kosten: 2-4€/Std. Begrenzt verfügbar."
   },
   {
     id: "muenchner-christkindlmarkt",
@@ -128,7 +138,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://frankfurt-tourismus.de/weihnachtsmarkt",
     phone: "+49 69 21238800",
     email: "weihnachtsmarkt@frankfurt.de",
-    transport: "U-Bahn: Linien U4, U5 bis Dom/Römer, S-Bahn: S1-S9 bis Hauptwache"
+    transport: "U-Bahn: Linien U4, U5 bis Dom/Römer, S-Bahn: S1-S9 bis Hauptwache",
+    highlights: [
+      "Historischer Römerberg mit über 200 Ständen",
+      "Frankfurter Bethmännchen-Museum mit Verkostung",
+      "Tägliche Blasmusik-Konzerte um 18 Uhr",
+      "Kinderweihnachtsmarkt mit Karussell und Märchenbahn",
+      "Illumination der historischen Fachwerkhäuser täglich ab 17 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "U-Bahn: U4, U5 bis Dom/Römer (2 Min. Fußweg), S-Bahn: S1-S9 bis Hauptwache (5 Min. Fußweg)",
+    parking: "Parkhaus Dom/Römer (200m), Parkhaus Konstabler (400m). Kosten: 2,50-3€/Std. Begrenzte Kapazität."
   },
   {
     id: "berliner-weihnachtszauber",
@@ -144,7 +164,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://weihnachtszeit-berlin.de",
     phone: "+49 30 25002333",
     email: "info@weihnachtszeit-berlin.de",
-    transport: "U-Bahn: Linie U6 bis Französische Straße, Linie U2 bis Stadtmitte"
+    transport: "U-Bahn: Linie U6 bis Französische Straße, Linie U2 bis Stadtmitte",
+    highlights: [
+      "Klassische Konzerte im Konzerthaus täglich um 19 Uhr",
+      "Berliner Weihnachtszauber mit über 80 Kunsthandwerk-Ständen",
+      "Silvestermarkt bis zum 31.12.2025",
+      "Glaspyramide mit wechselnden Kunstausstellungen",
+      "Kindertheater jeden Samstag und Sonntag um 15 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "U-Bahn: U6 bis Französische Straße (3 Min. Fußweg), U2 bis Stadtmitte (5 Min. Fußweg)",
+    parking: "Tiefgarage Gendarmenmarkt (direkt unter dem Platz), Parkhaus Friedrichstraße (300m). Kosten: 2-4€/Std."
   },
   {
     id: "hamburger-weihnachtsmarkt",
@@ -160,7 +190,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://hamburg.de/weihnachtsmarkt",
     phone: "+49 40 30051401",
     email: "weihnachtsmarkt@hamburg.de",
-    transport: "U-Bahn: Linien U1, U3 bis Rathaus, S-Bahn: S1, S3 bis Jungfernstieg"
+    transport: "U-Bahn: Linien U1, U3 bis Rathaus, S-Bahn: S1, S3 bis Jungfernstieg",
+    highlights: [
+      "Hamburger Rathausmarkt mit über 150 Ständen vor historischer Kulisse",
+      "Santa Pauli Weihnachtsmarkt im Heiligengeistfeld",
+      "Winterdom mit Karussells und Buden (größter Weihnachtsmarkt Norddeutschlands)",
+      "Weihnachtsschiff auf der Binnenalster",
+      "Tägliche Hafenrundfahrten mit Glühwein"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "U-Bahn: U1, U3 bis Rathaus (direkt am Rathausmarkt), S-Bahn: S1, S3 bis Jungfernstieg (5 Min. Fußweg)",
+    parking: "Parkhaus Europa Passage (300m), Parkhaus Gänsemarkt (400m). Kosten: 2-3€/Std."
   },
   {
     id: "stuttgarter-weihnachtsmarkt",
@@ -176,7 +216,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://stuttgart.de/weihnachtsmarkt",
     phone: "+49 711 22228460",
     email: "weihnachtsmarkt@stuttgart.de",
-    transport: "U-Bahn: Linien U5, U6, U7, U12 bis Staatsgalerie, S-Bahn: S1-S6 bis Hauptbahnhof"
+    transport: "U-Bahn: Linien U5, U6, U7, U12 bis Staatsgalerie, S-Bahn: S1-S6 bis Hauptbahnhof",
+    highlights: [
+      "Einer der größten Weihnachtsmärkte Deutschlands mit über 280 Ständen",
+      "Schwäbischer Weihnachtsmarkt mit regionalen Spezialitäten",
+      "Stuttgarter Wilhelmsplatz mit Kunsthandwerk-Markt",
+      "Weihnachtsmarkt im Schlossgarten",
+      "Tägliche schwäbische Musik-Events um 18:30 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "U-Bahn: U5, U6, U7, U12 bis Staatsgalerie (3 Min. Fußweg), S-Bahn: S1-S6 bis Hauptbahnhof (8 Min. Fußweg)",
+    parking: "Parkhaus Staatsgalerie (200m), Parkhaus Galeria Kaufhof (400m). Kosten: 1,50-2,50€/Std."
   },
   {
     id: "heidelberger-weihnachtsmarkt",
@@ -192,7 +242,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://heidelberg.de/weihnachtsmarkt",
     phone: "+49 6221 5844444",
     email: "weihnachtsmarkt@heidelberg.de",
-    transport: "Straßenbahn: Linien 5, 21, 22 bis Bismarckplatz, Bus: Linien 31, 32 bis Universitätsplatz"
+    transport: "Straßenbahn: Linien 5, 21, 22 bis Bismarckplatz, Bus: Linien 31, 32 bis Universitätsplatz",
+    highlights: [
+      "Romantische Kulisse vor dem weltberühmten Heidelberger Schloss",
+      "Weihnachtsmarkt am Kornmarkt mit Schlossblick",
+      "Universitätsplatz mit studentischem Flair",
+      "Tägliche Schlossführungen mit Weihnachtsbeleuchtung um 17 Uhr",
+      "Heidelberger Studentenkuss-Verkostung täglich 15-17 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Straßenbahn: 5, 21, 22 bis Bismarckplatz (5 Min. Fußweg), Bus: 31, 32 bis Universitätsplatz (direkt am Markt)",
+    parking: "Parkhaus P12 Kornmarkt (200m), Parkhaus P3 Theaterstadel (400m). Kosten: 1-2€/Std."
   },
   {
     id: "luebecker-weihnachtsmarkt",
@@ -208,7 +268,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://luebeck.de/weihnachtsmarkt",
     phone: "+49 451 8899700",
     email: "weihnachtsmarkt@luebeck.de",
-    transport: "Bus: Linien 1, 3, 11 bis Koberg, Regionalbahn: bis Lübeck Hbf"
+    transport: "Bus: Linien 1, 3, 11 bis Koberg, Regionalbahn: bis Lübeck Hbf",
+    highlights: [
+      "UNESCO-Welterbe Altstadt mit historischen Backsteingebäuden",
+      "Lübecker Marzipan-Museum mit täglichen Vorführungen",
+      "Historischer Märchenwald im Koberg",
+      "Maritime Weihnachtsdekoration",
+      "Hanseatischer Punsch und norddeutsche Spezialitäten"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Bus: 1, 3, 11 bis Koberg (direkt am Markt), Regionalbahn bis Lübeck Hbf (10 Min. Fußweg)",
+    parking: "Parkhaus Koberg (direkt am Markt), Parkhaus MUK (300m). Kosten: 1-2€/Std."
   },
   {
     id: "augsburger-christkindlmarkt",
@@ -224,7 +294,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://augsburg.de/christkindlmarkt",
     phone: "+49 821 502070",
     email: "christkindlmarkt@augsburg.de",
-    transport: "Straßenbahn: Linien 1, 2 bis Rathausplatz, Bus: Linie 22 bis Fuggerstraße"
+    transport: "Straßenbahn: Linien 1, 2 bis Rathausplatz, Bus: Linie 22 bis Fuggerstraße",
+    highlights: [
+      "Renaissance-Rathaus als prächtige Kulisse",
+      "Fuggerstadt-Atmosphäre mit historischem Flair",
+      "Augsburger Zwetschgenmännle-Verkauf und -Workshop",
+      "Friedensfest-Tradition am 8. August (einzigartig in Deutschland)",
+      "Schwäbische Weihnachtslieder-Aufführungen jeden Abend um 18 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Straßenbahn: 1, 2 bis Rathausplatz (direkt am Markt), Bus: 22 bis Fuggerstraße (3 Min. Fußweg)",
+    parking: "Parkhaus Theater (200m), Parkhaus City-Galerie (400m). Kosten: 1-2€/Std."
   },
   {
     id: "erfurter-weihnachtsmarkt",
@@ -240,7 +320,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://erfurt.de/weihnachtsmarkt",
     phone: "+49 361 6642265",
     email: "weihnachtsmarkt@erfurt.de",
-    transport: "Straßenbahn: Linien 1, 3, 5 bis Domplatz, Bus: Linie 9 bis Domplatz"
+    transport: "Straßenbahn: Linien 1, 3, 5 bis Domplatz, Bus: Linie 9 bis Domplatz",
+    highlights: [
+      "Imposante Kulisse von Dom St. Marien und Severikirche",
+      "Über 200 Stände auf dem historischen Domplatz",
+      "Thüringer Weihnachtspyramiden-Ausstellung",
+      "Mittelalterliche Handwerksvorführungen",
+      "Erfurter Domkonzerte jeden Freitag um 19 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Straßenbahn: 1, 3, 5 bis Domplatz (direkt am Markt), Bus: 9 bis Domplatz",
+    parking: "Parkhaus Domplatz (200m), Parkhaus Anger (500m). Kosten: 1-2€/Std."
   },
   {
     id: "rothenburg-reiterlesmarkt",
@@ -256,7 +346,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://rothenburg.de/reiterlesmarkt",
     phone: "+49 9861 404800",
     email: "reiterlesmarkt@rothenburg.de",
-    transport: "Bus: Regionalbus bis Marktplatz, Auto: A7 Ausfahrt Rothenburg"
+    transport: "Bus: Regionalbus bis Marktplatz, Auto: A7 Ausfahrt Rothenburg",
+    highlights: [
+      "Mittelalterliche Kulisse der besterhaltenen Stadtmauer Deutschlands",
+      "Märchenhafter Reiterlesmarkt mit romantischer Atmosphäre",
+      "Schneeballen-Bäckerei mit Live-Vorführungen",
+      "Mittelalterliche Handwerkskunst und Schmiedevorführungen",
+      "Nachtwächter-Rundgänge jeden Abend um 20 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Regionalbus bis Marktplatz (direkt am Markt)",
+    parking: "Parkplatz P1 außerhalb der Stadtmauer (300m), P2 Spitalhof (400m). Kosten: 3€/Tag."
   },
   {
     id: "bremer-weihnachtsmarkt",
@@ -272,7 +372,17 @@ export const christmasMarkets: ChristmasMarket[] = [
     website: "https://bremen.de/weihnachtsmarkt",
     phone: "+49 421 30800010",
     email: "weihnachtsmarkt@bremen.de",
-    transport: "Straßenbahn: Linien 1, 8 bis Domsheide, S-Bahn: RS1, RS4 bis Bremen Hbf"
+    transport: "Straßenbahn: Linien 1, 8 bis Domsheide, S-Bahn: RS1, RS4 bis Bremen Hbf",
+    highlights: [
+      "UNESCO-Welterbe Rathaus und Roland als Kulisse",
+      "Schlachte-Zauber an der Weser mit maritimem Flair",
+      "Bremer Stadtmusikanten als Weihnachtsmotiv",
+      "Hanseatischer Weihnachtsmarkt mit über 170 Ständen",
+      "Weser-Schifffahrten mit Glühwein jeden Samstag und Sonntag"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Straßenbahn: 1, 8 bis Domsheide (5 Min. Fußweg), S-Bahn: RS1, RS4 bis Bremen Hbf (10 Min. Fußweg)",
+    parking: "Parkhaus Mitte (300m), Parkhaus Am Wall (400m). Kosten: 1,50-2€/Std."
   },
   {
     id: "hannoverscher-weihnachtsmarkt",
@@ -280,47 +390,25 @@ export const christmasMarkets: ChristmasMarket[] = [
     name: "Hannoverscher Weihnachtsmarkt",
     city: "Hannover",
     address: "Marktkirche/Hauptbahnhof, 30159 Hannover",
-    description: "Der Hannoversche Weihnachtsmarkt rund um die historische Marktkirche gehört zu den traditionellsten Norddeutschlands. Mit über 120 Ständen bietet er niedersächsische Gemütlichkeit und eine besondere vorweihnachtliche Atmosphäre in der Landeshauptstadt.",
-    openingDates: "26.11.2025 - 22.12.2025",
-    openingHours: "Mo-Sa 10-21 Uhr, So 11-21 Uhr",
+    description: "Der traditionelle Hannoversche Weihnachtsmarkt rund um die Marktkirche ist einer der größten Niedersachsens. Mit über 180 Ständen erstreckt er sich von der Altstadt bis zum Hauptbahnhof und bietet eine perfekte Mischung aus Tradition und modernem Shopping-Erlebnis.",
+    openingDates: "25.11.2025 - 22.12.2025",
+    openingHours: "Mo-Do 10-21 Uhr, Fr-Sa 10-22 Uhr, So 11-21 Uhr",
     imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Grünkohl", "Heiße Schokolade", "Niedersächsische Spezialitäten", "Handwerkskunst", "Weihnachtsbaumschmuck"],
+    specialties: ["Niedersächsisches Grünkohl", "Glühwein", "Handwerkskunst", "Currywurst", "Lebkuchen"],
     website: "https://hannover.de/weihnachtsmarkt",
-    phone: "+49 511 168123456",
+    phone: "+49 511 16841111",
     email: "weihnachtsmarkt@hannover.de",
-    transport: "U-Bahn: Linien 1, 2, 8, 9 bis Kröpcke, S-Bahn: S1-S7 bis Hannover Hbf"
-  },
-  {
-    id: "mainzer-weihnachtsmarkt",
-    slug: "mainzer-weihnachtsmarkt",
-    name: "Mainzer Weihnachtsmarkt",
-    city: "Mainz",
-    address: "Markt/Leichhof, 55116 Mainz",
-    description: "Der Mainzer Weihnachtsmarkt vor dem imposanten Dom St. Martin gehört zu den schönsten Rheinland-Pfalz'. Mit über 120 Ständen und der besonderen rheinischen Atmosphäre bietet er eine perfekte Mischung aus Tradition und lebendiger Universitätsstadt-Kultur.",
-    openingDates: "22.11.2025 - 23.12.2025",
-    openingHours: "Mo-Do 10-20:30 Uhr, Fr-Sa 10-21:30 Uhr, So 11-20:30 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Rheinischer Döppekuchen", "Glühwein", "Mainzer Fastnachtskrapfen", "Rheinland-Pfälzer Spezialitäten", "Gutenberg-Souvenirs"],
-    website: "https://mainz.de/weihnachtsmarkt",
-    phone: "+49 6131 122647",
-    email: "weihnachtsmarkt@mainz.de",
-    transport: "S-Bahn: S8 bis Mainz Hauptbahnhof, Bus: Linien 6, 50, 54, 55 bis Höfchen/Markt"
-  },
-  {
-    id: "trierer-weihnachtsmarkt",
-    slug: "trierer-weihnachtsmarkt",
-    name: "Trierer Weihnachtsmarkt",
-    city: "Trier",
-    address: "Hauptmarkt/Domfreihof, 54290 Trier",
-    description: "Der Trierer Weihnachtsmarkt in Deutschlands ältester Stadt verbindet 2000 Jahre Geschichte mit weihnachtlicher Gemütlichkeit. Vor der Kulisse der Porta Nigra und des Doms bietet er eine einzigartige römisch-mittelalterliche Atmosphäre.",
-    openingDates: "19.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 12-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Trierer Weinbergspfirsiche", "Moselwein-Glühwein", "Römerbrot", "Eifel-Spezialitäten", "Antike Handwerkskunst"],
-    website: "https://trier.de/weihnachtsmarkt",
-    phone: "+49 651 97808520",
-    email: "weihnachtsmarkt@trier.de",
-    transport: "Bus: Linien 1, 2, 3 bis Porta Nigra, Regionalbahn: bis Trier Hbf"
+    transport: "S-Bahn: S1-S7 bis Hannover Hbf, U-Bahn: U1-U3 bis Hauptbahnhof",
+    highlights: [
+      "Einer der größten Weihnachtsmärkte Niedersachsens mit über 180 Ständen",
+      "Marktkirche als historische Kulisse",
+      "Fin de Siècle Weihnachtsmarkt im Historischen Museum",
+      "Weihnachtswald im Maschpark",
+      "Niedersächsische Spezialitäten und Handwerkskunst"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "S-Bahn: S1-S7 bis Hannover Hbf (5 Min. Fußweg), U-Bahn: U1-U3 bis Hauptbahnhof",
+    parking: "Parkhaus Hauptbahnhof (200m), Parkhaus Galeria Kaufhof (300m). Kosten: 1,50-2,50€/Std."
   },
   {
     id: "wuerzburger-weihnachtsmarkt",
@@ -328,175 +416,233 @@ export const christmasMarkets: ChristmasMarket[] = [
     name: "Würzburger Weihnachtsmarkt",
     city: "Würzburg",
     address: "Marktplatz, 97070 Würzburg",
-    description: "Der Würzburger Weihnachtsmarkt vor der Kulisse der Marienkapelle und des Falkenhauses gehört zu den schönsten Frankens. Mit fränkischen Spezialitäten und regionalem Handwerk bietet er eine authentische weihnachtliche Atmosphäre in der Universitätsstadt am Main.",
-    openingDates: "29.11.2025 - 23.12.2025",
-    openingHours: "Mo-Do 10-20:30 Uhr, Fr-Sa 10-21:30 Uhr, So 11-20:30 Uhr",
+    description: "Der Würzburger Weihnachtsmarkt vor der Kulisse der Marienkapelle ist ein fränkisches Juwel. Mit über 80 Ständen und der besonderen Atmosphäre der Universitätsstadt bietet er fränkische Spezialitäten und Weine in gemütlicher Runde.",
+    openingDates: "22.11.2025 - 23.12.2025",
+    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
     imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Fränkischer Lebkuchen", "Glühwein", "Saure Zipfel", "Bratwurst", "Fränkische Handwerkskunst"],
+    specialties: ["Fränkischer Glühwein", "Bratwurst", "Lebkuchen", "Weihnachtsstollen", "Handwerkskunst"],
     website: "https://wuerzburg.de/weihnachtsmarkt",
-    phone: "+49 931 372398",
+    phone: "+49 931 373398",
     email: "weihnachtsmarkt@wuerzburg.de",
-    transport: "Straßenbahn: Linien 1, 3, 5 bis Marktplatz, Bus: Linien 8, 14 bis Marktplatz"
+    transport: "Straßenbahn: Linien 1, 3, 5 bis Marktplatz, Bus: Linien 2, 4 bis Dom",
+    highlights: [
+      "Marienkapelle als gotische Kulisse",
+      "Fränkischer Weihnachtsmarkt mit über 80 Ständen",
+      "Universitätsstadt-Atmosphäre mit studentischem Flair",
+      "Fränkische Weine und regionale Spezialitäten",
+      "Weihnachtskonzerte in der Marienkapelle jeden Sonntag um 17 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Straßenbahn: 1, 3, 5 bis Marktplatz (direkt am Markt), Bus: 2, 4 bis Dom (3 Min. Fußweg)",
+    parking: "Parkhaus Marktgarage (direkt unter dem Marktplatz), Parkhaus Congress Centrum (300m). Kosten: 1-2€/Std."
   },
   {
-    id: "bamberger-weihnachtsmarkt",
-    slug: "bamberger-weihnachtsmarkt",
-    name: "Bamberger Weihnachtsmarkt",
-    city: "Bamberg",
-    address: "Maximilianstraße/Grüner Markt, 96047 Bamberg",
-    description: "Der Bamberger Weihnachtsmarkt in der UNESCO-Welterbestadt bietet eine einzigartige Atmosphäre zwischen barocken Bürgerhäusern und dem gotischen Dom. Die mittelalterliche Kulisse macht ihn zu einem der romantischsten Weihnachtsmärkte Deutschlands.",
-    openingDates: "25.11.2025 - 23.12.2025",
+    id: "mainzer-weihnachtsmarkt",
+    slug: "mainzer-weihnachtsmarkt",
+    name: "Mainzer Weihnachtsmarkt",
+    city: "Mainz",
+    address: "Markt/Domplatz, 55116 Mainz",
+    description: "Der traditionelle Mainzer Weihnachtsmarkt vor dem imposanten Dom ist ein rheinisches Kleinod. Mit über 100 Ständen zwischen Dom und Marktplatz bietet er eine perfekte Mischung aus rheinischer Gemütlichkeit und weihnachtlicher Atmosphäre.",
+    openingDates: "23.11.2025 - 23.12.2025",
     openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
     imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Bamberger Lebkuchen", "Rauchbier-Glühwein", "Fränkische Bratwurst", "Kunsthandwerk", "Zwiebeltreter"],
-    website: "https://bamberg.de/weihnachtsmarkt",
-    phone: "+49 951 871161",
-    email: "weihnachtsmarkt@bamberg.de",
-    transport: "Bus: Linien 901, 902, 906 bis ZOB, Regionalbahn: bis Bamberg Hbf"
-  },
-  {
-    id: "regensburger-christkindlmarkt",
-    slug: "regensburger-christkindlmarkt",
-    name: "Regensburger Christkindlmarkt",
-    city: "Regensburg",
-    address: "Neupfarrplatz/Haidplatz, 93047 Regensburg",
-    description: "Der Regensburger Christkindlmarkt in der UNESCO-Welterbestadt verzaubert vor mittelalterlicher Kulisse. Mit über 50 Ständen bietet er bayerische Gemütlichkeit und traditionelles Handwerk in einer der besterhaltenen mittelalterlichen Städte Deutschlands.",
-    openingDates: "24.11.2025 - 23.12.2025",
-    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Regensburger Wurst", "Bayerischer Punsch", "Lebkuchen", "Donau-Spezialitäten", "Mittelalterliche Handwerkskunst"],
-    website: "https://regensburg.de/christkindlmarkt",
-    phone: "+49 941 507123456",
-    email: "christkindlmarkt@regensburg.de",
-    transport: "Bus: Linien 1, 2, 6 bis Neupfarrplatz, Regionalbahn: bis Regensburg Hbf"
+    specialties: ["Rheinhessischer Glühwein", "Döppekuchen", "Lebkuchen", "Reibekuchen", "Handwerkskunst"],
+    website: "https://mainz.de/weihnachtsmarkt",
+    phone: "+49 6131 12345",
+    email: "weihnachtsmarkt@mainz.de",
+    transport: "S-Bahn: S60 bis Mainz Hauptbahnhof, Bus: Linien 6, 9 bis Dom/Liebfrauenplatz",
+    highlights: [
+      "Mainzer Dom als imposante Kulisse",
+      "Über 100 Stände zwischen Dom und Marktplatz",
+      "Rheinhessischer Weihnachtsmarkt mit regionalen Weinen",
+      "Gutenberg-Museum Weihnachtsausstellung",
+      "Mainzer Hofsänger-Auftritte jeden Samstag um 17 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "S-Bahn: S60 bis Mainz Hauptbahnhof (10 Min. Fußweg), Bus: 6, 9 bis Dom/Liebfrauenplatz (3 Min. Fußweg)",
+    parking: "Parkhaus Am Brand (200m), Parkhaus Rathaus (300m). Kosten: 1-2€/Std."
   },
   {
     id: "freiburger-weihnachtsmarkt",
-    slug: "freiburger-weihnachtsmarkt",
+    slug: "freiburger-weihnachtsmarkt", 
     name: "Freiburger Weihnachtsmarkt",
     city: "Freiburg im Breisgau",
-    address: "Münsterplatz/Rathausplatz, 79098 Freiburg",
-    description: "Der Freiburger Weihnachtsmarkt vor dem gotischen Münster zählt zu den schönsten Süddeutschlands. Mit über 120 Ständen vor der malerischen Kulisse des Münsters und der historischen Kaufhäuser bietet er badische Gemütlichkeit und Schwarzwälder Tradition.",
-    openingDates: "21.11.2025 - 23.12.2025",
+    address: "Rathausplatz/Münsterplatz, 79098 Freiburg",
+    description: "Der Freiburger Weihnachtsmarkt rund um das gotische Münster gilt als einer der atmosphärischsten Süddeutschlands. Mit über 120 Ständen in der sonnigen Schwarzwaldmetropole bietet er badische Gemütlichkeit vor der Kulisse des berühmten Münsters.",
+    openingDates: "21.11.2025 - 23.12.2025", 
     openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
     imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Schwarzwälder Kirschtorte", "Feuerzangenbowle", "Badische Spezialitäten", "Kunsthandwerk", "Schwarzwälder Schinken"],
+    specialties: ["Badischer Glühwein", "Lange Rote", "Schwarzwälder Schinken", "Lebkuchen", "Schwarzwälder Kirschtorte"],
     website: "https://freiburg.de/weihnachtsmarkt",
-    phone: "+49 761 201123456",
+    phone: "+49 761 2013880",
     email: "weihnachtsmarkt@freiburg.de",
-    transport: "Straßenbahn: Linien 1, 3, 5 bis Bertoldsbrunnen, Bus: Linien 10, 11 bis Münsterplatz"
+    transport: "Straßenbahn: Linien 1, 3 bis Bertoldsbrunnen, Linien 2, 5 bis Siegesdenkmal",
+    highlights: [
+      "Gotisches Freiburger Münster als prächtige Kulisse",
+      "Über 120 Stände auf Rathausplatz und Münsterplatz", 
+      "Badische Weihnachtsspezialitäten aus dem Schwarzwald",
+      "Freiburger Münster-Weihnachtskonzerte jeden Freitag um 19 Uhr",
+      "Schwarzwälder Handwerkskunst und regionale Produkte"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Straßenbahn: 1, 3 bis Bertoldsbrunnen (5 Min. Fußweg), 2, 5 bis Siegesdenkmal (3 Min. Fußweg)",
+    parking: "Parkhaus Schwarzwaldstraße (400m), Parkhaus Altstadt (300m). Kosten: 1,20-2€/Std."
   },
   {
     id: "lueneburger-weihnachtsmarkt",
     slug: "lueneburger-weihnachtsmarkt",
-    name: "Lüneburger Weihnachtsmarkt",
+    name: "Lüneburger Weihnachtsmarkt", 
     city: "Lüneburg",
-    address: "Am Markt/Rathausplatz, 21335 Lüneburg",
-    description: "Der Lüneburger Weihnachtsmarkt vor dem prächtigen Rathaus der Salzstadt verzaubert mit mittelalterlichem Flair. Die historische Hansestadt bietet eine romantische Kulisse für einen der stimmungsvollsten Weihnachtsmärkte Niedersachsens.",
+    address: "Am Markt/Am Sande, 21335 Lüneburg",
+    description: "Der historische Lüneburger Weihnachtsmarkt in der Salzstadt verzaubert mit mittelalterlichem Flair. Vor der Kulisse der gotischen Backsteinarchitektur und des berühmten Rathauses bietet er norddeutsche Gemütlichkeit und Hansestadt-Atmosphäre.",
     openingDates: "26.11.2025 - 22.12.2025",
-    openingHours: "Mo-Sa 10-20 Uhr, So 11-20 Uhr",
+    openingHours: "Mo-Sa 10-20 Uhr, So 11-20 Uhr", 
     imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Heidschnucken-Bratwurst", "Heißer Sanddorn", "Lüneburger Salzstangen", "Heide-Honig", "Niedersächsische Handwerkskunst"],
+    specialties: ["Lüneburger Salzstangen", "Glögg", "Heidschnucken-Spezialitäten", "Heidehonig", "Norddeutsche Handwerkskunst"],
     website: "https://lueneburg.de/weihnachtsmarkt",
-    phone: "+49 4131 207123456",
-    email: "weihnachtsmarkt@lueneburg.de",
-    transport: "Regionalbahn: bis Lüneburg Hbf, Bus: Linien 5001, 5002 bis Marktplatz"
+    phone: "+49 4131 309230",
+    email: "weihnachtsmarkt@lueneburg.de", 
+    transport: "Bus: Linien 1, 2 bis Am Markt, Metronom: bis Lüneburg",
+    highlights: [
+      "Historisches Rathaus der Salzstadt als Kulisse",
+      "Gotische Backsteinarchitektur der Hansezeit", 
+      "Salzstadt-Geschichte mit traditionellem Handwerk",
+      "Lüneburger Heide Spezialitäten und Heidehonig",
+      "Mittelalterliche Salzsiederei-Vorführungen jeden Samstag um 15 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Bus: 1, 2 bis Am Markt (direkt am Weihnachtsmarkt), Metronom bis Lüneburg (10 Min. Fußweg)",
+    parking: "Parkhaus Sülztorstraße (200m), Parkhaus Schröderstraße (300m). Kosten: 1€/Std."
   },
   {
     id: "konstanzer-weihnachtsmarkt",
     slug: "konstanzer-weihnachtsmarkt",
     name: "Konstanzer Weihnachtsmarkt",
-    city: "Konstanz",
-    address: "Marktstätte/Münsterplatz, 78462 Konstanz",
-    description: "Der Konstanzer Weihnachtsmarkt am Bodensee bietet eine einzigartige Atmosphäre zwischen Alpen und See. Mit Blick auf das Münster und den Bodensee verzaubert er Besucher mit süddeutscher Gemütlichkeit und internationaler Ausstrahlung der Grenzstadt.",
-    openingDates: "28.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 12-20 Uhr",
+    city: "Konstanz", 
+    address: "Marktstätte, 78462 Konstanz",
+    description: "Der Konstanzer Weihnachtsmarkt am Bodensee ist ein besonderes Erlebnis mit Alpenblick. In der Universitätsstadt direkt an der Schweizer Grenze bietet er eine internationale Atmosphäre mit schwäbisch-alemannischen Traditionen vor der Kulisse des Bodensees.",
+    openingDates: "27.11.2025 - 22.12.2025",
+    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
     imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Bodensee-Fischspezialitäten", "Seewein-Glühwein", "Schweizer Rösti", "Konstanzer Stollen", "Alpine Handwerkskunst"],
-    website: "https://konstanz.de/weihnachtsmarkt",
-    phone: "+49 7531 900123456",
+    specialties: ["Bodensee-Glühwein", "Schweizer Raclette", "Schwäbische Maultaschen", "Konstanzer Goldschmuck", "Alemannisches Handwerk"],
+    website: "https://konstanz.de/weihnachtsmarkt", 
+    phone: "+49 7531 900177",
     email: "weihnachtsmarkt@konstanz.de",
-    transport: "Regionalbahn: bis Konstanz Hbf, Bus: Linien 1, 5, 9 bis Marktstätte"
+    transport: "Bus: Stadtbus Konstanz Linien 1, 5 bis Marktstätte, DB: bis Konstanz Hbf",
+    highlights: [
+      "Weihnachtsmarkt am Bodensee mit Alpenblick",
+      "Internationale Atmosphäre an der Schweizer Grenze",
+      "Universitätsstadt mit studentischem Flair",
+      "Bodensee-Schifffahrten mit Glühwein-Service",
+      "Schwäbisch-alemannische Traditionen und Schweizer Einflüsse"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Stadtbus: 1, 5 bis Marktstätte (direkt am Markt), DB bis Konstanz Hbf (8 Min. Fußweg)",
+    parking: "Parkhaus Lago (300m), Parkhaus Altstadt (400m). Kosten: 1,50-2€/Std."
   },
   {
-    id: "passauer-weihnachtsmarkt",
+    id: "passauer-weihnachtsmarkt", 
     slug: "passauer-weihnachtsmarkt",
     name: "Passauer Weihnachtsmarkt",
     city: "Passau",
-    address: "Domplatz/Residenzplatz, 94032 Passau",
-    description: "Der Passauer Weihnachtsmarkt in der Dreiflüsse-Stadt zwischen Dom und Residenz bietet eine romantische Atmosphäre. Mit bayerischem Charme und österreichischem Einfluss verzaubert er Besucher vor der Kulisse der barocken Altstadt.",
-    openingDates: "27.11.2025 - 23.12.2025",
+    address: "Domplatz, 94032 Passau",
+    description: "Der Passauer Weihnachtsmarkt in der Dreiflüssestadt verzaubert mit barocker Kulisse. Vor dem St. Stephans-Dom mit der größten Domorgel der Welt bietet er bayerische Gemütlichkeit zwischen Donau, Inn und Ilz mit österreichischem Flair.",
+    openingDates: "29.11.2025 - 23.12.2025",
     openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
     imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Donau-Fischspezialitäten", "Bayerisch-Österreichischer Punsch", "Passauer Lebkuchen", "Dreiländer-Spezialitäten", "Böhmische Handwerkskunst"],
+    specialties: ["Passauer Lebkuchen", "Bayerischer Glühwein", "Donau-Fisch", "Österreichische Süßwaren", "Handwerkskunst"],
     website: "https://passau.de/weihnachtsmarkt",
-    phone: "+49 851 396123456",
+    phone: "+49 851 396610", 
     email: "weihnachtsmarkt@passau.de",
-    transport: "Regionalbahn: bis Passau Hbf, Bus: Linien 1, 2, 3 bis Domplatz"
+    transport: "Bus: Stadtbus Passau bis Domplatz, DB: bis Passau Hbf",
+    highlights: [
+      "St. Stephans-Dom mit der größten Domorgel der Welt",
+      "Dreiflüssestadt zwischen Donau, Inn und Ilz", 
+      "Barocke Architektur der Altstadt als Kulisse",
+      "Bayerisch-österreichische Grenzstadt-Atmosphäre",
+      "Passauer Domkonzerte mit Weihnachtsmusik jeden Sonntag um 17 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Stadtbus bis Domplatz (direkt am Weihnachtsmarkt), DB bis Passau Hbf (15 Min. Fußweg durch die Altstadt)",
+    parking: "Parkhaus ZOB (300m), Parkhaus Auweg (400m). Kosten: 1-2€/Std."
   },
   {
     id: "hildesheimer-weihnachtsmarkt",
-    slug: "hildesheimer-weihnachtsmarkt",
+    slug: "hildesheimer-weihnachtsmarkt", 
     name: "Hildesheimer Weihnachtsmarkt",
     city: "Hildesheim",
-    address: "Marktplatz/Andreasplatz, 31134 Hildesheim",
-    description: "Der Hildesheimer Weihnachtsmarkt vor dem UNESCO-Welterbe Dom und der St. Michaelis Kirche bietet eine mittelalterliche Atmosphäre. Mit niedersächsischer Tradition und dem berühmten 1000-jährigen Rosenstock ist er ein besonderes Weihnachtserlebnis.",
-    openingDates: "25.11.2025 - 22.12.2025",
+    address: "Marktplatz, 31134 Hildesheim",
+    description: "Der historische Hildesheimer Weihnachtsmarkt vor dem UNESCO-Welterbe Dom und St. Michaelis ist ein niedersächsisches Kleinod. Mit über 80 Ständen am Marktplatz bietet er eine einzigartige Atmosphäre zwischen romanischer Architektur und Fachwerkhäusern.",
+    openingDates: "24.11.2025 - 22.12.2025",
     openingHours: "Mo-Sa 10-20 Uhr, So 11-20 Uhr",
     imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Hildesheimer Würstchen", "Rosenlikör", "Niedersächsische Spezialitäten", "Töpferware", "Domschatz-Souvenirs"],
+    specialties: ["Hildesheimer Lebkuchen", "Niedersächsischer Glühwein", "Bratwurst", "Zuckerbäckerei", "Handwerkskunst"],
     website: "https://hildesheim.de/weihnachtsmarkt",
-    phone: "+49 5121 301123456",
+    phone: "+49 5121 301213",
     email: "weihnachtsmarkt@hildesheim.de",
-    transport: "S-Bahn: S3, S31 bis Hildesheim Hbf, Bus: Linien 1, 3, 5 bis Marktplatz"
+    transport: "S-Bahn: S3 bis Hildesheim Hauptbahnhof, Bus: Linien 1, 3 bis Marktplatz", 
+    highlights: [
+      "UNESCO-Welterbe Dom und St. Michaelis als Kulisse",
+      "Historischer Marktplatz mit rekonstruierten Fachwerkhäusern",
+      "Romanische Architektur aus dem 11. Jahrhundert", 
+      "Über 80 Stände zwischen Dom und Marktplatz",
+      "Hildesheimer Domkonzerte jeden Samstag um 18 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "S-Bahn: S3 bis Hildesheim Hauptbahnhof (8 Min. Fußweg), Bus: 1, 3 bis Marktplatz (direkt am Markt)",
+    parking: "Parkhaus Arneken Galerie (200m), Parkhaus Schuhstraße (300m). Kosten: 1€/Std."
   },
   {
-    id: "muensteraner-weihnachtsmarkt",
-    slug: "muensteraner-weihnachtsmarkt",
+    id: "muenster-weihnachtsmarkt",
+    slug: "muenster-weihnachtsmarkt",
     name: "Münsteraner Weihnachtsmarkt",
     city: "Münster",
     address: "Domplatz/Prinzipalmarkt, 48143 Münster",
-    description: "Der Münsteraner Weihnachtsmarkt vor dem gotischen Dom und entlang des historischen Prinzipalmarkts mit den charakteristischen Giebelhäusern bietet westfälische Gemütlichkeit. Die Fahrradstadt zeigt sich in der Adventszeit von ihrer romantischsten Seite.",
+    description: "Der Münsteraner Weihnachtsmarkt rund um den St.-Paulus-Dom ist ein westfälisches Highlight. Mit über 130 Ständen auf dem historischen Prinzipalmarkt mit seinen Giebelhäusern bietet er westfälische Gemütlichkeit in einer der schönsten Altstädte Deutschlands.",
     openingDates: "23.11.2025 - 23.12.2025",
-    openingHours: "Mo-Sa 10-21 Uhr, So 11-20 Uhr",
+    openingHours: "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr",
     imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Westfälischer Schinken", "Münsterländer Stuten", "Glühwein", "Töttchen", "Westfälische Handwerkskunst"],
+    specialties: ["Münsterländer Töttchen", "Westfälischer Glühwein", "Pumpernickel", "Münsteraner Kiepenkerl-Figuren", "Handwerkskunst"],
     website: "https://muenster.de/weihnachtsmarkt",
-    phone: "+49 251 492123456",
+    phone: "+49 251 4921810",
     email: "weihnachtsmarkt@muenster.de",
-    transport: "Bus: Linien 5, 11, 14 bis Domplatz, Regionalbahn: bis Münster Hbf"
-  },
-  {
-    id: "mainzer-adventsmarkt",
-    slug: "mainzer-adventsmarkt",
-    name: "Mainzer Adventsmarkt",
-    city: "Mainz",
-    address: "Höfchen/Liebfrauenplatz, 55116 Mainz",
-    description: "Der Mainzer Adventsmarkt rund um den majestätischen Dom bietet rheinische Gemütlichkeit in der Gutenberg-Stadt. Mit Blick auf den romanischen Dom St. Martin und das lebendige Treiben der Universitätsstadt ist er ein Höhepunkt der Adventszeit in Rheinland-Pfalz.",
-    openingDates: "20.11.2025 - 22.12.2025",
-    openingHours: "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 12-20 Uhr",
-    imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Rheinischer Sauerbraten", "Rheinhessischer Glühwein", "Mainzer Käse", "Gutenberg-Buchdruck-Souvenirs", "Rheinland-Pfälzer Kunsthandwerk"],
-    website: "https://mainz.de/adventsmarkt",
-    phone: "+49 6131 122890",
-    email: "adventsmarkt@mainz.de",
-    transport: "S-Bahn: S8 bis Mainz Römisches Theater, Bus: Linien 6, 50 bis Höfchen"
+    transport: "Bus: Stadtbus Münster Linien 2, 9, 11 bis Domplatz, DB: bis Münster Hbf",
+    highlights: [
+      "St.-Paulus-Dom als imposante gotische Kulisse",
+      "Prinzipalmarkt mit historischen Giebelhäusern",
+      "Über 130 Stände in der westfälischen Fahrradstadt",
+      "Münsterländer Spezialitäten und Handwerkskunst",
+      "Friedenssaal-Führungen mit Weihnachtsausstellung"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Stadtbus: 2, 9, 11 bis Domplatz (direkt am Weihnachtsmarkt), DB bis Münster Hbf (10 Min. Fußweg)",
+    parking: "Parkhaus Karstadt (300m), Parkhaus Theater (400m). Kosten: 1,50-2€/Std."
   },
   {
     id: "oldenburger-weihnachtsmarkt",
     slug: "oldenburger-weihnachtsmarkt",
     name: "Oldenburger Weihnachtsmarkt",
     city: "Oldenburg",
-    address: "Schlossplatz/Marktplatz, 26122 Oldenburg",
-    description: "Der Oldenburger Weihnachtsmarkt vor dem Schloss und der Lambertikirche bietet norddeutsche Gemütlichkeit in der ehemaligen Residenzstadt. Mit über 80 Ständen und dem besonderen oldenburger Flair ist er ein Höhepunkt der Adventszeit im Oldenburger Land.",
-    openingDates: "24.11.2025 - 23.12.2025",
+    address: "Marktplatz/Schloßplatz, 26122 Oldenburg",
+    description: "Der Oldenburger Weihnachtsmarkt zwischen Marktplatz und Schloss ist ein norddeutsches Juwel. Mit über 90 Ständen vor der Kulisse des Oldenburger Schlosses bietet er eine einzigartige Mischung aus höfischer Eleganz und norddeutscher Gemütlichkeit.",
+    openingDates: "25.11.2025 - 22.12.2025",
     openingHours: "Mo-Sa 10-20 Uhr, So 11-20 Uhr",
     imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Oldenburger Grünkohl", "Nordsee-Krabben", "Heißer Sanddorn", "Oldenburger Palme", "Norddeutsche Handwerkskunst"],
+    specialties: ["Oldenburger Grünkohl", "Norddeutscher Glühwein", "Pinkel", "Matjes", "Nordsee-Spezialitäten"],
     website: "https://oldenburg.de/weihnachtsmarkt",
-    phone: "+49 441 235123456",
+    phone: "+49 441 2352266",
     email: "weihnachtsmarkt@oldenburg.de",
-    transport: "Bus: Linien 306, 310, 324 bis Schlossplatz, Regionalbahn: bis Oldenburg Hbf"
+    transport: "Bus: Stadtbus Oldenburg bis Marktplatz, DB: bis Oldenburg Hbf",
+    highlights: [
+      "Oldenburger Schloss als elegante barocke Kulisse",
+      "Über 90 Stände zwischen Marktplatz und Schloßplatz",
+      "Ehemalige Residenzstadt mit höfischer Tradition",
+      "Norddeutsche Spezialitäten und maritime Atmosphäre",
+      "Schlosskonzerte mit Weihnachtsmusik jeden Freitag um 19 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Stadtbus bis Marktplatz (direkt am Weihnachtsmarkt), DB bis Oldenburg Hbf (8 Min. Fußweg)",
+    parking: "Parkhaus Achternstraße (200m), Parkhaus Waffenplatz (300m). Kosten: 1€/Std."
   },
   {
     id: "rostocker-weihnachtsmarkt",
@@ -504,15 +650,25 @@ export const christmasMarkets: ChristmasMarket[] = [
     name: "Rostocker Weihnachtsmarkt",
     city: "Rostock",
     address: "Neuer Markt/Universitätsplatz, 18055 Rostock",
-    description: "Der Rostocker Weihnachtsmarkt in der Hansestadt an der Ostsee bietet maritime Weihnachtsatmosphäre. Vor der Kulisse der Marienkirche und des historischen Rathauses verzaubert er mit mecklenburgischer Tradition und hanseatischem Flair.",
-    openingDates: "25.11.2025 - 22.12.2025",
-    openingHours: "Mo-Sa 10-20 Uhr, So 11-20 Uhr",
+    description: "Der Rostocker Weihnachtsmarkt in der Hansestadt an der Ostsee verzaubert mit maritimem Flair. Mit über 120 Ständen rund um das gotische Rathaus und die Marienkirche bietet er eine einzigartige Mischung aus hanseatischer Tradition und Ostsee-Atmosphäre.",
+    openingDates: "22.11.2025 - 22.12.2025",
+    openingHours: "Mo-Sa 10-21 Uhr, So 11-21 Uhr",
     imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Rostocker Fischbrötchen", "Ostseehering", "Sanddornsaft", "Mecklenburgische Spezialitäten", "Maritime Handwerkskunst"],
+    specialties: ["Rostocker Doppelkorn", "Glögg", "Ostseefisch", "Mecklenburger Rippenbraten", "Maritime Handwerkskunst"],
     website: "https://rostock.de/weihnachtsmarkt",
-    phone: "+49 381 381123456",
+    phone: "+49 381 3814567",
     email: "weihnachtsmarkt@rostock.de",
-    transport: "Straßenbahn: Linien 1, 2, 3 bis Neuer Markt, S-Bahn: S1, S2 bis Rostock Hbf"
+    transport: "Straßenbahn: Linien 1, 2 bis Neuer Markt, S-Bahn: bis Rostock Hbf",
+    highlights: [
+      "Gotisches Rathaus und St. Marienkirche als Kulisse",
+      "Über 120 Stände in der Hansestadt an der Ostsee",
+      "Maritime Weihnachtsatmosphäre mit Ostsee-Flair",
+      "Mecklenburger Spezialitäten und Ostseefisch",
+      "Weihnachtskonzerte in der Marienkirche jeden Sonntag um 17 Uhr"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Straßenbahn: 1, 2 bis Neuer Markt (direkt am Weihnachtsmarkt), S-Bahn bis Rostock Hbf (15 Min. Fußweg)",
+    parking: "Parkhaus Kröpeliner Tor (300m), Parkhaus Rathaus (200m). Kosten: 1€/Std."
   },
   {
     id: "kieler-weihnachtsmarkt",
@@ -520,15 +676,25 @@ export const christmasMarkets: ChristmasMarket[] = [
     name: "Kieler Weihnachtsmarkt",
     city: "Kiel",
     address: "Rathausplatz/Holstenstraße, 24103 Kiel",
-    description: "Der Kieler Weihnachtsmarkt in der Landeshauptstadt Schleswig-Holsteins bietet maritime Weihnachtsstimmung an der Förde. Mit Blick auf die Kieler Förde und nordischen Spezialitäten ist er ein besonderes Erlebnis zwischen Nord- und Ostsee.",
+    description: "Der Kieler Weihnachtsmarkt in der Landeshauptstadt Schleswig-Holsteins bietet maritime Weihnachtsstimmung. Mit über 100 Ständen zwischen Rathausplatz und Förde verbindet er skandinavisches Flair mit norddeutscher Gemütlichkeit und Ostsee-Atmosphäre.",
     openingDates: "26.11.2025 - 23.12.2025",
-    openingHours: "Mo-Sa 10-21 Uhr, So 11-20 Uhr",
+    openingHours: "Mo-Sa 10-21 Uhr, So 11-21 Uhr",
     imageUrl: "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
-    specialties: ["Kieler Sprotten", "Förde-Fisch", "Nordischer Glögg", "Schleswig-Holsteiner Spezialitäten", "Maritime Geschenke"],
+    specialties: ["Kieler Sprotten", "Glögg", "Nordischer Punsch", "Ostseefisch", "Skandinavische Süßwaren"],
     website: "https://kiel.de/weihnachtsmarkt",
-    phone: "+49 431 901123456",
+    phone: "+49 431 9013333",
     email: "weihnachtsmarkt@kiel.de",
-    transport: "Bus: Linien 11, 12, 41, 42 bis Rathausplatz, Regionalbahn: bis Kiel Hbf"
+    transport: "Bus: Stadtbus Kiel bis Rathausplatz, DB: bis Kiel Hbf",
+    highlights: [
+      "Landeshauptstadt Schleswig-Holsteins mit Förde-Blick",
+      "Über 100 Stände zwischen Rathausplatz und Kieler Förde",
+      "Maritime Weihnachtsatmosphäre mit skandinavischem Einfluss",
+      "Kieler Woche Weihnachtsversion mit Glühwein-Segelregatta",
+      "Förde-Rundfahrten mit Weihnachtspunsch jeden Samstag"
+    ],
+    entryPrice: "Eintritt frei",
+    publicTransport: "Stadtbus bis Rathausplatz (direkt am Weihnachtsmarkt), DB bis Kiel Hbf (10 Min. Fußweg)",
+    parking: "Parkhaus Sophienhof (300m), Parkhaus Holstenstraße (200m). Kosten: 1-2€/Std."
   }
 ];
 
