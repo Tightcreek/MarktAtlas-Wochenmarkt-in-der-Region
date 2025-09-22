@@ -3520,6 +3520,166 @@ export const christmasMarkets: ChristmasMarket[] = [
       "Holländisches Viertel in Laufnähe"
     ],
     "entryPrice": "Eintritt frei"
+  },
+  {
+    "id": "101",
+    "slug": "aachener-weihnachtsmarkt",
+    "name": "Aachener Weihnachtsmarkt",
+    "city": "Aachen",
+    "address": "Katschhof, 52062 Aachen",
+    "description": "Der Aachener Weihnachtsmarkt vor der imposanten Kulisse des Aachener Doms ist ein wahres Wintermärchen. Mit über 130 Ständen rund um den Katschhof und die Innenstadt bietet er eine einzigartige Atmosphäre zwischen historischen Mauern und modernem Stadtleben. Berühmt für seine Aachener Printen und die stimmungsvolle Beleuchtung.",
+    "openingDates": "21.11.2025 - 22.12.2025",
+    "openingHours": "Mo-Do 11-21 Uhr, Fr-Sa 11-22 Uhr, So 11-21 Uhr, 22.12. 11-20 Uhr",
+    "imageUrl": "/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png",
+    "specialties": [
+      "Aachener Printen",
+      "Glühwein",
+      "Reibekuchen",
+      "Feuerzangenbowle",
+      "Handwerkskunst"
+    ],
+    "website": "https://aachenweihnachtsmarkt.de",
+    "phone": "+49 241 25141",
+    "email": "info@mac-aachen.de",
+    "transport": "Bus: Linien 11, 21, 51 bis Elisenbrunnen, Regionalbahn: bis Aachen Hauptbahnhof",
+    "highlights": [
+      "Eröffnungsfeier am 21.11.2025 um 18 Uhr mit Bürgermeister",
+      "Tägliche Printen-Vorführungen in der Manufaktur 14-17 Uhr",
+      "Kinderprogramm jeden Samstag 15-17 Uhr mit Märchenerzähler",
+      "Konzerte auf der Bühne am Dom jeden Freitag 19 Uhr",
+      "Großer Weihnachtsbaum vor dem Dom mit täglicher Beleuchtung um 17 Uhr"
+    ],
+    "entryPrice": "Eintritt frei",
+    "publicTransport": "Bus: 11, 21, 51 bis Elisenbrunnen (2 Min. Fußweg), Regionalbahn bis Hauptbahnhof (10 Min. Fußweg)",
+    "parking": "Parkhaus Katschhof (100m), Parkhaus Büchel (200m), Tiefgarage Galeria Kaufhof (300m). Kosten: 1,50-2,50€/Std."
+  },
+  {
+    "id": "102",
+    "slug": "mainzer-weihnachtsmarkt",
+    "name": "Mainzer Weihnachtsmarkt",
+    "city": "Mainz",
+    "address": "Markt/Domplätze, 55116 Mainz",
+    "description": "Der Mainzer Weihnachtsmarkt rund um den majestätischen Dom ist einer der stimmungsvollsten Weihnachtsmärkte im Rheinland. Mit über 120 Ständen auf mehreren Plätzen der Altstadt verbindet er rheinische Gemütlichkeit mit über 1000-jähriger Geschichte. Die Kulisse aus Dom, historischen Fachwerkhäusern und romantischen Gassen macht ihn zu einem besonderen Erlebnis.",
+    "openingDates": "25.11.2025 - 23.12.2025",
+    "openingHours": "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr, 23.12. 10-16 Uhr",
+    "imageUrl": "/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png",
+    "specialties": [
+      "Rheinischer Sauerbraten",
+      "Glühwein",
+      "Mainzer Käse",
+      "Döppekuchen",
+      "Kunsthandwerk"
+    ],
+    "website": "https://weihnachtsstadt-mainz.de",
+    "phone": "+49 6131 286210",
+    "email": "weihnachtsmarkt@mainz.de",
+    "transport": "S-Bahn: S8 bis Mainz Hauptbahnhof, Straßenbahn: Linien 50, 51, 52, 53 bis Dom/Liebfrauenplatz",
+    "highlights": [
+      "Weihnachtliches Domkonzert jeden Sonntag 16 Uhr",
+      "Mainzer Weinprobe-Stände mit regionalen Weinen",
+      "Handwerkermarkt am Liebfrauenplatz mit Live-Demonstrationen",
+      "Karnevalsverein-Auftritte am Wochenende (Mainz ist Karnevalshochburg)",
+      "Adventssingen am Dom jeden Mittwoch 19 Uhr"
+    ],
+    "entryPrice": "Eintritt frei",
+    "publicTransport": "S-Bahn: S8 bis Mainz Hbf (8 Min. Fußweg), Straßenbahn: 50, 51, 52, 53 bis Dom (direkt am Markt)",
+    "parking": "Parkhaus Rathaus (200m), Parkhaus Markt (150m), Parkhaus Rheingoldhalle (400m). Kosten: 1€/Std."
+  },
+  {
+    "id": "103",
+    "slug": "mannheimer-weihnachtsmarkt",
+    "name": "Mannheimer Weihnachtsmarkt am Wasserturm",
+    "city": "Mannheim",
+    "address": "Friedrichsplatz, 68165 Mannheim",
+    "description": "Der Mannheimer Weihnachtsmarkt am berühmten Wasserturm ist einer der größten und schönsten Weihnachtsmärkte Baden-Württembergs. Mit über 150 Ständen rund um das Wahrzeichen der Quadratestadt bietet er eine einzigartige Kulisse. Die Kombination aus Jugendstil-Architektur und festlicher Weihnachtsbeleuchtung schafft eine ganz besondere Atmosphäre.",
+    "openingDates": "26.11.2025 - 22.12.2025",
+    "openingHours": "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr, 22.12. 10-18 Uhr",
+    "imageUrl": "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
+    "specialties": [
+      "Mannheimer Dreck",
+      "Glühwein",
+      "Saure Rädchen", 
+      "Kurpfälzer Spezialitäten",
+      "Lebkuchen"
+    ],
+    "website": "https://weihnachtsmarkt-mannheim.de",
+    "phone": "+49 621 2934567",
+    "email": "info@weihnachtsmarkt-mannheim.de",
+    "transport": "Straßenbahn: Linien 1, 3, 7 bis Wasserturm, S-Bahn: S1, S2, S3 bis Mannheim Hauptbahnhof",
+    "highlights": [
+      "Tägliche Beleuchtung des Wasserturms um 17 Uhr",
+      "Kurpfälzer Spezialitäten-Markt mit regionalen Produkten",
+      "Kinderkarussell und Märchenbahn am Wasserturm",
+      "Live-Musik auf der Bühne jeden Freitag und Samstag ab 18 Uhr",
+      "Weihnachtsbaumverkauf direkt am Markt"
+    ],
+    "entryPrice": "Eintritt frei",
+    "publicTransport": "Straßenbahn: 1, 3, 7 bis Wasserturm (direkt am Markt), S-Bahn: S1, S2, S3 bis Hauptbahnhof (5 Min. Fußweg)",
+    "parking": "Parkhaus Q7 (300m), Parkhaus Rosengarten (400m), Tiefgarage Planken (500m). Kosten: 1,50-2€/Std."
+  },
+  {
+    "id": "104", 
+    "slug": "wiesbadener-sternschnuppenmarkt",
+    "name": "Wiesbadener Sternschnuppenmarkt",
+    "city": "Wiesbaden",
+    "address": "Schlossplatz/Marktstraße, 65183 Wiesbaden",
+    "description": "Der Wiesbadener Sternschnuppenmarkt in der eleganten Kurstadt besticht durch seine exklusive Atmosphäre zwischen Schloss und Staatstheater. Mit über 120 ausgewählten Ständen bietet er eine gehobene Auswahl an Kunsthandwerk, Kulinarik und Geschenkideen. Das edle Ambiente der Kurstadt verleiht dem Markt einen besonderen Charme.",
+    "openingDates": "28.11.2025 - 23.12.2025",
+    "openingHours": "Mo-Do 11-20 Uhr, Fr-Sa 11-21 Uhr, So 12-20 Uhr, 23.12. 11-18 Uhr",
+    "imageUrl": "/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png",
+    "specialties": [
+      "Wiesbadener Kochkäse", 
+      "Sektkellerei-Produkte",
+      "Glühwein",
+      "Regionale Delikatessen",
+      "Edles Kunsthandwerk"
+    ],
+    "website": "https://wiesbaden.de/sternschnuppenmarkt",
+    "phone": "+49 611 312345",
+    "email": "sternschnuppenmarkt@wiesbaden.de",
+    "transport": "S-Bahn: S1, S8, S9 bis Wiesbaden Hauptbahnhof, Bus: Linien 1, 8, 14 bis Schlossplatz",
+    "highlights": [
+      "Tägliches Sektbuffet der regionalen Sektkellereien 17-19 Uhr",
+      "Kurkonzerte im Staatstheater mit Weihnachtsprogramm",
+      "Edle Kunsthandwerk-Ausstellung in der Villa Clementine",
+      "Wiesbadener Matinée jeden Sonntag 11 Uhr mit klassischer Musik",
+      "Thermalbad-Gutscheine als besondere Weihnachtsgeschenke"
+    ],
+    "entryPrice": "Eintritt frei",
+    "publicTransport": "S-Bahn: S1, S8, S9 bis Wiesbaden Hbf (8 Min. Fußweg), Bus: 1, 8, 14 bis Schlossplatz (direkt am Markt)",
+    "parking": "Tiefgarage Schlossplatz (100m), Parkhaus Luisenplatz (300m), Parkhaus Lilien-Carré (400m). Kosten: 1,80-2,50€/Std."
+  },
+  {
+    "id": "105",
+    "slug": "wuerzburger-weihnachtsmarkt",
+    "name": "Würzburger Weihnachtsmarkt",
+    "city": "Würzburg",
+    "address": "Marktplatz, 97070 Würzburg",
+    "description": "Der Würzburger Weihnachtsmarkt vor der Kulisse der berühmten Marienkapelle und des Falkenhauses gehört zu den schönsten Weihnachtsmärkten Frankens. Mit über 100 Ständen rund um den historischen Marktplatz bietet er eine perfekte Mischung aus fränkischen Spezialitäten und traditionellem Handwerk in einem der schönsten Marktplätze Deutschlands.",
+    "openingDates": "27.11.2025 - 23.12.2025",
+    "openingHours": "Mo-Do 10-20 Uhr, Fr-Sa 10-21 Uhr, So 11-20 Uhr, 23.12. 10-16 Uhr",
+    "imageUrl": "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
+    "specialties": [
+      "Fränkischer Lebkuchen",
+      "Frankenwein-Glühwein",
+      "Bratwurst",
+      "Schäufele",
+      "Fränkisches Handwerk"
+    ],
+    "website": "https://wuerzburg.de/weihnachtsmarkt",
+    "phone": "+49 931 372398",
+    "email": "weihnachtsmarkt@wuerzburg.de",
+    "transport": "Straßenbahn: Linien 1, 3, 5 bis Dom, Bus: Linien 12, 20 bis Marktplatz",
+    "highlights": [
+      "Fränkische Weinprobe mit Winzern aus der Region jeden Donnerstag 18 Uhr",
+      "Lebkuchen-Werkstatt mit Kindern jeden Samstag 14-16 Uhr",
+      "Weihnachtskonzerte in der Marienkapelle jeden Sonntag 17 Uhr",
+      "Handwerkervorführungen: Glasbläser, Töpfer, Holzschnitzer täglich 15-18 Uhr",
+      "Frankenwein-Stand mit über 20 regionalen Weinen zum Probieren"
+    ],
+    "entryPrice": "Eintritt frei",
+    "publicTransport": "Straßenbahn: 1, 3, 5 bis Dom (3 Min. Fußweg), Bus: 12, 20 bis Marktplatz (direkt am Markt)",
+    "parking": "Parkhaus Marktgarage (direkt unter dem Marktplatz), Parkhaus Congress Centrum (200m). Kosten: 1,50€/Std."
   }
 
 ];
