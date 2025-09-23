@@ -79,7 +79,14 @@ const ChristmasMarketDetailPage = () => {
               "@type": "PostalAddress",
               "streetAddress": market.address,
               "addressLocality": market.city,
+              "postalCode": market.postalCode,
+              "addressRegion": market.region,
               "addressCountry": "DE"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": market.latitude,
+              "longitude": market.longitude
             }
           },
           "organizer": {
