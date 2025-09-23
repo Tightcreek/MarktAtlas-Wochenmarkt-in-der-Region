@@ -44,6 +44,21 @@ const ChristmasMarketDetailPage = () => {
 
   const currentUrl = typeof window !== 'undefined' ? window.location.href : `https://marktatlas.lovable.app/weihnachtsmaerkte/${market.slug}`;
   
+  // Parse German date format to ISO format for schema
+  const parseGermanDateRange = (dateRange: string) => {
+    const [start, end] = dateRange.split(' - ');
+    const parseGermanDate = (dateStr: string) => {
+      const [day, month, year] = dateStr.split('.');
+      return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+    };
+    return {
+      startDate: parseGermanDate(start),
+      endDate: parseGermanDate(end)
+    };
+  };
+
+  const { startDate, endDate } = parseGermanDateRange(market.openingDates);
+  
   const breadcrumbItems = [
     { name: 'Startseite', url: 'https://markt-atlas-finden.lovable.app/' },
     { name: 'Weihnachtsmärkte', url: 'https://markt-atlas-finden.lovable.app/weihnachtsmaerkte' },
@@ -68,8 +83,8 @@ const ChristmasMarketDetailPage = () => {
           "description": market.description,
           "url": currentUrl,
           "image": market.imageUrl,
-          "startDate": "2025-11-25",
-          "endDate": "2025-12-23",
+          "startDate": startDate,
+          "endDate": endDate,
           "eventStatus": "https://schema.org/EventScheduled",
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "location": {
@@ -99,8 +114,8 @@ const ChristmasMarketDetailPage = () => {
             "price": "0",
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
-            "validFrom": "2025-11-25",
-            "validThrough": "2025-12-23"
+            "validFrom": startDate,
+            "validThrough": endDate
           },
           "subEvent": market.specialties.map(specialty => ({
             "@type": "Event",
