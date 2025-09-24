@@ -178,7 +178,7 @@ const ChristmasMarketsPage = () => {
       </nav>
 
       {/* Hero Banner */}
-      <div className="relative w-full h-96 mb-12 rounded-2xl overflow-hidden">
+      <div className="relative w-full h-64 mb-8 rounded-lg overflow-hidden max-w-4xl mx-auto">
         <img 
           src="/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png"
           alt="Weihnachtsmarkt mit festlicher Beleuchtung"
