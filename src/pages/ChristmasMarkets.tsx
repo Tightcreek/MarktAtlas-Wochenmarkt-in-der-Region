@@ -177,23 +177,22 @@ const ChristmasMarketsPage = () => {
         </div>
       </nav>
 
-      {/* Hero Banner */}
-      <div className="relative w-full h-64 mb-8 rounded-lg overflow-hidden max-w-4xl mx-auto">
-        <img 
-          src="/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png"
-          alt="Weihnachtsmarkt mit festlicher Beleuchtung"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-5xl font-bold mb-4 drop-shadow-lg">
-              🎄 Die besten Weihnachtsmärkte 2025 🎄
-            </h1>
-            <p className="text-xl max-w-2xl mx-auto drop-shadow-lg">
-              Entdecken Sie Deutschlands magischste Weihnachtsmärkte mit allen Terminen & Geheimtipps
-            </p>
-          </div>
+      {/* Header */}
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          🎄 Die besten Weihnachtsmärkte 2025 🎄
+        </h1>
+        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6">
+          Entdecken Sie Deutschlands magischste Weihnachtsmärkte mit allen Terminen & Geheimtipps
+        </p>
+        
+        {/* Christmas Market Image */}
+        <div className="max-w-4xl mx-auto mb-6">
+          <img 
+            src="/lovable-uploads/2b8ae1e1-72bb-4669-bda0-58a94434bd80.png"
+            alt="Weihnachtsmarkt mit festlicher Beleuchtung und traditionellen Holzbuden"
+            className="w-full h-64 object-cover rounded-lg shadow-lg"
+          />
         </div>
       </div>
 
