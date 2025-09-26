@@ -58,18 +58,39 @@ const SEOHead = ({
       metaTag.setAttribute('content', content);
     };
 
-    // Update basic meta tags
+    // Enhanced meta tags for better crawler control and indexing
     updateMetaTag('description', description);
     updateMetaTag('keywords', keywords);
     updateMetaTag('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+    updateMetaTag('googlebot', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+    updateMetaTag('bingbot', 'index, follow, max-snippet:-1, max-image-preview:large');
     updateMetaTag('language', 'de');
+    updateMetaTag('content-language', 'de-DE');
+    updateMetaTag('geo.region', 'DE');
+    updateMetaTag('geo.country', 'Germany');
     updateMetaTag('author', siteName);
+    updateMetaTag('publisher', siteName);
+    updateMetaTag('copyright', `© ${new Date().getFullYear()} ${siteName}`);
     updateMetaTag('viewport', 'width=device-width, initial-scale=1.0');
     updateMetaTag('theme-color', '#22c55e');
+    updateMetaTag('mobile-web-app-capable', 'yes');
+    updateMetaTag('apple-mobile-web-app-capable', 'yes');
+    updateMetaTag('msapplication-TileColor', '#22c55e');
     
-    // Performance and Core Web Vitals
+    // Performance and Core Web Vitals optimization
     updateMetaTag('format-detection', 'telephone=no');
     updateMetaTag('dns-prefetch-control', 'on');
+    updateMetaTag('preconnect', 'https://fonts.googleapis.com');
+    updateMetaTag('preconnect', 'https://fonts.gstatic.com');
+    updateMetaTag('referrer', 'strict-origin-when-cross-origin');
+    updateMetaTag('x-ua-compatible', 'IE=edge');
+    
+    // Schema.org verification and SEO enhancement tags
+    updateMetaTag('generator', 'MarktAtlas Deutschland SEO Engine v2.0');
+    updateMetaTag('rating', 'general');
+    updateMetaTag('distribution', 'global');
+    updateMetaTag('revisit-after', '7 days');
+    updateMetaTag('expires', 'never');
     
     // Update Open Graph tags
     updateMetaTag('og:title', title, true);
@@ -119,7 +140,7 @@ const SEOHead = ({
       linkTag.setAttribute('href', canonicalUrl);
     }
 
-    // Add alternate language URLs
+    // Enhanced hreflang implementation with proper fallbacks
     if (alternateUrls) {
       Object.entries(alternateUrls).forEach(([lang, url]) => {
         let linkTag = document.querySelector(`link[hreflang="${lang}"]`) as HTMLLinkElement;
@@ -131,6 +152,42 @@ const SEOHead = ({
         }
         linkTag.setAttribute('href', url);
       });
+    } else if (canonicalUrl) {
+      // Default hreflang setup for German sites
+      const hreflangs = [
+        { lang: 'de', url: canonicalUrl },
+        { lang: 'de-DE', url: canonicalUrl },
+        { lang: 'x-default', url: canonicalUrl }
+      ];
+      
+      hreflangs.forEach(({ lang, url }) => {
+        let linkTag = document.querySelector(`link[hreflang="${lang}"]`) as HTMLLinkElement;
+        if (!linkTag) {
+          linkTag = document.createElement('link');
+          linkTag.setAttribute('rel', 'alternate');
+          linkTag.setAttribute('hreflang', lang);
+          document.head.appendChild(linkTag);
+        }
+        linkTag.setAttribute('href', url);
+      });
+    }
+    
+    // Add preload hints for critical resources
+    const addPreloadHint = (href: string, as: string, type?: string) => {
+      if (!document.querySelector(`link[rel="preload"][href="${href}"]`)) {
+        const linkTag = document.createElement('link');
+        linkTag.setAttribute('rel', 'preload');
+        linkTag.setAttribute('href', href);
+        linkTag.setAttribute('as', as);
+        if (type) linkTag.setAttribute('type', type);
+        document.head.appendChild(linkTag);
+      }
+    };
+    
+    // Preload critical fonts and styles
+    addPreloadHint('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', 'style');
+    if (ogImage) {
+      addPreloadHint(ogImage, 'image');
     }
 
     // Add enhanced JSON-LD schema
@@ -167,7 +224,7 @@ const SEOHead = ({
       schemaScript.textContent = JSON.stringify(enhancedSchema);
     }
     
-    // Add DNS prefetch for external domains
+    // Enhanced DNS prefetch and preconnect for performance
     const addDnsPrefetch = (domain: string) => {
       if (!document.querySelector(`link[rel="dns-prefetch"][href="${domain}"]`)) {
         const linkTag = document.createElement('link');
@@ -177,9 +234,28 @@ const SEOHead = ({
       }
     };
     
-    addDnsPrefetch('//fonts.googleapis.com');
+    const addPreconnect = (domain: string, crossorigin = false) => {
+      if (!document.querySelector(`link[rel="preconnect"][href="${domain}"]`)) {
+        const linkTag = document.createElement('link');
+        linkTag.setAttribute('rel', 'preconnect');
+        linkTag.setAttribute('href', domain);
+        if (crossorigin) linkTag.setAttribute('crossorigin', 'anonymous');
+        document.head.appendChild(linkTag);
+      }
+    };
+    
+    // Critical domains for preconnect (faster than DNS prefetch)
+    addPreconnect('https://fonts.googleapis.com');
+    addPreconnect('https://fonts.gstatic.com', true);
+    
+    // Secondary domains for DNS prefetch
     addDnsPrefetch('//www.google-analytics.com');
     addDnsPrefetch('//maps.googleapis.com');
+    addDnsPrefetch('//www.googletagmanager.com');
+    addDnsPrefetch('//connect.facebook.net');
+    addDnsPrefetch('//static.xx.fbcdn.net');
+    addDnsPrefetch('//www.google.com');
+    addDnsPrefetch('//www.gstatic.com');
     
   }, [title, description, keywords, canonicalUrl, ogImage, schemaData, alternateUrls, breadcrumbs, rating]);
 

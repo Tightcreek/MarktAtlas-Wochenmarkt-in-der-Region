@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, MapPin, ExternalLink, Globe, Phone, Mail, Car, Wine, Cake, Coffee, Gift, Music, Star, Ticket, ParkingCircle, Bus, Train } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { BreadcrumbSchema, OrganizationSchema } from "@/components/StructuredData";
+import { EventSchema } from "@/components/EnhancedStructuredData";
 import Footer from "@/components/Footer";
 
 const ChristmasMarketDetailPage = () => {
@@ -142,6 +143,8 @@ const ChristmasMarketDetailPage = () => {
         ]}
         description="Deutschlands führende Plattform für die Suche nach Wochenmärkten und Bauernmärkten"
       />
+      
+      <EventSchema market={market} />
       
       {/* Hero Section */}
       <div className="relative h-96 lg:h-[500px] overflow-hidden">

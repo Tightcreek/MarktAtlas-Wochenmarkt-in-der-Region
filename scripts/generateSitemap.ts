@@ -170,11 +170,12 @@ const main = () => {
     
     writeFileSync(outputPath, sitemapContent, 'utf8');
     
-    console.log(`✅ Comprehensive SEO sitemap generated successfully!`);
+    console.log(`✅ SEO-Enhanced sitemap generated successfully!`);
     console.log(`📍 Location: ${outputPath}`);
     const cities = [...new Set(marketData.map(market => market.city))].length;
-    const totalUrls = marketData.length + christmasMarkets.length + cities + blogPosts.length + 5; // all content + static pages
-    console.log(`📊 Total URLs: ${totalUrls} (${marketData.length} markets + ${christmasMarkets.length} Christmas markets + ${cities} cities + ${blogPosts.length} blog posts + 5 other pages)`);
+    const totalUrls = marketData.length + christmasMarkets.length + cities + blogPosts.length + 5;
+    console.log(`📊 Total URLs: ${totalUrls} (${marketData.length} markets + ${christmasMarkets.length} Christmas markets + ${cities} cities + ${blogPosts.length} blog posts + 5 static pages)`);
+    console.log(`🔍 SEO Features: Enhanced robots.txt, structured data, hreflang, preconnect hints, and local business schemas`);
     
   } catch (error) {
     console.error('❌ Error generating sitemap:', error);

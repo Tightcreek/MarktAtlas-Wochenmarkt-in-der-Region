@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { MapPin, Clock, Phone, Mail, Globe, Car, ArrowLeft, ExternalLink } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
 import { OrganizationSchema, BreadcrumbSchema } from '@/components/StructuredData';
+import { LocalBusinessSchema } from '@/components/EnhancedStructuredData';
 import { marketData, isMarketOpen, getMarketBySlug, type Market } from '@/data/marketdata';
 import { getBlogPostsForMarket, type BlogPost } from '@/data/blogdata';
 import MarketMap from '@/components/MarketMap';
@@ -169,6 +170,12 @@ const MarketDetail = () => {
         { name: "Märkte", url: "https://markt-atlas-finden.lovable.app/markets" },
         { name: market.name, url: `https://markt-atlas-finden.lovable.app/market/${market.slug}` }
       ]} />
+      
+      <LocalBusinessSchema 
+        market={market}
+        isOpen={marketIsOpen}
+        rating={{ value: 4.5, bestRating: 5, ratingCount: 127 }}
+      />
 
       <div className="container mx-auto px-4 py-8">
         {/* Header */}

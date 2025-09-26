@@ -1,25 +1,35 @@
-# Robots.txt for MarktAtlas Deutschland
-# Allow all search engines to crawl the entire site
+# Robots.txt for MarktAtlas Deutschland - SEO Optimized v2.0
+# Comprehensive crawler guidance for optimal indexing
 
-# Default crawling rules for all bots
-User-agent: *
-Allow: /
-Crawl-delay: 1
-
-# Specific rules for major search engines
+# Primary search engines - Optimized crawling rules
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0.2
+Request-rate: 1/1s
+
+User-agent: Googlebot-Image
+Allow: /lovable-uploads/
+Allow: /assets/
 Crawl-delay: 0.5
 
 User-agent: Bingbot  
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0.5
 
 User-agent: Slurp
 Allow: /
+Crawl-delay: 0.8
+
+User-agent: DuckDuckBot
+Allow: /
 Crawl-delay: 1
 
-# Social media crawlers
+# Default rules for all other bots
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Social media and messaging crawlers - Enhanced rules
 User-agent: Twitterbot
 Allow: /
 Crawl-delay: 0
@@ -30,8 +40,18 @@ Crawl-delay: 0
 
 User-agent: LinkedInBot
 Allow: /
+Crawl-delay: 0.5
 
-# Block unnecessary paths and files
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: SkypeUriPreview
+Allow: /
+
+# Enhanced blocking rules for security and crawl efficiency
 User-agent: *
 Disallow: /api/
 Disallow: /admin/
@@ -44,6 +64,13 @@ Disallow: /*.tsx$
 Disallow: /src/
 Disallow: /.git/
 Disallow: /.env*
+Disallow: /.*
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+Disallow: /_next/static/
+Disallow: /webpack-hmr
+Disallow: /__nextjs_original-stack-frame
 
 # Allow important static assets
 Allow: /assets/
@@ -59,8 +86,11 @@ Allow: /*.svg$
 Allow: /*.webp$
 Allow: /*.ico$
 
-# Block common spam and malicious bots
+# Enhanced blocking of spam, scrapers and malicious bots
 User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
 Disallow: /
 
 User-agent: MJ12bot
@@ -68,6 +98,25 @@ Disallow: /
 
 User-agent: DotBot
 Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: SeznamBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: MegaIndex.ru
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
 
 # Sitemap references
 Sitemap: https://markt-atlas-finden.lovable.app/sitemap.xml
