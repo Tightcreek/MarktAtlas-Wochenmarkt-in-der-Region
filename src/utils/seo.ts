@@ -1,28 +1,79 @@
 import { Market } from '@/data/marketdata';
 
-// Generate optimized meta description for markets
+// Enhanced meta descriptions with location-specific keywords and optimal length
 export const generateMarketMetaDescription = (market: Market): string => {
   const isOpen = market.isOpen ? 'Jetzt geöffnet' : 'Geschlossen';
-  const specialties = market.specialties.slice(0, 3).join(', ');
+  const specialties = market.specialties.slice(0, 2).join(', ');
+  const nearbyText = market.city.toLowerCase().includes('köln') ? 'Köln Zentrum' : 
+                    market.city.toLowerCase().includes('münchen') ? 'München Innenstadt' :
+                    `${market.city} Zentrum`;
   
-  return `${market.name} in ${market.city}: ${market.description.substring(0, 100)}... ✓ Öffnungszeiten: ${market.openingHours} ✓ ${isOpen} ✓ Spezialitäten: ${specialties}`;
+  // Optimized for 150-160 characters with high-intent keywords
+  return `🥕 ${market.name} ${market.city}: ${isOpen} | ${market.openingHours} | ${specialties} | Frische Produkte direkt vom Erzeuger in ${nearbyText}`;
 };
 
-// Generate SEO-optimized keywords for markets
+// Christmas market meta descriptions
+export const generateChristmasMarketMetaDescription = (market: any): string => {
+  const specialties = market.specialties.slice(0, 2).join(', ');
+  return `🎄 ${market.name}: ${market.openingDates} | ${specialties} | Weihnachtsmarkt ${market.city} | Öffnungszeiten & Highlights 2025`;
+};
+
+// Enhanced SEO keywords with long-tail and local search optimization
 export const generateMarketKeywords = (market: Market): string => {
+  const city = market.city.toLowerCase();
   const baseKeywords = [
     market.name,
-    `wochenmarkt ${market.city.toLowerCase()}`,
-    `markt ${market.city.toLowerCase()}`,
-    `bauernmarkt ${market.city.toLowerCase()}`,
-    `${market.city.toLowerCase()} wochenmarkt öffnungszeiten`,
-    `markt ${market.city.toLowerCase()} heute geöffnet`
+    `wochenmarkt ${city}`,
+    `markt ${city}`,
+    `bauernmarkt ${city}`,
+    `${city} wochenmarkt öffnungszeiten`,
+    `markt ${city} heute geöffnet`,
+    `${city} wochenmarkt heute`,
+    `frischer markt ${city}`,
+    `bio markt ${city}`,
+    `regional einkaufen ${city}`
   ];
   
-  const featureKeywords = market.features.map(feature => feature.toLowerCase());
-  const specialtyKeywords = market.specialties.map(specialty => specialty.toLowerCase());
+  const longTailKeywords = [
+    `wo ist markt in ${city}`,
+    `${city} markt samstag`,
+    `wochenmarkt ${city} mittwoch`,
+    `beste märkte ${city}`,
+    `frische produkte ${city}`,
+    `markt termine ${city}`,
+    `bauernmarkt öffnungszeiten ${city}`,
+    `regional einkaufen nähe ${city}`
+  ];
   
-  return [...baseKeywords, ...featureKeywords, ...specialtyKeywords].join(', ');
+  const featureKeywords = market.features.map(feature => `${feature.toLowerCase()} ${city}`);
+  const specialtyKeywords = market.specialties.map(specialty => `${specialty.toLowerCase()} ${city}`);
+  
+  return [...baseKeywords, ...longTailKeywords, ...featureKeywords, ...specialtyKeywords].join(', ');
+};
+
+// Generate location-specific title tags
+export const generateOptimizedTitle = (market: Market): string => {
+  const isOpen = market.isOpen ? 'Geöffnet' : 'Öffnungszeiten';
+  return `${market.name} ${market.city} - ${isOpen} | Wochenmarkt & Öffnungszeiten`;
+};
+
+// Generate Christmas market keywords
+export const generateChristmasMarketKeywords = (market: any): string => {
+  const city = market.city.toLowerCase();
+  const baseKeywords = [
+    `weihnachtsmarkt ${city}`,
+    `christkindlmarkt ${city}`,
+    `${city} weihnachtsmarkt 2025`,
+    `weihnachtsmarkt ${city} öffnungszeiten`,
+    `${city} weihnachtsmarkt termine`,
+    `adventmarkt ${city}`,
+    `weihnachtsmarkt ${city} highlights`,
+    `glühwein ${city}`
+  ];
+  
+  const specialtyKeywords = market.specialties.map((specialty: string) => `${specialty.toLowerCase()} ${city}`);
+  
+  return [...baseKeywords, ...specialtyKeywords].join(', ');
 };
 
 // Generate SEO-friendly URLs

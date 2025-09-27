@@ -7,6 +7,9 @@ import { ArrowLeft, Calendar, Clock, MapPin, ExternalLink, Globe, Phone, Mail, C
 import SEOHead from "@/components/SEOHead";
 import { BreadcrumbSchema, OrganizationSchema } from "@/components/StructuredData";
 import { EventSchema } from "@/components/EnhancedStructuredData";
+import { ChristmasMarketFAQ } from "@/components/ChristmasMarketFAQ";
+import { MarketGuide } from "@/components/MarketGuide";
+import { generateChristmasMarketMetaDescription, generateChristmasMarketKeywords } from "@/utils/seo";
 import Footer from "@/components/Footer";
 
 const ChristmasMarketDetailPage = () => {
@@ -69,9 +72,9 @@ const ChristmasMarketDetailPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title={`${market.name} 2025 ✨ Weihnachtsmarkt ${market.city} | Alle Termine & Infos`}
-        description={`🎄 ${market.name} in ${market.city} 2025: ${market.description.substring(0, 120)}... ✨ Öffnungszeiten, Spezialitäten, Anfahrt & Insider-Tipps für Ihren perfekten Weihnachtsmarkt-Besuch!`}
-        keywords={`${market.name.toLowerCase()}, weihnachtsmarkt ${market.city.toLowerCase()} 2025, ${market.city.toLowerCase()} christkindlmarkt, ${market.specialties.slice(0, 5).join(', ').toLowerCase()}, weihnachtsmarkt öffnungszeiten ${market.city.toLowerCase()}, advent ${market.city.toLowerCase()}, glühwein ${market.city.toLowerCase()}, weihnachtsmarkt termine 2025`}
+        title={`${market.name} 2025 - Termine & Öffnungszeiten | Weihnachtsmarkt ${market.city}`}
+        description={generateChristmasMarketMetaDescription(market)}
+        keywords={generateChristmasMarketKeywords(market)}
         canonicalUrl={currentUrl}
         ogImage={market.imageUrl || "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE="}
         ogType="place"
@@ -471,6 +474,9 @@ const ChristmasMarketDetailPage = () => {
           </Button>
         </div>
       </div>
+      
+      <ChristmasMarketFAQ market={market} />
+      <MarketGuide city={market.city} marketType="christmas" />
 
       <Footer />
     </div>

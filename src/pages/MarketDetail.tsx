@@ -6,6 +6,9 @@ import { MapPin, Clock, Phone, Mail, Globe, Car, ArrowLeft, ExternalLink } from 
 import SEOHead from '@/components/SEOHead';
 import { OrganizationSchema, BreadcrumbSchema } from '@/components/StructuredData';
 import { LocalBusinessSchema } from '@/components/EnhancedStructuredData';
+import { MarketFAQ } from '@/components/MarketFAQ';
+import { MarketGuide } from '@/components/MarketGuide';
+import { generateOptimizedTitle, generateMarketMetaDescription, generateMarketKeywords } from '@/utils/seo';
 import { marketData, isMarketOpen, getMarketBySlug, type Market } from '@/data/marketdata';
 import { getBlogPostsForMarket, type BlogPost } from '@/data/blogdata';
 import MarketMap from '@/components/MarketMap';
@@ -134,9 +137,9 @@ const MarketDetail = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       <SEOHead 
-        title={`${market.name} - Wochenmarkt in ${market.city} | Öffnungszeiten & Spezialitäten | MarktAtlas`}
-        description={`${market.name} in ${market.city}: ${market.description.substring(0, 140)}... ✓ Öffnungszeiten: ${market.openingHours} ✓ Spezialitäten: ${market.specialties.slice(0, 3).join(', ')} ✓ ${marketIsOpen ? 'Jetzt geöffnet' : 'Geschlossen'}`}
-        keywords={`${market.name}, wochenmarkt ${market.city.toLowerCase()}, ${market.features.join(', ')}, ${market.specialties.join(', ')}, märkte ${market.city.toLowerCase()}, bauernmarkt ${market.city.toLowerCase()}, markt ${market.city.toLowerCase()} heute geöffnet, ${market.city.toLowerCase()} wochenmarkt öffnungszeiten`}
+        title={generateOptimizedTitle(market)}
+        description={generateMarketMetaDescription(market)}
+        keywords={generateMarketKeywords(market)}
         canonicalUrl={`https://markt-atlas-finden.lovable.app/market/${market.slug || market.name.toLowerCase().replace(/ü/g, 'ue').replace(/ö/g, 'oe').replace(/ä/g, 'ae').replace(/ß/g, 'ss').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-')}`}
         ogType="place"
         ogImage="https://markt-atlas-finden.lovable.app/lovable-uploads/20688308-10c0-4483-9eda-63494df4b92a.png"
@@ -435,6 +438,9 @@ const MarketDetail = () => {
             Zurück zur Marktübersicht
           </button>
         </div>
+        
+        <MarketFAQ market={market} />
+        <MarketGuide city={market.city} marketType="weekly" />
       </div>
     </div>
   );
