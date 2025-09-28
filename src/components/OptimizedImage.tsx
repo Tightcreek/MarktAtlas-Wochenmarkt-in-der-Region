@@ -66,30 +66,53 @@ const OptimizedImage = ({
     
     const widths = [320, 640, 960, 1200, 1600];
     return widths
-      .map(w => `${baseSrc}?w=${w}&q=75 ${w}w`)
+      .map(w => `${baseSrc}?w=${w}&q=80&format=webp ${w}w`)
+      .join(', ');
+  };
+
+  const generateWebPSource = (baseSrc: string) => {
+    if (!baseSrc.includes('/lovable-uploads/')) return undefined;
+    
+    const widths = [320, 640, 960, 1200, 1600];
+    return widths
+      .map(w => `${baseSrc}?w=${w}&q=80&format=webp ${w}w`)
       .join(', ');
   };
 
   return (
-    <img
-      ref={imgRef}
-      src={currentSrc}
-      srcSet={generateSrcSet(src)}
-      sizes={sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"}
-      alt={alt}
-      width={width}
-      height={height}
-      loading={priority ? "eager" : "lazy"}
-      decoding="async"
-      className={cn(
-        "transition-opacity duration-300",
-        isLoaded ? "opacity-100" : "opacity-70",
-        className
+    <picture>
+      {generateWebPSource(src) && (
+        <source
+          srcSet={generateWebPSource(src)}
+          sizes={sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"}
+          type="image/webp"
+        />
       )}
-      style={{
-        aspectRatio: width && height ? `${width}/${height}` : undefined
-      }}
-    />
+      <img
+        ref={imgRef}
+        src={currentSrc}
+        srcSet={generateSrcSet(src)}
+        sizes={sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"}
+        alt={alt}
+        width={width}
+        height={height}
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        className={cn(
+          "transition-opacity duration-300",
+          isLoaded ? "opacity-100" : "opacity-70",
+          className
+        )}
+        style={{
+          aspectRatio: width && height ? `${width}/${height}` : undefined
+        }}
+        onLoad={() => setIsLoaded(true)}
+        onError={(e) => {
+          console.warn(`Failed to load image: ${src}`);
+          e.currentTarget.style.display = 'none';
+        }}
+      />
+    </picture>
   );
 };
 

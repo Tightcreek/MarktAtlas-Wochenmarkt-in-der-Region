@@ -8,6 +8,8 @@ import { OrganizationSchema, BreadcrumbSchema } from '@/components/StructuredDat
 import { LocalBusinessSchema } from '@/components/EnhancedStructuredData';
 import { MarketFAQ } from '@/components/MarketFAQ';
 import { MarketGuide } from '@/components/MarketGuide';
+import MarketReviews from '@/components/MarketReviews';
+import { usePerformanceOptimization } from '@/hooks/usePerformanceOptimization';
 import { generateOptimizedTitle, generateMarketMetaDescription, generateMarketKeywords } from '@/utils/seo';
 import { marketData, isMarketOpen, getMarketBySlug, type Market } from '@/data/marketdata';
 import { getBlogPostsForMarket, type BlogPost } from '@/data/blogdata';
@@ -33,6 +35,13 @@ const MarketDetail = () => {
   }
 
   const market = getMarketBySlug(slug);
+
+  usePerformanceOptimization({
+    enableResourceHints: true,
+    enableCriticalResourcePreload: true,
+    enableLazyLoading: true,
+    enableImageOptimization: true
+  });
 
   if (!market) {
     return (
@@ -441,6 +450,7 @@ const MarketDetail = () => {
         
         <MarketFAQ market={market} />
         <MarketGuide city={market.city} marketType="weekly" />
+        <MarketReviews marketId={market.id.toString()} marketName={market.name} />
       </div>
     </div>
   );

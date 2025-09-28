@@ -9,6 +9,8 @@ import { BreadcrumbSchema, OrganizationSchema } from "@/components/StructuredDat
 import { EventSchema } from "@/components/EnhancedStructuredData";
 import { ChristmasMarketFAQ } from "@/components/ChristmasMarketFAQ";
 import { MarketGuide } from "@/components/MarketGuide";
+import MarketReviews from "@/components/MarketReviews";
+import { usePerformanceOptimization } from "@/hooks/usePerformanceOptimization";
 import { generateChristmasMarketMetaDescription, generateChristmasMarketKeywords } from "@/utils/seo";
 import Footer from "@/components/Footer";
 
@@ -29,6 +31,13 @@ const ChristmasMarketDetailPage = () => {
   }
 
   const market = getChristmasMarketBySlug(slug);
+
+  usePerformanceOptimization({
+    enableResourceHints: true,
+    enableCriticalResourcePreload: true,
+    enableLazyLoading: true,
+    enableImageOptimization: true
+  });
 
   if (!market) {
     return (
@@ -477,6 +486,7 @@ const ChristmasMarketDetailPage = () => {
       
       <ChristmasMarketFAQ market={market} />
       <MarketGuide city={market.city} marketType="christmas" />
+      <MarketReviews marketId={market.id.toString()} marketName={market.name} />
 
       <Footer />
     </div>
