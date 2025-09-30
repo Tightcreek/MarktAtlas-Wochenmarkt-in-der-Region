@@ -1,4 +1,4 @@
-const CACHE_NAME = 'marktatlas-v1';
+const CACHE_NAME = 'marktatlas-v3-' + Date.now();
 const STATIC_CACHE_URLS = [
   '/',
   '/markets',
@@ -49,10 +49,28 @@ self.addEventListener('fetch', (event) => {
   // Skip external requests
   if (!event.request.url.startsWith(self.location.origin)) return;
 
+  // Use network-first strategy for HTML to always get fresh content
+  if (event.request.headers.get('accept').includes('text/html')) {
+    event.respondWith(
+      fetch(event.request)
+        .then((fetchResponse) => {
+          const responseToCache = fetchResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
+          return fetchResponse;
+        })
+        .catch(() => {
+          return caches.match(event.request);
+        })
+    );
+    return;
+  }
+
+  // Use cache-first strategy for other assets
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
-        // Return cached version or fetch from network
         return response || fetch(event.request).then((fetchResponse) => {
           // Don't cache if not successful
           if (!fetchResponse || fetchResponse.status !== 200 || fetchResponse.type !== 'basic') {
