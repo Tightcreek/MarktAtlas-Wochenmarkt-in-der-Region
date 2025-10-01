@@ -132,7 +132,16 @@ export const PerformanceMonitor = ({ reportWebVitals }: PerformanceMonitorProps)
 // Service Worker registration for caching
 export const registerServiceWorker = () => {
   if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
-    window.addEventListener('load', () => {
+    window.addEventListener('load', async () => {
+      // First, unregister all existing service workers to clear old caches
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(registrations.map(registration => registration.unregister()));
+      
+      // Clear all caches
+      const cacheNames = await caches.keys();
+      await Promise.all(cacheNames.map(name => caches.delete(name)));
+      
+      // Now register the new service worker
       navigator.serviceWorker.register('/sw.js')
         .then((registration) => {
           console.log('SW registered: ', registration);
