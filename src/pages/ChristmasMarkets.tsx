@@ -14,6 +14,7 @@ import { useState } from "react";
 import { useGeolocation } from '@/hooks/useGeolocation';
 import { formatDistance } from '@/utils/distanceCalculation';
 import { toast } from 'sonner';
+import { MarketsMapView } from '@/components/MarketsMapView';
 
 const ChristmasMarketsPage = () => {
   const location = useLocation();
@@ -299,7 +300,7 @@ const ChristmasMarketsPage = () => {
           </p>
         </div>
 
-        {/* Markets Grid */}
+        {/* Map or List View */}
         {resultCount === 0 ? (
           <div className="text-center py-12">
             <p className="text-lg text-muted-foreground mb-4">
@@ -312,6 +313,14 @@ const ChristmasMarketsPage = () => {
               Alle Filter zurücksetzen
             </Button>
           </div>
+        ) : viewMode === 'map' ? (
+          <MarketsMapView 
+            markets={filteredMarkets as any}
+            userLocation={geolocation.hasLocation ? { latitude: geolocation.latitude!, longitude: geolocation.longitude! } : null}
+            onMarketClick={(market) => {
+              window.location.href = `/weihnachtsmaerkte/${market.slug}`;
+            }}
+          />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {filteredMarkets.map((market) => (
