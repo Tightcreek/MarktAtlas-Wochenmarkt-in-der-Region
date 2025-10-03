@@ -3,7 +3,7 @@ import { christmasMarkets } from "@/data/weihnachtsmarktdata";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, ExternalLink } from "lucide-react";
+import { Calendar, MapPin, ExternalLink, Navigation, Map, List } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { BreadcrumbSchema, FAQSchema, OrganizationSchema } from "@/components/StructuredData";
 import Footer from "@/components/Footer";
@@ -11,9 +11,14 @@ import { ChristmasMarketSearch } from "@/components/ChristmasMarketSearch";
 import { ChristmasMarketFilters } from "@/components/ChristmasMarketFilters";
 import { useChristmasMarketFilters, Filters } from "@/hooks/useChristmasMarketFilters";
 import { useState } from "react";
+import { useGeolocation } from '@/hooks/useGeolocation';
+import { formatDistance } from '@/utils/distanceCalculation';
+import { toast } from 'sonner';
 
 const ChristmasMarketsPage = () => {
   const location = useLocation();
+  const geolocation = useGeolocation();
+  const [viewMode, setViewMode] = useState<'list' | 'map'>('list');
   
   const [filters, setFilters] = useState<Filters>({
     searchQuery: '',
@@ -22,7 +27,7 @@ const ChristmasMarketsPage = () => {
     features: []
   });
 
-  const { filteredMarkets, resetFilters, resultCount } = useChristmasMarketFilters(christmasMarkets, filters);
+  const { filteredMarkets, resetFilters, resultCount } = useChristmasMarketFilters(christmasMarkets, filters, geolocation.hasLocation ? { latitude: geolocation.latitude!, longitude: geolocation.longitude! } : undefined);
 
   const handleFiltersChange = (newFilters: Filters) => {
     setFilters(newFilters);
@@ -30,6 +35,11 @@ const ChristmasMarketsPage = () => {
 
   const handleReset = () => {
     setFilters(resetFilters());
+  };
+
+  const handleGetLocation = () => {
+    geolocation.getCurrentLocation();
+    toast.success('Standort wird ermittelt...');
   };
   
   const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://marktatlas.lovable.app/weihnachtsmaerkte';
@@ -200,21 +210,82 @@ const ChristmasMarketsPage = () => {
 
         {/* Search and Filters Section */}
         <div className="mb-8 space-y-6">
-          {/* Search Bar */}
-          <div className="max-w-2xl mx-auto">
-            <ChristmasMarketSearch
-              value={filters.searchQuery}
-              onChange={(value) => handleFiltersChange({ ...filters, searchQuery: value })}
-            />
+          {/* Search Bar and Location */}
+          <div className="max-w-2xl mx-auto space-y-4">
+            <div className="flex gap-2">
+              <div className="flex-1">
+                <ChristmasMarketSearch
+                  value={filters.searchQuery}
+                  onChange={(value) => handleFiltersChange({ ...filters, searchQuery: value })}
+                />
+              </div>
+              <Button
+                variant={geolocation.hasLocation ? "default" : "outline"}
+                onClick={handleGetLocation}
+                disabled={geolocation.isLoading}
+                className="whitespace-nowrap"
+              >
+                <Navigation className="h-4 w-4 mr-2" />
+                {geolocation.isLoading ? 'Wird ermittelt...' : geolocation.hasLocation ? 'Aktualisieren' : 'Standort'}
+              </Button>
+            </div>
+
+            {/* Location Status */}
+            {geolocation.error && (
+              <div className="p-3 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-md text-sm">
+                {geolocation.error}
+              </div>
+            )}
+            
+            {geolocation.hasLocation && (
+              <div className="p-3 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded-md text-sm flex items-center justify-between">
+                <span className="flex items-center gap-2">
+                  <Navigation className="h-4 w-4" />
+                  Standort ermittelt - Entfernungen werden angezeigt
+                </span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => geolocation.clearLocation()}
+                  className="text-xs"
+                >
+                  Löschen
+                </Button>
+              </div>
+            )}
           </div>
 
           {/* Filters */}
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-4">
             <ChristmasMarketFilters
               filters={filters}
               onFiltersChange={handleFiltersChange}
               onReset={handleReset}
             />
+            
+            {/* View Mode Toggle */}
+            <div className="flex justify-end">
+              <div className="flex gap-2">
+                <Button
+                  variant={viewMode === 'list' ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setViewMode('list')}
+                  className="text-xs"
+                >
+                  <List className="h-4 w-4 mr-1" />
+                  Liste
+                </Button>
+                <Button
+                  variant={viewMode === 'map' ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setViewMode('map')}
+                  className="text-xs"
+                >
+                  <Map className="h-4 w-4 mr-1" />
+                  Karte
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -259,6 +330,12 @@ const ChristmasMarketsPage = () => {
                   <Calendar className="h-4 w-4 mr-1" />
                   {market.openingDates}
                 </div>
+                {(market as any).distance !== undefined && (market as any).distance !== Infinity && (
+                  <div className="flex items-center text-primary font-medium text-sm mt-2">
+                    <Navigation className="h-4 w-4 mr-1" />
+                    {formatDistance((market as any).distance)} entfernt
+                  </div>
+                )}
               </CardHeader>
               
               <CardContent>

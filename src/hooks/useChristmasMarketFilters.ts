@@ -1,5 +1,6 @@
 import { useMemo, useCallback } from 'react';
 import { ChristmasMarket } from '@/data/weihnachtsmarktdata';
+import { calculateDistances, sortByDistance } from '@/utils/distanceCalculation';
 
 export interface Filters {
   searchQuery: string;
@@ -8,7 +9,11 @@ export interface Filters {
   features: string[];
 }
 
-export const useChristmasMarketFilters = (markets: ChristmasMarket[], filters: Filters) => {
+export const useChristmasMarketFilters = (
+  markets: ChristmasMarket[], 
+  filters: Filters,
+  userLocation?: { latitude: number; longitude: number }
+) => {
   const filteredMarkets = useMemo(() => {
     let results = markets.filter((market) => {
       // Search filter
@@ -83,29 +88,39 @@ export const useChristmasMarketFilters = (markets: ChristmasMarket[], filters: F
       return true;
     });
 
-    // Sort results to prioritize city matches
-    if (filters.searchQuery.trim()) {
-      const query = filters.searchQuery.toLowerCase();
-      results.sort((a, b) => {
-        const aCityMatch = a.city.toLowerCase() === query;
-        const bCityMatch = b.city.toLowerCase() === query;
-        const aCityIncludes = a.city.toLowerCase().includes(query);
-        const bCityIncludes = b.city.toLowerCase().includes(query);
-        
-        // Exact city match has highest priority
-        if (aCityMatch && !bCityMatch) return -1;
-        if (!aCityMatch && bCityMatch) return 1;
-        
-        // City includes match has second priority
-        if (aCityIncludes && !bCityIncludes) return -1;
-        if (!aCityIncludes && bCityIncludes) return 1;
-        
-        return 0;
-      });
+    // Add distances if user location is available
+    if (userLocation) {
+      const withDistances = calculateDistances(
+        userLocation.latitude,
+        userLocation.longitude,
+        results
+      );
+      results = sortByDistance(withDistances) as any;
+    } else {
+      // Sort results to prioritize city matches when no location
+      if (filters.searchQuery.trim()) {
+        const query = filters.searchQuery.toLowerCase();
+        results.sort((a, b) => {
+          const aCityMatch = a.city.toLowerCase() === query;
+          const bCityMatch = b.city.toLowerCase() === query;
+          const aCityIncludes = a.city.toLowerCase().includes(query);
+          const bCityIncludes = b.city.toLowerCase().includes(query);
+          
+          // Exact city match has highest priority
+          if (aCityMatch && !bCityMatch) return -1;
+          if (!aCityMatch && bCityMatch) return 1;
+          
+          // City includes match has second priority
+          if (aCityIncludes && !bCityIncludes) return -1;
+          if (!aCityIncludes && bCityIncludes) return 1;
+          
+          return 0;
+        });
+      }
     }
 
     return results;
-  }, [markets, filters]);
+  }, [markets, filters, userLocation]);
 
   const resetFilters = useCallback((): Filters => ({
     searchQuery: '',

@@ -3,21 +3,27 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Search, MapPin, Clock, Filter } from 'lucide-react';
+import { Search, MapPin, Clock, Filter, Navigation, Map, List } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import SEOHead from '@/components/SEOHead';
 import Footer from '@/components/Footer';
 import { OrganizationSchema } from '@/components/StructuredData';
 import { marketData, isMarketOpen, generateSEOKeywords, type Market } from '@/data/marketdata';
 import organicProduceImage from '@/assets/organic-produce.jpg';
+import { useGeolocation } from '@/hooks/useGeolocation';
+import { calculateDistances, sortByDistance, formatDistance } from '@/utils/distanceCalculation';
+import { MarketsMapView } from '@/components/MarketsMapView';
+import { toast } from 'sonner';
 
 const Markets = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDay, setSelectedDay] = useState('');
   const [selectedStatus, setSelectedStatus] = useState('');
-  const [isListView, setIsListView] = useState(true);
+  const [sortBy, setSortBy] = useState<'relevance' | 'distance'>('relevance');
+  const [viewMode, setViewMode] = useState<'list' | 'map'>('list');
   const [currentTime, setCurrentTime] = useState(new Date());
   const location = useLocation();
+  const geolocation = useGeolocation();
 
   // Update current time every minute to keep badges accurate
   useEffect(() => {
@@ -32,43 +38,32 @@ const Markets = () => {
     setSearchTerm(e.target.value);
   };
 
-  const handleSearch = () => {
-    const searchResults = marketData.map(market => {
+  const handleSearch = (): (Market & { relevanceScore: number; distance?: number })[] => {
+    let searchResults = marketData.map(market => {
       let relevanceScore = 0;
       const searchLower = searchTerm.toLowerCase().trim();
       
       if (searchTerm === '') {
-        relevanceScore = 1; // Default relevance when no search term
+        relevanceScore = 1;
       } else {
-        // Exact city match (highest priority - 100 points)
         if (market.city.toLowerCase() === searchLower) {
           relevanceScore += 100;
-        }
-        // City starts with search term (high priority - 70 points)
-        else if (market.city.toLowerCase().startsWith(searchLower)) {
+        } else if (market.city.toLowerCase().startsWith(searchLower)) {
           relevanceScore += 70;
         }
         
-        // Exact name match (high priority - 90 points)
         if (market.name.toLowerCase() === searchLower) {
           relevanceScore += 90;
-        }
-        // Name starts with search term (medium-high priority - 60 points)
-        else if (market.name.toLowerCase().startsWith(searchLower)) {
+        } else if (market.name.toLowerCase().startsWith(searchLower)) {
           relevanceScore += 60;
         }
         
-        // Exact postal code match (medium priority - 50 points)
         if (market.postalCode === searchTerm) {
           relevanceScore += 50;
-        }
-        // Postal code starts with search term (medium priority - 40 points)
-        else if (market.postalCode.startsWith(searchTerm)) {
+        } else if (market.postalCode.startsWith(searchTerm)) {
           relevanceScore += 40;
         }
         
-        // Word boundary matches in name (medium priority - 30 points)
-        // Only if not already matched exactly or by starting
         if (relevanceScore < 60) {
           const exactWordRegex = new RegExp(`\\b${searchLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
           if (exactWordRegex.test(market.name)) {
@@ -76,8 +71,6 @@ const Markets = () => {
           }
         }
         
-        // Word boundary matches in city (medium priority - 35 points)
-        // Only if not already matched exactly or by starting
         if (relevanceScore < 70) {
           const exactWordRegex = new RegExp(`\\b${searchLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
           if (exactWordRegex.test(market.city)) {
@@ -85,8 +78,6 @@ const Markets = () => {
           }
         }
         
-        // Address exact word match (lowest priority - 5 points)
-        // Only match if it's a complete word, not partial like "kölner" when searching "köln"
         if (relevanceScore === 0) {
           const exactWordRegex = new RegExp(`\\b${searchLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
           if (exactWordRegex.test(market.address)) {
@@ -97,21 +88,41 @@ const Markets = () => {
       
       return { ...market, relevanceScore };
     }).filter(market => {
-      // Require minimum relevance score of 5 for search results (filters out weak address matches)
       const matchesSearch = searchTerm === '' || market.relevanceScore >= 5;
-      
       const matchesDay = selectedDay === '' || 
         market.openingHours.toLowerCase().includes(selectedDay.toLowerCase());
-      
       const marketIsOpen = isMarketOpen(market.openingHours);
       const matchesStatus = selectedStatus === '' || 
         (selectedStatus === 'geöffnet' && marketIsOpen) ||
         (selectedStatus === 'geschlossen' && !marketIsOpen);
       
       return matchesSearch && matchesDay && matchesStatus;
-    }).sort((a, b) => b.relevanceScore - a.relevanceScore); // Sort by relevance score descending
+    });
+
+    // Add distances if user location is available
+    if (geolocation.hasLocation && geolocation.latitude && geolocation.longitude) {
+      const withDistances = calculateDistances(
+        geolocation.latitude,
+        geolocation.longitude,
+        searchResults
+      );
+      searchResults = withDistances as typeof searchResults;
+    }
+
+    // Sort by distance or relevance
+    if (sortBy === 'distance' && geolocation.hasLocation) {
+      const sorted = sortByDistance(searchResults);
+      searchResults = sorted as typeof searchResults;
+    } else {
+      searchResults = searchResults.sort((a, b) => b.relevanceScore - a.relevanceScore);
+    }
     
     return searchResults;
+  };
+
+  const handleGetLocation = () => {
+    geolocation.getCurrentLocation();
+    toast.success('Standort wird ermittelt...');
   };
 
   const filteredMarkets = handleSearch();
@@ -236,7 +247,43 @@ const Markets = () => {
                 className="pl-10"
               />
             </div>
+            <Button
+              variant={geolocation.hasLocation ? "default" : "outline"}
+              onClick={handleGetLocation}
+              disabled={geolocation.isLoading}
+              className="whitespace-nowrap"
+            >
+              <Navigation className="h-4 w-4 mr-2" />
+              {geolocation.isLoading ? 'Wird ermittelt...' : geolocation.hasLocation ? 'Standort aktualisieren' : 'Standort finden'}
+            </Button>
           </div>
+
+          {/* Location Status */}
+          {geolocation.error && (
+            <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-md text-sm">
+              {geolocation.error}
+            </div>
+          )}
+          
+          {geolocation.hasLocation && (
+            <div className="mb-4 p-3 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded-md text-sm flex items-center justify-between">
+              <span className="flex items-center gap-2">
+                <Navigation className="h-4 w-4" />
+                Standort ermittelt - Märkte werden nach Entfernung sortiert
+              </span>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => {
+                  geolocation.clearLocation();
+                  setSortBy('relevance');
+                }}
+                className="text-xs"
+              >
+                Löschen
+              </Button>
+            </div>
+          )}
 
           {/* Day Filter */}
           <div className="mb-4">
@@ -278,6 +325,60 @@ const Markets = () => {
             </div>
           </div>
 
+          {/* Sort and View Options */}
+          <div className="mb-4 flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
+            <div>
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Sortieren nach:
+              </p>
+              <div className="flex gap-2">
+                <Button
+                  variant={sortBy === 'relevance' ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSortBy('relevance')}
+                  className="text-xs"
+                >
+                  Relevanz
+                </Button>
+                <Button
+                  variant={sortBy === 'distance' ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSortBy('distance')}
+                  disabled={!geolocation.hasLocation}
+                  className="text-xs"
+                >
+                  Entfernung
+                </Button>
+              </div>
+            </div>
+            
+            <div>
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Ansicht:
+              </p>
+              <div className="flex gap-2">
+                <Button
+                  variant={viewMode === 'list' ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setViewMode('list')}
+                  className="text-xs"
+                >
+                  <List className="h-4 w-4 mr-1" />
+                  Liste
+                </Button>
+                <Button
+                  variant={viewMode === 'map' ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setViewMode('map')}
+                  className="text-xs"
+                >
+                  <Map className="h-4 w-4 mr-1" />
+                  Karte
+                </Button>
+              </div>
+            </div>
+          </div>
+
           {/* Results Count */}
           <div className="text-sm text-gray-500 dark:text-gray-400">
             {filteredMarkets.length} von {marketData.length} Märkten gefunden
@@ -291,9 +392,21 @@ const Markets = () => {
           </p>
         </div>
 
-        {/* Markets Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredMarkets.map((market) => {
+        {/* Map or List View */}
+        {viewMode === 'map' ? (
+          <MarketsMapView 
+            markets={filteredMarkets}
+            userLocation={geolocation.hasLocation ? { latitude: geolocation.latitude!, longitude: geolocation.longitude! } : null}
+            onMarketClick={(market) => {
+              const slug = market.slug || market.name.toLowerCase()
+                .replace(/ü/g, 'ue').replace(/ö/g, 'oe').replace(/ä/g, 'ae').replace(/ß/g, 'ss')
+                .replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
+              window.location.href = `/market/${slug}`;
+            }}
+          />
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredMarkets.map((market) => {
             // Calculate market open status dynamically on each render
             const marketIsOpen = isMarketOpen(market.openingHours);
             
@@ -322,6 +435,13 @@ const Markets = () => {
                       <Clock className="h-4 w-4" />
                       {market.openingHours}
                     </div>
+                    
+                    {(market as any).distance !== undefined && (market as any).distance !== Infinity && (
+                      <div className="flex items-center gap-2 text-sm text-primary font-medium">
+                        <Navigation className="h-4 w-4" />
+                        {formatDistance((market as any).distance)} entfernt
+                      </div>
+                    )}
                     
                     <div className="text-sm text-gray-500 dark:text-gray-400">
                       {market.address}
@@ -353,7 +473,8 @@ const Markets = () => {
               </Card>
             );
           })}
-        </div>
+          </div>
+        )}
 
         {/* Empty State */}
         {filteredMarkets.length === 0 && (

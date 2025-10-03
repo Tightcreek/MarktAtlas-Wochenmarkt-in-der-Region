@@ -45,24 +45,24 @@ export function formatDistance(km: number): string {
 export function calculateDistances<T extends { latitude?: number; longitude?: number }>(
   userLat: number,
   userLon: number,
-  items: T[]
+  items: readonly T[]
 ): (T & { distance: number })[] {
   return items.map(item => {
     if (item.latitude && item.longitude) {
       const distance = calculateDistance(userLat, userLon, item.latitude, item.longitude);
-      return { ...item, distance };
+      return { ...item, distance } as T & { distance: number };
     }
-    return { ...item, distance: Infinity };
+    return { ...item, distance: Infinity } as T & { distance: number };
   });
 }
 
 /**
  * Sort items by distance (closest first)
  */
-export function sortByDistance<T extends { distance?: number }>(items: T[]): T[] {
+export function sortByDistance<T>(items: readonly T[]): T[] {
   return [...items].sort((a, b) => {
-    const distA = a.distance ?? Infinity;
-    const distB = b.distance ?? Infinity;
+    const distA = (a as any).distance ?? Infinity;
+    const distB = (b as any).distance ?? Infinity;
     return distA - distB;
   });
 }
