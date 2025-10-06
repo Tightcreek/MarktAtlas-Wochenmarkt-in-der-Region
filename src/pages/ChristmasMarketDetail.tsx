@@ -85,7 +85,7 @@ const ChristmasMarketDetailPage = () => {
         description={generateChristmasMarketMetaDescription(market)}
         keywords={generateChristmasMarketKeywords(market)}
         canonicalUrl={currentUrl}
-        ogImage={market.imageUrl || "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE="}
+        ogImage={(market.imageUrl && market.imageUrl !== "N/A") ? market.imageUrl : "/lovable-uploads/generic-christmas-market.png"}
         ogType="place"
         siteName="MarktAtlas Deutschland"
         breadcrumbs={breadcrumbItems}
@@ -95,7 +95,7 @@ const ChristmasMarketDetailPage = () => {
           "name": market.name,
           "description": market.description,
           "url": currentUrl,
-          "image": market.imageUrl,
+          "image": (market.imageUrl && market.imageUrl !== "N/A") ? market.imageUrl : "/lovable-uploads/generic-christmas-market.png",
           "startDate": startDate,
           "endDate": endDate,
           "eventStatus": "https://schema.org/EventScheduled",
@@ -160,7 +160,7 @@ const ChristmasMarketDetailPage = () => {
       
       {/* Hero Section */}
       <div className="relative w-full h-[400px] lg:h-[600px] overflow-hidden bg-muted">
-        {market.imageUrl ? (
+        {market.imageUrl && market.imageUrl !== "N/A" ? (
           <img 
             src={market.imageUrl} 
             alt={`${market.name} Weihnachtsmarkt`}
@@ -168,7 +168,12 @@ const ChristmasMarketDetailPage = () => {
             loading="eager"
           />
         ) : (
-          <div className="absolute inset-0 w-full h-full bg-gradient-primary" />
+          <img 
+            src="/lovable-uploads/generic-christmas-market.png" 
+            alt={`${market.name} Weihnachtsmarkt`}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
+          />
         )}
         
         {/* Hero Overlay */}
