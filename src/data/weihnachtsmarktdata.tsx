@@ -218,7 +218,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     longitude: 13.3925,
     description:
       "Einer der schönsten Weihnachtsmärkte Deutschlands in eindrucksvoller Kulisse zwischen Konzerthaus, Deutschem und Französischem Dom. Weiße Zeltstadt mit exklusivem Kunsthandwerk, Gaumenfreuden und kulturellem Programm.",
-    openDates: "24.11.2025 - 31.12.2025",
+    openingDates: "24.11.2025 - 31.12.2025",
     openingHours: "So-Do 12-22 Uhr, Fr-Sa 12-23 Uhr, 24.12. 12-18 Uhr, 31.12. 12-00 Uhr",
     imageUrl: "N/A",
     specialties: [
