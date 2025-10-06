@@ -37,7 +37,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     "description": "Einer der berühmtesten Weihnachtsmärkte Deutschlands mit über 180 Ständen. Der Nürnberger Christkindlmarkt verzaubert jährlich über 2 Millionen Besucher mit seinem besonderen Flair, traditionellem Handwerk und kulinarischen Köstlichkeiten. Das berühmte Christkind eröffnet jeden Advent den Markt mit einem feierlichen Prolog.",
     "openingDates": "28.11.2025 - 24.12.2025",
     "openingHours": "Mo-Do 10-21 Uhr, Fr-Sa 10-22 Uhr, So 10-21 Uhr",
-    "imageUrl": "/lovable-uploads/1236a97e-b09b-4957-9450-7b9e7f2da7f5.png",
+    "imageUrl": "/lovable-uploads/nuernberg-christmas-market.jpg",
     "specialties": [
       "Lebkuchen",
       "Glühwein",
