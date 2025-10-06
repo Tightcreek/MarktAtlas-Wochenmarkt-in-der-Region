@@ -107,7 +107,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     "description": "Sieben verschiedene Weihnachtsmärkte in der Kölner Innenstadt. Der Markt am Dom ist der größte und bekannteste mit über 160 Ständen direkt vor dem UNESCO-Weltkulturerbe Kölner Dom. Jeder Markt hat seinen eigenen Charakter - vom traditionellen Markt am Neumarkt bis zum mittelalterlichen Markt am Stadtgarten.",
     "openingDates": "25.11.2025 - 23.12.2025",
     "openingHours": "Mo-Do 11-21 Uhr, Fr-Sa 11-22 Uhr, So 11-21 Uhr",
-    "imageUrl": "/lovable-uploads/79363d5a-6bb6-4acb-8065-0964442b7ab1.png",
+    "imageUrl": "/lovable-uploads/koeln-christmas-market.jpg",
     "specialties": [
       "Kölsch",
       "Reibekuchen",
@@ -134,7 +134,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     "description": "Einer der größten und schönsten Weihnachtsmärkte Europas mit über 280 Ständen. Der Stuttgarter Weihnachtsmarkt erstreckt sich über die gesamte Innenstadt und verzaubert mit seinem einzigartigen Dach aus Tannenzweigen über den Marktständen. Die historische Kulisse des Alten Schlosses bietet eine märchenhafte Atmosphäre.",
     "openingDates": "26.11.2025 - 23.12.2025",
     "openingHours": "Mo-Do 10-21 Uhr, Fr-Sa 10-22 Uhr, So 11-21 Uhr",
-    "imageUrl": "/lovable-uploads/d52436a8-406e-4325-8002-c87fd25c1ad5.png",
+    "imageUrl": "/lovable-uploads/stuttgart-christmas-market.jpg",
     "specialties": [
       "Feuerzangenbowle",
       "Schwäbische Maultaschen",
@@ -161,7 +161,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     "description": "Der traditionelle Christkindlmarkt am Marienplatz vor dem berühmten Rathaus mit Glockenspiel. Seit 1642 verzaubert dieser Markt Besucher aus aller Welt mit bayerischer Gemütlichkeit, traditionellem Handwerk und dem einzigartigen Flair der bayerischen Landeshauptstadt. Der 30 Meter hohe Christbaum ist das Wahrzeichen des Marktes.",
     "openingDates": "25.11.2025 - 24.12.2025",
     "openingHours": "Mo-Sa 10-21 Uhr, So 10-20 Uhr",
-    "imageUrl": "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
+    "imageUrl": "/lovable-uploads/muenchen-christmas-market.jpg",
     "specialties": [
       "Gebrannte Mandeln",
       "Glühwein",
@@ -188,7 +188,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     "description": "Der Frankfurter Weihnachtsmarkt am historischen Römerberg ist einer der traditionsreichsten Deutschlands. Seit 1393 findet hier der Weihnachtsmarkt statt. Die mittelalterliche Kulisse der Fachwerkhäuser und des Römers bietet eine einzigartige Atmosphäre. Mit über 200 Ständen ist er einer der größten Weihnachtsmärkte in Deutschland.",
     "openingDates": "25.11.2025 - 22.12.2025",
     "openingHours": "Mo-Sa 10-21 Uhr, So 11-21 Uhr",
-    "imageUrl": "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
+    "imageUrl": "/lovable-uploads/frankfurt-christmas-market.jpg",
     "specialties": [
       "Frankfurter Bethmännchen",
       "Glühwein",
@@ -215,7 +215,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     "description": "Der größte Weihnachtsmarkt im Norden mit maritimem Flair. Rund um das imposante Rathaus erstreckt sich einer der schönsten Weihnachtsmärkte Deutschlands. Die Hansestadt Hamburg bietet mit ihrem Weihnachtsmarkt eine einzigartige Mischung aus norddeutscher Tradition und internationalem Flair.",
     "openingDates": "25.11.2025 - 23.12.2025",
     "openingHours": "Mo-Sa 10-21 Uhr, So 10-20 Uhr",
-    "imageUrl": "https://media.istockphoto.com/id/520625727/de/foto/weihnachts-markt-in-frankfurt.jpg?s=612x612&w=0&k=20&c=AaRAxjIqZgNVlPJ-MPqhbbTkKzjJ7c_NQgjLJA1gSHE=",
+    "imageUrl": "/lovable-uploads/hamburg-christmas-market.jpg",
     "specialties": [
       "Feuerzangenbowle",
       "Geröstete Mandeln",
