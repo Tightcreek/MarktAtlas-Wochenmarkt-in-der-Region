@@ -241,7 +241,78 @@ export const christmasMarkets: ChristmasMarket[] = [
     ],
     parking: "Parkhäuser in der Nähe: Bebelplatz, Friedrichstraße",
     entryPrice: "2 Euro (Kinder unter 12 Jahren frei), Mo-Fr 12-15 Uhr freier Eintritt (außer 24./25./26./31.12.)",
-  },
+  }
+{
+  "id": "9",
+  "slug": "weihnachtsmarkt-bonn-innenstadt",
+  "name": "Bonner Weihnachtsmarkt Innenstadt",
+  "city": "Bonn",
+  "address": "Münsterplatz, Marktplatz, Bottlerplatz",
+  "postalCode": "53111",
+  "region": "Nordrhein-Westfalen",
+  "latitude": 50.7339,
+  "longitude": 7.0997,
+  "description": "Traditionsreicher Weihnachtsmarkt mit über 170 festlich geschmückten Ständen in der historischen Bonner Innenstadt. Stimmungsvolle Atmosphäre rund um Münster und Marktplatz mit vielfältigem Angebot.",
+  "openingDates": "22.11.2025 - 23.12.2025",
+  "openingHours": "Verkaufsstände täglich 11-21 Uhr, Gastronomie So-Do 11-21:30 Uhr, Fr-Sa 11-22:30 Uhr, 23.11. geschlossen (Totensonntag)",
+  "imageUrl": "N/A",
+  "specialties": [
+    "Kunsthandwerk",
+    "Rheinische Spezialitäten",
+    "Weihnachtsdekorationen",
+    "Glühweinvariationen",
+    "Geschenkideen"
+  ],
+  "website": "https://bonnerweihnachtsmarkt.de",
+  "phone": "N/A",
+  "email": "N/A",
+  "transport": "S-Bahn/U-Bahn: Bonn Hauptbahnhof, dann 10 Min. Fußweg",
+  "highlights": [
+    "Über 170 festlich geschmückte Stände",
+    "Historische Kulisse am Bonner Münster",
+    "Traditionelles Warenangebot und Kunsthandwerk",
+    "Verlängerung: Dreikönigsmarkt ab 27.12.2025 am Remigiusplatz",
+    "Geführte Markttouren möglich"
+  ],
+  "parking": "Parkhäuser: Friedensplatz, Stadthausgarage, Karstadt",
+  "entryPrice": "frei"
+},
+{
+  "id": "10",
+  "slug": "leipziger-weihnachtsmarkt",
+  "name": "Leipziger Weihnachtsmarkt",
+  "city": "Leipzig",
+  "address": "Marktplatz und Innenstadt",
+  "postalCode": "04109",
+  "region": "Sachsen",
+  "latitude": 51.3397,
+  "longitude": 12.3731,
+  "description": "Einer der ältesten Weihnachtsmärkte Deutschlands seit 1458. Rund 300 festlich geschmückte Stände auf sechs Marktbereichen in der illuminierten Leipziger Innenstadt mit einzigartigem kulturellen und kulinarischen Angebot.",
+  "openingDates": "25.11.2025 - 23.12.2025",
+  "openingHours": "Täglich ab 10 Uhr, abends unterschiedlich je nach Stand",
+  "imageUrl": "N/A",
+  "specialties": [
+    "Tradition seit 1458",
+    "Thomanerchor-Konzerte",
+    "Weihnachtsoratorium J.S. Bach",
+    "Turmbläser am Alten Rathaus",
+    "Leipziger Allerlei"
+  ],
+  "website": "https://www.leipzig.de/weihnachtsmarkt",
+  "phone": "N/A",
+  "email": "N/A",
+  "transport": "S-Bahn: Leipzig Markt, Straßenbahn: Augustusplatz oder Markt",
+  "highlights": [
+    "Zweitältester Weihnachtsmarkt Deutschlands (seit 1458)",
+    "Rund 300 Stände auf sechs Marktbereichen",
+    "Feierliche Eröffnung durch OB am 25.11. um 17 Uhr",
+    "Turmbläser auf dem Turm des Alten Rathauses",
+    "Aufführungen des Weihnachtsoratoriums in Leipziger Kirchen",
+    "Orgelmusik und Konzerte des Thomanerchors"
+  ],
+  "parking": "Parkhäuser: Hauptbahnhof, Petersbogen, am Markt",
+  "entryPrice": "frei"
+}  
 ];
 
 // Utility function to get a Christmas market by slug
