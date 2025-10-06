@@ -159,29 +159,30 @@ const ChristmasMarketDetailPage = () => {
       <EventSchema market={market} />
       
       {/* Hero Section */}
-      <div className="relative h-96 lg:h-[500px] overflow-hidden">
+      <div className="relative w-full h-[400px] lg:h-[600px] overflow-hidden bg-muted">
         {market.imageUrl ? (
           <img 
             src={market.imageUrl} 
             alt={`${market.name} Weihnachtsmarkt`}
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-primary" />
+          <div className="absolute inset-0 w-full h-full bg-gradient-primary" />
         )}
         
         {/* Hero Overlay */}
-        <div className="absolute inset-0 bg-black/40">
-          <div className="container mx-auto px-4 h-full flex flex-col justify-end pb-12">
-            <div className="text-white">
-              <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60">
+          <div className="container mx-auto px-4 h-full flex flex-col justify-end pb-16">
+            <div className="text-white max-w-4xl">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg">
                 {market.name}
               </h1>
-              <div className="flex items-center text-lg lg:text-xl mb-6">
-                <MapPin className="h-6 w-6 mr-3" />
-                {market.address}, {market.city}
+              <div className="flex items-center text-lg lg:text-xl mb-8 drop-shadow-md">
+                <MapPin className="h-6 w-6 mr-3 flex-shrink-0" />
+                <span>{market.address}, {market.city}</span>
               </div>
-              <Button variant="outline" asChild className="bg-white/10 border-white/20 text-white hover:bg-white/20">
+              <Button variant="outline" asChild className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:border-white/40 shadow-lg">
                 <Link to="/weihnachtsmaerkte" className="flex items-center gap-2">
                   <ArrowLeft className="h-4 w-4" />
                   Zurück zur Übersicht
