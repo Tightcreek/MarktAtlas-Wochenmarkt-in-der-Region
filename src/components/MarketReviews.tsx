@@ -80,72 +80,31 @@ const MarketReviews = ({ marketId, marketName }: MarketReviewsProps) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 space-y-4">
-          {reviews.map((review) => (
-            <Card key={review.id}>
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <User className="w-4 h-4" />
-                    <span className="font-medium">{review.author}</span>
-                    {review.verified && (
-                      <Badge variant="secondary" className="text-xs">
-                        Verifiziert
-                      </Badge>
-                    )}
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <StarRating rating={review.rating} />
-                    <span className="text-sm text-muted-foreground">{review.date}</span>
-                  </div>
+      <div className="space-y-4">
+        {reviews.map((review) => (
+          <Card key={review.id}>
+            <CardHeader className="pb-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <User className="w-4 h-4" />
+                  <span className="font-medium">{review.author}</span>
+                  {review.verified && (
+                    <Badge variant="secondary" className="text-xs">
+                      Verifiziert
+                    </Badge>
+                  )}
                 </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{review.comment}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="lg:col-span-1">
-          <Card>
-            <CardHeader>
-              <CardTitle>Bewertung abgeben</CardTitle>
+                <div className="flex items-center space-x-2">
+                  <StarRating rating={review.rating} />
+                  <span className="text-sm text-muted-foreground">{review.date}</span>
+                </div>
+              </div>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div>
-                <label className="text-sm font-medium mb-2 block">Ihre Bewertung</label>
-                <StarRating 
-                  rating={userRating} 
-                  interactive 
-                  onRatingChange={setUserRating}
-                />
-              </div>
-              
-              <div>
-                <label className="text-sm font-medium mb-2 block">Kommentar</label>
-                <Textarea
-                  placeholder="Teilen Sie Ihre Erfahrungen mit diesem Markt..."
-                  value={newReview}
-                  onChange={(e) => setNewReview(e.target.value)}
-                  rows={4}
-                />
-              </div>
-              
-              <Button 
-                className="w-full" 
-                disabled={!userRating || !newReview.trim()}
-              >
-                Bewertung senden
-              </Button>
-              
-              <p className="text-xs text-muted-foreground">
-                Ihre Bewertung hilft anderen Besuchern bei der Auswahl des richtigen Marktes.
-              </p>
+            <CardContent>
+              <p className="text-muted-foreground">{review.comment}</p>
             </CardContent>
           </Card>
-        </div>
+        ))}
       </div>
     </section>
   );
