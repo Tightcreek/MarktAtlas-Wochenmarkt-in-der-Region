@@ -2052,7 +2052,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "53",
+    id: "56",
     slug: "fuerther-weihnachtsmarkt",
     name: "Fürther Weihnachtsmarkt",
     city: "Fürth",
@@ -2082,7 +2082,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "54",
+    id: "57",
     slug: "heilbronner-kaethchen-weihnachtsmarkt",
     name: "Heilbronner Käthchen Weihnachtsmarkt",
     city: "Heilbronn",
@@ -2112,7 +2112,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "55",
+    id: "58",
     slug: "ulmer-weihnachtsmarkt",
     name: "Ulmer Weihnachtsmarkt",
     city: "Ulm",
@@ -2142,7 +2142,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "56",
+    id: "59",
     slug: "kaiserslauterer-weihnachtsmarkt",
     name: "Lautrer Advent - Kaiserslauterer Weihnachtsmarkt",
     city: "Kaiserslautern",
@@ -2172,7 +2172,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "57",
+    id: "60",
     slug: "hildesheimer-weihnachtsmarkt",
     name: "Hildesheimer Weihnachtsmarkt",
     city: "Hildesheim",
@@ -2202,7 +2202,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "58",
+    id: "61",
     slug: "schweriner-weihnachtsmarkt",
     name: "Schweriner Weihnachtsmarkt",
     city: "Schwerin",
@@ -2232,7 +2232,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "59",
+    id: "62",
     slug: "hanauer-weihnachtsmarkt",
     name: "Märchenhafter Weihnachtsmarkt Hanau",
     city: "Hanau",
@@ -2262,7 +2262,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "60",
+    id: "63",
     slug: "flensburger-weihnachtsmarkt",
     name: "Flensburger Weihnachtsmarkt",
     city: "Flensburg",
@@ -2292,7 +2292,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "61",
+    id: "64",
     slug: "esslinger-mittelaltermarkt",
     name: "Esslinger Mittelaltermarkt & Weihnachtsmarkt",
     city: "Esslingen am Neckar",
@@ -2322,7 +2322,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "62",
+    id: "65",
     slug: "geraer-weihnachtsmarkt",
     name: "Geraer Weihnachtsmarkt",
     city: "Gera",
@@ -2352,7 +2352,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "63",
+    id: "66",
     slug: "cottbuser-weihnachtsmarkt",
     name: "Cottbuser Weihnachtsmarkt",
     city: "Cottbus",
@@ -2382,7 +2382,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "64",
+    id: "67",
     slug: "duerener-weihnachtsmarkt",
     name: "Dürener Weihnachtsmarkt",
     city: "Düren",
@@ -2412,7 +2412,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "65",
+    id: "68",
     slug: "ludwigsburger-barock-weihnachtsmarkt",
     name: "Ludwigsburger Barock-Weihnachtsmarkt",
     city: "Ludwigsburg",
@@ -2442,7 +2442,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "66",
+    id: "69",
     slug: "tuebinger-weihnachtsmarkt",
     name: "Tübinger Weihnachtsmarkt",
     city: "Tübingen",
