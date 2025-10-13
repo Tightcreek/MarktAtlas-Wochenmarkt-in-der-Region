@@ -2472,7 +2472,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "89",
+    id: "70",
     slug: "iserlohner-weihnachtsmarkt",
     name: "Iserlohner Weihnachtsmarkt",
     city: "Iserlohn",
@@ -2495,7 +2495,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "90",
+    id: "71",
     slug: "wittener-weihnachtsmarkt",
     name: "Wittener Weihnachtsmarkt",
     city: "Witten",
@@ -2518,7 +2518,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "91",
+    id: "72",
     slug: "villinger-weihnachtsmarkt",
     name: "Villinger Weihnachtsmarkt",
     city: "Villingen-Schwenningen",
@@ -2541,7 +2541,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "92",
+    id: "73",
     slug: "ratinger-weihnachtsmarkt",
     name: "Ratinger Weihnachtsmarkt",
     city: "Ratingen",
@@ -2564,7 +2564,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "93",
+    id: "74",
     slug: "giessener-weihnachtsmarkt",
     name: "Gießener Weihnachtsmarkt",
     city: "Gießen",
@@ -2587,7 +2587,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "94",
+    id: "75",
     slug: "zwickauer-weihnachtsmarkt",
     name: "Zwickauer Weihnachtsmarkt",
     city: "Zwickau",
@@ -2610,7 +2610,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "95",
+    id: "76",
     slug: "konstanzer-weihnachtsmarkt-am-see",
     name: "Konstanzer Weihnachtsmarkt am See",
     city: "Konstanz",
@@ -2633,7 +2633,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "96",
+    id: "77",
     slug: "weihnachtsmarkt-charlottenburg",
     name: "Weihnachtsmarkt am Schloss Charlottenburg",
     city: "Berlin",
@@ -2656,7 +2656,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "1 Euro",
   },
   {
-    id: "97",
+    id: "78",
     slug: "weihnachtsmarkt-alexanderplatz",
     name: "Weihnachtsmarkt am Alexanderplatz",
     city: "Berlin",
@@ -2679,7 +2679,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "98",
+    id: "79",
     slug: "lucia-weihnachtsmarkt-kulturbrauerei",
     name: "Lucia Weihnachtsmarkt in der Kulturbrauerei",
     city: "Berlin",
@@ -2702,7 +2702,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "99",
+    id: "80",
     slug: "engelchenmarkt-neumarkt-koeln",
     name: "Markt der Engel am Neumarkt",
     city: "Köln",
@@ -2725,7 +2725,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "100",
+    id: "81",
     slug: "hafen-weihnachtsmarkt-koeln",
     name: "Hafen-Weihnachtsmarkt am Rheinauhafen",
     city: "Köln",
@@ -2748,7 +2748,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "101",
+    id: "82",
     slug: "heinzels-wintermaerchen-koeln",
     name: "Heinzels Wintermärchen",
     city: "Köln",
@@ -2771,7 +2771,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "102",
+    id: "83",
     slug: "weihnachtsmarkt-chinesischer-turm",
     name: "Weihnachtsmarkt am Chinesischen Turm",
     city: "München",
@@ -2794,7 +2794,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "103",
+    id: "84",
     slug: "tollwood-winterfestival",
     name: "Tollwood Winterfestival",
     city: "München",
@@ -2817,7 +2817,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "Markt frei, Veranstaltungen kostenpflichtig",
   },
   {
-    id: "104",
+    id: "85",
     slug: "haidhauser-weihnachtsmarkt",
     name: "Haidhauser Weihnachtsmarkt",
     city: "München",
@@ -2840,7 +2840,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "105",
+    id: "86",
     slug: "weisser-zauber-jungfernstieg",
     name: "Weißer Zauber am Jungfernstieg",
     city: "Hamburg",
@@ -2863,7 +2863,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "106",
+    id: "87",
     slug: "santa-pauli",
     name: "Santa Pauli",
     city: "Hamburg",
@@ -2886,7 +2886,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "107",
+    id: "88",
     slug: "weihnachtsmarkt-altona",
     name: "Weihnachtsmarkt Altona",
     city: "Hamburg",
