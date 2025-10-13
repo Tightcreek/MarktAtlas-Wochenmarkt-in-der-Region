@@ -16,19 +16,21 @@ export const useChristmasMarketFilters = (
 ) => {
   const filteredMarkets = useMemo(() => {
     let results = markets.filter((market) => {
-      // Search filter - prioritize city matches
+      // Search filter
       if (filters.searchQuery.trim()) {
-        const query = filters.searchQuery.toLowerCase();
+        const query = filters.searchQuery.toLowerCase().trim();
         
-        // Check if query matches city exactly or partially
+        // Check if query matches city
         const cityMatch = market.city.toLowerCase().includes(query);
+        const nameMatch = market.name.toLowerCase().includes(query);
+        const addressMatch = market.address.toLowerCase().includes(query);
         
-        // For other fields, only search if no specific city search term
-        const matchesSearch = cityMatch ||
-          market.name.toLowerCase().includes(query) ||
-          market.address.toLowerCase().includes(query) ||
-          market.description.toLowerCase().includes(query) ||
-          market.specialties.some(s => s.toLowerCase().includes(query));
+        // Only search in description and specialties if it's not a city name match
+        // This prevents false matches when searching for city names
+        const descriptionMatch = !cityMatch && market.description.toLowerCase().includes(query);
+        const specialtyMatch = !cityMatch && market.specialties.some(s => s.toLowerCase().includes(query));
+        
+        const matchesSearch = cityMatch || nameMatch || addressMatch || descriptionMatch || specialtyMatch;
         
         if (!matchesSearch) return false;
       }

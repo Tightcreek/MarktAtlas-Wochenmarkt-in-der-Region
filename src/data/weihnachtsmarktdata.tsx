@@ -1212,7 +1212,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "43",
+    id: "45",
     slug: "chemnitzer-weihnachtsmarkt",
     name: "Chemnitzer Weihnachtsmarkt",
     city: "Chemnitz",
@@ -1242,7 +1242,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "44",
+    id: "46",
     slug: "magdeburger-weihnachtsmarkt",
     name: "Magdeburger Weihnachtsmarkt",
     city: "Magdeburg",
@@ -1272,7 +1272,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "45",
+    id: "49",
     slug: "freiburger-weihnachtsmarkt",
     name: "Freiburger Weihnachtsmarkt",
     city: "Freiburg",
@@ -1302,7 +1302,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "46",
+    id: "50",
     slug: "krefelder-weihnachtsmarkt",
     name: "Krefelder Weihnachtsmarkt",
     city: "Krefeld",
@@ -1332,7 +1332,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "47",
+    id: "51",
     slug: "hallescher-weihnachtsmarkt",
     name: "Hallescher Weihnachtsmarkt",
     city: "Halle (Saale)",
@@ -1362,7 +1362,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "48",
+    id: "52",
     slug: "mainzer-weihnachtsmarkt",
     name: "Mainzer Weihnachtsmarkt",
     city: "Mainz",
@@ -1392,7 +1392,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "49",
+    id: "53",
     slug: "saarbruecker-christkindlmarkt",
     name: "Saarbrücker Christkindl-Markt",
     city: "Saarbrücken",
@@ -1422,7 +1422,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "50",
+    id: "54",
     slug: "erfurter-weihnachtsmarkt",
     name: "Erfurter Weihnachtsmarkt",
     city: "Erfurt",
@@ -1452,7 +1452,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "51",
+    id: "55",
     slug: "centro-weihnachtsmarkt-oberhausen",
     name: "CentrO Weihnachtsmarkt Oberhausen",
     city: "Oberhausen",
@@ -1482,7 +1482,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "47",
+    id: "89",
     slug: "rostocker-weihnachtsmarkt",
     name: "Rostocker Weihnachtsmarkt",
     city: "Rostock",
@@ -1512,7 +1512,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "48",
+    id: "90",
     slug: "kasseler-maerchenweihnachtsmarkt",
     name: "Kasseler Märchenweihnachtsmarkt",
     city: "Kassel",
@@ -1542,7 +1542,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "49",
+    id: "91",
     slug: "hagener-weihnachtsmarkt",
     name: "Hagener Weihnachtsmarkt",
     city: "Hagen",
@@ -1572,7 +1572,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "50",
+    id: "92",
     slug: "potsdamer-weihnachtszauber",
     name: "Potsdamer Weihnachtszauber - Blauer Lichterglanz",
     city: "Potsdam",
@@ -1602,7 +1602,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "51",
+    id: "93",
     slug: "hammer-weihnachtsmarkt",
     name: "Hammer Weihnachtsmarkt",
     city: "Hamm",
@@ -1632,7 +1632,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "52",
+    id: "94",
     slug: "oldenburger-lamberti-markt",
     name: "Oldenburger Lamberti-Markt",
     city: "Oldenburg",
@@ -1662,7 +1662,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "53",
+    id: "95",
     slug: "osnabruecker-weihnachtsmarkt",
     name: "Historischer Weihnachtsmarkt Osnabrück",
     city: "Osnabrück",
@@ -1692,7 +1692,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "54",
+    id: "96",
     slug: "muelheimer-weihnachtsmarkt",
     name: "Mülheimer Weihnachtsmarkt",
     city: "Mülheim an der Ruhr",
@@ -1722,7 +1722,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "55",
+    id: "97",
     slug: "darmstaedter-weihnachtsmarkt",
     name: "Darmstädter Weihnachtsmarkt",
     city: "Darmstadt",
@@ -1752,7 +1752,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "43",
+    id: "98",
     slug: "solinger-weihnachtsmarkt",
     name: "Solinger Weihnachtsmarkt",
     city: "Solingen",
@@ -1782,7 +1782,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "44",
+    id: "99",
     slug: "paderborner-weihnachtsmarkt",
     name: "Paderborner Weihnachtsmarkt",
     city: "Paderborn",
@@ -1812,7 +1812,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "45",
+    id: "100",
     slug: "cranger-weihnachtszauber",
     name: "Cranger Weihnachtszauber",
     city: "Herne",
@@ -1842,7 +1842,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "46",
+    id: "101",
     slug: "heidelberger-weihnachtsmarkt",
     name: "Heidelberger Weihnachtsmarkt",
     city: "Heidelberg",
@@ -1872,7 +1872,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "47",
+    id: "102",
     slug: "neusser-weihnachtsmarkt",
     name: "Neusser Weihnachtsmarkt",
     city: "Neuss",
@@ -1902,7 +1902,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "48",
+    id: "103",
     slug: "regensburger-christkindlmarkt",
     name: "Regensburger Christkindlmarkt",
     city: "Regensburg",
@@ -1932,7 +1932,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "49",
+    id: "104",
     slug: "ingolstaedter-christkindlmarkt",
     name: "Ingolstädter Christkindlmarkt",
     city: "Ingolstadt",
@@ -1962,7 +1962,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "50",
+    id: "105",
     slug: "pforzheimer-weihnachtsmarkt",
     name: "Pforzheimer Weihnachtsmarkt",
     city: "Pforzheim",
@@ -1992,7 +1992,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "51",
+    id: "106",
     slug: "wuerzburger-weihnachtsmarkt",
     name: "Würzburger Weihnachtsmarkt",
     city: "Würzburg",
@@ -2022,7 +2022,7 @@ export const christmasMarkets: ChristmasMarket[] = [
     entryPrice: "frei",
   },
   {
-    id: "52",
+    id: "107",
     slug: "offenbacher-weihnachtsmarkt",
     name: "Offenbacher Weihnachtsmarkt",
     city: "Offenbach am Main",
