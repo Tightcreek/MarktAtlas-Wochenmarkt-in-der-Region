@@ -16,12 +16,16 @@ export const useChristmasMarketFilters = (
 ) => {
   const filteredMarkets = useMemo(() => {
     let results = markets.filter((market) => {
-      // Search filter
+      // Search filter - prioritize city matches
       if (filters.searchQuery.trim()) {
         const query = filters.searchQuery.toLowerCase();
-        const matchesSearch = 
+        
+        // Check if query matches city exactly or partially
+        const cityMatch = market.city.toLowerCase().includes(query);
+        
+        // For other fields, only search if no specific city search term
+        const matchesSearch = cityMatch ||
           market.name.toLowerCase().includes(query) ||
-          market.city.toLowerCase().includes(query) ||
           market.address.toLowerCase().includes(query) ||
           market.description.toLowerCase().includes(query) ||
           market.specialties.some(s => s.toLowerCase().includes(query));
